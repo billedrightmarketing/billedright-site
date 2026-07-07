@@ -946,6 +946,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
    CONTACT
    ═══════════════════════════════════════════ */
 .br-contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; align-items: start; }
+.br-psy-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: start; }
 .br-trust-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 24px 0 32px; }
 .br-trust-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--navy-dark); }
 .br-trust-tick {
@@ -1524,6 +1525,10 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-search-row { flex-direction: column; }
   .br-nav-links, .br-nav-right { display: none; }
   .br-hamburger { display: flex; }
+  .br-contact-grid { grid-template-columns: 1fr; }
+  .br-contact-grid > * { min-width: 0; }
+  .br-psy-grid { grid-template-columns: 1fr; }
+  .br-psy-grid > * { min-width: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .br-reveal { opacity: 1; transform: none; transition: none; }
@@ -1811,7 +1816,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 
   <section class="br-section br-bg-white">
     <div class="br-wrap">
-      <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start">
+      <div class="br-psy-grid">
 
         <div class="br-reveal">
           <p style="font-size:16px;color:var(--text-muted);line-height:1.75;margin-bottom:28px">To excel in psychiatry medical billing services, proficiency in accurate E/M coding, mental health coding, and avoiding E/M payment pitfalls is crucial. Errors in coding can result in payment delays or claim rejections, potentially prompting coding audits. Drawing on our proven track record in psychiatry billing, we offer comprehensive support including coding education, timely billing updates, and expertise in recovering previously denied claims.</p>

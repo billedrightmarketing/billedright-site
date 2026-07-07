@@ -946,6 +946,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
    CONTACT
    ═══════════════════════════════════════════ */
 .br-contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; align-items: start; }
+.br-psy-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: start; }
 .br-trust-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 24px 0 32px; }
 .br-trust-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--navy-dark); }
 .br-trust-tick {
@@ -1524,6 +1525,10 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-search-row { flex-direction: column; }
   .br-nav-links, .br-nav-right { display: none; }
   .br-hamburger { display: flex; }
+  .br-contact-grid { grid-template-columns: 1fr; }
+  .br-contact-grid > * { min-width: 0; }
+  .br-psy-grid { grid-template-columns: 1fr; }
+  .br-psy-grid > * { min-width: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .br-reveal { opacity: 1; transform: none; transition: none; }
