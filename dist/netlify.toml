@@ -1,0 +1,62 @@
+[build]
+  publish = "dist"
+  command = "python build.py"
+
+# Clean URLs: serve /services/ (folder + index.html) without exposing .html
+[[redirects]]
+  from = "/*.html"
+  to = "/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+  force = true
+
+# Long-lived caching for immutable static assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Security headers on every response. Deliberately no Cache-Control here —
+# it would collide with the immutable asset rules above (Netlify merges
+# matching header blocks, and HTML should revalidate on every request anyway).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
