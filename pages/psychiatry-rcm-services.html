@@ -1009,8 +1009,9 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
   border-radius: var(--r-md); padding: 18px;
 }
-.br-cred-stat-num { font-size: 24px; font-weight: 800; color: var(--brand); line-height: 1; margin-bottom: 5px; }
-.br-cred-stat-lbl { font-size: 12px; color: rgba(255,255,255,.55); }
+.br-cred-stat-num { font-size: 24px; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 5px; }
+.br-cred-stat-lbl { font-size: 12px; color: #fff; }
+.br-psy-kpi-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; position: relative; z-index: 1; }
 
 /* ═══════════════════════════════════════════
    TESTIMONIALS — quote cards
@@ -1528,6 +1529,9 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-contact-grid > * { min-width: 0; }
   .br-psy-grid { grid-template-columns: 1fr; }
   .br-psy-grid > * { min-width: 0; }
+  .br-psy-kpi-grid { grid-template-columns: repeat(2,1fr); gap: 10px; }
+  .br-psy-kpi-grid .br-cred-stat { padding: 12px; }
+  .br-psy-kpi-grid .br-cred-stat-num { font-size: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .br-reveal { opacity: 1; transform: none; transition: none; }
@@ -1591,7 +1595,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 
           <h3 style="font-size:21px;font-weight:800;color:var(--navy);margin:32px 0 16px">Results Reflected in Our KPIs</h3>
           <div style="background:var(--navy);border-radius:var(--r-xl);padding:32px" class="br-reveal">
-            <div class="br-cred-stats" style="grid-template-columns:repeat(4,1fr)">
+            <div class="br-psy-kpi-grid">
             <div class="br-cred-stat"><div class="br-cred-stat-num">97%</div><div class="br-cred-stat-lbl">Achieving Collections up to</div></div>
             <div class="br-cred-stat"><div class="br-cred-stat-num">20</div><div class="br-cred-stat-lbl">Reduction in days in AR</div></div>
             <div class="br-cred-stat"><div class="br-cred-stat-num">1%</div><div class="br-cred-stat-lbl">Error Ratio</div></div>
