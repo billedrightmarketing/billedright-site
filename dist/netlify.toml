@@ -1,6 +1,9 @@
 [build]
   publish = "dist"
-  command = "python build.py"
+  # No build command: dist/ is already committed to the repo (regenerated
+  # locally via `python build.py` before every push). Netlify just serves
+  # it as-is — this avoids depending on a Python runtime being available
+  # in Netlify's build image, which may not alias `python` to python3.
 
 # Clean URLs: serve /services/ (folder + index.html) without exposing .html
 [[redirects]]
