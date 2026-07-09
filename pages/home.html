@@ -319,6 +319,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
    HERO — navy dark bg, orbit right, stats bottom
    ═══════════════════════════════════════════ */
 .br-hero {
+  --orbit-sz: clamp(320px, 40vw, 520px);
   min-height: calc(100vh - 60px);
   background: linear-gradient(130deg, #1a2535 0%, #243348 45%, #2e3f5c 100%);
   display: flex; align-items: center;
@@ -342,7 +343,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 
 .br-hero-inner {
   position: relative; z-index: 2;
-  display: grid; grid-template-columns: 1fr 520px; gap: 60px; align-items: center;
+  display: grid; grid-template-columns: minmax(0,1fr) var(--orbit-sz); gap: 60px; align-items: center;
 }
 .br-hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
@@ -386,7 +387,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
    RCM ORBIT DIAGRAM — matches video
    ═══════════════════════════════════════════ */
 .br-orbit {
-  position: relative; width: 520px; height: 520px; flex-shrink: 0;
+  position: relative; width: var(--orbit-sz); height: var(--orbit-sz); flex-shrink: 0;
 }
 .br-orbit-ring {
   position: absolute; left: 50%; top: 50%;
@@ -394,14 +395,14 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   border-radius: 50%; border: 1.5px solid rgba(255,255,255,.08);
   pointer-events: none;
 }
-.br-orbit-ring-1 { width: 200px; height: 200px; }
+.br-orbit-ring-1 { width: calc(var(--orbit-sz) * 200 / 520); height: calc(var(--orbit-sz) * 200 / 520); }
 .br-orbit-ring-2 {
-  width: 340px; height: 340px;
+  width: calc(var(--orbit-sz) * 340 / 520); height: calc(var(--orbit-sz) * 340 / 520);
   border-color: rgba(186,32,37,.22);
   animation: br-spin-cw 22s linear infinite;
 }
 .br-orbit-ring-3 {
-  width: 480px; height: 480px;
+  width: calc(var(--orbit-sz) * 480 / 520); height: calc(var(--orbit-sz) * 480 / 520);
   border-color: rgba(255,255,255,.05);
   animation: br-spin-ccw 38s linear infinite;
 }
@@ -418,7 +419,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 }
 /* Inner ring static — just a faint guide circle */
 .br-orbit-ring-1 {
-  width: 200px; height: 200px;
+  width: calc(var(--orbit-sz) * 200 / 520); height: calc(var(--orbit-sz) * 200 / 520);
   border-color: rgba(255,255,255,.07);
 }
 @keyframes br-spin-cw  { from{transform:translate(-50%,-50%) rotate(0)} to{transform:translate(-50%,-50%) rotate(360deg)} }
@@ -427,7 +428,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 /* Center hub — red box */
 .br-orbit-hub {
   position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-  width: 118px; height: 118px; border-radius: 22px;
+  width: calc(var(--orbit-sz) * 118 / 520); height: calc(var(--orbit-sz) * 118 / 520); border-radius: 22px;
   background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
   filter: drop-shadow(0 0 12px rgba(186,32,37,.4));
@@ -456,7 +457,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   z-index: 5;
 }
 .br-node-box {
-  width: 56px; height: 56px; border-radius: 14px;
+  width: calc(var(--orbit-sz) * 56 / 520); height: calc(var(--orbit-sz) * 56 / 520); border-radius: 14px;
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.15);
   backdrop-filter: blur(8px);
@@ -1488,7 +1489,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
    ═══════════════════════════════════════════ */
 @media (max-width: 1100px) {
   .br-hero-inner      { grid-template-columns: 1fr; gap: 48px; }
-  .br-orbit           { width: 380px; height: 380px; margin: 0 auto; }
+  .br-orbit           { margin: 0 auto; }
   .br-g4,.br-metric-cards { grid-template-columns: repeat(2,1fr); }
   .br-results-grid    { grid-template-columns: repeat(4,1fr); }
   .br-love-grid       { grid-template-columns: repeat(3,1fr); }
