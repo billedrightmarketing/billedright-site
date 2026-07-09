@@ -1560,7 +1560,21 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
     <div class="br-nav-links" role="list">
 
       <!-- Home -->
-      <a href="/" class="br-nav-direct active" data-brpage="home">Home</a>
+      <div class="br-nav-item" id="mega-item-home">
+        <a href="/" class="br-has-mega" aria-haspopup="true" aria-expanded="false" id="mega-btn-home" data-brpage="home">Home</a>
+        <div class="br-mega" id="br-mega-home" role="region" aria-label="Home menu">
+          <div class="br-mega-inner">
+            <div style="max-width:240px">
+              <ul class="br-mega-links">
+                <li><a href="/services/">Why Billed Right</a></li>
+                <li><a href="/about/">About Us</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="/testimonials/">Testimonials</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Who We Serve -->
       <div class="br-nav-item" id="mega-item-serve">
@@ -1710,6 +1724,10 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 
   <!-- Home -->
   <a href="/" class="br-mob-direct" data-brpage="home">Home</a>
+  <a href="/services/" class="br-mob-sub-link">Why Billed Right</a>
+  <a href="/about/" class="br-mob-sub-link">About Us</a>
+  <a href="#" class="br-mob-sub-link">FAQ</a>
+  <a href="/testimonials/" class="br-mob-sub-link">Testimonials</a>
 
   <!-- Who We Serve -->
   <div class="br-mob-item" id="mob-serve">
