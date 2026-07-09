@@ -468,6 +468,22 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 .br-orbit-node:hover .br-node-box { background: rgba(186,32,37,.3); border-color: rgba(186,32,37,.5); transform: scale(1.1); }
 .br-node-label { font-size: 10px; font-weight: 600; color: rgba(255,255,255,.6); white-space: nowrap; text-transform: uppercase; letter-spacing: .06em; }
 
+/* Hover insight card — describes the service under each orbit node */
+.br-node-tip {
+  position: absolute; bottom: calc(100% + 10px); left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  width: 168px; background: var(--navy-dark); border: 1px solid rgba(186,32,37,.35);
+  border-radius: var(--r-md); padding: 10px 13px; box-shadow: var(--sh-lg);
+  font-size: 12px; font-weight: 500; color: #fff; line-height: 1.5; text-align: center;
+  text-transform: none; letter-spacing: normal;
+  opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 20;
+}
+.br-node-tip::after {
+  content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+  border: 6px solid transparent; border-top-color: var(--navy-dark);
+}
+.br-orbit-node:hover .br-node-tip { opacity: 1; transform: translateX(-50%) translateY(0); }
+
 /* Node float offsets */
 .br-orbit-node:nth-child(2) .br-node-box { animation-delay: -1s; }
 .br-orbit-node:nth-child(3) .br-node-box { animation-delay: -2s; }
@@ -1499,6 +1515,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 }
 @media (max-width: 768px) {
   .br-section { padding: 60px 0; }
+  .br-orbit { display: none; }
   .br-g2,.br-g3,.br-services-grid,.br-spec-detail-grid,.br-team-grid,.br-awards-grid { grid-template-columns: 1fr; }
   .br-metric-cards,.br-love-grid { grid-template-columns: 1fr 1fr; }
   .br-spec-tiles    { grid-template-columns: repeat(3,1fr); }
@@ -1595,7 +1612,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 
           <!-- Center hub -->
           <div class="br-orbit-hub" aria-hidden="true">
-            <div class="h-brand">BilledRight</div>
+            <div class="h-brand">Billed Right</div>
             <div class="h-rcm">RCM</div>
             <div class="h-engine">Engine</div>
           </div>
@@ -1604,26 +1621,32 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
           <div class="br-orbit-node" style="left:50%;top:13%">
             <div class="br-node-box"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
             <div class="br-node-label">Charge Entry</div>
+            <div class="br-node-tip">Accurate charge entry that keeps your claims clean from day one.</div>
           </div>
           <div class="br-orbit-node" style="left:80%;top:29%">
             <div class="br-node-box"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
             <div class="br-node-label">Eligibility</div>
+            <div class="br-node-tip">Real-time verification before the visit — fewer denials downstream.</div>
           </div>
           <div class="br-orbit-node" style="left:81%;top:68%">
             <div class="br-node-box"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
             <div class="br-node-label">Claim Submission</div>
+            <div class="br-node-tip">Timely electronic submission with payer-specific edits.</div>
           </div>
           <div class="br-orbit-node" style="left:50%;top:87%">
             <div class="br-node-box"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></div>
             <div class="br-node-label">Denial Mgmt</div>
+            <div class="br-node-tip">Recover the up to 90% of revenue lost to denied claims.</div>
           </div>
           <div class="br-orbit-node" style="left:19%;top:68%">
             <div class="br-node-box"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
             <div class="br-node-label">Payment Posting</div>
+            <div class="br-node-tip">Accurate posting that protects financial health.</div>
           </div>
           <div class="br-orbit-node" style="left:20%;top:29%">
             <div class="br-node-box"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
             <div class="br-node-label">Reporting</div>
+            <div class="br-node-tip">Custom dashboards giving full visibility into RCM performance.</div>
           </div>
         </div>
       </div>
