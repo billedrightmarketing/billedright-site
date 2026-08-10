@@ -94,11 +94,12 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type":"Question","name":"How much can Billed Right improve my collections?","acceptedAnswer":{"@type":"Answer","text":"Billed Right clients see an average 94% lift in collections, with days in A/R reduced from 40+ to under 24 days on average."}},
-        {"@type":"Question","name":"What specialties does Billed Right serve?","acceptedAnswer":{"@type":"Answer","text":"Billed Right serves 20+ medical specialties including cardiology, behavioral health, internal medicine, pain management, orthopedics, pediatrics, ophthalmology, urgent care, neurology, nephrology, and multispecialty groups."}},
-        {"@type":"Question","name":"Is Billed Right HIPAA compliant?","acceptedAnswer":{"@type":"Answer","text":"Yes. Billed Right has maintained zero data breaches in 18+ years of operation. We are HIPAA compliant, SOC 2 aligned, and use 256-bit encryption for all data in transit and at rest."}},
-        {"@type":"Question","name":"How long does it take to onboard with Billed Right?","acceptedAnswer":{"@type":"Answer","text":"Most practices are fully onboarded within 2–3 weeks, including EHR/PM system integration, payer setup, and team training."}},
-        {"@type":"Question","name":"What does Billed Right charge for medical billing services?","acceptedAnswer":{"@type":"Answer","text":"Billed Right uses a transparent percentage-of-collections pricing model with no setup fees and no long-term contracts required to get started. Contact us for a quote tailored to your specialty and volume."}}
+        {"@type":"Question","name":"What CPT codes are most commonly used in psychiatry billing?","acceptedAnswer":{"@type":"Answer","text":"The most common codes are 90791 (psychiatric diagnostic evaluation), 90834 and 90837 (psychotherapy, 45 and 60 minutes), the 90833/90836/90838 add-on codes for psychotherapy delivered alongside an E/M visit, and 99213-99215 for the E/M visit itself."}},
+        {"@type":"Question","name":"How do you handle telehealth billing for psychiatric visits?","acceptedAnswer":{"@type":"Answer","text":"We track each payer's current place-of-service and modifier requirements (95 vs. GT) by state, since telehealth parity rules still vary and change more often than in-person billing rules."}},
+        {"@type":"Question","name":"What's the difference between an E/M visit and a psychotherapy add-on code?","acceptedAnswer":{"@type":"Answer","text":"The E/M code (99213-99215) covers medical management of the visit. Add-on codes like 90833, 90836, and 90838 cover psychotherapy delivered during that same visit and must be billed alongside the E/M code, never standalone."}},
+        {"@type":"Question","name":"Do you handle prior authorizations for intensive outpatient programs?","acceptedAnswer":{"@type":"Answer","text":"Yes. We track authorization requirements per payer and submit and follow up on IOP and higher-level-of-care authorizations before claims go out, not after a denial comes back."}},
+        {"@type":"Question","name":"How long does it take to see a reduction in denied claims?","acceptedAnswer":{"@type":"Answer","text":"Most practices see a measurable drop within the first 60-90 days as coding and documentation gaps are corrected, with denial follow-up starting within 24-48 hours from day one."}},
+        {"@type":"Question","name":"Can you work with our existing EHR/practice management system?","acceptedAnswer":{"@type":"Answer","text":"Yes. We work with all major EMR/PM systems and integrate with what you already have - no rip-and-replace required."}}
       ]
     }
   ]
@@ -1207,6 +1208,8 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
    IMPLEMENTATION TIMELINE
    ═══════════════════════════════════════════ */
 .br-impl-timeline { display: grid; grid-template-columns: repeat(5,1fr); gap: 0; }
+.br-impl-timeline.br-psy-impl-6 { grid-template-columns: repeat(3,1fr); gap: 32px 20px; }
+.br-psy-denial-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
 .br-impl-step { text-align: center; position: relative; padding: 0 14px; }
 .br-impl-step::before {
   content: ''; position: absolute; top: 21px; left: -50%; width: 100%; height: 2px;
@@ -1520,6 +1523,8 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-spec-stats { gap: 24px; }
   .br-leadmag-grid,.br-tool-grid,.br-case-grid,.br-doctor-grid { grid-template-columns: 1fr; }
   .br-impl-timeline { grid-template-columns: 1fr; gap: 24px; }
+  .br-impl-timeline.br-psy-impl-6 { grid-template-columns: 1fr; gap: 24px; }
+  .br-psy-denial-grid { grid-template-columns: 1fr; }
   .br-impl-step::before { display: none; }
   .br-compare-table th, .br-compare-table td { padding: 13px 14px; font-size: 13px; }
   .br-search-row { flex-direction: column; }
@@ -1544,6 +1549,31 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-orbit-hub, .br-ai-hub { animation: none !important; filter: none !important; }
   .br-ai-chip, .br-chip { animation-duration: 12s !important; }
 }
+
+/* ── Direct Answer callout — light navy left-border accent ── */
+.br-callout {
+  background: var(--bg-light); border-left: 3px solid var(--navy);
+  border-radius: var(--r-md); padding: 20px 24px; margin-bottom: 32px;
+}
+.br-callout-label {
+  display: block; font-size: 11px; font-weight: 800; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--navy); margin-bottom: 8px;
+}
+.br-callout p { font-size: 15px; color: var(--navy-dark); line-height: 1.7; margin: 0; }
+
+/* ── FAQ accordion — same expand mechanism as the mobile nav accordion ── */
+.br-faq-item { border: 1px solid var(--border); border-radius: var(--r-md); margin-bottom: 10px; overflow: hidden; }
+.br-faq-trigger {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 16px 20px; font-size: 15px; font-weight: 700; color: var(--navy);
+  cursor: pointer; user-select: none; transition: color .15s, background .15s;
+}
+.br-faq-trigger:hover { color: var(--brand); background: var(--bg-lighter); }
+.br-faq-arrow { width: 20px; height: 20px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: transform .25s; }
+.br-faq-arrow svg { width: 14px; height: 14px; stroke: var(--text-muted); stroke-width: 2.5; fill: none; }
+.br-faq-item.open .br-faq-arrow { transform: rotate(180deg); }
+.br-faq-body { max-height: 0; overflow: hidden; transition: max-height .3s cubic-bezier(.4,0,.2,1); background: var(--bg-lighter); }
+.br-faq-body p { padding: 0 20px 18px; font-size: 14px; color: var(--text-muted); line-height: 1.65; margin: 0; }
 </style>
 </head>
 <body>
@@ -1557,6 +1587,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
       <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:14px">
         <a href="/" style="color:rgba(255,255,255,.5)">Home</a><span style="margin:0 8px;color:rgba(255,255,255,.3)">/</span><span style="color:rgba(255,255,255,.85)">Psychiatry</span>
       </p>
+      <p style="font-size:12.5px;color:rgba(255,255,255,.45);margin-bottom:14px">Reviewed by Billed Right's behavioral health billing team &mdash; 18+ years in psychiatric RCM.</p>
       <span class="br-eyebrow" style="color:rgba(186,32,37,.9)">Specialty Billing</span>
       <h1>Psychiatry</h1>
     </div>
@@ -1567,6 +1598,10 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
       <div class="br-psy-grid">
 
         <div class="br-reveal">
+          <div class="br-callout">
+            <p>Psychiatry billing is uniquely difficult because most services are time-based and diagnosis-dependent rather than procedure-based, so a single missed minute of documented time or an unsupported E/M level can turn a clean claim into a denial. Layer on prior-authorization rules for intensive outpatient programs and telehealth parity requirements that vary by state and payer, and even experienced billers can lose meaningful revenue to preventable errors.</p>
+          </div>
+
           <p style="font-size:16px;color:var(--text-muted);line-height:1.75;margin-bottom:28px">To excel in psychiatry medical billing services, proficiency in accurate E/M coding, mental health coding, and avoiding E/M payment pitfalls is crucial. Errors in coding can result in payment delays or claim rejections, potentially prompting coding audits. Drawing on our proven track record in psychiatry billing, we offer comprehensive support including coding education, timely billing updates, and expertise in recovering previously denied claims.</p>
 
           <div class="br-blog-img tall" style="border-radius:var(--r-lg);margin-bottom:32px">
@@ -1593,6 +1628,28 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
         <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>Bilingual representatives are available.</li>
       </ul>
 
+          <h3 style="font-size:21px;font-weight:800;color:var(--navy);margin:32px 0 16px">Top Denial Reasons</h3>
+          <div class="br-psy-denial-grid br-reveal">
+            <div class="br-service-card"><div class="br-svc-icon"><strong style="color:var(--brand);font-size:18px;font-weight:800">1</strong></div><h3>Missing Time Documentation</h3><p>Psychotherapy add-on codes require exact start/stop time. Without it, the add-on gets stripped or the whole claim denies.</p></div>
+            <div class="br-service-card"><div class="br-svc-icon"><strong style="color:var(--brand);font-size:18px;font-weight:800">2</strong></div><h3>Unsupported E/M Level</h3><p>Medical decision-making documentation doesn't match the billed E/M level, triggering a downcode or denial.</p></div>
+            <div class="br-service-card"><div class="br-svc-icon"><strong style="color:var(--brand);font-size:18px;font-weight:800">3</strong></div><h3>Telehealth Modifier Mismatch</h3><p>Place-of-service and modifier (95 vs. GT) requirements vary by payer and state, and a mismatch is an easy, avoidable denial.</p></div>
+            <div class="br-service-card"><div class="br-svc-icon"><strong style="color:var(--brand);font-size:18px;font-weight:800">4</strong></div><h3>Missing Prior Authorization</h3><p>Intensive outpatient and higher levels of care often require authorization that's easy to miss without a dedicated tracking process.</p></div>
+            <div class="br-service-card"><div class="br-svc-icon"><strong style="color:var(--brand);font-size:18px;font-weight:800">5</strong></div><h3>Diagnosis Doesn't Support Medical Necessity</h3><p>The billed service isn't clearly tied to the diagnosis code on the claim, so the payer denies for lack of medical necessity.</p></div>
+          </div>
+
+          <h3 style="font-size:21px;font-weight:800;color:var(--navy);margin:32px 0 16px">Payer-Specific Considerations</h3>
+          <p style="font-size:16px;color:var(--text-muted);line-height:1.75;margin-bottom:0">Payer rules for psychiatry diverge more than almost any other specialty. Medicare and most commercial payers require exact start/stop time to support psychotherapy codes like 90834 and 90837, while add-on codes such as 90833, 90836, and 90838 must be billed alongside a covered E/M visit (99213&ndash;99215) rather than standalone. A diagnostic evaluation is typically billed under 90791, and Collaborative Care Management codes (99492&ndash;99494) are billable by some plans without prior authorization and require it under others &mdash; a distinction that's easy to miss without specialty-specific payer knowledge.</p>
+
+          <h3 style="font-size:21px;font-weight:800;color:var(--navy);margin:32px 0 16px">What to Expect</h3>
+          <div class="br-impl-timeline br-psy-impl-6 br-reveal">
+            <div class="br-impl-step"><div class="br-impl-num">1</div><h4>Free Billing Review</h4><p>We audit recent claims and show you exactly where revenue is leaking.</p></div>
+            <div class="br-impl-step"><div class="br-impl-num">2</div><h4>Onboarding &amp; EHR Setup</h4><p>Payer setup and integration with your existing EHR/PM system &mdash; no rip-and-replace.</p></div>
+            <div class="br-impl-step"><div class="br-impl-num">3</div><h4>Credentialing Check</h4><p>We verify provider enrollment status and handle re-credentialing if needed.</p></div>
+            <div class="br-impl-step"><div class="br-impl-num">4</div><h4>Claims Submission Begins</h4><p>Coded claims go out under full account management, same business day.</p></div>
+            <div class="br-impl-step"><div class="br-impl-num">5</div><h4>Denial Monitoring &amp; Appeals</h4><p>Denials are flagged and appealed within 24&ndash;48 hours of the alert.</p></div>
+            <div class="br-impl-step"><div class="br-impl-num">6</div><h4>Monthly Reporting</h4><p>KPI dashboards show collections, A/R days, and denial trends every month.</p></div>
+          </div>
+
           <h3 style="font-size:21px;font-weight:800;color:var(--navy);margin:32px 0 16px">Results Reflected in Our KPIs</h3>
           <div style="background:var(--navy);border-radius:var(--r-xl);padding:32px" class="br-reveal">
             <div class="br-psy-kpi-grid">
@@ -1607,6 +1664,34 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
           </div>
 
           <p style="font-size:16px;color:var(--text-muted);line-height:1.75;margin-top:32px">Our comprehensive medical billing solutions ensure efficient claim processing and follow-up on claim rejections, ultimately improving billing efficiency. By leveraging our behavioral health billing expertise, we help you reduce denials and optimize your revenue cycle.</p>
+
+          <h3 style="font-size:21px;font-weight:800;color:var(--navy);margin:32px 0 16px">Frequently Asked Questions</h3>
+          <div class="br-reveal">
+            <div class="br-faq-item">
+              <div class="br-faq-trigger" onclick="brToggleFaq(this)">What CPT codes are most commonly used in psychiatry billing?<span class="br-faq-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+              <div class="br-faq-body"><p>The most common codes are 90791 (psychiatric diagnostic evaluation), 90834 and 90837 (psychotherapy, 45 and 60 minutes), the 90833/90836/90838 add-on codes for psychotherapy delivered alongside an E/M visit, and 99213&ndash;99215 for the E/M visit itself.</p></div>
+            </div>
+            <div class="br-faq-item">
+              <div class="br-faq-trigger" onclick="brToggleFaq(this)">How do you handle telehealth billing for psychiatric visits?<span class="br-faq-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+              <div class="br-faq-body"><p>We track each payer's current place-of-service and modifier requirements (95 vs. GT) by state, since telehealth parity rules still vary and change more often than in-person billing rules.</p></div>
+            </div>
+            <div class="br-faq-item">
+              <div class="br-faq-trigger" onclick="brToggleFaq(this)">What's the difference between an E/M visit and a psychotherapy add-on code?<span class="br-faq-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+              <div class="br-faq-body"><p>The E/M code (99213&ndash;99215) covers medical management of the visit. Add-on codes like 90833, 90836, and 90838 cover psychotherapy delivered during that same visit and must be billed alongside the E/M code, never standalone.</p></div>
+            </div>
+            <div class="br-faq-item">
+              <div class="br-faq-trigger" onclick="brToggleFaq(this)">Do you handle prior authorizations for intensive outpatient programs?<span class="br-faq-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+              <div class="br-faq-body"><p>Yes. We track authorization requirements per payer and submit and follow up on IOP and higher-level-of-care authorizations before claims go out, not after a denial comes back.</p></div>
+            </div>
+            <div class="br-faq-item">
+              <div class="br-faq-trigger" onclick="brToggleFaq(this)">How long does it take to see a reduction in denied claims?<span class="br-faq-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+              <div class="br-faq-body"><p>Most practices see a measurable drop within the first 60&ndash;90 days as coding and documentation gaps are corrected, with denial follow-up starting within 24&ndash;48 hours from day one.</p></div>
+            </div>
+            <div class="br-faq-item">
+              <div class="br-faq-trigger" onclick="brToggleFaq(this)">Can you work with our existing EHR/practice management system?<span class="br-faq-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+              <div class="br-faq-body"><p>Yes. We work with all major EMR/PM systems and integrate with what you already have &mdash; no rip-and-replace required.</p></div>
+            </div>
+          </div>
         </div>
 
         <div>
@@ -1625,22 +1710,46 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
             <h3 style="margin-bottom:18px">Our Specialties</h3>
             <ul class="br-mega-links">
               <li><a href="/psychiatry-rcm-services/" style="color:var(--brand);font-weight:700">Psychiatry</a></li>
-        <li><a href="/specialties/">Rheumatology</a></li>
-        <li><a href="/specialties/">Internal Medicine</a></li>
-        <li><a href="/specialties/">Allergy</a></li>
-        <li><a href="/specialties/">Nephrology</a></li>
-        <li><a href="/specialties/">Cardiology</a></li>
-        <li><a href="/specialties/">Urgent Care</a></li>
-        <li><a href="/specialties/">Pain Management</a></li>
-        <li><a href="/specialties/">Gastroenterology</a></li>
-        <li><a href="/specialties/">Behavioral Health</a></li>
-        <li><a href="/specialties/">Primary Care</a></li>
-        <li><a href="/specialties/">Vascular Surgery</a></li>
-        <li><a href="/specialties/">Pulmonary</a></li>
+        <li><a href="/rheumatology-rcm-services/">Rheumatology</a></li>
+        <li><a href="/internal-medicine-rcm-services/">Internal Medicine</a></li>
+        <li><a href="/allergy-rcm-services/">Allergy</a></li>
+        <li><a href="/nephrology-rcm-services/">Nephrology</a></li>
+        <li><a href="/cardiology-rcm-services/">Cardiology</a></li>
+        <li><a href="/urgent-care-rcm-services/">Urgent Care</a></li>
+        <li><a href="/pain-management-rcm-services/">Pain Management</a></li>
+        <li><a href="/gastroenterology-rcm-services/">Gastroenterology</a></li>
+        <li><a href="/behavioral-health-rcm-services/">Behavioral Health</a></li>
+        <li><a href="/primary-care-rcm-services/">Primary Care</a></li>
+        <li><a href="/vascular-surgery-rcm-services/">Vascular Surgery</a></li>
+        <li><a href="/pulmonary-rcm-services/">Pulmonary</a></li>
             </ul>
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <section class="br-section br-bg-light">
+    <div class="br-wrap">
+      <div class="br-section-head center br-reveal"><span class="br-eyebrow">Resources &amp; Insights</span><h2>More on psychiatry billing.</h2></div>
+      <div class="br-latest-grid">
+        <div class="br-latest-card br-reveal" onclick="window.location='/blog/'" style="cursor:pointer"><span class="br-tool-cat">Blog</span><h3>Psychiatry Coding Updates for 2026: What's Changed</h3><p>A rundown of the E/M and psychotherapy coding changes psychiatry practices need to know about this year.</p><span class="br-learn">Read <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        <div class="br-latest-card br-reveal br-reveal-d1" onclick="window.location='/resources/'" style="cursor:pointer"><span class="br-tool-cat">Resource</span><h3>Psychiatry Billing Denial Checklist</h3><p>A quick self-audit checklist for the most common psychiatry denial reasons, before you submit.</p><span class="br-learn">Get it <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        <div class="br-latest-card br-reveal br-reveal-d2" onclick="window.location='/case-studies/'" style="cursor:pointer"><span class="br-tool-cat">Case Study</span><h3>Behavioral Health Practice Cuts Denials by 40%</h3><p>A composite look at how a multi-provider psychiatry practice tightened documentation and recovered lost revenue.</p><span class="br-learn">Read <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="br-section-tight br-bg-light">
+    <div class="br-wrap-sm">
+      <div class="br-final-cta br-reveal">
+        <h2>Ready to fix your psychiatry billing?</h2>
+        <p>Your trusted billing advisors are just a call away. No sales pitch &mdash; just a real audit of your claims.</p>
+        <div class="br-cta-row">
+          <a href="/contact/" class="br-btn br-btn-red br-btn-lg">Connect with Us! <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="tel:+14072179281" class="br-btn br-btn-outline br-btn-lg"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>407-217-9281</a>
+        </div>
       </div>
     </div>
   </section>
@@ -1712,6 +1821,14 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
     var sub = item.querySelector('.br-mob-sub');
     var isOpen = item.classList.toggle('open');
     sub.style.maxHeight = isOpen ? sub.scrollHeight + 'px' : '0';
+  };
+
+  /* ── FAQ accordion ── */
+  window.brToggleFaq = function(trigger) {
+    var item = trigger.closest('.br-faq-item');
+    var body = item.querySelector('.br-faq-body');
+    var isOpen = item.classList.toggle('open');
+    body.style.maxHeight = isOpen ? body.scrollHeight + 'px' : '0';
   };
 
   /* ── Mobile menu ── */
