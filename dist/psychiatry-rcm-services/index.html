@@ -1216,6 +1216,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   background: var(--border); z-index: 0;
 }
 .br-impl-step:first-child::before { display: none; }
+.br-impl-timeline.br-psy-impl-6 .br-impl-step:nth-child(3n+1)::before { display: none; }
 .br-impl-num {
   width: 42px; height: 42px; border-radius: 50%; background: var(--brand); color: #fff;
   display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px;
@@ -1860,7 +1861,6 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
       <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:14px">
         <a href="/" style="color:rgba(255,255,255,.5)">Home</a><span style="margin:0 8px;color:rgba(255,255,255,.3)">/</span><span style="color:rgba(255,255,255,.85)">Psychiatry</span>
       </p>
-      <p style="font-size:12.5px;color:rgba(255,255,255,.45);margin-bottom:14px">Reviewed by Billed Right's behavioral health billing team &mdash; 18+ years in psychiatric RCM.</p>
       <span class="br-eyebrow" style="color:rgba(186,32,37,.9)">Specialty Billing</span>
       <h1>Psychiatry</h1>
     </div>
@@ -1870,7 +1870,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
     <div class="br-wrap">
       <div class="br-psy-grid">
 
-        <div class="br-reveal">
+        <div>
           <div class="br-callout">
             <p>Psychiatry billing is uniquely difficult because most services are time-based and diagnosis-dependent rather than procedure-based, so a single missed minute of documented time or an unsupported E/M level can turn a clean claim into a denial. Layer on prior-authorization rules for intensive outpatient programs and telehealth parity requirements that vary by state and payer, and even experienced billers can lose meaningful revenue to preventable errors.</p>
           </div>
@@ -1964,6 +1964,11 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
               <div class="br-faq-trigger" onclick="brToggleFaq(this)">Can you work with our existing EHR/practice management system?<span class="br-faq-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
               <div class="br-faq-body"><p>Yes. We work with all major EMR/PM systems and integrate with what you already have &mdash; no rip-and-replace required.</p></div>
             </div>
+          </div>
+
+          <div style="display:flex;align-items:center;gap:8px;margin-top:32px;padding-top:20px;border-top:1px solid var(--border);font-size:12.5px;color:var(--text-muted)">
+            <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--text-muted);stroke-width:2;fill:none;flex-shrink:0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Reviewed by Billed Right's behavioral health billing team &mdash; 18+ years in psychiatric RCM.
           </div>
         </div>
 
