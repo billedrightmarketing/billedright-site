@@ -302,6 +302,9 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   box-shadow: var(--sh-md);
   transform: translateY(-110%); transition: transform .3s cubic-bezier(.4,0,.2,1);
   padding: 16px 24px 24px;
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .br-mobile-menu.open { transform: translateY(0); }
 .br-mobile-menu a { display: block; padding: 12px 14px; border-radius: var(--r-sm); font-weight: 500; color: var(--navy); }
@@ -2006,10 +2009,12 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
     var open = m.classList.toggle('open');
     h.classList.toggle('open', open);
     h.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
   };
   window.brCloseMenu = function() {
     document.getElementById('br-hamburger').classList.remove('open');
     document.getElementById('br-mobile-menu').classList.remove('open');
+    document.body.style.overflow = '';
   };
 
   /* ── Scroll reveal ── */
