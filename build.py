@@ -47,6 +47,7 @@ PAGE_OUTPUT_PATHS = {
     "primary-care-rcm-services": "primary-care-rcm-services/index.html",
     "vascular-surgery-rcm-services": "vascular-surgery-rcm-services/index.html",
     "allergy-rcm-services": "allergy-rcm-services/index.html",
+    "pulmonary-rcm-services": "pulmonary-rcm-services/index.html",
 }
 
 
