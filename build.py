@@ -38,6 +38,7 @@ PAGE_OUTPUT_PATHS = {
     "psychiatry-rcm-services": "psychiatry-rcm-services/index.html",
     "cardiology-rcm-services": "cardiology-rcm-services/index.html",
     "behavioral-health-rcm-services": "behavioral-health-rcm-services/index.html",
+    "internal-medicine-rcm-services": "internal-medicine-rcm-services/index.html",
 }
 
 
