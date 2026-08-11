@@ -42,6 +42,7 @@ PAGE_OUTPUT_PATHS = {
     "rheumatology-rcm-services": "rheumatology-rcm-services/index.html",
     "nephrology-rcm-services": "nephrology-rcm-services/index.html",
     "urgent-care-rcm-services": "urgent-care-rcm-services/index.html",
+    "pain-management-rcm-services": "pain-management-rcm-services/index.html",
 }
 
 
