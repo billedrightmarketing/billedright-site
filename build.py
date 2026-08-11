@@ -45,6 +45,7 @@ PAGE_OUTPUT_PATHS = {
     "pain-management-rcm-services": "pain-management-rcm-services/index.html",
     "gastroenterology-rcm-services": "gastroenterology-rcm-services/index.html",
     "primary-care-rcm-services": "primary-care-rcm-services/index.html",
+    "vascular-surgery-rcm-services": "vascular-surgery-rcm-services/index.html",
 }
 
 
