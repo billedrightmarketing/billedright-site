@@ -40,6 +40,7 @@ PAGE_OUTPUT_PATHS = {
     "behavioral-health-rcm-services": "behavioral-health-rcm-services/index.html",
     "internal-medicine-rcm-services": "internal-medicine-rcm-services/index.html",
     "rheumatology-rcm-services": "rheumatology-rcm-services/index.html",
+    "nephrology-rcm-services": "nephrology-rcm-services/index.html",
 }
 
 
