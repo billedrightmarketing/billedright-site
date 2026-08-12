@@ -52,6 +52,7 @@ PAGE_OUTPUT_PATHS = {
     "charge-posting": "charge-posting/index.html",
     "documentation-review": "documentation-review/index.html",
     "claim-submission": "claim-submission/index.html",
+    "denial-management": "denial-management/index.html",
 }
 
 
