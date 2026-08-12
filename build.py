@@ -49,6 +49,7 @@ PAGE_OUTPUT_PATHS = {
     "allergy-rcm-services": "allergy-rcm-services/index.html",
     "pulmonary-rcm-services": "pulmonary-rcm-services/index.html",
     "insurance-eligibility": "insurance-eligibility/index.html",
+    "charge-posting": "charge-posting/index.html",
 }
 
 
