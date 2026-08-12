@@ -51,6 +51,7 @@ PAGE_OUTPUT_PATHS = {
     "insurance-eligibility": "insurance-eligibility/index.html",
     "charge-posting": "charge-posting/index.html",
     "documentation-review": "documentation-review/index.html",
+    "claim-submission": "claim-submission/index.html",
 }
 
 
