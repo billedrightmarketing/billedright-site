@@ -50,6 +50,7 @@ PAGE_OUTPUT_PATHS = {
     "pulmonary-rcm-services": "pulmonary-rcm-services/index.html",
     "insurance-eligibility": "insurance-eligibility/index.html",
     "charge-posting": "charge-posting/index.html",
+    "documentation-review": "documentation-review/index.html",
 }
 
 
