@@ -58,6 +58,10 @@ PAGE_OUTPUT_PATHS = {
     "patient-ar-collections": "patient-ar-collections/index.html",
     "ar-follow-up": "ar-follow-up/index.html",
     "reporting": "reporting/index.html",
+    "authorizations": "authorizations/index.html",
+    "account-management": "account-management/index.html",
+    "documentation-management": "documentation-management/index.html",
+    "contract-renegotiation": "contract-renegotiation/index.html",
 }
 
 
