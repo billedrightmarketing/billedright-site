@@ -54,6 +54,7 @@ PAGE_OUTPUT_PATHS = {
     "claim-submission": "claim-submission/index.html",
     "denial-management": "denial-management/index.html",
     "medical-coding": "medical-coding/index.html",
+    "payment-posting": "payment-posting/index.html",
 }
 
 
