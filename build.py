@@ -56,6 +56,7 @@ PAGE_OUTPUT_PATHS = {
     "medical-coding": "medical-coding/index.html",
     "payment-posting": "payment-posting/index.html",
     "patient-ar-collections": "patient-ar-collections/index.html",
+    "ar-follow-up": "ar-follow-up/index.html",
     "reporting": "reporting/index.html",
 }
 
