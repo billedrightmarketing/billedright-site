@@ -62,6 +62,12 @@ PAGE_OUTPUT_PATHS = {
     "account-management": "account-management/index.html",
     "documentation-management": "documentation-management/index.html",
     "contract-renegotiation": "contract-renegotiation/index.html",
+    "why-billed-right": "why-billed-right/index.html",
+    "leadership": "leadership/index.html",
+    "awards": "awards/index.html",
+    "locations": "locations/index.html",
+    "careers-us": "careers-us/index.html",
+    "careers-india": "careers-india/index.html",
 }
 
 
