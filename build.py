@@ -68,6 +68,9 @@ PAGE_OUTPUT_PATHS = {
     "locations": "locations/index.html",
     "careers-us": "careers-us/index.html",
     "careers-india": "careers-india/index.html",
+    "privacy-policy": "privacy-policy/index.html",
+    "sms-consent": "sms-consent/index.html",
+    "terms-and-conditions": "terms-and-conditions/index.html",
 }
 
 
