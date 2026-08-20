@@ -72,6 +72,7 @@ PAGE_OUTPUT_PATHS = {
     "sms-consent": "sms-consent/index.html",
     "terms-and-conditions": "terms-and-conditions/index.html",
     "faq": "faq/index.html",
+    "eclinicalworks-billing-services": "eclinicalworks-billing-services/index.html",
 }
 
 
