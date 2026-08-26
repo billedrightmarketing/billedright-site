@@ -4,8 +4,8 @@
    Tables: chat_conversations, chat_messages
    ============================================================= */
 (function(){
-  const SUPA_URL = 'https://epvensmhlhkhlvmmejob.supabase.co';
-  const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVwdmVuc21obGhraGx2bW1lam9iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU3MDU1NzcsImV4cCI6MjA2MTI4MTU3N30.lkKMb0JMGhpHzNvlOHPZTc0P2P5TyTTdvdHa0N2SbSs';
+  const SUPA_URL = 'https://itgrapibtnuaoagtsiwh.supabase.co';
+  const SUPA_KEY = 'sb_publishable_fuKICh99F0hIucOEjb-dqQ_tVrocUmC';
 
   // ── State ──────────────────────────────────────────────────
   let convId = null;
