@@ -1938,13 +1938,17 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
         <div>
           <div class="br-form-card br-reveal">
             <h3>Download Our Brochure</h3>
+<form name="psychiatry-brochure" method="POST" data-netlify="true" netlify="true" action="/thank-you/psychiatry/">
+            <input type="hidden" name="form-name" value="psychiatry-brochure">
+            <input type="hidden" name="specialty" value="Psychiatry">
             <div class="br-field"><label for="psy-name">Your Name</label><input type="text" id="psy-name" autocomplete="name"></div>
             <div class="br-field"><label for="psy-email">Your Email</label><input type="email" id="psy-email" autocomplete="email"></div>
             <div class="br-field"><label for="psy-phone">Phone Number</label><input type="tel" id="psy-phone" autocomplete="tel"></div>
             <div class="br-field"><label for="psy-practice">Practice Name</label><input type="text" id="psy-practice" autocomplete="organization"></div>
             <div class="br-field"><label for="psy-providers">Number of Providers</label><select id="psy-providers"><option>Single Provider</option><option>2&ndash;5 providers</option><option>6&ndash;10 providers</option><option>10+ providers</option></select></div>
             <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-muted);line-height:1.5;margin-bottom:18px;cursor:pointer"><input type="checkbox" style="margin-top:3px;flex-shrink:0">I agree to allow Billed Right to use the information provided to contact me. I understand my data will be handled securely and not shared with third parties.</label>
-            <button class="br-btn br-btn-red br-btn-lg" style="width:100%;justify-content:center" onclick="brFormSubmit(this)" aria-label="Submit brochure request">Submit</button>
+            <button type="submit" class="br-btn br-btn-red br-btn-lg" style="width:100%;justify-content:center" aria-label="Submit brochure request">Submit</button>
+            </form>
           </div>
 
           <div class="br-form-card br-reveal br-reveal-d1" style="margin-top:24px">
@@ -2037,6 +2041,17 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
             <svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--text-muted);stroke-width:2;fill:none;flex-shrink:0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             Reviewed by Billed Right's psychiatry billing team &mdash; 18+ years in psychiatric RCM.
           </div>
+    </div>
+  </section>
+
+  <section class="br-section-tight br-bg-white">
+    <div class="br-wrap-sm">
+      <div class="br-testi-card br-reveal" style="text-align:center">
+        <div class="br-stars" style="display:flex;justify-content:center">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p style="font-size:16px;margin-bottom:14px">&ldquo;I have been associated with Billed Right for the past two years since I started my practice. Billed Right has been incredibly helpful in assisting my practice with initial credentialing, providing prompt responses to all of my requests, and excellent service to address my concerns. I am very satisfied with their timely insurance billing, collections, low AR, and patient accounts management.&rdquo;</p>
+        <div class="br-testi-who" style="margin-bottom:18px">&mdash; Psychiatry Provider, Florida</div>
+        <a href="/testimonials/" class="br-learn" style="justify-content:center">Read all client testimonials <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
     </div>
   </section>
 

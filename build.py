@@ -73,6 +73,19 @@ PAGE_OUTPUT_PATHS = {
     "terms-and-conditions": "terms-and-conditions/index.html",
     "faq": "faq/index.html",
     "eclinicalworks-billing-services": "eclinicalworks-billing-services/index.html",
+    "thank-you/psychiatry": "thank-you/psychiatry/index.html",
+    "thank-you/cardiology": "thank-you/cardiology/index.html",
+    "thank-you/behavioral-health": "thank-you/behavioral-health/index.html",
+    "thank-you/internal-medicine": "thank-you/internal-medicine/index.html",
+    "thank-you/rheumatology": "thank-you/rheumatology/index.html",
+    "thank-you/allergy": "thank-you/allergy/index.html",
+    "thank-you/nephrology": "thank-you/nephrology/index.html",
+    "thank-you/urgent-care": "thank-you/urgent-care/index.html",
+    "thank-you/pain-management": "thank-you/pain-management/index.html",
+    "thank-you/gastroenterology": "thank-you/gastroenterology/index.html",
+    "thank-you/primary-care": "thank-you/primary-care/index.html",
+    "thank-you/vascular-surgery": "thank-you/vascular-surgery/index.html",
+    "thank-you/pulmonary": "thank-you/pulmonary/index.html",
 }
 
 
@@ -89,7 +102,12 @@ def build():
     footer_html = load_template("footer-template.html")
 
     for slug, output_rel_path in PAGE_OUTPUT_PATHS.items():
+        # Most pages are flat files (pages/<slug>.html). A few, like the
+        # thank-you pages, are organized as real nested folders
+        # (pages/<slug>/index.html) so the source tree mirrors dist/.
         source_path = PAGES_DIR / f"{slug}.html"
+        if not source_path.exists():
+            source_path = PAGES_DIR / slug / "index.html"
         if not source_path.exists():
             raise FileNotFoundError(f"Missing page source: {source_path}")
 

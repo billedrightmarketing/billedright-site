@@ -758,6 +758,9 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 .br-love-num { font-size: 22px; font-weight: 800; color: var(--brand); opacity: .5; font-family: 'Inter', sans-serif; line-height: 1; }
 .br-love-card h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
 .br-love-card p  { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+.br-love-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.br-love-list li { position: relative; padding-left: 15px; font-size: 12.5px; color: var(--text-muted); line-height: 1.55; }
+.br-love-list li::before { content: ''; position: absolute; left: 0; top: 7px; width: 5px; height: 5px; border-radius: 50%; background: var(--brand); }
 
 /* ═══════════════════════════════════════════
    SERVICES GRID — matches video card style
@@ -1617,20 +1620,55 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
     </div>
   </section>
 
-  <!-- ═══ SECTION 4 — OUR FIVE PILLARS ═══ -->
+  <!-- ═══ SECTION 4 — OUR CORE VALUES ═══ -->
   <section class="br-section br-bg-light">
     <div class="br-wrap">
       <div class="br-section-head center br-reveal">
-        <span class="br-eyebrow">Our Five Pillars</span>
-        <h2>What Sets Us Apart</h2>
-        <p>Five principles that define how we work with every client, every day.</p>
+        <span class="br-eyebrow">Our Core Values</span>
+        <h2>Our Core Values</h2>
+        <p>Five values that define every client relationship, every deliverable, and every decision we make.</p>
       </div>
       <div class="br-love-grid">
-        <div class="br-love-card br-reveal"><div class="br-love-top"><div class="br-love-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="br-love-num">01</div></div><h3>Operational Synergy</h3><p>At Billed Right, we believe in operational synergy &mdash; a collaborative environment where cross-functional teams seamlessly address client needs. By scrutinizing workflow intricacies and adhering to standardized operating procedures, we ensure that our work aligns synergistically with your operations, resulting in streamlined processes and enhanced service delivery.</p></div>
-        <div class="br-love-card br-reveal br-reveal-d1"><div class="br-love-top"><div class="br-love-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><div class="br-love-num">02</div></div><h3>Client Education</h3><p>Empowering our clients with knowledge is at the core of what we do. Our personalized one-on-one instruction covers coding, regulatory compliance, denials management, and workflow enhancement. From EMR to Practice Management Systems, we provide the insights needed for optimized performance, fostering your practice's growth and success.</p></div>
-        <div class="br-love-card br-reveal br-reveal-d2"><div class="br-love-top"><div class="br-love-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><div class="br-love-num">03</div></div><h3>Knowledge Base</h3><p>Our knowledge base is the cornerstone of client success, offering a comprehensive repository of information crucial to operational excellence. It encompasses in-depth knowledge of EMR, PMS, industry nuances, specific specialties, and intricate workflows &mdash; continuously enriched through diverse backgrounds and ongoing training to provide tailored solutions for your unique challenges.</p></div>
-        <div class="br-love-card br-reveal br-reveal-d3"><div class="br-love-top"><div class="br-love-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div class="br-love-num">04</div></div><h3>Data-Driven Insights</h3><p>Harnessing the power of data analytics, we adopt a data-driven approach to decision-making. By meticulously tracking and measuring Key Performance Indicators for each process, we continually strive for improvement, ensuring service quality and client satisfaction.</p></div>
-        <div class="br-love-card br-reveal br-reveal-d4"><div class="br-love-top"><div class="br-love-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M3 21v-2a7 7 0 017-7h4a7 7 0 017 7v2"/></svg></div><div class="br-love-num">05</div></div><h3>Trusted Advisor</h3><p>We go beyond traditional revenue cycle management to be your trusted advisor. Our team is trained and empowered to build trust through transparent and valuable advice. With comprehensive training in management, leadership, and people-centric skills, we evolve into long-term strategic partners committed to your success.</p></div>
+        <div class="br-love-card br-reveal"><div class="br-love-top"><div class="br-love-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="br-love-num">01</div></div><h3>Trust</h3>
+          <ul class="br-love-list">
+            <li>Full transparency into every claim, payment, and denial &mdash; you always know where your money is</li>
+            <li>Secure access to your own data at all times through your existing practice management system</li>
+            <li>HIPAA-compliant processes across every workflow and every team member</li>
+            <li>We tell you what we find, not what you want to hear</li>
+          </ul>
+        </div>
+        <div class="br-love-card br-reveal br-reveal-d1"><div class="br-love-top"><div class="br-love-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div><div class="br-love-num">02</div></div><h3>Relationships</h3>
+          <ul class="br-love-list">
+            <li>A dedicated account manager assigned to every client &mdash; one person, one number, one relationship</li>
+            <li>Weekly calls, monthly reports, and quarterly business reviews &mdash; not annual check-ins</li>
+            <li>4.9-year average client tenure because we earn the relationship every month, not just at onboarding</li>
+            <li>We treat your practice as a long-term partner, not a recurring contract</li>
+          </ul>
+        </div>
+        <div class="br-love-card br-reveal br-reveal-d2"><div class="br-love-top"><div class="br-love-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M3 21v-2a7 7 0 017-7h4a7 7 0 017 7v2"/></svg></div><div class="br-love-num">03</div></div><h3>Advisor</h3>
+          <ul class="br-love-list">
+            <li>We go beyond executing tasks &mdash; we identify problems before they become revenue losses</li>
+            <li>Proactive recommendations on coding, workflow, payer contracts, and operational efficiency</li>
+            <li>Strategic guidance included as part of every engagement &mdash; not a separate consulting service</li>
+            <li>Our goal is practice growth, not just claim submission</li>
+          </ul>
+        </div>
+        <div class="br-love-card br-reveal br-reveal-d3"><div class="br-love-top"><div class="br-love-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div><div class="br-love-num">04</div></div><h3>Experience</h3>
+          <ul class="br-love-list">
+            <li>Founded in 2006 &mdash; over two decades of healthcare RCM expertise</li>
+            <li>AAPC-certified coders and ICD-10 certified account managers on every account</li>
+            <li>400+ team members across the US and India, each with a minimum of 2-4 years in medical billing</li>
+            <li>Specialized teams for every service area &mdash; not generalists handling everything</li>
+          </ul>
+        </div>
+        <div class="br-love-card br-reveal br-reveal-d4"><div class="br-love-top"><div class="br-love-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="br-love-num">05</div></div><h3>Best In Class Deliverables</h3>
+          <ul class="br-love-list">
+            <li>99% claim accuracy rate on every submission</li>
+            <li>94-97% of claims paid on first submission</li>
+            <li>Claims submitted within 24-48 hours of signed notes</li>
+            <li>Weekly, monthly, and quarterly reporting delivered on schedule &mdash; no exceptions</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
