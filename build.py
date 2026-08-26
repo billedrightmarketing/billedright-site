@@ -79,6 +79,7 @@ PAGE_OUTPUT_PATHS = {
     "terms-and-conditions": "terms-and-conditions/index.html",
     "faq": "faq/index.html",
     "eclinicalworks-billing-services": "eclinicalworks-billing-services/index.html",
+    "emr-billing-platforms": "emr-billing-platforms/index.html",
     "thank-you/psychiatry": "thank-you/psychiatry/index.html",
     "thank-you/cardiology": "thank-you/cardiology/index.html",
     "thank-you/behavioral-health": "thank-you/behavioral-health/index.html",
