@@ -86,6 +86,8 @@ PAGE_OUTPUT_PATHS = {
     "thank-you/primary-care": "thank-you/primary-care/index.html",
     "thank-you/vascular-surgery": "thank-you/vascular-surgery/index.html",
     "thank-you/pulmonary": "thank-you/pulmonary/index.html",
+    "thank-you/contact": "thank-you/contact/index.html",
+    "thank-you/consultation": "thank-you/consultation/index.html",
 }
 
 
