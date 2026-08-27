@@ -37,6 +37,45 @@ this map had flagged. Summary (full detail in `docs/claims-register.md` and
   4 priority specialties (was listing Orthopedic/Pediatric/Psychiatry,
   missing Pain Management/Behavioral Health).
 
+**2026-08-27 — second alignment pass (re-audit against governing docs).**
+Added two homepage sections the Homepage Narrative in
+`BILLED_RIGHT_WEBSITE_2026_MASTER.md` calls for but which were entirely
+absent:
+- **Business Challenges** (between Proven Results and Inside Billed
+  Right) — three cards covering the Three Buying Situations (Growth &
+  Scale, Performance Improvement, Transformation), reusing the existing
+  `.br-services-grid`/`.br-service-card` CSS, no new styles needed.
+- **Who We Serve** (between Services Preview and Specialties Preview) —
+  five audience cards (Enterprise Physician Groups, Multi-Location &
+  Multi-Specialty Organizations, MSOs & Healthcare Platforms, Private
+  Equity-Backed Healthcare, Growing & Transforming Organizations), reusing
+  `.br-love-grid`/`.br-love-card`. Only the Private Equity card links out
+  (`/private-equity/`, a real page) — the other four are informational
+  only, since no dedicated landing page exists yet for those segments.
+  That's the same real inventory gap already tracked for the footer/nav
+  ("Who We Serve" stays thin until those pages are built).
+
+Also added the four homepage testimonials to `docs/claims-register.md` —
+they were the only claim category on the page that had never been
+tracked, despite predating this session's work.
+
+**2026-08-27 — Client Success Stories replaced with real, sourced case
+studies.** The three cards (previously labeled Cardiology/Behavioral
+Health/Multispecialty with composite figures that never matched any real
+case study) are now Cardiology, Primary Care, and Allergy — each pulling
+its real published numbers directly from `/case-studies/cardiology/`,
+`/case-studies/primary-care/`, and `/case-studies/allergy/`, and each card
+links to its source page. Note: the Cardiology case study page itself has
+no numeric before/after results yet (source has an explicit `<!-- pending
+client data confirmation -->` comment) — its homepage card uses only the
+real qualitative outcomes from that page (24–72h claim submission
+established, PA-related denials eliminated, coding accuracy improved), no
+percentages were invented to fill the gap. Section H2 changed from
+"Composite results, by the numbers" back to "Real results, by the
+numbers" since these are no longer composites. `docs/claims-register.md`
+updated: the three old composite rows marked `REMOVE`/superseded, three
+new `VERIFIED` rows added sourcing each figure to its published page.
+
 **Still open / not resolved in this pass:**
 - API & HL7/FHIR integration claim (Technology Ecosystem section) —
   not covered by the leadership review, still NEEDS VERIFICATION.
