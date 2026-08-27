@@ -225,6 +225,24 @@ MSO/physician-group/multi-location pages exist yet. Verified in-browser at
 desktop (1440px, no horizontal overflow) and mobile (375px) widths, all six
 dropdown panels and the mobile accordion confirmed rendering correctly.
 
+**⏪ REVERTED (same day) — user feedback.** The 9-item restructure above
+was judged too cluttered for site visitors and reverted back to the
+original 5-item nav (Home, Who We Serve, Credentialing, Specialties,
+Resources) per explicit user direction: *"Bring back the old nav this one
+is way too cluttered, lets not do this to our website guests."* The footer
+restructure (Solutions/Who We Serve/Technology & Revenue Intelligence/
+Specialties/Resources/Company) was NOT reverted — only the top nav was
+flagged as cluttered. Two unrelated fixes were preserved through the
+revert: the Netlify-staging-link fix (specialty dropdown links stay
+relative, not `billedright.netlify.app`) and the analytics events script
+tag. **Status: the nav-vs-footer structural mismatch this created (footer
+now organized by a taxonomy the nav doesn't use) is a known, accepted
+tradeoff — not a bug.** If nav alignment with `docs/
+TECHNICAL_SEO_AND_AI_SEARCH_STANDARD.md`'s recommended structure is
+revisited later, it should be done as a lighter-touch pass (e.g. 2-3 new
+top-level items instead of a full 9-item rebuild), not a reapplication of
+this change.
+
 ### Templates
 Two shared templates (`nav-template.html`, `footer-template.html`) plus 70
 page sources under `pages/`. Build system is documented and understood (see
