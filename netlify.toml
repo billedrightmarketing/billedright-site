@@ -34,6 +34,16 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# The chat widget is under active development and keeps a stable filename
+# (no content hash), so it must NOT be cached immutably like other JS —
+# doing so left visitors' browsers stuck on stale versions after every
+# update. Short cache + revalidation instead. This rule is more specific
+# than /*.js above, so Netlify applies it in preference for this file.
+[[headers]]
+  for = "/assets/js/br-chat-widget.js"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
+
 [[headers]]
   for = "/*.png"
   [headers.values]
