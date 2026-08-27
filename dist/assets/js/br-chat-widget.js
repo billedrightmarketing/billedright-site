@@ -228,6 +228,11 @@
       document.getElementById('br-chat-messages').style.display = 'flex';
       document.getElementById('br-chat-input-row').style.display = 'flex';
 
+      try {
+        localStorage.setItem('br_conv_id', convId);
+        localStorage.setItem('br_visitor_name', visitorName);
+      } catch(storageErr){ /* localStorage unavailable — conversation just won't persist across reloads */ }
+
       appendMessage('Hi ' + visitorName + '! A member of our team will be with you shortly. How can we help?', 'rep');
       subscribeToReplies();
       document.getElementById('br-chat-input').focus();
@@ -307,10 +312,48 @@
     msgs.scrollTop = msgs.scrollHeight;
   }
 
+  // ── Restore an existing conversation from localStorage ──────
+  async function restoreConversation(savedConvId, savedName){
+    convId = savedConvId;
+    visitorName = savedName;
+
+    document.getElementById('br-chat-intro').style.display = 'none';
+    document.getElementById('br-chat-messages').style.display = 'flex';
+    document.getElementById('br-chat-input-row').style.display = 'flex';
+
+    try {
+      const { data, error } = await db
+        .from('chat_messages')
+        .select('*')
+        .eq('conversation_id', savedConvId)
+        .order('created_at', { ascending: true });
+
+      if(error) throw error;
+
+      (data || []).forEach((msg) => appendMessage(msg.content, msg.sender));
+    } catch(err){
+      console.error('Chat restore error:', err);
+    }
+
+    appendMessage('Welcome back, ' + visitorName + '. Continuing your conversation.', 'system');
+    subscribeToReplies();
+  }
+
   // ── Init ───────────────────────────────────────────────────
-  loadSupabase((client) => {
+  loadSupabase(async (client) => {
     db = client;
     console.log('Billed Right chat widget ready');
+
+    let savedConvId = null;
+    let savedName = null;
+    try {
+      savedConvId = localStorage.getItem('br_conv_id');
+      savedName = localStorage.getItem('br_visitor_name');
+    } catch(storageErr){ /* localStorage unavailable — fall back to the intro form */ }
+
+    if(savedConvId && savedName){
+      await restoreConversation(savedConvId, savedName);
+    }
   });
 
 })();
