@@ -96,7 +96,7 @@
       "mainEntity": [
         {"@type":"Question","name":"How much can Billed Right improve my collections?","acceptedAnswer":{"@type":"Answer","text":"Billed Right clients see an average 94% lift in collections, with days in A/R reduced from 40+ to under 24 days on average."}},
         {"@type":"Question","name":"What specialties does Billed Right serve?","acceptedAnswer":{"@type":"Answer","text":"Billed Right serves 20+ medical specialties including cardiology, behavioral health, internal medicine, pain management, orthopedics, pediatrics, ophthalmology, urgent care, neurology, nephrology, and multispecialty groups."}},
-        {"@type":"Question","name":"Is Billed Right HIPAA compliant?","acceptedAnswer":{"@type":"Answer","text":"Yes. Billed Right has maintained zero data breaches in 18+ years of operation. We are HIPAA compliant and use 256-bit encryption for all data in transit and at rest."}},
+        {"@type":"Question","name":"Is Billed Right HIPAA compliant?","acceptedAnswer":{"@type":"Answer","text":"Yes. Billed Right maintains healthcare-focused privacy and security practices designed to protect patient and client information, including HIPAA compliance, access controls, and workforce security training."}},
         {"@type":"Question","name":"How long does it take to onboard with Billed Right?","acceptedAnswer":{"@type":"Answer","text":"Most organizations are fully onboarded within 2–3 weeks, with timing based on size and complexity — including EHR/PM system integration, payer setup, and team training."}},
         {"@type":"Question","name":"What does Billed Right charge for medical billing services?","acceptedAnswer":{"@type":"Answer","text":"Billed Right uses a transparent percentage-of-collections pricing model with no setup fees and no long-term contracts required to get started. Contact us for a quote tailored to your specialty and volume."}}
       ]
@@ -680,7 +680,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   padding: 5px 12px; border-radius: 30px;
 }
 .br-hipaa-tag svg { width: 12px; height: 12px; stroke: var(--brand); stroke-width: 2.5; fill: none; }
-.br-certs-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+.br-certs-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; }
 .br-cert-tile {
   background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
   border-radius: var(--r-md); padding: 16px 12px; text-align: center;
@@ -1499,7 +1499,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-spec-tiles      { grid-template-columns: repeat(4,1fr); }
   .br-journey-grid    { grid-template-columns: repeat(3,1fr); }
   .br-hipaa-inner     { grid-template-columns: 1fr; }
-  .br-certs-grid      { grid-template-columns: repeat(3,1fr); }
+  .br-certs-grid      { grid-template-columns: repeat(2,1fr); }
   .br-ai-wrap         { grid-template-columns: 1fr; }
   .br-cred-banner     { grid-template-columns: 1fr; gap: 28px; }
   .br-footer-grid     { grid-template-columns: 1fr 1fr 1fr; }
@@ -1875,17 +1875,15 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
       <div class="br-hero-inner">
         <!-- Left content -->
         <div>
-          <div class="br-hero-badge">
-            Proudly serving healthcare organizations since 2006
-          </div>
-          <h1>Boost your organization's revenue<br>with <span class="red">proven</span><br><span class="red">RCM</span> strategies.</h1>
-          <p class="br-hero-sub">Let us handle the billing — you focus on care. End-to-end Revenue Cycle Management, medical billing, and credentialing built for modern healthcare organizations.</p>
+          <span class="br-eyebrow" style="color:#fff">Enterprise Revenue Performance Partner</span>
+          <h1>Transform Revenue Operations.<br>Strengthen <span class="red">Financial Performance</span>.</h1>
+          <p class="br-hero-sub">We help healthcare organizations achieve stronger financial performance by transforming the way revenue operations are managed. Billed Right combines proven Revenue Cycle Management expertise, scalable operations, data intelligence, intelligent automation, predictive analytics, AI, and expert human oversight to improve collections, create more predictable cash flow, reduce avoidable denials, strengthen compliance, and support growth and transformation.</p>
           <div class="br-flex-wrap">
             <a href="/contact/" class="br-btn br-btn-red br-btn-lg">
-              Connect with Us!
+              Schedule an Executive Conversation
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a href="/services/" class="br-btn br-btn-outline br-btn-lg">Explore services</a>
+            <a href="/why-billed-right/" class="br-btn br-btn-outline br-btn-lg">Explore Our Approach</a>
           </div>
           <div class="br-hero-stats" aria-label="Key statistics">
             <div class="br-hero-stat"><div class="sn">$2B+</div><div class="sl">Billed to date</div></div>
@@ -1895,7 +1893,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
         </div>
 
         <!-- RCM Orbit Diagram -->
-        <div class="br-orbit" role="img" aria-label="Billed Right RCM Engine diagram showing Charge Entry, Eligibility, Claim Submission, Denial Management, Payment Posting, and Reporting">
+        <div class="br-orbit" role="img" aria-label="Billed Right RCM Engine diagram showing Capture &amp; Validate, Prevent, Execute, Prioritize &amp; Resolve, Collect &amp; Reconcile, and Learn &amp; Optimize">
           <div class="br-orbit-ring br-orbit-ring-1" aria-hidden="true"></div>
           <div class="br-orbit-ring br-orbit-ring-2" aria-hidden="true"></div>
           <div class="br-orbit-ring br-orbit-ring-3" aria-hidden="true"></div>
@@ -1920,33 +1918,33 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
           <!-- 6 orbit nodes -->
           <div class="br-orbit-node" style="left:50%;top:13%">
             <div class="br-node-box"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-            <div class="br-node-label">Charge Entry</div>
-            <div class="br-node-tip">Accurate charge entry that keeps your claims clean from day one.</div>
+            <div class="br-node-label">Capture &amp; Validate</div>
+            <div class="br-node-tip">Accurate data, eligibility, documentation, and charge readiness before submission.</div>
           </div>
           <div class="br-orbit-node" style="left:80%;top:29%">
             <div class="br-node-box"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <div class="br-node-label">Eligibility</div>
-            <div class="br-node-tip">Real-time verification before the visit — fewer denials downstream.</div>
+            <div class="br-node-label">Prevent</div>
+            <div class="br-node-tip">Payer-specific rules and risk signals reduce avoidable rejections and denials.</div>
           </div>
           <div class="br-orbit-node" style="left:81%;top:68%">
             <div class="br-node-box"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
-            <div class="br-node-label">Claim Submission</div>
-            <div class="br-node-tip">Timely electronic submission with payer-specific edits.</div>
+            <div class="br-node-label">Execute</div>
+            <div class="br-node-tip">Claims and repeatable workflows move through disciplined, technology-enabled operations.</div>
           </div>
           <div class="br-orbit-node" style="left:50%;top:87%">
             <div class="br-node-box"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></div>
-            <div class="br-node-label">Denial Mgmt</div>
-            <div class="br-node-tip">Recover the up to 90% of revenue lost to denied claims.</div>
+            <div class="br-node-label">Prioritize &amp; Resolve</div>
+            <div class="br-node-tip">Data and intelligence surface the highest-value exceptions for expert action.</div>
           </div>
           <div class="br-orbit-node" style="left:19%;top:68%">
             <div class="br-node-box"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-            <div class="br-node-label">Payment Posting</div>
-            <div class="br-node-tip">Accurate posting that protects financial health.</div>
+            <div class="br-node-label">Collect &amp; Reconcile</div>
+            <div class="br-node-tip">Payments, underpayments, and A/R are actively managed to protect cash flow.</div>
           </div>
           <div class="br-orbit-node" style="left:20%;top:29%">
             <div class="br-node-box"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-            <div class="br-node-label">Reporting</div>
-            <div class="br-node-tip">Custom dashboards giving full visibility into RCM performance.</div>
+            <div class="br-node-label">Learn &amp; Optimize</div>
+            <div class="br-node-tip">Dashboards, trend analysis, and continuous improvement strengthen future performance.</div>
           </div>
         </div>
       </div>
@@ -2035,15 +2033,13 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
     <div class="br-wrap">
       <div class="br-hipaa-inner">
         <div class="br-hipaa-left br-reveal">
-          <div class="br-hipaa-tag"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Trust & Compliance</div>
-          <h2>Your patient data is <span style="color:var(--brand)">100% HIPAA-secure</span> — every claim, every keystroke.</h2>
-          <p>Zero breaches in 18+ years. Independently audited. Trained workforce.</p>
+          <div class="br-hipaa-tag"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Security, Compliance & Governance</div>
+          <h2>Built for responsible healthcare revenue operations.</h2>
+          <p>Protecting patient and client information requires disciplined controls, trained teams, secure technology, and ongoing oversight. Billed Right maintains healthcare-focused privacy, security, compliance, and quality practices designed to support responsible Revenue Cycle Management.</p>
         </div>
         <div class="br-certs-grid br-reveal br-reveal-d1">
           <div class="br-cert-tile"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><div class="br-cert-title">HIPAA Compliant</div><div class="br-cert-desc">End-to-end PHI protection</div></div>
-          <div class="br-cert-tile"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><div class="br-cert-title">AAPC Certified</div><div class="br-cert-desc">CPC & CPMA on every account</div></div>
-          <div class="br-cert-tile"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div class="br-cert-title">AHIMA Standards</div><div class="br-cert-desc">ICD-10 excellence</div></div>
-          <div class="br-cert-tile"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg><div class="br-cert-title">256-bit Encryption</div><div class="br-cert-desc">At rest & in transit</div></div>
+          <div class="br-cert-tile"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><div class="br-cert-title">AAPC-Credentialed Coders</div><div class="br-cert-desc">CPC & CPMA-certified staff</div></div>
         </div>
       </div>
     </div>
@@ -2297,10 +2293,10 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   <section class="br-section-tight br-bg-light">
     <div class="br-wrap-sm">
       <div class="br-final-cta br-reveal">
-        <h2>Ready to transform your revenue cycle?</h2>
-        <p>Your trusted billing advisors are just a call away. No sales pitch — just a real audit of your claims.</p>
+        <h2>Ready to strengthen your revenue operation?</h2>
+        <p>Whether you are scaling, improving an underperforming revenue cycle, integrating acquisitions, or modernizing your operating model, Billed Right can help you build a more predictable, scalable, and intelligent revenue operation.</p>
         <div class="br-cta-row">
-          <a href="/contact/" class="br-btn br-btn-red br-btn-lg">Connect with Us! <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="/contact/" class="br-btn br-btn-red br-btn-lg">Schedule an Executive Conversation <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a href="tel:+14072179281" class="br-btn br-btn-outline br-btn-lg"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>407-217-9281</a>
         </div>
       </div>
