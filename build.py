@@ -11,7 +11,7 @@ the result to dist/ using a clean-URL folder structure:
     pages/about.html        -> dist/about/index.html
     ...
 
-Also copies assets/, netlify.toml, sitemap.xml, and robots.txt into dist/.
+Also copies assets/, netlify.toml, sitemap.xml, robots.txt, and llms.txt into dist/.
 """
 import shutil
 from pathlib import Path
@@ -139,7 +139,7 @@ def build():
         print("  assets/ -> dist/assets/")
 
     # Copy root-level static files needed at the site root.
-    for filename in ("netlify.toml", "sitemap.xml", "robots.txt"):
+    for filename in ("netlify.toml", "sitemap.xml", "robots.txt", "llms.txt"):
         src = ROOT / filename
         if src.exists():
             shutil.copy2(src, DIST_DIR / filename)

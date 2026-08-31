@@ -204,7 +204,64 @@ for those categories (e.g. no MSO/multi-location/physician-group pages, no
 standalone Revenue Intelligence page). Building those out is separate,
 future work — flagged in `docs/BILLED_RIGHT_WEBSITE_2026_MASTER.md`'s
 preserved "Executive Problem Pages" / Revenue Intelligence authority page
-guidance, not done here. **✅ RESOLVED (2026-08-27) — Nav restructure.** Rebuilt to: Why Billed
+guidance, not done here.
+
+**🐛 BUG FOUND AND FIXED (2026-08-31) — footer grid layout broken at
+desktop width.** An independent inspection report surfaced this: the
+footer's 7 top-level sections (logo/subscribe, Solutions, Who We Serve +
+Technology & Revenue Intelligence, Specialties, Resources, Company, Follow
+Us) were wrapping into a 5-column CSS grid, so row 2 misaligned — "Company"
+rendered squeezed under the narrow logo column instead of its own column,
+"Follow Us" rendered under "Solutions," and the right third of the footer
+was empty white space. This shipped in the 2026-08-27 footer rebuild and
+went undetected because verification only covered mobile width and a
+text-content check at desktop, never an actual wide screenshot. **Fixed**
+by consolidating back to exactly 5 top-level columns matching the grid's 5
+tracks: Follow Us merged into the logo/subscribe column (icon-only, no
+text labels, to fit the tighter space) and Company merged into the
+Resources column as a second heading. Verified via DOM position checks
+(all 5 columns now share one row, evenly spaced) and screenshots at both
+1400px and 375px widths — no more wrapping, no empty gap, mobile unaffected.
+
+One related item from the same inspection was explicitly triaged by the
+user and is intentionally NOT changed:
+- **Pulmonary specialty tile** — real page exists (`/pulmonary-rcm-services/`)
+  and is in the nav, but was dropped from the homepage's 12-tile specialty
+  grid during an earlier rebuild. User decision: leave it out — adding a
+  13th tile would make the grid uneven. Homepage specialty grid stays at 12.
+
+**✅ RESOLVED (2026-08-31) — `<div onclick>` cards converted to `<a>` links.**
+All 7 non-crawlable/non-keyboard-accessible cards (4 in Free Tools/Section
+13, 3 in Latest Resources/Section 18) converted to real anchor tags with
+`display:block`, preserving all existing classes/styles. All still route
+to their current generic destinations (`/resources/`, `/blog/`,
+`/case-studies/`) — this fix was purely markup (div→a), not a change to
+where they link. Where they *should* link (dedicated resource pages
+instead of the generic hub) is still pending real content, per user
+direction. Verified: 0 remaining `onclick="window.location...` instances
+on the homepage; confirmed correct `href`/tag via DOM inspection and
+visual screenshot — no layout regression.
+
+**✅ RESOLVED (2026-08-31) — Section 8 service card links.** Denial
+Management, Medical Reporting, Insurance Eligibility, Claim Submission,
+and A/R Follow-up cards all pointed to the generic `/services/` hub
+instead of their own dedicated pages. Fixed to link to
+`/denial-management/`, `/reporting/`, `/insurance-eligibility/`,
+`/claim-submission/`, `/ar-follow-up/` respectively. Credentialing card
+was already correct (`/credentialing/`), left unchanged.
+
+**✅ RESOLVED (2026-08-31) — Schema/geo address corrected from Orlando to
+Longwood.** The JSON-LD `Organization` and `MedicalBusiness` nodes'
+`addressLocality` said "Orlando," which didn't match the footer's actual
+street address (256 Rangeline Road, Longwood, FL 32750) — a real
+schema-vs-reality mismatch. Both nodes now say "Longwood." The
+`geo.placename` meta tag changed from "Orlando, Florida" to "Greater
+Orlando Area" (a defensible regional descriptor rather than a specific
+city that isn't where the office is), and `geo.position`/`ICBM`
+coordinates updated to 28.7031, -81.3451 (Longwood, FL) from the old
+Orlando coordinates.
+
+**✅ RESOLVED (2026-08-27) — Nav restructure.** Rebuilt to: Why Billed
 Right → Solutions → Credentialing (standalone quick link) → Who We Serve →
 Technology & Revenue Intelligence → Specialties → Client Results →
 Resources → About, with "Let's Connect" / phone CTA on the right. Every
