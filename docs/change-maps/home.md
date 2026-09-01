@@ -59,6 +59,35 @@ Also added the four homepage testimonials to `docs/claims-register.md` —
 they were the only claim category on the page that had never been
 tracked, despite predating this session's work.
 
+**2026-08-31 — Inside Billed Right section: eyebrow + feature cards
+updated.** Eyebrow changed from "Inside Billed Right" to "The Billed
+Right Model," per explicit instruction. The 4 feature cards (Operational
+excellence, Strategic RCM partnership, Technology-driven workflows,
+Customized billing solutions) replaced with 5 pillar cards (RCM
+Expertise, Scalable Operations, Revenue Intelligence, Intelligent
+Automation, Human Oversight and Continuous Improvement) using the exact
+copy supplied. H2 and the YouTube video component left untouched, as
+instructed. Reused existing icon shapes already present elsewhere on the
+page (award/badge, layers, bar-chart, server/automation, people) — no new
+icons designed. Verified via direct parse of the built HTML: eyebrow
+text, unchanged H2, unchanged video `data-vid`, and all 5 card
+titles/copy in the correct order all confirmed correct.
+
+**2026-08-31 — Revenue Performance Challenges section added.** New section
+inserted between "Where We Help" (Business Challenges) and "Inside Billed
+Right," per explicit instruction with exact copy supplied. 9 challenge
+cards (Unpredictable Cash Flow, Underperforming Collections, Avoidable
+Denials, Revenue Leakage, Weak Executive Visibility, Labor Dependency,
+Scaling Complexity, Acquisition Integration, Inconsistent Workflows) in a
+3×3 grid, reusing the existing `.br-services-grid`/`.br-service-card`
+pattern already used in the adjacent section — no new CSS. Used
+`br-bg-light` (not white, as the surrounding sections are both white) to
+preserve the page's background alternation — confirmed light→white→
+light→white sequence around the new section, no adjacent same-background
+sections. Verified 9/9 cards render with correct titles/copy via DOM
+inspection and a partial screenshot; no fabricated claims (purely
+descriptive/qualitative challenge copy, no numbers).
+
 **2026-08-27 — Client Success Stories replaced with real, sourced case
 studies.** The three cards (previously labeled Cardiology/Behavioral
 Health/Multispecialty with composite figures that never matched any real
