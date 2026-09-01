@@ -1,4 +1,5 @@
 [build]
+  command = "python3 build.py"
   publish = "dist"
 
 # Clean URLs: serve /services/ (folder + index.html) without exposing .html
