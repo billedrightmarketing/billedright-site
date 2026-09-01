@@ -1,11 +1,17 @@
 /* =============================================================
-   Billed Right Live Chat Widget v2
+   Billed Right Live Chat Widget v3
    Uses Supabase JS client for reliable realtime
    Project: itgrapibtnuaoagtsiwh.supabase.co
+
+   v3 adds a "Talk To Us" launcher teaser and a 3-option FAB menu
+   (Live Chat / Call Us / Email Us) that expands from the launcher,
+   plus an Email Us popup mirroring the /contact/ page's Netlify form.
    ============================================================= */
 (function(){
   const SUPA_URL = 'https://itgrapibtnuaoagtsiwh.supabase.co';
   const SUPA_KEY = 'sb_publishable_fuKICh99F0hIucOEjb-dqQ_tVrocUmC';
+  const PHONE_DISPLAY = '407-217-9281';
+  const PHONE_TEL = '+14072179281';
 
   // ── Load Supabase JS client then init ──────────────────────
   function loadSupabase(cb){
@@ -21,11 +27,21 @@
   let convId = null;
   let visitorName = '';
   let isOpen = false;
+  let fabOpen = false;
+  let contactOpen = false;
   let unread = 0;
   let realtimeChannel = null;
 
   // ── Styles ─────────────────────────────────────────────────
   const styles = `
+  /* Widget elements are appended directly to <body>, outside the page's
+     own .br-reset scope, so they don't inherit its box-sizing:border-box
+     reset. Force it here so width:100% + padding behaves the same way
+     for every element in the widget (inputs and buttons previously drifted
+     out of alignment because of this). */
+  #br-chat-window *, #br-contact-modal *, #br-fab-menu *, #br-chat-launcher *, #br-chat-teaser {
+    box-sizing: border-box;
+  }
   #br-chat-launcher {
     position: fixed; bottom: 24px; right: 24px; z-index: 99999;
     width: 56px; height: 56px; border-radius: 50%;
@@ -43,9 +59,65 @@
     display: none; align-items: center; justify-content: center;
     font-family: system-ui, sans-serif;
   }
-  #br-chat-window {
+
+  /* ── Talk To Us teaser bubble — sits up and to the left of the
+     launcher, its curved corner tail pointing at the 10:30 position
+     on the circle (diagonally up-left, not straight left). ── */
+  #br-chat-teaser {
+    position: fixed; bottom: 82px; right: 78px; z-index: 99999;
+    background: #fff; color: #31425E; font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px; font-weight: 600; padding: 11px 18px; border-radius: 20px 20px 6px 20px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.14); cursor: pointer;
+    white-space: nowrap; border: none;
+    transform: scale(0.85) translateY(6px); opacity: 0; pointer-events: none;
+    transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), opacity 0.22s ease;
+  }
+  #br-chat-teaser.show { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+  #br-chat-teaser .br-teaser-tail {
+    position: absolute; right: -1px; bottom: -1px; width: 16px; height: 16px;
+    transform: scaleX(-1);
+  }
+
+  /* ── FAB option menu ──
+     One clean set of rules: fixed stack positioned 92px above the
+     viewport bottom (clears the 56px launcher + its 24px offset + a
+     little breathing room), 28px from the right edge, even 14px gaps
+     between items via flex gap (no per-item margin hacks). */
+  #br-fab-menu {
+    position: fixed; right: 28px; bottom: 92px; z-index: 99997;
+    display: flex; flex-direction: column-reverse; align-items: flex-end; gap: 14px;
+    pointer-events: none;
+  }
+  .br-fab-item {
+    display: flex; align-items: center; gap: 10px;
+    transform: scale(0.4) translateY(10px); opacity: 0;
+    transition: transform 0.24s cubic-bezier(0.34,1.56,0.64,1), opacity 0.18s ease;
+    pointer-events: none;
+  }
+  .br-fab-item[data-fab="email"] { order: 1; }
+  .br-fab-item[data-fab="call"]  { order: 2; }
+  .br-fab-item[data-fab="chat"]  { order: 3; }
+  #br-fab-menu.open .br-fab-item { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+  #br-fab-menu.open .br-fab-item[data-fab="chat"] { transition-delay: 0.02s; }
+  #br-fab-menu.open .br-fab-item[data-fab="call"] { transition-delay: 0.07s; }
+  #br-fab-menu.open .br-fab-item[data-fab="email"] { transition-delay: 0.12s; }
+  .br-fab-label {
+    background: #31425E; color: #fff; font-family: 'Inter', system-ui, sans-serif;
+    font-size: 12.5px; font-weight: 600; padding: 8px 14px; border-radius: 16px;
+    white-space: nowrap; box-shadow: 0 3px 12px rgba(0,0,0,0.18);
+  }
+  .br-fab-circle {
+    width: 48px; height: 48px; border-radius: 50%; background: #fff;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.2); text-decoration: none;
+    transition: transform 0.15s;
+  }
+  .br-fab-circle:hover { transform: scale(1.08); }
+  .br-fab-circle svg { width: 21px; height: 21px; stroke: #BA2025; fill: none; stroke-width: 2; }
+
+  #br-chat-window, #br-contact-modal {
     position: fixed; bottom: 92px; right: 24px; z-index: 99998;
-    width: 360px; max-height: 520px; border-radius: 16px;
+    width: min(360px, calc(100vw - 48px)); max-height: 560px; border-radius: 16px;
     background: #fff; box-shadow: 0 8px 40px rgba(0,0,0,0.18);
     display: flex; flex-direction: column; overflow: hidden;
     font-family: 'Inter', system-ui, sans-serif;
@@ -53,10 +125,11 @@
     pointer-events: none;
     transition: all 0.22s cubic-bezier(0.34,1.56,0.64,1);
   }
-  #br-chat-window.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+  #br-chat-window.open, #br-contact-modal.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
   .br-chat-header {
     background: #31425E; padding: 16px 18px;
     display: flex; align-items: center; gap: 12px; flex-shrink: 0;
+    box-sizing: border-box; width: 100%; border-radius: 16px 16px 0 0;
   }
   .br-chat-header-avatar {
     width: 40px; height: 40px; border-radius: 50%; background: #BA2025;
@@ -74,18 +147,18 @@
   }
   .br-chat-close:hover { color: #fff; }
   #br-chat-intro {
-    padding: 20px 18px; background: #f8fafc;
+    padding: 6px 18px 20px; background: #f8fafc;
     border-bottom: 1px solid #e2e8f0; flex-shrink: 0;
   }
   #br-chat-intro p { font-size: 13px; color: #475569; margin-bottom: 12px; line-height: 1.5; }
   #br-chat-intro input {
-    width: 100%; border: 1px solid #cbd5e1; border-radius: 8px;
+    width: 100%; box-sizing: border-box; border: 1px solid #cbd5e1; border-radius: 8px;
     padding: 9px 12px; font-size: 13px; outline: none; margin-bottom: 8px;
     font-family: inherit; color: #1e293b; transition: border-color 0.15s; display: block;
   }
   #br-chat-intro input:focus { border-color: #BA2025; }
   #br-chat-start-btn {
-    width: 100%; background: #BA2025; color: #fff; border: none;
+    width: 100%; box-sizing: border-box; background: #BA2025; color: #fff; border: none;
     border-radius: 8px; padding: 10px; font-size: 13px; font-weight: 600;
     cursor: pointer; font-family: inherit; transition: background 0.15s;
   }
@@ -117,21 +190,46 @@
     border-top: 1px solid #e2e8f0; gap: 8px; align-items: flex-end; flex-shrink: 0;
   }
   #br-chat-input {
-    flex: 1; border: 1px solid #cbd5e1; border-radius: 10px;
+    flex: 1; box-sizing: border-box; border: 1px solid #cbd5e1; border-radius: 10px;
     padding: 9px 12px; font-size: 13px; outline: none; resize: none;
     font-family: inherit; max-height: 90px; min-height: 36px;
     line-height: 1.4; color: #1e293b; transition: border-color 0.15s;
   }
   #br-chat-input:focus { border-color: #BA2025; }
   #br-chat-send {
-    width: 36px; height: 36px; border-radius: 50%; background: #BA2025;
+    width: 36px; height: 36px; box-sizing: border-box; border-radius: 50%; background: #BA2025;
     border: none; cursor: pointer; display: flex; align-items: center;
     justify-content: center; flex-shrink: 0; transition: background 0.15s;
   }
   #br-chat-send:hover { background: #9b1a1e; }
   #br-chat-send svg { width: 16px; height: 16px; fill: #fff; }
+
+  /* ── Contact popup form ── */
+  #br-contact-modal { max-height: 78vh; }
+  #br-contact-body { padding: 16px 18px 18px; overflow-y: auto; background: #fff; }
+  #br-contact-body p.br-cf-sub { font-size: 12.5px; color: #64748b; margin-bottom: 14px; line-height: 1.5; }
+  .br-cf-field { margin-bottom: 10px; }
+  .br-cf-field label { display: block; font-size: 11.5px; font-weight: 600; color: #31425E; margin-bottom: 4px; }
+  .br-cf-field input, .br-cf-field select, .br-cf-field textarea {
+    width: 100%; border: 1px solid #cbd5e1; border-radius: 8px;
+    padding: 9px 11px; font-size: 13px; outline: none; font-family: inherit;
+    color: #1e293b; transition: border-color 0.15s; box-sizing: border-box;
+  }
+  .br-cf-field input:focus, .br-cf-field select:focus, .br-cf-field textarea:focus { border-color: #BA2025; }
+  .br-cf-field textarea { resize: vertical; min-height: 54px; }
+  #br-contact-body button[type="submit"] {
+    width: 100%; box-sizing: border-box; background: #BA2025; color: #fff; border: none;
+    border-radius: 8px; padding: 11px; font-size: 13px; font-weight: 700;
+    cursor: pointer; font-family: inherit; transition: background 0.15s;
+    display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 4px;
+  }
+  #br-contact-body button[type="submit"]:hover { background: #9b1a1e; }
+  #br-contact-body button[type="submit"] svg { width: 15px; height: 15px; fill: #fff; }
+  .br-cf-fine { font-size: 10.5px; color: #94a3b8; margin-top: 8px; line-height: 1.4; text-align: center; }
+
   @media(max-width: 400px){
-    #br-chat-window { width: calc(100vw - 24px); right: 12px; bottom: 80px; }
+    #br-chat-window, #br-contact-modal { width: calc(100vw - 24px); right: 12px; bottom: 80px; }
+    #br-chat-teaser { font-size: 12px; padding: 9px 15px; }
   }
   `;
 
@@ -139,16 +237,49 @@
   styleEl.textContent = styles;
   document.head.appendChild(styleEl);
 
-  // ── Build DOM ──────────────────────────────────────────────
+  // ── Build DOM: launcher ──────────────────────────────────────
   const launcher = document.createElement('button');
   launcher.id = 'br-chat-launcher';
-  launcher.setAttribute('aria-label', 'Chat with Billed Right');
+  launcher.setAttribute('aria-label', 'Talk to Billed Right');
   launcher.innerHTML = `
     <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
     <span id="br-chat-badge"></span>
   `;
   document.body.appendChild(launcher);
 
+  // ── Build DOM: "Talk To Us" teaser bubble ─────────────────────
+  const teaser = document.createElement('button');
+  teaser.id = 'br-chat-teaser';
+  teaser.type = 'button';
+  teaser.innerHTML = `Talk To Us<svg class="br-teaser-tail" viewBox="0 0 30 30" aria-hidden="true"><path d="M30 30C13 30 0 17 0 0v30h30z" fill="#fff"/></svg>`;
+  document.body.appendChild(teaser);
+
+  // ── Build DOM: FAB option menu ────────────────────────────────
+  const fabMenu = document.createElement('div');
+  fabMenu.id = 'br-fab-menu';
+  fabMenu.innerHTML = `
+    <div class="br-fab-item" data-fab="chat">
+      <span class="br-fab-label">Live Chat</span>
+      <button class="br-fab-circle" id="br-fab-chat" aria-label="Start live chat" type="button">
+        <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+      </button>
+    </div>
+    <div class="br-fab-item" data-fab="call">
+      <span class="br-fab-label">Call Us</span>
+      <a class="br-fab-circle" id="br-fab-call" href="tel:${PHONE_TEL}" aria-label="Call ${PHONE_DISPLAY}">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 01.01 4.18 2 2 0 012 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+      </a>
+    </div>
+    <div class="br-fab-item" data-fab="email">
+      <span class="br-fab-label">Email Us</span>
+      <button class="br-fab-circle" id="br-fab-email" aria-label="Open contact form" type="button">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+      </button>
+    </div>
+  `;
+  document.body.appendChild(fabMenu);
+
+  // ── Build DOM: chat window ─────────────────────────────────
   const win = document.createElement('div');
   win.id = 'br-chat-window';
   win.innerHTML = `
@@ -179,10 +310,63 @@
   `;
   document.body.appendChild(win);
 
-  // ── Open/close ─────────────────────────────────────────────
+  // ── Build DOM: contact popup (mirrors /contact/'s Netlify form) ──
+  const contactModal = document.createElement('div');
+  contactModal.id = 'br-contact-modal';
+  contactModal.innerHTML = `
+    <div class="br-chat-header">
+      <div class="br-chat-header-avatar">✉️</div>
+      <div class="br-chat-header-info">
+        <div class="br-chat-header-name">Get My Free Billing Review</div>
+        <div class="br-chat-header-status"><span>An account manager responds within one business day.</span></div>
+      </div>
+      <button class="br-chat-close" id="br-contact-close-btn" aria-label="Close contact form">&times;</button>
+    </div>
+    <div id="br-contact-body">
+      <form name="contact-billing-review-request" method="POST" data-netlify="true" action="/thank-you/contact/">
+        <input type="hidden" name="form-name" value="contact-billing-review-request">
+        <input type="hidden" name="bot-field" />
+        <div class="br-cf-field"><label for="br-w-name">Full Name</label><input type="text" id="br-w-name" name="name" placeholder="Dr. Jane Okafor" autocomplete="name"></div>
+        <div class="br-cf-field"><label for="br-w-phone">Phone Number</label><input type="tel" id="br-w-phone" name="phone" placeholder="(407) 000-0000" autocomplete="tel"></div>
+        <div class="br-cf-field"><label for="br-w-email">Work Email</label><input type="email" id="br-w-email" name="email" placeholder="you@yourpractice.com" autocomplete="email"></div>
+        <div class="br-cf-field"><label for="br-w-specialty">Your Specialty</label><select id="br-w-specialty" name="specialty"><option value="">Select specialty</option><option>Internal Medicine</option><option>Cardiology</option><option>Behavioral Health</option><option>Pain Management</option><option>Orthopedics</option><option>Pediatrics</option><option>Ophthalmology</option><option>Urgent Care</option><option>Family Practice</option><option>Neurology</option><option>Nephrology</option><option>Multispecialty</option><option>Other</option></select></div>
+        <div class="br-cf-field"><label for="br-w-size">Practice Size</label><select id="br-w-size" name="practice-size"><option value="">Select size</option><option>Solo practitioner</option><option>2&ndash;5 providers</option><option>6&ndash;10 providers</option><option>10+ providers</option></select></div>
+        <div class="br-cf-field"><label for="br-w-challenge">What's your biggest billing challenge?</label><textarea id="br-w-challenge" name="challenge" placeholder="Tell us where you're losing revenue..."></textarea></div>
+        <button type="submit" aria-label="Submit billing review request">
+          Get My Free Billing Review
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="br-cf-fine">Your information is HIPAA-protected. No contracts required.</p>
+      </form>
+    </div>
+  `;
+  document.body.appendChild(contactModal);
+
+  // ── Teaser visibility ──────────────────────────────────────
+  function showTeaser(){ if(!isOpen && !fabOpen && !contactOpen) teaser.classList.add('show'); }
+  function hideTeaser(){ teaser.classList.remove('show'); }
+  setTimeout(showTeaser, 900);
+
+  // ── FAB menu open/close ─────────────────────────────────────
+  function openFab(){
+    fabOpen = true;
+    fabMenu.classList.add('open');
+    hideTeaser();
+  }
+  function closeFab(){
+    fabOpen = false;
+    fabMenu.classList.remove('open');
+    showTeaser();
+  }
+  function toggleFab(){ fabOpen ? closeFab() : openFab(); }
+
+  // ── Chat open/close ─────────────────────────────────────────
   function openChat(){
+    closeFab();
+    closeContactModal();
     isOpen = true;
     win.classList.add('open');
+    hideTeaser();
     unread = 0;
     updateBadge();
     setTimeout(() => {
@@ -192,15 +376,49 @@
       if(el) el.focus();
     }, 100);
   }
-  function closeChat(){ isOpen = false; win.classList.remove('open'); }
+  function closeChat(){ isOpen = false; win.classList.remove('open'); showTeaser(); }
   function updateBadge(){
     const badge = document.getElementById('br-chat-badge');
     if(unread > 0){ badge.style.display = 'flex'; badge.textContent = unread > 9 ? '9+' : unread; }
     else { badge.style.display = 'none'; }
   }
 
-  launcher.addEventListener('click', () => isOpen ? closeChat() : openChat());
+  // ── Contact popup open/close ─────────────────────────────────
+  function openContactModal(){
+    closeFab();
+    closeChat();
+    contactOpen = true;
+    contactModal.classList.add('open');
+    hideTeaser();
+    setTimeout(() => {
+      const el = document.getElementById('br-w-name');
+      if(el) el.focus();
+    }, 100);
+  }
+  function closeContactModal(){
+    contactOpen = false;
+    contactModal.classList.remove('open');
+    showTeaser();
+  }
+
+  // ── Wire up launcher / teaser / FAB items ───────────────────
+  launcher.addEventListener('click', () => {
+    if(isOpen){ closeChat(); return; }
+    if(contactOpen){ closeContactModal(); return; }
+    toggleFab();
+  });
+  teaser.addEventListener('click', toggleFab);
   document.getElementById('br-close-btn').addEventListener('click', closeChat);
+  document.getElementById('br-contact-close-btn').addEventListener('click', closeContactModal);
+  document.getElementById('br-fab-chat').addEventListener('click', openChat);
+  document.getElementById('br-fab-call').addEventListener('click', closeFab);
+  document.getElementById('br-fab-email').addEventListener('click', openContactModal);
+
+  document.addEventListener('click', (e) => {
+    if(!fabOpen) return;
+    if(fabMenu.contains(e.target) || launcher.contains(e.target) || teaser.contains(e.target)) return;
+    closeFab();
+  });
 
   // ── Start conversation ─────────────────────────────────────
   document.getElementById('br-chat-start-btn').addEventListener('click', async () => {
