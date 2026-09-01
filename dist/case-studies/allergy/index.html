@@ -1669,6 +1669,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="br-reset">
 
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <nav class="br-nav" role="navigation" aria-label="Main navigation">
   <div class="br-nav-inner">
     <!-- Logo -->
@@ -1974,6 +1975,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script src="/assets/js/br-chat-widget.js?v=4"></script>
 <script src="/assets/js/br-analytics-events.js?v=1"></script>
+<script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", user => {
+    if (!user) {
+      window.netlifyIdentity.on("login", () => {
+        document.location.href = "/admin/";
+      });
+    }
+  });
+}
+</script>
 
 
 <main id="brpage-case-study-allergy" class="br-page active" aria-label="Allergy billing case study page">

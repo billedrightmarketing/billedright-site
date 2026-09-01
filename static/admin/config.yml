@@ -1,0 +1,32 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: assets/images/blog
+public_folder: /assets/images/blog
+
+collections:
+  - name: blog
+    label: Blog Posts
+    folder: content/blog
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Author, name: author, widget: string, default: Billed Right }
+      - { label: Publish Date, name: date, widget: datetime }
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - Denial Management
+          - Coding & Compliance
+          - Revenue Cycle
+          - Specialty Billing
+          - Credentialing
+      - { label: Meta Description, name: meta_description, widget: text, hint: Keep under 160 characters }
+      - label: Title Image
+        name: title_image
+        widget: image
+        required: false
+      - { label: Body, name: body, widget: markdown }
