@@ -24,6 +24,14 @@
   // inline <style> block — so the success/error states this script adds
   // are styled here once, injected into <head>, rather than needing to
   // touch 32 separate pages' CSS.
+  //
+  // The submitting-button feedback reuses the site's existing button
+  // transition timing (.br-btn's `transition: transform .15s ease` —
+  // see pages/home.html's .br-btn rule) for the click bounce, rather
+  // than inventing a new duration/easing. There's no existing spinner
+  // anywhere on the site to reuse, so that part is necessarily new —
+  // it borrows the button's own red/white color scheme instead of
+  // introducing a new palette.
   var styleTag = document.createElement('style');
   styleTag.textContent =
     '.br-lead-form-error{margin-top:12px;padding:10px 14px;border-radius:8px;' +
@@ -31,7 +39,14 @@
     'color:#941a1e;font-size:13px;line-height:1.5}' +
     '.br-lead-form-success{padding:24px;text-align:center;font-size:15px;' +
     'color:#31425E;line-height:1.6}' +
-    '.br-lead-form-success strong{display:block;font-size:18px;margin-bottom:6px;color:#1a2535}';
+    '.br-lead-form-success strong{display:block;font-size:18px;margin-bottom:6px;color:#1a2535}' +
+    '.br-lead-form-submitting{position:relative;color:transparent!important;' +
+    'animation:br-lead-form-pulse .15s ease}' +
+    '.br-lead-form-submitting::after{content:"";position:absolute;width:16px;height:16px;' +
+    'top:50%;left:50%;margin:-8px 0 0 -8px;border:2px solid rgba(255,255,255,.4);' +
+    'border-top-color:#fff;border-radius:50%;animation:br-lead-form-spin .6s linear infinite}' +
+    '@keyframes br-lead-form-pulse{0%{transform:scale(1)}50%{transform:scale(.96)}100%{transform:scale(1)}}' +
+    '@keyframes br-lead-form-spin{to{transform:rotate(360deg)}}';
   document.head.appendChild(styleTag);
 
   function formToPayload(form) {
@@ -48,8 +63,20 @@
 
   function setBusy(form, busy) {
     var submitBtn = form.querySelector('button[type="submit"]');
-    if (submitBtn) submitBtn.disabled = busy;
+    if (!submitBtn) return;
+    submitBtn.disabled = busy;
+    if (busy) {
+      // Restart the pulse/spinner animation even on a rapid re-click by
+      // forcing a reflow between removing and re-adding the class.
+      submitBtn.classList.remove('br-lead-form-submitting');
+      void submitBtn.offsetWidth;
+      submitBtn.classList.add('br-lead-form-submitting');
+    } else {
+      submitBtn.classList.remove('br-lead-form-submitting');
+    }
   }
+
+  var EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   function showError(form, text) {
     var msg = form.querySelector('.br-lead-form-error');
@@ -101,6 +128,19 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       clearError(form);
+
+      // Client-side format check, before any network activity: a
+      // malformed email (e.g. "test@example" — no "." after the @) is
+      // something the visitor can fix immediately, so tell them
+      // specifically rather than sending it to zoho-lead.js and getting
+      // back a generic failure. Native browser type="email" validation
+      // doesn't actually require a "." in the domain, so this catches
+      // cases the browser itself lets through.
+      var emailInput = form.querySelector('[name="email"]');
+      if (emailInput && emailInput.value.trim() && !EMAIL_PATTERN.test(emailInput.value.trim())) {
+        showError(form, 'Please check the email address you entered and try again');
+        return;
+      }
 
       var payload = formToPayload(form);
       payload.form_source = formSource;

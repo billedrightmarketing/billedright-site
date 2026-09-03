@@ -218,6 +218,21 @@ function buildLeadPayload(fields, contact) {
   if (fields.specialty) {
     lead.Specialty_Multi_Select = [mapSpecialty(fields.specialty)];
   }
+
+  // The 13 specialty "brochure request" forms only (form_source values
+  // ending in "-brochure", e.g. "cardiology-brochure") — a visitor
+  // downloading a brochure is a warmer, more passive lead than one who
+  // filled out a consultation/contact/case-study form asking to be
+  // contacted, so this note goes first in Description, ahead of
+  // "Source Page". Consultation forms, the contact form, case-study
+  // forms, and the chat widget never match this and are unaffected.
+  const isBrochureForm =
+    typeof fields.form_source === "string" && fields.form_source.endsWith("-brochure");
+  if (isBrochureForm) {
+    descriptionParts.push(
+      "Lead Type: Brochure Download - Warm lead, requested informational material, not actively requesting direct outreach."
+    );
+  }
   if (fields.form_source) {
     descriptionParts.push(`Source Page: ${fields.form_source}`);
   }
