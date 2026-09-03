@@ -36,12 +36,13 @@ Usage:
 import argparse
 import html
 import re
+import sys
 import time
 import urllib.error
 import urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import quote, urlparse, urlsplit, urlunsplit
 
 ROOT = Path(__file__).resolve().parent
 URLS_FILE = ROOT / "blog_urls.txt"
@@ -62,15 +63,27 @@ USER_AGENT = (
 # HTTP
 # ─────────────────────────────────────────────────────────────────────────
 
+def sanitize_url(url: str) -> str:
+    """Percent-encode any raw non-ASCII characters in a URL's path/query.
+    Some WordPress media filenames contain literal Unicode (an em dash
+    turned up in one), and http.client encodes the raw HTTP request line
+    as strict ASCII — passing such a URL to urlopen() unsanitized raises
+    a UnicodeEncodeError instead of a normal, catchable request failure."""
+    parts = urlsplit(url)
+    path = quote(parts.path, safe="/%")
+    query = quote(parts.query, safe="=&%")
+    return urlunsplit((parts.scheme, parts.netloc, path, query, parts.fragment))
+
+
 def fetch_url(url: str) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    req = urllib.request.Request(sanitize_url(url), headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
         charset = resp.headers.get_content_charset() or "utf-8"
         return resp.read().decode(charset, errors="replace")
 
 
 def download_image(url: str, dest: Path) -> None:
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    req = urllib.request.Request(sanitize_url(url), headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
         dest.write_bytes(resp.read())
 
@@ -474,6 +487,14 @@ def scrape_one(url: str) -> str:
 
 
 def main():
+    # Windows consoles (and piped/non-tty output) can default stdout to a
+    # narrow codec that can't represent every character a scraped title
+    # might contain. Replacing unrepresentable characters keeps a single
+    # odd title from crashing the whole run's progress output.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(errors="replace")
+
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--force", action="store_true",
