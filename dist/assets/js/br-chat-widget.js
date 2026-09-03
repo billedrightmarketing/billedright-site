@@ -344,6 +344,9 @@
     </div>
   `;
   document.body.appendChild(contactModal);
+  if (window.brWireLeadForm) {
+    window.brWireLeadForm(contactModal.querySelector('form'), { formSource: 'chat-widget' });
+  }
 
   // ── Teaser visibility ──────────────────────────────────────
   function showTeaser(){ if(!isOpen && !fabOpen && !contactOpen) teaser.classList.add('show'); }
