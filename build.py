@@ -262,14 +262,17 @@ def slug_from_filename(filename: str) -> str:
     return match.group(1) if match else stem
 
 
-def build_blog_posts() -> dict:
+def build_blog_posts() -> tuple:
     """Render content/blog/*.md against templates/blog-post-template.html,
-    writing each to pages/blog/<slug>/index.html. Returns a dict in the
-    same shape as PAGE_OUTPUT_PATHS so the caller can merge it in and let
-    the normal {{NAV}}/{{FOOTER}} pass below pick the generated pages up."""
+    writing each to pages/blog/<slug>/index.html. Returns (output_paths,
+    posts): output_paths is a dict in the same shape as PAGE_OUTPUT_PATHS
+    so the caller can merge it in and let the normal {{NAV}}/{{FOOTER}}
+    pass below pick the generated pages up; posts is the parsed, sorted
+    list, reused by render_blog_archive() so it doesn't have to re-parse
+    every markdown file a second time."""
     md_files = sorted(CONTENT_BLOG_DIR.glob("*.md")) if CONTENT_BLOG_DIR.exists() else []
     if not md_files:
-        return {}
+        return {}, []
 
     template = load_template("blog-post-template.html")
 
@@ -369,7 +372,7 @@ def build_blog_posts() -> dict:
 
         output_paths[f"blog/{post['slug']}"] = f"blog/{post['slug']}/index.html"
 
-    return output_paths
+    return output_paths, posts
 
 
 def json_escape(value: str) -> str:
@@ -381,6 +384,62 @@ def json_escape(value: str) -> str:
     )
 
 
+# CMS test entries created while trying out the Decap CMS — real content,
+# but not meant for the public archive.
+TEST_POST_SLUGS = {"sd", "this-is-a-test-blog-post"}
+
+
+def category_slug(category: str) -> str:
+    slug = re.sub(r"[^a-z0-9]+", "-", category.lower()).strip("-")
+    return slug or "general"
+
+
+def render_blog_card(post: dict, featured: bool) -> str:
+    category = post["category"] or "General"
+    img_style = (
+        f"background-image:url('{html.escape(post['title_image'], quote=True)}');"
+        f"background-size:cover;background-position:center"
+        if post["title_image"] else
+        "background:linear-gradient(135deg,#1a2535,#31425E)"
+    )
+    date_label = (
+        f"{post['date_obj'].strftime('%B')} {post['date_obj'].day}, {post['date_obj'].year}"
+        if post["date_obj"] else ""
+    )
+    return (
+        f'<a href="/blog/{post["slug"]}/" class="br-blog-card" data-cat="{category_slug(category)}">'
+        f'<div class="br-blog-img{" tall" if featured else ""}" style="{img_style}">'
+        f'<div class="br-blog-overlay">'
+        f'<span class="br-blog-cat">{html.escape(category, quote=True)}</span>'
+        f'<div class="br-blog-img-title">{html.escape(post["title"], quote=True)}</div>'
+        f'</div></div>'
+        f'<div class="br-blog-body">'
+        f'<p>{html.escape(post["meta_description"], quote=True)}</p>'
+        f'<div class="br-blog-foot">'
+        f'<span class="br-blog-kw">{date_label}</span>'
+        f'<span class="br-blog-read">Read <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>'
+        f'</div></div></a>'
+    )
+
+
+def render_blog_archive(all_posts: list) -> tuple:
+    """Build the /blog/ archive's filter-button row and post-card grid
+    from the same parsed post list build_blog_posts() already produced.
+    Returns (filter_buttons_html, grid_html)."""
+    posts = [p for p in all_posts if p["slug"] not in TEST_POST_SLUGS]
+
+    categories = sorted({p["category"] for p in posts if p["category"]})
+    buttons = ['<button class="br-filter-btn active" onclick="brFilterBlog(\'all\',this)">All Resources</button>']
+    for category in categories:
+        buttons.append(
+            f'<button class="br-filter-btn" onclick="brFilterBlog(\'{category_slug(category)}\',this)">'
+            f'{html.escape(category, quote=True)}</button>'
+        )
+
+    cards = [render_blog_card(post, featured=(i == 0)) for i, post in enumerate(posts)]
+    return "".join(buttons), "\n".join(cards)
+
+
 def build():
     if DIST_DIR.exists():
         shutil.rmtree(DIST_DIR)
@@ -389,8 +448,9 @@ def build():
     # Render markdown blog posts to pages/blog/<slug>/index.html before the
     # main pass below, so they get {{NAV}}/{{FOOTER}} injected and copied to
     # dist/ exactly like every hand-written page.
-    blog_output_paths = build_blog_posts()
+    blog_output_paths, blog_posts = build_blog_posts()
     all_output_paths = {**PAGE_OUTPUT_PATHS, **blog_output_paths}
+    blog_filter_buttons, blog_grid_html = render_blog_archive(blog_posts)
 
     nav_html = load_template("nav-template.html")
     footer_html = load_template("footer-template.html")
@@ -408,6 +468,9 @@ def build():
         html = source_path.read_text(encoding="utf-8")
         html = html.replace("{{NAV}}", nav_html)
         html = html.replace("{{FOOTER}}", footer_html)
+        if slug == "blog":
+            html = html.replace("{{BLOG_FILTER_BUTTONS}}", blog_filter_buttons)
+            html = html.replace("{{BLOG_POSTS_GRID}}", blog_grid_html)
 
         out_path = DIST_DIR / output_rel_path
         out_path.parent.mkdir(parents=True, exist_ok=True)
