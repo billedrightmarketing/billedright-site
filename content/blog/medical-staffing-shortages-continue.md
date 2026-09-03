@@ -35,7 +35,7 @@ One of the biggest opportunities to shore up your workforce, streamline workflow
 - Accounting
 - Payroll
 - [Medical billing](https://billedright.com/revenue-cycle-management-company/)
-- [Credentialling](https://billedright.com/credentialing/)
+- [Credentialling](https://billedright.com/services/credentialing/)
 - And more
 
 [MGMA did a poll in March 2022](https://mgma.com/data/data-stories/outsourcing,-automation-may-provide-help-to-short) asking medical practices they will be outsourcing/automating in the next six months. Of those polled, 36% stated “revenue cycle,” 33% said “patient communication,” 9% said “clinical efficiency,” and 23% said “other,” which included things like medical billing, call center, and IT services. This poll shows that the medical worker shortage is forcing medical practice leaders to think outside the box on ways to streamline workflows and ensure they have the right workers for all the key roles in their practice.

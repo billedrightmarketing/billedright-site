@@ -31,7 +31,7 @@ In an effort to streamline the process for your practice, without taking on the 
 
 **How Billed Right Can Help with Prior Authorizations **
 
-[At [Billed Right](https://billedright.com), we specialize in revenue cycle and operational management, including offering a [prior authorization service](https://billedright.com/authorizations/) as an add-on solution. We can provide you with peace of mind that your PAs are being requested, followed up on, and filed appropriately in your EHR software. This helps avoid medical claim denials, patient frustration, and loss of staff time.
+[At [Billed Right](https://billedright.com), we specialize in revenue cycle and operational management, including offering a [prior authorization service](https://billedright.com/services/authorizations/) as an add-on solution. We can provide you with peace of mind that your PAs are being requested, followed up on, and filed appropriately in your EHR software. This helps avoid medical claim denials, patient frustration, and loss of staff time.
 
 Our team of experts understands all the ins and outs of obtaining prior authorizations and submit authorization requests within 12 – 24 hours, follow-up with payers ensuring that they are received quickly, and work within your EHR so that your staff has access to them when they are needed.
 

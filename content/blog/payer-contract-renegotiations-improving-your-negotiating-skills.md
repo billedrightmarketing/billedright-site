@@ -60,7 +60,7 @@ By doing this, you maintain close contact with the payer representative, which c
 
 With all the other things that need to be managed daily, who has the time to establish a comprehensive payer contract management process to handle the complexity of managing multiple contracts. It is hard for a practice to keep up without getting discouraged by the process as it can be lengthy and complicated.
 
-[At Billed Right we understand how stressful and time-consuming [contract renegotiations](https://billedright.com/contract-renegotiation/) can be. Taking the time to review your payer contracts to understand where you currently are can be overwhelming. You also need to analyze your data to determine which payers, plans, and services drive the most value, or the least, consuming even more time and resources. But there is a way to save yourself the time and cost of doing all of this yourself – outsourcing.
+[At Billed Right we understand how stressful and time-consuming [contract renegotiations](https://billedright.com/services/contract-renegotiation/) can be. Taking the time to review your payer contracts to understand where you currently are can be overwhelming. You also need to analyze your data to determine which payers, plans, and services drive the most value, or the least, consuming even more time and resources. But there is a way to save yourself the time and cost of doing all of this yourself – outsourcing.
 
 Billed Right has a dedicated team of experts who can help prepare and negotiate your payer contracts. In addition, we work closely with you and your team to ensure a solid understanding of your analytical data and what makes your practice unique and work hard to increase reimbursement amounts.
 

@@ -27,11 +27,11 @@ Medical authorizations can take time. Sometimes patients don’t want to wait an
 
 ## **Getting Help with Medical Authorizations and Medical Referrals**
 
-[Both [authorizations and referrals](https://billedright.com/authorizations/) take time and add an administrative burden on your staff. Time that could be spent ensuring the quality of patient care. Billed Right can help!
+[Both [authorizations and referrals](https://billedright.com/services/authorizations/) take time and add an administrative burden on your staff. Time that could be spent ensuring the quality of patient care. Billed Right can help!
 
 Billed Right is a revenue cycle management company, started in 2006, that believes in a holistic approach to practice management. To that end, they not only offer RCM but also have virtual back-office services such as an authorization and referral service.
 
-[With Billed Right’s [Medical authorization and Medical referral service](https://billedright.com/authorizations/) you can expect:
+[With Billed Right’s [Medical authorization and Medical referral service](https://billedright.com/services/authorizations/) you can expect:
 
 - A virtual resource
 - Submission request within 12-24 hours

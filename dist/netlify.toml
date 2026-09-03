@@ -15,6 +15,160 @@
   status = 301
   force = true
 
+# Service and specialty pages moved from flat root-level URLs to nested
+# /services/ and /specialties/ paths. These preserve existing search
+# rankings, bookmarks, and inbound links to the old flat URLs.
+[[redirects]]
+  from = "/credentialing/"
+  to = "/services/credentialing/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/insurance-eligibility/"
+  to = "/services/insurance-eligibility/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/charge-posting/"
+  to = "/services/charge-posting/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/documentation-review/"
+  to = "/services/documentation-review/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/claim-submission/"
+  to = "/services/claim-submission/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/denial-management/"
+  to = "/services/denial-management/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/medical-coding/"
+  to = "/services/medical-coding/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/payment-posting/"
+  to = "/services/payment-posting/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/patient-ar-collections/"
+  to = "/services/patient-ar-collections/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/ar-follow-up/"
+  to = "/services/ar-follow-up/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/reporting/"
+  to = "/services/reporting/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/authorizations/"
+  to = "/services/authorizations/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/account-management/"
+  to = "/services/account-management/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/documentation-management/"
+  to = "/services/documentation-management/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/contract-renegotiation/"
+  to = "/services/contract-renegotiation/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/eclinicalworks-billing-services/"
+  to = "/services/eclinicalworks-billing-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/emr-billing-platforms/"
+  to = "/services/emr-billing-platforms/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/psychiatry-rcm-services/"
+  to = "/specialties/psychiatry-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/cardiology-rcm-services/"
+  to = "/specialties/cardiology-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/behavioral-health-rcm-services/"
+  to = "/specialties/behavioral-health-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/internal-medicine-rcm-services/"
+  to = "/specialties/internal-medicine-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rheumatology-rcm-services/"
+  to = "/specialties/rheumatology-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/nephrology-rcm-services/"
+  to = "/specialties/nephrology-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/urgent-care-rcm-services/"
+  to = "/specialties/urgent-care-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/pain-management-rcm-services/"
+  to = "/specialties/pain-management-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/gastroenterology-rcm-services/"
+  to = "/specialties/gastroenterology-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/primary-care-rcm-services/"
+  to = "/specialties/primary-care-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/vascular-surgery-rcm-services/"
+  to = "/specialties/vascular-surgery-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/allergy-rcm-services/"
+  to = "/specialties/allergy-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/pulmonary-rcm-services/"
+  to = "/specialties/pulmonary-rcm-services/"
+  status = 301
+  force = true
+
 # Long-lived caching for immutable static assets
 [[headers]]
   for = "/assets/*"

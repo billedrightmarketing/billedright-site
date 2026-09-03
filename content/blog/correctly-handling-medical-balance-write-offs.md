@@ -23,7 +23,7 @@ All of the reasons above are standard write-off reasons, however, some situation
 
 - [**Errors in medical claims **such as coding issues, documentation issues, or erroneous patient information lead to denials. Once this occurs your staff needs to be able to immediately make corrections and appeal the [medical claim denial](https://billedright.com/medical-billing-denial-management/). If it isn’t appealed promptly the revenue is lost.
 - **Missing medical claim filing deadlines** for a payer. Each payer has a contracted deadline for filing medical claims and if this is missed you don’t get paid. Each payer is different so ensure you know each payer’s deadline.
-- [**Un-credentialed provider write-offs** happen when you file a claim for a practitioner who has not finalized their [credentialing](https://billedright.com/credentialing/) and contracting with payers prior to the filing.
+- [**Un-credentialed provider write-offs** happen when you file a claim for a practitioner who has not finalized their [credentialing](https://billedright.com/services/credentialing/) and contracting with payers prior to the filing.
 - **Waiving or writing off copays or deductibles **by writing these balances off you could be violating regulations including the Anti-kickback Statute, the False Claims Act, the Civil Monetary Penalties Law, and/or some state laws and regulations.
 - **Payer Changes **happen when a payer makes changes without notifying a practice.
 - **Bad debt write-off **is debt that, after exhausting all avenues to collect, you decide to write off the debt for good.

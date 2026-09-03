@@ -21,7 +21,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://billedright.com/credentialing/</loc>
+    <loc>https://billedright.com/services/credentialing/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -56,137 +56,137 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://billedright.com/psychiatry-rcm-services/</loc>
+    <loc>https://billedright.com/specialties/psychiatry-rcm-services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://billedright.com/cardiology-rcm-services/</loc>
+    <loc>https://billedright.com/specialties/cardiology-rcm-services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://billedright.com/behavioral-health-rcm-services/</loc>
+    <loc>https://billedright.com/specialties/behavioral-health-rcm-services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://billedright.com/internal-medicine-rcm-services/</loc>
+    <loc>https://billedright.com/specialties/internal-medicine-rcm-services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://billedright.com/rheumatology-rcm-services/</loc>
+    <loc>https://billedright.com/specialties/rheumatology-rcm-services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://billedright.com/nephrology-rcm-services/</loc>
+    <loc>https://billedright.com/specialties/nephrology-rcm-services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://billedright.com/urgent-care-rcm-services/</loc>
+    <loc>https://billedright.com/specialties/urgent-care-rcm-services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://billedright.com/pain-management-rcm-services/</loc>
+    <loc>https://billedright.com/specialties/pain-management-rcm-services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://billedright.com/gastroenterology-rcm-services/</loc>
+    <loc>https://billedright.com/specialties/gastroenterology-rcm-services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://billedright.com/primary-care-rcm-services/</loc>
+    <loc>https://billedright.com/specialties/primary-care-rcm-services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://billedright.com/vascular-surgery-rcm-services/</loc>
+    <loc>https://billedright.com/specialties/vascular-surgery-rcm-services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://billedright.com/allergy-rcm-services/</loc>
+    <loc>https://billedright.com/specialties/allergy-rcm-services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://billedright.com/pulmonary-rcm-services/</loc>
+    <loc>https://billedright.com/specialties/pulmonary-rcm-services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://billedright.com/insurance-eligibility/</loc>
+    <loc>https://billedright.com/services/insurance-eligibility/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://billedright.com/charge-posting/</loc>
+    <loc>https://billedright.com/services/charge-posting/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://billedright.com/documentation-review/</loc>
+    <loc>https://billedright.com/services/documentation-review/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://billedright.com/claim-submission/</loc>
+    <loc>https://billedright.com/services/claim-submission/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://billedright.com/denial-management/</loc>
+    <loc>https://billedright.com/services/denial-management/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://billedright.com/medical-coding/</loc>
+    <loc>https://billedright.com/services/medical-coding/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://billedright.com/payment-posting/</loc>
+    <loc>https://billedright.com/services/payment-posting/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://billedright.com/patient-ar-collections/</loc>
+    <loc>https://billedright.com/services/patient-ar-collections/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://billedright.com/ar-follow-up/</loc>
+    <loc>https://billedright.com/services/ar-follow-up/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://billedright.com/reporting/</loc>
+    <loc>https://billedright.com/services/reporting/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://billedright.com/account-management/</loc>
+    <loc>https://billedright.com/services/account-management/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://billedright.com/authorizations/</loc>
+    <loc>https://billedright.com/services/authorizations/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://billedright.com/contract-renegotiation/</loc>
+    <loc>https://billedright.com/services/contract-renegotiation/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://billedright.com/documentation-management/</loc>
+    <loc>https://billedright.com/services/documentation-management/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -196,12 +196,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://billedright.com/eclinicalworks-billing-services/</loc>
+    <loc>https://billedright.com/services/eclinicalworks-billing-services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://billedright.com/emr-billing-platforms/</loc>
+    <loc>https://billedright.com/services/emr-billing-platforms/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

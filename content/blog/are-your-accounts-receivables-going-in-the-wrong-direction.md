@@ -23,7 +23,7 @@ As for those practices that stated their A/R had increased:
 
 - Lack of office staff to work outstanding balances or large learning curves for new employees.
 - [Some declared that they felt that payers played a role by issuing questionable [medical claim denials](https://billedright.com/medical-billing-denial-management/) and delays in reviewing appeals.
-- [Whereas [prior authorizations](https://billedright.com/authorizations/) were called out as an issue for several of the practices.
+- [Whereas [prior authorizations](https://billedright.com/services/authorizations/) were called out as an issue for several of the practices.
 
 There are a couple of ways you can start collecting on these outstanding balances:
 
