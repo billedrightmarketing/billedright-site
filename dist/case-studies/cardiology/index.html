@@ -1984,7 +1984,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Spacer for fixed nav -->
 <div style="height:60px" aria-hidden="true"></div>
 
-<script src="/assets/js/br-chat-widget.js?v=4"></script>
+<script src="/assets/js/br-chat-widget.js?v=5"></script>
 <script src="/assets/js/br-analytics-events.js?v=1"></script>
 <script>
 if (window.netlifyIdentity) {
@@ -1996,6 +1996,20 @@ if (window.netlifyIdentity) {
     }
   });
 }
+</script>
+<script>
+/* Populates every form's hidden page_url field with the URL of the page
+   it was loaded on. Deferred to DOMContentLoaded — this nav fragment is
+   injected near the top of <body>, before the page's own forms (and
+   before the chat widget builds its own form), so a synchronous script
+   here would run before any of them exist in the DOM. This site is
+   fully static multi-page (no client-side routing), so "page load" and
+   "form render" always happen together — no need to re-populate later. */
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('input[name="page_url"]').forEach(function (el) {
+    el.value = window.location.href;
+  });
+});
 </script>
 
 
@@ -2180,6 +2194,7 @@ if (window.netlifyIdentity) {
         <form name="cardiology-case-study-form" method="POST" data-netlify="true" action="/thank-you/cardiology/">
         <input type="hidden" name="form-name" value="cardiology-case-study-form">
         <input type="hidden" name="bot-field" />
+        <input type="hidden" name="page_url" value="">
         <div class="br-field-row">
           <div class="br-field"><label for="cs-fname">First Name</label><input type="text" id="cs-fname" name="first-name" required autocomplete="given-name"></div>
           <div class="br-field"><label for="cs-lname">Last Name</label><input type="text" id="cs-lname" name="last-name" required autocomplete="family-name"></div>

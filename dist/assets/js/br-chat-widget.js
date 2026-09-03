@@ -326,9 +326,12 @@
       <form name="contact-billing-review-request" method="POST" data-netlify="true" action="/thank-you/contact/">
         <input type="hidden" name="form-name" value="contact-billing-review-request">
         <input type="hidden" name="bot-field" />
-        <div class="br-cf-field"><label for="br-w-name">Full Name</label><input type="text" id="br-w-name" name="name" placeholder="Dr. Jane Okafor" autocomplete="name"></div>
+        <input type="hidden" name="page_url" value="">
+        <div class="br-cf-field"><label for="br-w-fname">First Name</label><input type="text" id="br-w-fname" name="first-name" placeholder="Jane" required autocomplete="given-name"></div>
+        <div class="br-cf-field"><label for="br-w-lname">Last Name</label><input type="text" id="br-w-lname" name="last-name" placeholder="Okafor" required autocomplete="family-name"></div>
         <div class="br-cf-field"><label for="br-w-phone">Phone Number</label><input type="tel" id="br-w-phone" name="phone" placeholder="(407) 000-0000" autocomplete="tel"></div>
-        <div class="br-cf-field"><label for="br-w-email">Work Email</label><input type="email" id="br-w-email" name="email" placeholder="you@yourpractice.com" autocomplete="email"></div>
+        <div class="br-cf-field"><label for="br-w-email">Work Email</label><input type="email" id="br-w-email" name="email" placeholder="you@yourpractice.com" required autocomplete="email"></div>
+        <div class="br-cf-field"><label for="br-w-practice">Practice Name</label><input type="text" id="br-w-practice" name="practice" placeholder="Your practice name" required autocomplete="organization"></div>
         <div class="br-cf-field"><label for="br-w-specialty">Your Specialty</label><select id="br-w-specialty" name="specialty"><option value="">Select specialty</option><option>Internal Medicine</option><option>Cardiology</option><option>Behavioral Health</option><option>Pain Management</option><option>Orthopedics</option><option>Pediatrics</option><option>Ophthalmology</option><option>Urgent Care</option><option>Family Practice</option><option>Neurology</option><option>Nephrology</option><option>Multispecialty</option><option>Other</option></select></div>
         <div class="br-cf-field"><label for="br-w-size">Practice Size</label><select id="br-w-size" name="practice-size"><option value="">Select size</option><option>Solo practitioner</option><option>2&ndash;5 providers</option><option>6&ndash;10 providers</option><option>10+ providers</option></select></div>
         <div class="br-cf-field"><label for="br-w-challenge">What's your biggest billing challenge?</label><textarea id="br-w-challenge" name="challenge" placeholder="Tell us where you're losing revenue..."></textarea></div>

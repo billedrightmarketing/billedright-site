@@ -1953,7 +1953,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Spacer for fixed nav -->
 <div style="height:60px" aria-hidden="true"></div>
 
-<script src="/assets/js/br-chat-widget.js?v=4"></script>
+<script src="/assets/js/br-chat-widget.js?v=5"></script>
 <script src="/assets/js/br-analytics-events.js?v=1"></script>
 <script>
 if (window.netlifyIdentity) {
@@ -1965,6 +1965,20 @@ if (window.netlifyIdentity) {
     }
   });
 }
+</script>
+<script>
+/* Populates every form's hidden page_url field with the URL of the page
+   it was loaded on. Deferred to DOMContentLoaded — this nav fragment is
+   injected near the top of <body>, before the page's own forms (and
+   before the chat widget builds its own form), so a synchronous script
+   here would run before any of them exist in the DOM. This site is
+   fully static multi-page (no client-side routing), so "page load" and
+   "form render" always happen together — no need to re-populate later. */
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('input[name="page_url"]').forEach(function (el) {
+    el.value = window.location.href;
+  });
+});
 </script>
 
 
