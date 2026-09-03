@@ -382,6 +382,9 @@ def body_html_to_markdown(entry_html: str) -> str:
 # Image handling
 # ─────────────────────────────────────────────────────────────────────────
 
+PRODUCTION_HOST = "billedright.com"
+
+
 def save_featured_image(image_url: str, slug: str) -> tuple:
     """Returns (title_image_value, ok). On any failure, falls back to the
     remote URL itself as title_image and reports ok=False so the caller
@@ -396,12 +399,28 @@ def save_featured_image(image_url: str, slug: str) -> tuple:
     IMAGES_DIR.mkdir(parents=True, exist_ok=True)
     dest = IMAGES_DIR / filename
 
-    try:
-        download_image(image_url, dest)
-        return f"/assets/blog/{filename}", True
-    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError) as exc:
-        log_error(f"IMAGE DOWNLOAD FAILED for {slug}: {image_url} — {exc}")
-        return image_url, False
+    # The site's WordPress media library has a mix of stale hostnames baked
+    # into some posts' image URLs — a staging subdomain, a www. variant with
+    # no DNS record, a raw EC2 hostname whose cert doesn't match — left over
+    # from moving between hosting environments. All of them are, or should
+    # be, the same underlying server as production, so if the URL as given
+    # fails, retry once against the real production hostname before falling
+    # back to the (likely broken for site visitors too) original URL.
+    urls_to_try = [image_url]
+    parsed = urlparse(image_url)
+    if parsed.hostname and parsed.hostname != PRODUCTION_HOST:
+        urls_to_try.append(parsed._replace(netloc=PRODUCTION_HOST).geturl())
+
+    last_exc = None
+    for attempt_url in urls_to_try:
+        try:
+            download_image(attempt_url, dest)
+            return f"/assets/blog/{filename}", True
+        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError) as exc:
+            last_exc = exc
+
+    log_error(f"IMAGE DOWNLOAD FAILED for {slug}: {image_url} — {last_exc}")
+    return image_url, False
 
 
 # ─────────────────────────────────────────────────────────────────────────
