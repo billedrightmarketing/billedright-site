@@ -11,7 +11,9 @@ the result to dist/ using a clean-URL folder structure:
     pages/about.html        -> dist/about/index.html
     ...
 
-Also copies assets/, netlify.toml, sitemap.xml, robots.txt, and llms.txt into dist/.
+Also copies assets/, netlify.toml, sitemap.xml, robots.txt, llms.txt, and the
+favicon files (favicon.ico, favicon-32x32.png, favicon-16x16.png,
+apple-touch-icon.png) into dist/.
 
 Blog posts are authored as markdown + frontmatter in content/blog/*.md (this
 is what the Decap CMS admin panel writes to). Each one is rendered against
@@ -497,7 +499,10 @@ def build():
         print("  static/ -> dist/")
 
     # Copy root-level static files needed at the site root.
-    for filename in ("netlify.toml", "sitemap.xml", "robots.txt", "llms.txt"):
+    for filename in (
+        "netlify.toml", "sitemap.xml", "robots.txt", "llms.txt",
+        "favicon.ico", "favicon-32x32.png", "favicon-16x16.png", "apple-touch-icon.png",
+    ):
         src = ROOT / filename
         if src.exists():
             shutil.copy2(src, DIST_DIR / filename)
