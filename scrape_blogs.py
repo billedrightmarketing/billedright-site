@@ -29,8 +29,11 @@ Inline images/figures are dropped — only the one featured image
 per post is kept.
 
 Usage:
-    python3 scrape_blogs.py
+    python3 scrape_blogs.py            # skips any URL already in content/blog/
+    python3 scrape_blogs.py --force    # re-scrapes and overwrites every URL,
+                                        # even ones already saved
 """
+import argparse
 import html
 import re
 import time
@@ -452,6 +455,16 @@ def scrape_one(url: str) -> str:
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--force", action="store_true",
+        help="Re-scrape and overwrite posts already saved to content/blog/, "
+             "instead of skipping them. Use this to pick up new markdown/build.py "
+             "fixes on already-imported posts — but note it will discard any "
+             "hand edits (e.g. an SEO rewrite) made to that post's .md file since.",
+    )
+    args = parser.parse_args()
+
     if ERROR_LOG.exists():
         ERROR_LOG.unlink()
 
@@ -460,10 +473,19 @@ def main():
     print(f"Found {total} URL(s) in {URLS_FILE.name}\n")
 
     succeeded = 0
+    skipped = 0
     failed = 0
 
     for i, url in enumerate(urls, start=1):
         print(f"[{i}/{total}] {url}")
+
+        slug = slug_from_url(url)
+        existing = CONTENT_BLOG_DIR / f"{slug}.md"
+        if existing.exists() and not args.force:
+            print(f"    -> SKIPPED: {existing.relative_to(ROOT)} already exists (use --force to re-scrape)")
+            skipped += 1
+            continue
+
         try:
             result = scrape_one(url)
             print(f"    -> OK: {result}")
@@ -476,7 +498,7 @@ def main():
         if i < total:
             time.sleep(REQUEST_DELAY_SECONDS)
 
-    print(f"\nDone. {succeeded} succeeded, {failed} failed.")
+    print(f"\nDone. {succeeded} succeeded, {skipped} skipped, {failed} failed.")
     if failed:
         print(f"See {ERROR_LOG.name} for details on failed URLs.")
 
