@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: assets/images/blog
-public_folder: /assets/images/blog
+media_folder: assets/blog
+public_folder: /assets/blog
 
 collections:
   - name: blog
@@ -17,13 +17,8 @@ collections:
       - { label: Publish Date, name: date, widget: datetime }
       - label: Category
         name: category
-        widget: select
-        options:
-          - Denial Management
-          - Coding & Compliance
-          - Revenue Cycle
-          - Specialty Billing
-          - Credentialing
+        widget: string
+        hint: "Use the category exactly as it appears on the old site (e.g. Healthcare Billing, Healthcare Workflow Optimization, Medical Practice Management)."
       - { label: Meta Description, name: meta_description, widget: text, hint: Keep under 160 characters }
       - label: Title Image
         name: title_image
