@@ -334,7 +334,7 @@
         <div class="br-cf-field"><label for="br-w-practice">Practice Name</label><input type="text" id="br-w-practice" name="practice" placeholder="Your practice name" required autocomplete="organization"></div>
         <div class="br-cf-field"><label for="br-w-specialty">Your Specialty</label><select id="br-w-specialty" name="specialty"><option value="">Select specialty</option><option>Internal Medicine</option><option>Cardiology</option><option>Behavioral Health</option><option>Pain Management</option><option>Orthopedics</option><option>Pediatrics</option><option>Ophthalmology</option><option>Urgent Care</option><option>Family Practice</option><option>Neurology</option><option>Nephrology</option><option>Multispecialty</option><option>Other</option></select></div>
         <div class="br-cf-field"><label for="br-w-size">Practice Size</label><select id="br-w-size" name="practice-size"><option value="">Select size</option><option>Solo practitioner</option><option>2&ndash;5 providers</option><option>6&ndash;10 providers</option><option>10+ providers</option></select></div>
-        <div class="br-cf-field"><label for="br-w-challenge">What's your biggest billing challenge?</label><textarea id="br-w-challenge" name="challenge" placeholder="Tell us where you're losing revenue..."></textarea></div>
+        <div class="br-cf-field"><label for="br-w-message">What's your biggest billing challenge?</label><textarea id="br-w-message" name="message" placeholder="Tell us where you're losing revenue..."></textarea></div>
         <button type="submit" aria-label="Submit billing review request">
           Get My Free Billing Review
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>

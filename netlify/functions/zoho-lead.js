@@ -193,8 +193,15 @@ function deriveContact(fields) {
 
 function buildLeadPayload(fields, contact) {
   const descriptionParts = [];
-  const message = fields.message || fields["how-can-we-help"] || fields.challenge;
-  if (message) descriptionParts.push(message);
+  // "message" is the chat widget's field specifically (see
+  // assets/js/br-chat-widget.js) — its text goes to its own Zoho field
+  // rather than Description. "challenge" (pages/contact.html) and
+  // "how-can-we-help" (the 4 case-study forms) are unchanged: still
+  // folded into Description, as they were before this pass. Only the
+  // chat widget uses the "message" field name, so this check doesn't
+  // affect any other form.
+  const otherFreeTextMessage = fields["how-can-we-help"] || fields.challenge;
+  if (otherFreeTextMessage) descriptionParts.push(otherFreeTextMessage);
 
   const lead = {
     Last_Name: contact.lastName,
@@ -210,6 +217,7 @@ function buildLeadPayload(fields, contact) {
   if (contact.firstName) lead.First_Name = contact.firstName;
   if (fields.email) lead.Email = fields.email;
   if (fields.phone) lead.Phone = fields.phone;
+  if (fields.message) lead.Message_From_Lead_Website_Form = fields.message;
 
   if (fields.specialty) {
     lead.Specialty_Multi_Select = [mapSpecialty(fields.specialty)];
