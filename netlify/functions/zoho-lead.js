@@ -111,43 +111,54 @@ async function getAccessToken({ clientId, clientSecret, refreshToken, dc }) {
   return data.access_token;
 }
 
-// Looks up whether the Leads module has a custom field for "specialty" so
-// we can set it directly instead of folding it into Description. Cached
-// per warm function instance (module-level) since it can't change
-// mid-invocation and there's no need to re-fetch it on every request.
-// Falls back to null (meaning: use Description) on any failure — a
-// broken metadata lookup should never block lead creation.
-let cachedSpecialtyFieldApiName;
+// Specialty_Multi_Select is a Multi Select picklist field on the Leads
+// module — Zoho requires it be sent as an array of exact, case-sensitive
+// picklist values, never a plain string.
+//
+// Maps every specialty value the site's forms currently send (contact
+// form, chat widget, the 14 service-page forms, the 13 specialty-page
+// hidden fields, and the 4 case-study forms) to the exact Zoho picklist
+// value. Three site values have no clean match and are pinned to "Other"
+// on purpose rather than guessed — see the report for this pass:
+//   "Family Practice" -> Zoho only has "Family Medicine" (different string)
+//   "Multispecialty"  -> Zoho only has "Multi-specialty" (hyphenated)
+//   "Vascular Surgery" -> no matching or close Zoho option exists at all
+const SPECIALTY_MAP = {
+  "Allergy": "Allergy",
+  "Behavioral Health": "Behavioral Health",
+  "Cardiology": "Cardiology",
+  "Family Practice": "Other", // no exact match — see comment above
+  "Gastroenterology": "Gastroenterology",
+  "Internal Medicine": "Internal Medicine",
+  "Multispecialty": "Other", // no exact match — see comment above
+  "Nephrology": "Nephrology",
+  "Neurology": "Neurology",
+  "Ophthalmology": "Ophthalmology",
+  "Orthopedics": "Orthopedics",
+  "Other": "Other",
+  "Pain Management": "Pain Management",
+  "Pediatrics": "Pediatrics",
+  "Primary Care": "Primary Care",
+  "Psychiatry": "Psychiatry",
+  "Pulmonary": "Pulmonary",
+  "Rheumatology": "Rheumatology",
+  "Urgent Care": "Urgent Care",
+  "Vascular Surgery": "Other", // no matching Zoho option — see comment above
+};
 
-async function findSpecialtyFieldApiName(accessToken, dc) {
-  if (cachedSpecialtyFieldApiName !== undefined) {
-    return cachedSpecialtyFieldApiName;
+// Maps a site specialty value to the exact Zoho picklist value. Anything
+// not in SPECIALTY_MAP (a value none of today's forms send, or a typo/
+// future addition) is logged server-side and defaulted to "Other" rather
+// than sent as-is, since Zoho would reject an unrecognized picklist value
+// outright.
+function mapSpecialty(value) {
+  if (Object.prototype.hasOwnProperty.call(SPECIALTY_MAP, value)) {
+    return SPECIALTY_MAP[value];
   }
-  try {
-    const res = await fetch(
-      `https://www.zohoapis.${dc}/crm/v3/settings/fields?module=Leads`,
-      { headers: { Authorization: `Zoho-oauthtoken ${accessToken}` } }
-    );
-    if (!res.ok) {
-      cachedSpecialtyFieldApiName = null;
-      return null;
-    }
-    const data = await res.json();
-    const fields = (data && data.fields) || [];
-    const match = fields.find((f) => {
-      const label = (f.field_label || "").toLowerCase();
-      const apiName = (f.api_name || "").toLowerCase();
-      return label === "specialty" || apiName === "specialty";
-    });
-    cachedSpecialtyFieldApiName = match ? match.api_name : null;
-  } catch (err) {
-    console.error(
-      "zoho-lead: field metadata lookup failed, falling back to Description:",
-      err
-    );
-    cachedSpecialtyFieldApiName = null;
-  }
-  return cachedSpecialtyFieldApiName;
+  console.warn(
+    `zoho-lead: unrecognized specialty value "${value}" — defaulting to "Other"`
+  );
+  return "Other";
 }
 
 // Maps the site's form field names to a Zoho Lead record.
@@ -156,7 +167,11 @@ async function findSpecialtyFieldApiName(accessToken, dc) {
 // "company" — they collect "practice" (e.g. pages/contact.html, every
 // service/specialty form). Mapped both, preferring an explicit "company"
 // if a future form ever sends one, falling back to "practice".
-function buildLeadPayload(fields, specialtyFieldApiName) {
+//
+// Deliberately has NO fallback defaults (no "Not Provided") — the
+// handler validates these are all present before ever reaching Zoho, so
+// silently substituting a placeholder here would defeat that check.
+function deriveContact(fields) {
   let firstName = (fields["first-name"] || "").trim();
   let lastName = (fields["last-name"] || "").trim();
 
@@ -170,29 +185,34 @@ function buildLeadPayload(fields, specialtyFieldApiName) {
       lastName = rawName.slice(spaceIdx + 1).trim();
     }
   }
-  if (!lastName) {
-    lastName = firstName || "Not Provided"; // Zoho requires Last_Name
-  }
 
+  const company = (fields.company || fields.practice || "").trim();
+
+  return { firstName, lastName, company };
+}
+
+function buildLeadPayload(fields, contact) {
   const descriptionParts = [];
   const message = fields.message || fields["how-can-we-help"] || fields.challenge;
   if (message) descriptionParts.push(message);
 
   const lead = {
-    Last_Name: lastName,
-    Company: fields.company || fields.practice || "Not Provided",
-    Lead_Source: "Website Form",
+    Last_Name: contact.lastName,
+    Company: contact.company,
+    Lead_Source: "Website Inquiry",
+    // Read from a page_url field in the payload rather than the Referer
+    // header, which can be stripped by the browser or a proxy and isn't
+    // reliable. parseIncomingFields/the handler already warns server-side
+    // if it's missing; an empty string here is the documented fallback,
+    // not a silent failure.
+    Lead_Source_Details: fields.page_url || "",
   };
-  if (firstName) lead.First_Name = firstName;
+  if (contact.firstName) lead.First_Name = contact.firstName;
   if (fields.email) lead.Email = fields.email;
   if (fields.phone) lead.Phone = fields.phone;
 
   if (fields.specialty) {
-    if (specialtyFieldApiName) {
-      lead[specialtyFieldApiName] = fields.specialty;
-    } else {
-      descriptionParts.push(`Specialty: ${fields.specialty}`);
-    }
+    lead.Specialty_Multi_Select = [mapSpecialty(fields.specialty)];
   }
   if (fields.form_source) {
     descriptionParts.push(`Source Page: ${fields.form_source}`);
@@ -280,6 +300,30 @@ exports.handler = async (event) => {
     };
   }
 
+  // Fail fast with a clear message instead of letting Zoho reject the
+  // lead with an opaque error — Last_Name is a hard Zoho requirement,
+  // and First_Name/Company are required by this pass's spec.
+  const contact = deriveContact(fields);
+  const missing = [];
+  if (!contact.firstName) missing.push("first name");
+  if (!contact.lastName) missing.push("last name");
+  if (!contact.company) missing.push("company/practice name");
+  if (missing.length) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        success: false,
+        error: `Please provide your ${missing.join(", ")}.`,
+      }),
+    };
+  }
+
+  if (!fields.page_url) {
+    console.warn(
+      "zoho-lead: request had no page_url field — Lead_Source_Details will be empty"
+    );
+  }
+
   let accessToken;
   try {
     accessToken = await getAccessToken({
@@ -299,10 +343,7 @@ exports.handler = async (event) => {
     };
   }
 
-  const specialtyFieldApiName = fields.specialty
-    ? await findSpecialtyFieldApiName(accessToken, ZOHO_DC)
-    : null;
-  const leadRecord = buildLeadPayload(fields, specialtyFieldApiName);
+  const leadRecord = buildLeadPayload(fields, contact);
 
   try {
     await createZohoLead(accessToken, ZOHO_DC, leadRecord);
