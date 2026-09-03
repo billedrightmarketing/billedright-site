@@ -155,7 +155,9 @@ def render_inline_markdown(text: str) -> str:
 
 def markdown_to_html(md: str) -> str:
     """Convert the subset of markdown the blog post template supports:
-    H2/H3 headings, paragraphs, bullet lists, bold text, and links."""
+    H2/H3 headings, paragraphs, bullet lists, bold text, links, and
+    simple GitHub-style pipe tables (| cell | cell |, with a |---|---|
+    separator row right under the header)."""
     lines = md.replace("\r\n", "\n").split("\n")
     out = []
     in_list = False
@@ -172,28 +174,63 @@ def markdown_to_html(md: str) -> str:
             out.append("</ul>")
             in_list = False
 
-    for line in lines:
-        stripped = line.strip()
+    def is_table_row(s: str) -> bool:
+        return len(s) > 1 and s.startswith("|") and s.endswith("|")
+
+    def is_separator_row(s: str) -> bool:
+        cells = [c.strip() for c in s.strip("|").split("|")]
+        return bool(cells) and all(re.fullmatch(r":?-{3,}:?", c) for c in cells)
+
+    def split_row(s: str) -> list:
+        return [c.strip() for c in s.strip("|").split("|")]
+
+    i = 0
+    n = len(lines)
+    while i < n:
+        stripped = lines[i].strip()
         if not stripped:
             flush_para()
             close_list()
+            i += 1
         elif stripped.startswith("### "):
             flush_para()
             close_list()
             out.append("<h3>" + render_inline_markdown(stripped[4:].strip()) + "</h3>")
+            i += 1
         elif stripped.startswith("## "):
             flush_para()
             close_list()
             out.append("<h2>" + render_inline_markdown(stripped[3:].strip()) + "</h2>")
+            i += 1
         elif stripped.startswith("- "):
             flush_para()
             if not in_list:
                 out.append("<ul>")
                 in_list = True
             out.append("<li>" + render_inline_markdown(stripped[2:].strip()) + "</li>")
+            i += 1
+        elif is_table_row(stripped) and i + 1 < n and is_separator_row(lines[i + 1].strip()):
+            flush_para()
+            close_list()
+            header = split_row(stripped)
+            ncols = len(header)
+            i += 2  # skip the header row and the |---|---| separator row
+            body_rows = []
+            while i < n and is_table_row(lines[i].strip()):
+                body_rows.append(split_row(lines[i].strip()))
+                i += 1
+            table = ['<div class="br-table-wrap"><table><thead><tr>']
+            table += [f"<th>{render_inline_markdown(c)}</th>" for c in header]
+            table.append("</tr></thead><tbody>")
+            for row in body_rows:
+                padded = (row + [""] * ncols)[:ncols]
+                table.append("<tr>" + "".join(f"<td>{render_inline_markdown(c)}</td>" for c in padded) + "</tr>")
+            table.append("</tbody></table></div>")
+            out.append("".join(table))
         else:
             close_list()
             para.append(stripped)
+            i += 1
 
     flush_para()
     close_list()

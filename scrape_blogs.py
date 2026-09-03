@@ -23,10 +23,9 @@ theme markup, confirmed by inspecting a live post before writing this:
 
 The body HTML is converted to the markdown subset build.py's
 markdown_to_html() actually supports: H2/H3 headings, paragraphs, bullet
-lists, bold text, and links. WordPress tables get flattened into a bullet
-per row ("**Column:** value — **Column:** value") since the site has no
-table renderer. Nested lists are flattened to a single level for the same
-reason. Inline images/figures are dropped — only the one featured image
+lists, bold text, links, and simple pipe tables. Nested lists are
+flattened to a single level since the site has no nested-list renderer.
+Inline images/figures are dropped — only the one featured image
 per post is kept.
 
 Usage:
@@ -324,18 +323,29 @@ class EntryContentToMarkdown(HTMLParser):
             self.table_rows = []
 
     def _emit_table(self):
+        """Emit a real GitHub-style pipe table (build.py's markdown_to_html
+        parses these back into an actual <table>) instead of flattening
+        rows into bullets — WP posts use tables for genuine tabular data
+        (comparisons, benchmarks) that reads poorly as a bullet list."""
         if len(self.table_rows) < 2:
             return
         header, body_rows = self.table_rows[0], self.table_rows[1:]
-        for row in body_rows:
-            parts = []
-            for i, cell in enumerate(row):
-                if not cell:
-                    continue
-                label = header[i] if i < len(header) else ""
-                parts.append(f"**{label}:** {cell}" if label else cell)
-            if parts:
-                self.lines.append("- " + " — ".join(parts))
+        ncols = len(header)
+
+        def cell_text(value: str) -> str:
+            # A literal "|" would be misread as a column boundary by
+            # build.py's parser; real WP table cells are short phrases,
+            # so swapping it for a dash is a safe, simple trade-off
+            # rather than teaching both sides pipe-escaping.
+            return (value or "").replace("|", "-").strip()
+
+        def row_line(cells: list) -> str:
+            padded = cells + [""] * (ncols - len(cells))
+            return "| " + " | ".join(cell_text(c) for c in padded[:ncols]) + " |"
+
+        table_lines = [row_line(header), "| " + " | ".join(["---"] * ncols) + " |"]
+        table_lines += [row_line(row) for row in body_rows]
+        self.lines.append("\n".join(table_lines))
 
     def handle_data(self, data):
         if not self.skip_depth:

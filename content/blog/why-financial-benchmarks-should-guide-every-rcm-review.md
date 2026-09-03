@@ -21,10 +21,12 @@ The significance of financial benchmarks lies in their ability to drive performa
 
 The following table illustrates common financial benchmarks used in RCM:
 
-- **Benchmark Metric:** Days in Accounts Receivable (AR) — **Definition:** The average number of days it takes to collect payment after a service is billed.
-- **Benchmark Metric:** Net Collection Rate — **Definition:** The percentage of total patient service revenue that is collected, indicating efficiency in revenue collection.
-- **Benchmark Metric:** Denial Rate — **Definition:** The percentage of claims denied by payers, reflecting the effectiveness of coding and billing processes.
-- **Benchmark Metric:** Cost to Collect — **Definition:** The total cost incurred to collect accounts receivable, providing insights into operational efficiency.
+| Benchmark Metric | Definition |
+| --- | --- |
+| Days in Accounts Receivable (AR) | The average number of days it takes to collect payment after a service is billed. |
+| Net Collection Rate | The percentage of total patient service revenue that is collected, indicating efficiency in revenue collection. |
+| Denial Rate | The percentage of claims denied by payers, reflecting the effectiveness of coding and billing processes. |
+| Cost to Collect | The total cost incurred to collect accounts receivable, providing insights into operational efficiency. |
 
 ### How Financial Benchmarks Influence RCM Reviews
 
@@ -52,9 +54,11 @@ Key steps in setting financial benchmarks include:
 
 To provide clarity, here’s a sample table that illustrates how different financial metrics can be benchmarked:
 
-- **Financial Metric:** Days in Accounts Receivable — **Historical Performance:** 45 days — **Industry Average:** 30 days — **Proposed Benchmark:** 35 days
-- **Financial Metric:** Net Revenue per Patient — **Historical Performance:** $150 — **Industry Average:** $180 — **Proposed Benchmark:** $160
-- **Financial Metric:** Claim Denial Rate — **Historical Performance:** 5% — **Industry Average:** 3% — **Proposed Benchmark:** 4%
+| Financial Metric | Historical Performance | Industry Average | Proposed Benchmark |
+| --- | --- | --- | --- |
+| Days in Accounts Receivable | 45 days | 30 days | 35 days |
+| Net Revenue per Patient | $150 | $180 | $160 |
+| Claim Denial Rate | 5% | 3% | 4% |
 
 These benchmarks assist in guiding the RCM review process and determining areas needing attention or improvement.
 
@@ -68,8 +72,10 @@ After establishing financial benchmarks, the next step involves analyzing actual
 
 Here’s an illustrative table representing potential performance analysis:
 
-- **Financial Metric:** Days in Accounts Receivable — **Proposed Benchmark:** 35 days — **Actual Performance:** 42 days — **Variance:** +7 days — **Action Required:** Review billing processes
-- **Financial Metric:** Net Revenue per Patient — **Proposed Benchmark:** $160 — **Actual Performance:** $145 — **Variance:** -$15 — **Action Required:** Analyze service pricing
-- **Financial Metric:** Claim Denial Rate — **Proposed Benchmark:** 4% — **Actual Performance:** 6% — **Variance:** +2% — **Action Required:** Investigate denial reasons
+| Financial Metric | Proposed Benchmark | Actual Performance | Variance | Action Required |
+| --- | --- | --- | --- | --- |
+| Days in Accounts Receivable | 35 days | 42 days | +7 days | Review billing processes |
+| Net Revenue per Patient | $160 | $145 | -$15 | Analyze service pricing |
+| Claim Denial Rate | 4% | 6% | +2% | Investigate denial reasons |
 
 This type of analysis is essential for informing strategy adjustments and ensuring that financial targets are met. By understanding the role of financial benchmarks in RCM reviews, healthcare professionals can optimize their revenue cycle management practices effectively.

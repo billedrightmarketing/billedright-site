@@ -414,6 +414,13 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 .br-post-body strong { color: var(--navy-dark); font-weight: 700; }
 .br-post-body a { color: var(--brand); font-weight: 600; border-bottom: 1px solid rgba(186,32,37,.3); transition: border-color .15s; }
 .br-post-body a:hover { border-color: var(--brand); }
+.br-post-body .br-table-wrap { overflow-x: auto; margin: 0 0 24px; border: 1px solid var(--border); border-radius: var(--r-md); }
+.br-post-body table { width: 100%; border-collapse: collapse; min-width: 480px; }
+.br-post-body th, .br-post-body td { padding: 12px 16px; text-align: left; font-size: 14.5px; line-height: 1.5; border-bottom: 1px solid var(--border); }
+.br-post-body thead th { background: var(--navy); color: #fff; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; white-space: nowrap; }
+.br-post-body tbody tr:last-child td { border-bottom: none; }
+.br-post-body tbody tr:nth-child(even) { background: var(--bg-lighter); }
+.br-post-body td strong { color: var(--navy); }
 
 /* Sidebar */
 .br-post-sidebar { position: sticky; top: 84px; display: flex; flex-direction: column; gap: 20px; }
