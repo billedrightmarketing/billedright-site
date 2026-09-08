@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /signature/
 
 Sitemap: https://billedright.com/sitemap.xml
