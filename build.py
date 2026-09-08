@@ -498,6 +498,16 @@ def build():
         )
         print("  static/ -> dist/")
 
+    # Copy signature/ (email signature assets, e.g. the 20 years GIF) so
+    # they're reachable at /signature/... rather than nested under /assets/.
+    if (ROOT / "signature").exists():
+        shutil.copytree(
+            ROOT / "signature",
+            DIST_DIR / "signature",
+            ignore=shutil.ignore_patterns(".DS_Store"),
+        )
+        print("  signature/ -> dist/signature/")
+
     # Copy root-level static files needed at the site root.
     for filename in (
         "netlify.toml", "sitemap.xml", "robots.txt", "llms.txt",
