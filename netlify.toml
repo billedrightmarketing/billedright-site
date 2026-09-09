@@ -200,6 +200,15 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# /signature/images/* are static email-signature assets (logos, social
+# icons, badges) that never change once published — cache them long-term
+# regardless of file type (this also covers the .gif, which /*.png above
+# does not).
+[[headers]]
+  for = "/signature/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 [[headers]]
   for = "/*.jpg"
   [headers.values]
