@@ -42,17 +42,30 @@
   }
   .employee-row:last-child { border-bottom: none; }
   .employee-name { font-size: 14.5px; font-weight: 600; color: #1a2535; }
-  .download-btn {
+  .row-actions { display: flex; gap: 8px; flex-shrink: 0; }
+  .open-btn, .copy-btn {
     display: inline-block;
-    background: #31425e;
-    color: #ffffff !important;
-    text-decoration: none;
     font-size: 13px; font-weight: 600;
     padding: 8px 16px;
     border-radius: 6px;
     white-space: nowrap;
+    border: 1px solid #31425e;
+    cursor: pointer;
+    font-family: inherit;
   }
-  .download-btn:hover { background: #243348; }
+  .open-btn {
+    background: #ffffff;
+    color: #31425e !important;
+    text-decoration: none;
+  }
+  .open-btn:hover { background: #eef2f7; }
+  .copy-btn {
+    background: #31425e;
+    color: #ffffff;
+  }
+  .copy-btn:hover { background: #243348; }
+  .copy-btn.copied { background: #1f8a4c; border-color: #1f8a4c; }
+  .copy-btn.copy-failed { background: #b3261e; border-color: #b3261e; }
   .footer-note {
     text-align: center; font-size: 11.5px; color: #94a3b8;
     margin-top: 20px;
@@ -69,65 +82,104 @@
   <div class="card">
     <h1>Email Signatures</h1>
     <div class="instructions">
-      Find your name below and click Download. Then, in Outlook:
+      Find your name below and click <strong>Copy</strong>. Then, in Outlook:
       <ol>
-        <li>Open the downloaded file and select all (Ctrl+A), then copy (Ctrl+C).</li>
         <li>Go to File &rarr; Options &rarr; Mail &rarr; Signatures.</li>
-        <li>Create a new signature, paste the copied content, then click OK.</li>
-        <li>Set it as your default signature for new messages and replies.</li>
+        <li>Click New, give it a name, then click OK.</li>
+        <li>Click inside the signature editor box and paste (Ctrl+V).</li>
+        <li>Set it as your default signature for new messages and replies, then click OK.</li>
       </ol>
+      Not working? Click <strong>Open</strong> instead, select all in the page (Ctrl+A), copy (Ctrl+C), then paste into the signature editor.
     </div>
 
     <ul class="employee-list">
-      <li class="employee-row"><span class="employee-name">Amber Thompson</span><a class="download-btn" href="Amber20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Arunsathyan</span><a class="download-btn" href="Arunsathyan20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Dave Patel</span><a class="download-btn" href="Dave20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">David Torres</span><a class="download-btn" href="David20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Dilip</span><a class="download-btn" href="Dilip20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Ericka Gutierrez</span><a class="download-btn" href="ErickaG20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Gana</span><a class="download-btn" href="GanaM20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">George Nina</span><a class="download-btn" href="George20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Gokul Vasan Thirunavukkarasu</span><a class="download-btn" href="Gokul20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Henry Samuel</span><a class="download-btn" href="HenrySamuel20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Index (Common)</span><a class="download-btn" href="Index-20years.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Index (IT)</span><a class="download-btn" href="index-it20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Jeffrey Shaw</span><a class="download-btn" href="Jeffrey20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Kalyan Anant</span><a class="download-btn" href="Kalyan20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Krishnaprabhu</span><a class="download-btn" href="KrishnaP20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Lisa Shostack</span><a class="download-btn" href="Lisa20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Maria Grosswiller</span><a class="download-btn" href="Maria20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Mariana Malak</span><a class="download-btn" href="Mariana20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Maryan Hennen</span><a class="download-btn" href="MaryanHennen20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Mayelin Rodriguez</span><a class="download-btn" href="Mayelin20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Milushka</span><a class="download-btn" href="Milushka20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Naresh</span><a class="download-btn" href="Naresh20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Nausheen</span><a class="download-btn" href="Nausheen20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Nikhil Patel</span><a class="download-btn" href="Nikhil20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Parthiban Murugesan</span><a class="download-btn" href="Parthiban20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Prasath Manivel</span><a class="download-btn" href="Prasath20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Preethalakshmi</span><a class="download-btn" href="PreethaLakshmi20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Puru</span><a class="download-btn" href="Puru20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Rajasekar</span><a class="download-btn" href="RajasekarR20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Ramesh</span><a class="download-btn" href="RameshSha20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Raul Neyra</span><a class="download-btn" href="RaulNeyra20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Raul Neyra Jr.</span><a class="download-btn" href="RaulJr20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">RK</span><a class="download-btn" href="RK20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Sankar</span><a class="download-btn" href="SankarJ20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Sathiya Rathinam</span><a class="download-btn" href="Sathiya20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Saurin Patel</span><a class="download-btn" href="Saurin20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Selvakumar Sankaran</span><a class="download-btn" href="Selva20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Shandhiya</span><a class="download-btn" href="Shandhiya20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Shanil</span><a class="download-btn" href="Shanil20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Sukumaran</span><a class="download-btn" href="Sukumar20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Suresh Kumar</span><a class="download-btn" href="SureshJ20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Tamizhvanan</span><a class="download-btn" href="Tamizh20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">Teri Soehnlen</span><a class="download-btn" href="Teri20.html" download>Download</a></li>
-      <li class="employee-row"><span class="employee-name">TG Suresh</span><a class="download-btn" href="TGSuresh20.html" download>Download</a></li>
+      <li class="employee-row"><span class="employee-name">Amber Thompson</span><span class="row-actions"><a class="open-btn" href="Amber20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Amber20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Arunsathyan</span><span class="row-actions"><a class="open-btn" href="Arunsathyan20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Arunsathyan20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Dave Patel</span><span class="row-actions"><a class="open-btn" href="Dave20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Dave20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">David Torres</span><span class="row-actions"><a class="open-btn" href="David20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('David20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Dilip</span><span class="row-actions"><a class="open-btn" href="Dilip20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Dilip20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Ericka Gutierrez</span><span class="row-actions"><a class="open-btn" href="ErickaG20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('ErickaG20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Gana</span><span class="row-actions"><a class="open-btn" href="GanaM20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('GanaM20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">George Nina</span><span class="row-actions"><a class="open-btn" href="George20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('George20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Gokul Vasan Thirunavukkarasu</span><span class="row-actions"><a class="open-btn" href="Gokul20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Gokul20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Henry Samuel</span><span class="row-actions"><a class="open-btn" href="HenrySamuel20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('HenrySamuel20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Index (Common)</span><span class="row-actions"><a class="open-btn" href="Index-20years.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Index-20years.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Index (IT)</span><span class="row-actions"><a class="open-btn" href="index-it20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('index-it20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Jeffrey Shaw</span><span class="row-actions"><a class="open-btn" href="Jeffrey20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Jeffrey20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Kalyan Anant</span><span class="row-actions"><a class="open-btn" href="Kalyan20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Kalyan20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Krishnaprabhu</span><span class="row-actions"><a class="open-btn" href="KrishnaP20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('KrishnaP20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Lisa Shostack</span><span class="row-actions"><a class="open-btn" href="Lisa20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Lisa20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Maria Grosswiller</span><span class="row-actions"><a class="open-btn" href="Maria20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Maria20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Mariana Malak</span><span class="row-actions"><a class="open-btn" href="Mariana20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Mariana20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Maryan Hennen</span><span class="row-actions"><a class="open-btn" href="MaryanHennen20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('MaryanHennen20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Mayelin Rodriguez</span><span class="row-actions"><a class="open-btn" href="Mayelin20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Mayelin20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Milushka</span><span class="row-actions"><a class="open-btn" href="Milushka20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Milushka20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Naresh</span><span class="row-actions"><a class="open-btn" href="Naresh20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Naresh20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Nausheen</span><span class="row-actions"><a class="open-btn" href="Nausheen20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Nausheen20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Nikhil Patel</span><span class="row-actions"><a class="open-btn" href="Nikhil20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Nikhil20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Parthiban Murugesan</span><span class="row-actions"><a class="open-btn" href="Parthiban20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Parthiban20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Prasath Manivel</span><span class="row-actions"><a class="open-btn" href="Prasath20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Prasath20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Preethalakshmi</span><span class="row-actions"><a class="open-btn" href="PreethaLakshmi20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('PreethaLakshmi20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Puru</span><span class="row-actions"><a class="open-btn" href="Puru20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Puru20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Rajasekar</span><span class="row-actions"><a class="open-btn" href="RajasekarR20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('RajasekarR20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Ramesh</span><span class="row-actions"><a class="open-btn" href="RameshSha20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('RameshSha20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Raul Neyra</span><span class="row-actions"><a class="open-btn" href="RaulNeyra20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('RaulNeyra20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Raul Neyra Jr.</span><span class="row-actions"><a class="open-btn" href="RaulJr20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('RaulJr20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">RK</span><span class="row-actions"><a class="open-btn" href="RK20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('RK20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Sankar</span><span class="row-actions"><a class="open-btn" href="SankarJ20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('SankarJ20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Sathiya Rathinam</span><span class="row-actions"><a class="open-btn" href="Sathiya20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Sathiya20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Saurin Patel</span><span class="row-actions"><a class="open-btn" href="Saurin20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Saurin20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Selvakumar Sankaran</span><span class="row-actions"><a class="open-btn" href="Selva20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Selva20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Shandhiya</span><span class="row-actions"><a class="open-btn" href="Shandhiya20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Shandhiya20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Shanil</span><span class="row-actions"><a class="open-btn" href="Shanil20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Shanil20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Sukumaran</span><span class="row-actions"><a class="open-btn" href="Sukumar20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Sukumar20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Suresh Kumar</span><span class="row-actions"><a class="open-btn" href="SureshJ20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('SureshJ20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Tamizhvanan</span><span class="row-actions"><a class="open-btn" href="Tamizh20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Tamizh20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">Teri Soehnlen</span><span class="row-actions"><a class="open-btn" href="Teri20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('Teri20.html', this)">Copy</button></span></li>
+      <li class="employee-row"><span class="employee-name">TG Suresh</span><span class="row-actions"><a class="open-btn" href="TGSuresh20.html" target="_blank" rel="noopener">Open</a><button type="button" class="copy-btn" onclick="copySignature('TGSuresh20.html', this)">Copy</button></span></li>
     </ul>
   </div>
 
   <div class="footer-note">Billed Right — internal use only</div>
 
 </div>
+
+<script>
+  async function copySignature(url, btn) {
+    const original = btn.textContent;
+    try {
+      const res = await fetch(url);
+      const html = await res.text();
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const bodyHtml = doc.body.innerHTML;
+      const bodyText = doc.body.innerText;
+
+      if (window.ClipboardItem) {
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            'text/html': new Blob([bodyHtml], { type: 'text/html' }),
+            'text/plain': new Blob([bodyText], { type: 'text/plain' })
+          })
+        ]);
+      } else {
+        await navigator.clipboard.writeText(bodyText);
+      }
+
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove('copied');
+      }, 1800);
+    } catch (err) {
+      btn.textContent = 'Use Open →';
+      btn.classList.add('copy-failed');
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove('copy-failed');
+      }, 2500);
+    }
+  }
+</script>
 </body>
 </html>
