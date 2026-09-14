@@ -317,8 +317,8 @@
     <div class="br-chat-header">
       <div class="br-chat-header-avatar">✉️</div>
       <div class="br-chat-header-info">
-        <div class="br-chat-header-name">Get My Free Billing Review</div>
-        <div class="br-chat-header-status"><span>An account manager responds within one business day.</span></div>
+        <div class="br-chat-header-name">Talk to a Solution Specialist</div>
+        <div class="br-chat-header-status"><span>A solution specialist responds within one business day.</span></div>
       </div>
       <button class="br-chat-close" id="br-contact-close-btn" aria-label="Close contact form">&times;</button>
     </div>
@@ -327,16 +327,13 @@
         <input type="hidden" name="form-name" value="contact-billing-review-request">
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="page_url" value="">
-        <div class="br-cf-field"><label for="br-w-fname">First Name</label><input type="text" id="br-w-fname" name="first-name" placeholder="Jane" required autocomplete="given-name"></div>
-        <div class="br-cf-field"><label for="br-w-lname">Last Name</label><input type="text" id="br-w-lname" name="last-name" placeholder="Okafor" required autocomplete="family-name"></div>
+        <div class="br-cf-field"><label for="br-w-name">Name</label><input type="text" id="br-w-name" name="name" required autocomplete="name"></div>
         <div class="br-cf-field"><label for="br-w-phone">Phone Number</label><input type="tel" id="br-w-phone" name="phone" placeholder="(407) 000-0000" autocomplete="tel"></div>
-        <div class="br-cf-field"><label for="br-w-email">Work Email</label><input type="email" id="br-w-email" name="email" placeholder="you@yourpractice.com" required autocomplete="email"></div>
+        <div class="br-cf-field"><label for="br-w-email">Work Email</label><input type="email" id="br-w-email" name="email" placeholder="you@yourpractice.com" autocomplete="email"></div>
         <div class="br-cf-field"><label for="br-w-practice">Practice Name</label><input type="text" id="br-w-practice" name="practice" placeholder="Your practice name" required autocomplete="organization"></div>
-        <div class="br-cf-field"><label for="br-w-specialty">Your Specialty</label><select id="br-w-specialty" name="specialty"><option value="">Select specialty</option><option>Internal Medicine</option><option>Cardiology</option><option>Behavioral Health</option><option>Pain Management</option><option>Orthopedics</option><option>Pediatrics</option><option>Ophthalmology</option><option>Urgent Care</option><option>Family Practice</option><option>Neurology</option><option>Nephrology</option><option>Multispecialty</option><option>Other</option></select></div>
-        <div class="br-cf-field"><label for="br-w-size">Practice Size</label><select id="br-w-size" name="practice-size"><option value="">Select size</option><option>Solo practitioner</option><option>2&ndash;5 providers</option><option>6&ndash;10 providers</option><option>10+ providers</option></select></div>
         <div class="br-cf-field"><label for="br-w-message">What's your biggest billing challenge?</label><textarea id="br-w-message" name="message" placeholder="Tell us where you're losing revenue..."></textarea></div>
-        <button type="submit" aria-label="Submit billing review request">
-          Get My Free Billing Review
+        <button type="submit" aria-label="Submit contact request">
+          Talk to a Solution Specialist
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
         <p class="br-cf-fine">Your information is HIPAA-protected. No contracts required.</p>
@@ -344,8 +341,42 @@
     </div>
   `;
   document.body.appendChild(contactModal);
+
+  // Well-known medicine/science names (real historical figures + TV
+  // doctors) — same fixed list used on /contact/'s form. Randomized
+  // independently of that page's own pick.
+  const BR_NAME_EXAMPLES = ['Albert Einstein', 'Marie Curie', 'Jonas Salk', 'Louis Pasteur', 'Florence Nightingale', 'Alexander Fleming', 'Elizabeth Blackwell', 'Meredith Grey', 'Gregory House', 'Derek Shepherd', 'Shaun Murphy', 'Doogie Howser', 'John Watson', 'Cristina Yang'];
+  const contactNameInput = document.getElementById('br-w-name');
+  if (contactNameInput) {
+    contactNameInput.placeholder = 'e.g. ' + BR_NAME_EXAMPLES[Math.floor(Math.random() * BR_NAME_EXAMPLES.length)];
+  }
+
+  const contactFormEl = contactModal.querySelector('form');
+  const contactEmailEl = document.getElementById('br-w-email');
+  const contactPhoneEl = document.getElementById('br-w-phone');
+  // Email and phone are each optional individually, but at least one is
+  // required so a solution specialist has a way to respond. Native
+  // `required` can't express "one of two fields", so this listener
+  // (registered before brWireLeadForm's own submit handler) checks it
+  // and, on failure, stops that handler from also running via
+  // stopImmediatePropagation.
+  contactFormEl.addEventListener('submit', function(e) {
+    if (!contactEmailEl.value.trim() && !contactPhoneEl.value.trim()) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      let msg = contactFormEl.querySelector('.br-contact-validation-error');
+      if (!msg) {
+        msg = document.createElement('div');
+        msg.className = 'br-contact-validation-error br-lead-form-error';
+        contactFormEl.appendChild(msg);
+      }
+      msg.textContent = 'Please provide an email address or phone number.';
+      (contactEmailEl || contactPhoneEl).focus();
+    }
+  });
+
   if (window.brWireLeadForm) {
-    window.brWireLeadForm(contactModal.querySelector('form'), { formSource: 'chat-widget' });
+    window.brWireLeadForm(contactFormEl, { formSource: 'chat-widget' });
   }
 
   // ── Teaser visibility ──────────────────────────────────────
