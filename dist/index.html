@@ -1583,12 +1583,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="br-reset">
 
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<!-- Deferred: only exists site-wide to catch a Netlify Identity
+     invite/recovery link (#invite_token=...) that a content editor
+     might land on from any page, not just /admin/. defer keeps it off
+     the critical rendering path since it's irrelevant to almost every
+     visitor. -->
+<script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <nav class="br-nav" role="navigation" aria-label="Main navigation">
   <div class="br-nav-inner">
     <!-- Logo -->
     <a href="/" class="br-logo" aria-label="Billed Right Home">
-      <img src="/assets/images/billedright-logo.png" alt="Billed Right — Where We Bill Right" width="360" height="105" fetchpriority="high" style="display:block;height:36px;width:auto;max-width:180px">
+      <img src="/assets/images/billedright-logo.png" alt="Billed Right — Where We Bill Right" width="246" height="72" fetchpriority="high" style="display:block;height:36px;width:auto;max-width:180px">
     </a>
 
     <!-- Nav links -->
@@ -1888,18 +1893,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div style="height:60px" aria-hidden="true"></div>
 
 <script src="/assets/js/br-lead-form.js?v=1"></script>
-<script src="/assets/js/br-chat-widget.js?v=9"></script>
-<script src="/assets/js/br-analytics-events.js?v=1"></script>
+<script defer src="/assets/js/br-chat-widget.js?v=9"></script>
+<script defer src="/assets/js/br-analytics-events.js?v=1"></script>
 <script>
-if (window.netlifyIdentity) {
-  window.netlifyIdentity.on("init", user => {
-    if (!user) {
-      window.netlifyIdentity.on("login", () => {
-        document.location.href = "/admin/";
-      });
-    }
-  });
-}
+/* The identity widget script above is now deferred, so window.netlifyIdentity
+   isn't guaranteed to exist yet at this point in parsing — wait for it. */
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+});
 </script>
 <script>
 /* Populates every form's hidden page_url field with the URL of the page
@@ -2264,13 +2273,13 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="br-svc-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
           <h3>Credentialing as a Service</h3>
           <p>Provider enrollment, re-credentialing, CAQH maintenance, and payer follow-ups — zero admin burden.</p>
-          <a href="/credentialing/" class="br-learn">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="/credentialing/" class="br-learn" aria-label="Learn more about Credentialing">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-        <div class="br-service-card br-reveal br-reveal-d1"><div class="br-svc-icon"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></div><h3>Denial Management</h3><p>Industry research shows most denied claims are recoverable. Our specialty-trained appeals teams work to recover that revenue for you.</p><a href="/denial-management/" class="br-learn">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-        <div class="br-service-card br-reveal br-reveal-d2"><div class="br-svc-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3>Medical Reporting</h3><p>Custom dashboards giving full visibility into RCM performance — the KPIs that actually matter.</p><a href="/reporting/" class="br-learn">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-        <div class="br-service-card br-reveal"><div class="br-svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Insurance Eligibility</h3><p>Real-time verification before the visit — fewer denials downstream from day one.</p><a href="/insurance-eligibility/" class="br-learn">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-        <div class="br-service-card br-reveal br-reveal-d1"><div class="br-svc-icon"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div><h3>Claim Submission</h3><p>Timely electronic submission with built-in payer-specific edits that reduce rejections before they happen.</p><a href="/claim-submission/" class="br-learn">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-        <div class="br-service-card br-reveal br-reveal-d2"><div class="br-svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div><h3>A/R Follow-up</h3><p>Aggressive, systematic follow-up on every outstanding claim. Nothing ages past your threshold.</p><a href="/ar-follow-up/" class="br-learn">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="br-service-card br-reveal br-reveal-d1"><div class="br-svc-icon"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></div><h3>Denial Management</h3><p>Industry research shows most denied claims are recoverable. Our specialty-trained appeals teams work to recover that revenue for you.</p><a href="/denial-management/" class="br-learn" aria-label="Learn more about Denial Management">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="br-service-card br-reveal br-reveal-d2"><div class="br-svc-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3>Medical Reporting</h3><p>Custom dashboards giving full visibility into RCM performance — the KPIs that actually matter.</p><a href="/reporting/" class="br-learn" aria-label="Learn more about Medical Reporting">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="br-service-card br-reveal"><div class="br-svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Insurance Eligibility</h3><p>Real-time verification before the visit — fewer denials downstream from day one.</p><a href="/insurance-eligibility/" class="br-learn" aria-label="Learn more about Insurance Eligibility">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="br-service-card br-reveal br-reveal-d1"><div class="br-svc-icon"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div><h3>Claim Submission</h3><p>Timely electronic submission with built-in payer-specific edits that reduce rejections before they happen.</p><a href="/claim-submission/" class="br-learn" aria-label="Learn more about Claim Submission">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="br-service-card br-reveal br-reveal-d2"><div class="br-svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div><h3>A/R Follow-up</h3><p>Aggressive, systematic follow-up on every outstanding claim. Nothing ages past your threshold.</p><a href="/ar-follow-up/" class="br-learn" aria-label="Learn more about A/R Follow-up">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </div>
     </div>
   </section>
