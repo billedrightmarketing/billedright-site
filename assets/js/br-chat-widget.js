@@ -8,6 +8,15 @@
    plus an Email Us popup mirroring the /contact/ page's Netlify form.
    ============================================================= */
 (function(){
+  // ── Kill switch ──────────────────────────────────────────────
+  // Set to false to hide the chat widget site-wide — no launcher
+  // bubble, no "Talk To Us" teaser, no FAB menu, no contact/chat
+  // popups. Nothing below this line runs when disabled, so the widget,
+  // its Supabase wiring, and its Zoho-bound contact form are left
+  // completely intact for whenever this flips back to true.
+  const CHAT_WIDGET_ENABLED = false;
+  if (!CHAT_WIDGET_ENABLED) return;
+
   const SUPA_URL = 'https://itgrapibtnuaoagtsiwh.supabase.co';
   const SUPA_KEY = 'sb_publishable_fuKICh99F0hIucOEjb-dqQ_tVrocUmC';
   const PHONE_DISPLAY = '407-217-9281';
