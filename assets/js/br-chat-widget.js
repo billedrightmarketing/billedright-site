@@ -8,14 +8,16 @@
    plus an Email Us popup mirroring the /contact/ page's Netlify form.
    ============================================================= */
 (function(){
-  // ── Kill switch ──────────────────────────────────────────────
-  // Set to false to hide the chat widget site-wide — no launcher
-  // bubble, no "Talk To Us" teaser, no FAB menu, no contact/chat
-  // popups. Nothing below this line runs when disabled, so the widget,
-  // its Supabase wiring, and its Zoho-bound contact form are left
-  // completely intact for whenever this flips back to true.
-  const CHAT_WIDGET_ENABLED = false;
-  if (!CHAT_WIDGET_ENABLED) return;
+  // ── Live Chat kill switch ────────────────────────────────────
+  // Set to false to hide just the "Live Chat" option while we fix
+  // issues with it — the launcher bubble, "Talk To Us" teaser, and
+  // the Call Us / Email Us FAB options all stay fully visible and
+  // functional. When false: the "Live Chat" FAB item isn't rendered,
+  // its click handler isn't wired, and the Supabase chat backend
+  // isn't initialized (so no stray unread badge from an old
+  // conversation with no way to open it). Nothing else changes.
+  // Flip back to true to bring Live Chat back.
+  const LIVE_CHAT_ENABLED = false;
 
   const SUPA_URL = 'https://itgrapibtnuaoagtsiwh.supabase.co';
   const SUPA_KEY = 'sb_publishable_fuKICh99F0hIucOEjb-dqQ_tVrocUmC';
@@ -267,12 +269,13 @@
   const fabMenu = document.createElement('div');
   fabMenu.id = 'br-fab-menu';
   fabMenu.innerHTML = `
+    ${LIVE_CHAT_ENABLED ? `
     <div class="br-fab-item" data-fab="chat">
       <span class="br-fab-label">Live Chat</span>
       <button class="br-fab-circle" id="br-fab-chat" aria-label="Start live chat" type="button">
         <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
       </button>
-    </div>
+    </div>` : ''}
     <div class="br-fab-item" data-fab="call">
       <span class="br-fab-label">Call Us</span>
       <a class="br-fab-circle" id="br-fab-call" href="tel:${PHONE_TEL}" aria-label="Call ${PHONE_DISPLAY}">
@@ -456,7 +459,9 @@
   teaser.addEventListener('click', toggleFab);
   document.getElementById('br-close-btn').addEventListener('click', closeChat);
   document.getElementById('br-contact-close-btn').addEventListener('click', closeContactModal);
-  document.getElementById('br-fab-chat').addEventListener('click', openChat);
+  if (LIVE_CHAT_ENABLED) {
+    document.getElementById('br-fab-chat').addEventListener('click', openChat);
+  }
   document.getElementById('br-fab-call').addEventListener('click', closeFab);
   document.getElementById('br-fab-email').addEventListener('click', openContactModal);
 
@@ -604,20 +609,25 @@
   }
 
   // ── Init ───────────────────────────────────────────────────
-  loadSupabase(async (client) => {
-    db = client;
-    console.log('Billed Right chat widget ready');
+  // Skipped while Live Chat is disabled — no backend to connect to,
+  // no reason to load the Supabase SDK or restore an old conversation
+  // into a chat window nothing links to anymore.
+  if (LIVE_CHAT_ENABLED) {
+    loadSupabase(async (client) => {
+      db = client;
+      console.log('Billed Right chat widget ready');
 
-    let savedConvId = null;
-    let savedName = null;
-    try {
-      savedConvId = localStorage.getItem('br_conv_id');
-      savedName = localStorage.getItem('br_visitor_name');
-    } catch(storageErr){ /* localStorage unavailable — fall back to the intro form */ }
+      let savedConvId = null;
+      let savedName = null;
+      try {
+        savedConvId = localStorage.getItem('br_conv_id');
+        savedName = localStorage.getItem('br_visitor_name');
+      } catch(storageErr){ /* localStorage unavailable — fall back to the intro form */ }
 
-    if(savedConvId && savedName){
-      await restoreConversation(savedConvId, savedName);
-    }
-  });
+      if(savedConvId && savedName){
+        await restoreConversation(savedConvId, savedName);
+      }
+    });
+  }
 
 })();
