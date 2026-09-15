@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K8DSPBH');</script>
+<!-- Google Tag Manager — consent-gated. This block only initializes
+     window.dataLayer (a plain array push, no network request) and defines
+     window.brLoadGTM() without calling it. The actual gtm.js request (and
+     therefore GA4, which is configured inside this GTM container) only
+     fires once cookie consent is checked in templates/nav-template.html —
+     either immediately on pages loaded after a prior "Accept All", or the
+     moment "Accept All" is clicked. See the cookie-consent script in
+     templates/nav-template.html for the gate itself. -->
+<script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+window.brLoadGTM = function() {
+  (function(w,d,s,l,i){
+    var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K8DSPBH');
+};
+</script>
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1557,10 +1570,11 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8DSPBH"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<!-- Google Tag Manager (noscript) — removed. A <noscript> iframe cannot
+     be consent-gated with JavaScript (by definition it only renders when
+     JS is disabled), so it was removed rather than left firing
+     unconditionally for the small no-JS visitor segment. GTM/GA4 for
+     JS-enabled visitors is gated in templates/nav-template.html. -->
 <div class="br-reset">
 
 <!-- Deferred: only exists site-wide to catch a Netlify Identity
@@ -1913,29 +1927,217 @@ document.addEventListener("DOMContentLoaded", function () {
      against br-chat-widget.js and br-analytics-events.js: no conflicts —
      their scroll/click/keydown listeners are scoped to specific elements
      or `document` (not `window`), none call stopPropagation on these
-     event types, so this fires independently alongside them. -->
+     event types, so this fires independently alongside them.
+
+     Consent-gated: this block only DEFINES window.brLoadClarity() (the
+     immediate loader) and window.brArmClarityDeferred() (arms the
+     interaction/timeout listeners above) — neither is called here. The
+     cookie-consent script below decides when/whether to call either one,
+     so Clarity can never fire before a visitor has made a consent choice,
+     even if the interaction/timeout condition is met first. -->
 <script type="text/javascript">
 (function() {
+  var loaded = false;
   function loadClarity() {
+    if (loaded) return;
+    loaded = true;
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "yiqpm5h0ek");
   }
-  var loaded = false;
-  function triggerLoad() {
-    if (loaded) return;
-    loaded = true;
-    loadClarity();
+  function armDeferred() {
+    function triggerLoad() {
+      loadClarity();
+      ['scroll','click','keydown','touchstart'].forEach(function(evt){
+        window.removeEventListener(evt, triggerLoad);
+      });
+    }
     ['scroll','click','keydown','touchstart'].forEach(function(evt){
-      window.removeEventListener(evt, triggerLoad);
+      window.addEventListener(evt, triggerLoad, { passive: true });
     });
+    setTimeout(triggerLoad, 5000);
   }
-  ['scroll','click','keydown','touchstart'].forEach(function(evt){
-    window.addEventListener(evt, triggerLoad, { passive: true });
-  });
-  setTimeout(triggerLoad, 5000);
+  window.brLoadClarity = loadClarity;
+  window.brArmClarityDeferred = armDeferred;
+})();
+</script>
+
+<!-- Cookie consent — gates the two Analytics-category scripts (GA4, which
+     is configured inside the Google Tag Manager container loaded via
+     window.brLoadGTM() in every page's <head>, and Microsoft Clarity,
+     defined just above) behind an explicit visitor choice. Necessary
+     scripts — br-lead-form.js's Zoho submission (fires only when a
+     visitor voluntarily submits a form with their own information),
+     br-chat-widget.js, br-analytics-events.js's dataLayer pushes (inert
+     without GTM loaded), and core site functionality — are unaffected and
+     always run, since none of them are passive tracking.
+
+     Consent is stored in localStorage as cookie_consent
+     ("accepted"/"rejected") + cookie_consent_date (ISO timestamp) and is
+     treated as expired after ~12 months, at which point the banner
+     reappears. If localStorage is unavailable (e.g. locked-down private
+     browsing), consent is treated as unset so we fail toward showing the
+     banner rather than silently loading analytics. -->
+<script>
+(function() {
+  'use strict';
+  var CONSENT_KEY = 'cookie_consent';
+  var CONSENT_DATE_KEY = 'cookie_consent_date';
+  var CONSENT_MAX_AGE_MS = 365 * 24 * 60 * 60 * 1000;
+
+  function getStoredConsent() {
+    var value, dateStr;
+    try {
+      value = window.localStorage.getItem(CONSENT_KEY);
+      dateStr = window.localStorage.getItem(CONSENT_DATE_KEY);
+    } catch (e) {
+      return null;
+    }
+    if (!value || !dateStr) return null;
+    var storedDate = new Date(dateStr);
+    if (isNaN(storedDate.getTime())) return null;
+    if (Date.now() - storedDate.getTime() > CONSENT_MAX_AGE_MS) return null;
+    return (value === 'accepted' || value === 'rejected') ? value : null;
+  }
+
+  function storeConsent(choice) {
+    try {
+      window.localStorage.setItem(CONSENT_KEY, choice);
+      window.localStorage.setItem(CONSENT_DATE_KEY, new Date().toISOString());
+    } catch (e) {
+      // Storage blocked — the banner will simply re-show on the next
+      // page load, which is the safe failure mode.
+    }
+  }
+
+  function loadAnalyticsImmediately() {
+    if (typeof window.brLoadGTM === 'function') window.brLoadGTM();
+    if (typeof window.brLoadClarity === 'function') window.brLoadClarity();
+  }
+
+  function armAnalyticsDeferred() {
+    // GTM was never deferred (it loads as soon as consent allows it, same
+    // as its original unconditional behavior); Clarity keeps its existing
+    // interaction/5s-timeout deferral for returning, already-consented
+    // visitors.
+    if (typeof window.brLoadGTM === 'function') window.brLoadGTM();
+    if (typeof window.brArmClarityDeferred === 'function') window.brArmClarityDeferred();
+  }
+
+  // While the banner is visible, it shares the bottom-right corner of the
+  // viewport with br-chat-widget.js's launcher/teaser/FAB menu (all
+  // position:fixed there too). Rather than hardcoding offsets that would
+  // drift out of sync with that file's own values, measure the banner's
+  // actual rendered height and push those elements up by exactly that
+  // much via a CSS custom property, restoring them the moment the banner
+  // closes.
+  var bannerResizeHandler = null;
+  function ensureBannerOffsetStyle() {
+    if (document.getElementById('br-cookie-banner-offset-style')) return;
+    var style = document.createElement('style');
+    style.id = 'br-cookie-banner-offset-style';
+    style.textContent =
+      'body.br-cookie-banner-open #br-chat-launcher{bottom:calc(var(--br-banner-h,90px) + 24px)!important}' +
+      'body.br-cookie-banner-open #br-chat-teaser{bottom:calc(var(--br-banner-h,90px) + 82px)!important}' +
+      'body.br-cookie-banner-open #br-fab-menu{bottom:calc(var(--br-banner-h,90px) + 92px)!important}';
+    document.head.appendChild(style);
+  }
+  function measureBannerHeight() {
+    var el = document.getElementById('br-cookie-banner');
+    if (el) document.documentElement.style.setProperty('--br-banner-h', el.offsetHeight + 'px');
+  }
+
+  function hideBanner() {
+    var el = document.getElementById('br-cookie-banner');
+    if (el) el.parentNode.removeChild(el);
+    document.body.classList.remove('br-cookie-banner-open');
+    if (bannerResizeHandler) {
+      window.removeEventListener('resize', bannerResizeHandler);
+      bannerResizeHandler = null;
+    }
+  }
+
+  function buildBanner() {
+    var banner = document.createElement('div');
+    banner.id = 'br-cookie-banner';
+    banner.setAttribute('role', 'region');
+    banner.setAttribute('aria-label', 'Cookie consent');
+    banner.style.cssText =
+      'position:fixed;left:0;right:0;bottom:0;z-index:99999;' +
+      'background:#31425E;color:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;' +
+      'padding:18px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;' +
+      'gap:16px 24px;box-shadow:0 -8px 32px rgba(26,37,53,.35)';
+
+    var text = document.createElement('p');
+    text.style.cssText =
+      'margin:0;font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.85);' +
+      'flex:1 1 320px;max-width:640px';
+    text.innerHTML =
+      'We use cookies for essential site functionality and, with your consent, for analytics. ' +
+      '<a href="/privacy-policy/" style="color:#fff;text-decoration:underline;font-weight:600">Read our Privacy Policy</a>.';
+
+    var actions = document.createElement('div');
+    actions.style.cssText = 'display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0';
+
+    var acceptBtn = document.createElement('button');
+    acceptBtn.type = 'button';
+    acceptBtn.textContent = 'Accept All';
+    acceptBtn.style.cssText =
+      'background:#BA2025;color:#fff;border:none;border-radius:8px;padding:11px 22px;' +
+      'font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap';
+    acceptBtn.addEventListener('click', function() {
+      storeConsent('accepted');
+      hideBanner();
+      loadAnalyticsImmediately();
+    });
+
+    var rejectBtn = document.createElement('button');
+    rejectBtn.type = 'button';
+    rejectBtn.textContent = 'Reject Non-Essential';
+    rejectBtn.style.cssText =
+      'background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:8px;' +
+      'padding:11px 22px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap';
+    rejectBtn.addEventListener('click', function() {
+      storeConsent('rejected');
+      hideBanner();
+    });
+
+    actions.appendChild(acceptBtn);
+    actions.appendChild(rejectBtn);
+    banner.appendChild(text);
+    banner.appendChild(actions);
+    return banner;
+  }
+
+  function showBanner() {
+    if (document.getElementById('br-cookie-banner')) return;
+    function render() {
+      ensureBannerOffsetStyle();
+      document.body.appendChild(buildBanner());
+      document.body.classList.add('br-cookie-banner-open');
+      measureBannerHeight();
+      bannerResizeHandler = measureBannerHeight;
+      window.addEventListener('resize', bannerResizeHandler);
+    }
+    if (document.body) render();
+    else document.addEventListener('DOMContentLoaded', render);
+  }
+
+  var consent = getStoredConsent();
+  if (consent === 'accepted') {
+    armAnalyticsDeferred();
+  } else if (consent === 'rejected') {
+    // Valid, stored rejection — no banner, no analytics load, this visit
+    // or any future one until the choice expires or is cleared.
+  } else {
+    showBanner();
+  }
+
+  window.brConsentAnalyticsAllowed = function() {
+    return getStoredConsent() === 'accepted';
+  };
 })();
 </script>
 
