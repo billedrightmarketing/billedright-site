@@ -4,6 +4,78 @@
 
 ## Implementation Log
 
+**2026-09-15 — Final cleanup pass (page frozen after this).** Targeted
+revision only, per direct chat instructions — no rebuild, no SEO/content
+changes beyond what's listed:
+
+1. **Consolidated the two ending conversion sections into one.** Merged
+   the "Talk to a Cardiology RCM Expert" form section and the separate
+   "Find Out Where..." Final CTA into a single section with the exact
+   requested heading/copy. Form fields unchanged (Name, Work Email,
+   Phone, Organization/Practice — `specialty` still captured via hidden
+   input). Added "Prefer to talk? Talk to a Cardiology RCM Expert —
+   407-217-9281" as a one-click `tel:` secondary conversion beneath the
+   submit button (reused the page's existing "Talk to a Cardiology RCM
+   Expert" phrase rather than inventing new copy). **Our Specialties**
+   moved to its own section directly below, with no CTA in it and no
+   major CTA after it.
+2. **"Reviewed by" statement replaced** with the exact requested copy:
+   "Billed Right has supported Cardiology revenue cycle management
+   since 2006."
+3. **KPI labels — conservative pass only.** The request explicitly
+   gates the fuller relabel ("Collection Rate," adding "Days" to the
+   28-figure) on Arun confirming what each number specifically measures,
+   and says not to add "Net," "Days," or other definitions without that
+   confirmation. Since that confirmation isn't available in this
+   session, applied only safe, non-definitional grammar cleanup to the
+   4 labels named as awkward — "Achieving Collections up to" →
+   "Collections Up To," "Reduction in days in AR" → "Reduction in Days
+   in A/R," "Reduce 'No Response'" → "No-Response Reduction," "TAT for
+   Payment" → "Payment TAT" — none of which assert a specific metric
+   definition beyond what the original label already implied. **All 7
+   KPI values themselves are byte-identical to before.** Flagging for
+   Marketing: the deeper relabel (confirming 97% is specifically
+   "Collection Rate" vs. some other definition, confirming the 28-figure
+   is in days) still needs Arun's sign-off before those exact labels
+   from the request's examples can be applied.
+4. **Prior Authorization language in the case study — validated, not
+   changed, plus a scope note added.** Confirmed both statements
+   ("took full ownership of the prior authorization workflow" and
+   "auth-related denials on interventional procedures eliminated")
+   against the source: they're pulled directly from the published,
+   verified case study page (`pages/case-studies/cardiology/index.html`)
+   and match `docs/claims-register.md`'s VERIFIED entry for this case
+   study word-for-word. No factual issue found. Added one clarifying
+   sentence directly beneath the case-study card: "Prior Authorization
+   support was part of this client's specific engagement scope. It is
+   not automatically included in Billed Right's standard core RCM
+   service—see Additional / Add-On Services above." — addresses the
+   scoping concern without altering the verified facts.
+5. **Intelligent RCM section: untouched**, confirmed via grep (PREVENT/
+   DETECT/PRIORITIZE/AUTOMATE/ACT/LEARN and all specific capability
+   language still present verbatim; no banned AI phrases introduced).
+6. **No other SEO/content rewrite.** H1, meta title/description,
+   canonical, schema, eClinicalWorks section, PE-backed/growth section,
+   Data-to-Decisions, FAQs, and overall architecture confirmed unchanged
+   via DOM inspection after build.
+
+**QA after deployment:** desktop and mobile layouts checked in-browser;
+form payload confirmed correct (merged `name`, hidden `specialty`,
+`page_url` autofill); `tel:` link confirmed one-click; internal links
+(eClinicalWorks page, real case-study page) confirmed present; schema
+confirmed still valid JSON-LD; no console errors. **Not verified**
+(same limitation as prior passes): live Zoho CRM lead creation, Sales
+notification, and lead routing — no live Netlify Functions/Zoho
+endpoint available in this environment; client-side payload structure
+is correct.
+
+**Page frozen after this pass per direct instruction.** Further
+Cardiology SEO work should go into supporting authority content and
+internal linking (per the original implementation doc's Section 30
+content cluster), not further edits to this page.
+
+---
+
 **2026-09-15 — Flagship rebuild per
 `docs/specialty-pages/Billed_Right_Specialty_Page_Framework_V2.md` and
 `docs/specialty-pages/cardiology/Billed_Right_Cardiology_Flagship_RCM_SEO_Implementation_V2_AI_Automation.md`.**
