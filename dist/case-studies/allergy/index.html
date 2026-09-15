@@ -2015,6 +2015,40 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<!-- Microsoft Clarity — deferred until first genuine user interaction
+     (scroll, click, keydown, or touchstart), or a 5s fallback timeout so
+     no-interaction sessions still get tracked. Registers only lightweight
+     passive window listeners up front; the actual Clarity tag (and its
+     network request) doesn't load until one of those fires. Checked
+     against br-chat-widget.js and br-analytics-events.js: no conflicts —
+     their scroll/click/keydown listeners are scoped to specific elements
+     or `document` (not `window`), none call stopPropagation on these
+     event types, so this fires independently alongside them. -->
+<script type="text/javascript">
+(function() {
+  function loadClarity() {
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yiqpm5h0ek");
+  }
+  var loaded = false;
+  function triggerLoad() {
+    if (loaded) return;
+    loaded = true;
+    loadClarity();
+    ['scroll','click','keydown','touchstart'].forEach(function(evt){
+      window.removeEventListener(evt, triggerLoad);
+    });
+  }
+  ['scroll','click','keydown','touchstart'].forEach(function(evt){
+    window.addEventListener(evt, triggerLoad, { passive: true });
+  });
+  setTimeout(triggerLoad, 5000);
+})();
+</script>
+
 
 <main id="brpage-case-study-allergy" class="br-page active" aria-label="Allergy billing case study page">
 
