@@ -4,6 +4,54 @@
 
 ## Implementation Log
 
+**2026-09-15 — Targeted cleanup pass per
+`docs/specialty-pages/psychiatry/Claude_Psychiatry_Page_Final_Cleanup_Instructions.md`.**
+Applied only the changes that document specified — not a rebuild:
+
+1. **Denial table simplified** to buyer-level language (doc's exact
+   6-row table used verbatim, header changed from "Common Root Cause"
+   to "Why It Happens"). Removed remaining coding-education specifics
+   (exact start/stop-time wording, "95 vs. GT" modifier comparison,
+   diagnosis-code reference).
+2. **Illustrative/composite case study removed entirely** — no
+   replacement hypothetical scenario created. Left an HTML comment
+   marking the slot as ready for a real, approved case study later.
+   Genuine Psychiatry testimonial ("Psychiatry Provider, Florida")
+   preserved unchanged, now standing alone in its own section.
+3. **Consolidated the two ending conversion sections into one** — the
+   previous build had a "Talk to an RCM Expert" form section plus a
+   separate "Find Out Where..." Final CTA section. Merged into a single
+   section using the doc's exact heading/copy, keeping the same form
+   fields (Name, Work Email, Phone, Organization/Practice Name — no
+   Psychiatry field required, `specialty` still captured via hidden
+   input). Added the doc's "Prefer to talk? Call Billed Right" secondary
+   conversion as a one-click `tel:` link beneath the submit button.
+   **Our Specialties** moved to its own section immediately below the
+   consolidated conversion area (previously sat beside the form).
+4. **KPI labels clarified, values untouched** — only the doc's own
+   explicit example ("Up to 97% — Collection Rate") is a verbatim
+   instruction; the other five label rewords (Reduction in Days in A/R,
+   Claim Error Ratio, Claim Processing TAT, No-Response Claim Rate,
+   Payment TAT) are reasonable clarity edits in the same spirit, not
+   individually specified in the doc — flagged for Marketing to adjust
+   wording preference if desired. Did **not** add "Days" to the 28 TAT
+   figure per the doc's explicit caution not to assert an unconfirmed
+   unit.
+5. **"Reviewed by..." statement replaced** with the doc's exact locked
+   copy: "Billed Right has supported Psychiatry revenue cycle management
+   since 2006."
+
+**Conflict check (as requested):** the follow-up doc's denial-table
+column header ("Why It Happens") differs from the original
+implementation spec's and the V2 framework's suggested header ("Common
+Root Cause"). Not a guardrail conflict — used the follow-up doc's exact
+wording as the more specific, more recent instruction, per CLAUDE.md's
+priority order. No other conflicts found between this document and the
+original Psychiatry spec or the V2 framework; everything else in this
+pass reinforces guardrails already in place (six EMRs, core-vs-addon
+distinction, since-2006 language, no CPT dump) rather than changing
+them.
+
 **2026-09-15 — Full rebuild per `docs/specialty-pages/Billed_Right_Specialty_Page_Framework_V2.md`
 and `docs/specialty-pages/psychiatry/Billed_Right_Psychiatry_RCM_Final_Implementation.md`.**
 
