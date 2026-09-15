@@ -4,6 +4,74 @@
 
 ## Implementation Log
 
+**2026-09-15 — Production cleanup & freeze per
+`docs/specialty-pages/Internal Medicine/Billed_Right_Internal_Medicine_FINAL_V2_Production_Cleanup_and_Freeze.md`.**
+Targeted revision pass only — no re-rebuild. Cross-referenced the doc
+against the live page before editing (confirmed each quoted "current"
+sentence matched what was actually on the page). Changes:
+
+1. **EMR & Technology section rewritten** (doc §3) — removed the
+   `[CONFIRM CURRENT CAPABILITY]` placeholder now that EMR experience is
+   internally confirmed. New H2 ("Works With the EMR Your Internal
+   Medicine Practice Already Uses"), doc's exact two-paragraph copy, and
+   a 4-pill visual (eClinicalWorks (eCW), IMS, athenahealth, AdvancedMD)
+   using the same `.br-tech-grid`/`.br-tech-pill` pattern as other
+   specialty pages — no platform visually ranked above another, per the
+   doc's explicit caution. Kept the existing "Don't see your system
+   listed?" line (doc didn't direct removing it) alongside the doc's new
+   "Plus experience across many other major EMR..." supporting line.
+2. **Holistic Services disclaimer replaced** (doc §6) — the
+   internal-sounding sentence ("The page above explains how coverage
+   classification...") replaced with the doc's exact customer-facing
+   replacement ("Service scope is customized to each engagement...").
+3. **Patient financial communication line replaced** (doc §7) — "Patient
+   calls and follow-up are included where they are part of Billed
+   Right's current contracted service" replaced with the doc's exact
+   wording ("Patient financial communication and follow-up can also be
+   incorporated based on the organization's service scope.").
+4. **Form privacy/consent language corrected + PHI warning added** (doc
+   §5) — removed the inaccurate absolute claim "not shared with third
+   parties" from the lead-form consent checkbox; kept the "I agree to
+   allow Billed Right to use the information provided to contact me"
+   consent framing (still accurate and still the actual opt-in action)
+   and added the doc's authorized-service-providers concept with a link
+   to `/privacy-policy/`. Added a new, separate PHI warning line above
+   the submit button ("Please do not include patient or protected health
+   information (PHI) in this form."), per the doc's explicit instruction.
+   **Flagged, not applied elsewhere:** the doc says this correction
+   "should ultimately be corrected sitewide, not only on the Internal
+   Medicine page" — per this task's explicit scope ("do not touch any
+   other specialty page"), the identical outdated consent sentence was
+   left unchanged on Psychiatry, Cardiology and Pain Management's forms.
+   This is a genuine, now-visible inconsistency across specialty pages
+   that Marketing should schedule as a sitewide follow-up.
+
+### Explicitly reviewed, no changes made
+- **KPI section (doc §4):** the doc restates the KPI governance rule
+  (metric definition + approved value + unit/time basis, no unverified
+  qualifier words) but supplies no new approved values, corrected units,
+  or relabeled KPIs. Since there is nothing concrete to change and the
+  doc explicitly warns not to alter approved numbers "simply to improve
+  presentation," the KPI grid was left exactly as-is. Arun/internal
+  data-owner sign-off on the existing values remains an open,
+  human action item, not something resolved by this edit.
+- **Sections 8–12 of the doc** (diagnosis capture, Intelligent RCM,
+  custom-analytics separation, proof strategy, one final conversion
+  section) — the doc explicitly says "do not materially rewrite" /
+  "keep" for each of these. Verified each already matches the doc's
+  requirements on the live page (evergreen "since its earliest years,
+  with client relationships dating to 2007" language intact, no
+  "Reviewed by" language, no rolling-year claims, no composite case
+  study, exactly one final conversion section) — confirmed compliant,
+  left untouched.
+
+### Conflicts found
+None. Every instruction in this cleanup doc was consistent with the
+original implementation doc and the V2 framework; nothing required
+choosing between conflicting sources.
+
+---
+
 **2026-09-15 — Full rebuild per
 `docs/specialty-pages/Internal Medicine/Billed_Right_Internal_Medicine_FINAL_Flagship_RCM_SEO_AI_Implementation.md`
 (FINAL — single source of truth).**
@@ -142,21 +210,22 @@ was used here per the doc's explicit instruction ("Use the exact approved
 wording if still validated"), but should not be treated as a fully
 cleared claim until Client Success/Legal resolves the new HOLD.
 
-### EMR & TECHNOLOGY (doc §20) — action item, not resolved
+### EMR & TECHNOLOGY (doc §20) — RESOLVED 2026-09-15
 The doc explicitly states: "Do not assume the Cardiology or Pain
 Management EMR order applies to Internal Medicine... Before publication,
 Raul must validate the Internal Medicine EMR list with operations... Do
 not invent 'deep expertise' in a platform without first-party support."
-**No EMR list was provided in the doc for Internal Medicine** (unlike
-Cardiology's eClinicalWorks-flagship treatment or Pain Management's
-eClinicalWorks/IMS/AdvancedMD list). Rather than inventing one, this
-section uses only generic positioning ("a wide range of existing
-practice-management and EMR environments") with an explicit
-`[CONFIRM CURRENT CAPABILITY]` placeholder noting that a validated,
-prioritized EMR list is pending internal confirmation.
-**Action item for Raul/Operations:** supply the actual Internal
-Medicine EMR list (with priority order) so this section can be completed
-with named, verified platforms.
+**No EMR list was provided in the doc for Internal Medicine** at the
+time of the initial rebuild (unlike Cardiology's eClinicalWorks-flagship
+treatment or Pain Management's eClinicalWorks/IMS/AdvancedMD list).
+Rather than inventing one, that section originally used only generic
+positioning with a `[CONFIRM CURRENT CAPABILITY]` placeholder.
+
+**Resolved by the Production Cleanup & Freeze pass (see entry above):**
+the EMR capability has since been internally confirmed
+(eClinicalWorks (eCW), IMS, athenahealth, AdvancedMD, plus other major
+platforms) and the placeholder has been replaced with the doc's exact
+locked copy and a 4-pill visual. No further action needed on this item.
 
 ### AI / GUARDRAILS
 - No "revolutionary AI," "fully autonomous RCM," "eliminates denials," or
@@ -194,17 +263,25 @@ with named, verified platforms.
   `/testimonials/`.
 
 ## Internal-Medicine-Specific QA Checklist Results
-(Doc §34 "Pre-Publish Validation" — full pass/fail/unconfirmed report
-delivered in-conversation.) Summary: all implementable content, guardrail,
-structural and SEO items **pass**. Two items are explicitly **flagged as
-open action items, not failures**: (1) the Internal Medicine EMR list
-requires Raul/Operations validation before specific platforms can be
-named (see EMR & TECHNOLOGY above); (2) the "Internal Medicine
-Provider, FL" testimonial's claims-register HOLD is newly opened, not yet
-resolved. Zoho lead creation, CRM routing, and mobile carrier-level
-click-to-call behavior are **unconfirmed** — cannot be verified in this
-local/static environment (no live Netlify Functions/Zoho endpoint),
-consistent with every prior specialty-page QA report.
+(Doc §34 "Pre-Publish Validation," initial rebuild — full pass/fail/
+unconfirmed report delivered in-conversation.) Summary: all implementable
+content, guardrail, structural and SEO items **pass**. Two items were
+flagged as open action items at that time: (1) the Internal Medicine EMR
+list required Raul/Operations validation before specific platforms could
+be named — **resolved 2026-09-15** by the Production Cleanup & Freeze
+pass (see entry above); (2) the "Internal Medicine Provider, FL"
+testimonial's claims-register HOLD, opened during the rebuild — **still
+open**, not addressed by the cleanup pass (not in scope of that
+document). Zoho lead creation, CRM routing, and mobile carrier-level
+click-to-call behavior remain **unconfirmed** — cannot be verified in
+this local/static environment (no live Netlify Functions/Zoho endpoint),
+consistent with every prior specialty-page QA report. See doc §13's own
+Final Production QA checklist for the cleanup-pass-specific items (EMR
+placeholder removed, form privacy language updated, PHI warning added,
+Holistic Services language customer-facing, patient financial
+communication wording updated) — all confirmed applied above; Zoho
+routing, mobile click-to-call, and full desktop/mobile visual QA remain
+outside what can be verified in this environment.
 
 ## Not in scope / not touched
 - `netlify/functions/zoho-lead.js`, `build.py`, `templates/nav-template.html`,
