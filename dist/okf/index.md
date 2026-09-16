@@ -55,7 +55,7 @@ website content. Each concept links back to its live page via its
 - [Primary Care Medical Billing & RCM Services | Billed Right](./specialties/primary-care-rcm-services.md)
 - [Psychiatry Revenue Cycle Management Services | Billed Right](./specialties/psychiatry-rcm-services.md)
 - [Pulmonary Medicine Medical Billing & RCM Services | Billed Right](./specialties/pulmonary-rcm-services.md)
-- [Rheumatology Medical Billing & RCM Services | Billed Right](./specialties/rheumatology-rcm-services.md)
+- [Rheumatology Revenue Cycle Management & Billing | Billed Right](./specialties/rheumatology-rcm-services.md)
 - [Specialty Medical Billing Services | Billed Right](./specialties.md)
 - [Urgent Care Medical Billing & RCM Services | Billed Right](./specialties/urgent-care-rcm-services.md)
 - [Vascular Surgery Medical Billing & RCM Services | Billed Right](./specialties/vascular-surgery-rcm-services.md)
