@@ -57,7 +57,7 @@ website content. Each concept links back to its live page via its
 - [Pulmonary Medicine Medical Billing & RCM Services | Billed Right](./specialties/pulmonary-rcm-services.md)
 - [Rheumatology Revenue Cycle Management & Billing | Billed Right](./specialties/rheumatology-rcm-services.md)
 - [Specialty Medical Billing Services | Billed Right](./specialties.md)
-- [Urgent Care Medical Billing & RCM Services | Billed Right](./specialties/urgent-care-rcm-services.md)
+- [Urgent Care Revenue Cycle Management & Billing | Billed Right](./specialties/urgent-care-rcm-services.md)
 - [Vascular Surgery Medical Billing & RCM Services | Billed Right](./specialties/vascular-surgery-rcm-services.md)
 
 ## Case Studies
