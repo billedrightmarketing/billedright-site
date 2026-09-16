@@ -46,7 +46,7 @@ website content. Each concept links back to its live page via its
 
 ## Specialties
 - [Allergy & Immunology Medical Billing & RCM Services | Billed Right](./specialties/allergy-rcm-services.md)
-- [Behavioral Health Medical Billing & RCM Services | Billed Right](./specialties/behavioral-health-rcm-services.md)
+- [Behavioral Health Revenue Cycle Management & Billing | Billed Right](./specialties/behavioral-health-rcm-services.md)
 - [Cardiology Revenue Cycle Management & Billing Services | Billed Right](./specialties/cardiology-rcm-services.md)
 - [Gastroenterology Revenue Cycle Management & Billing | Billed Right](./specialties/gastroenterology-rcm-services.md)
 - [Internal Medicine Revenue Cycle Management & Billing Services | Billed Right](./specialties/internal-medicine-rcm-services.md)
