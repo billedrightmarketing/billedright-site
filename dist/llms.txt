@@ -1,54 +1,65 @@
 # Billed Right
 
-## What Billed Right Does
-Billed Right is a healthcare Revenue Cycle Management company and Enterprise Revenue Performance Partner founded in 2006 and headquartered in Longwood, Florida, in the Greater Orlando area. The company provides end-to-end RCM services to healthcare organizations across the United States, combining proven RCM expertise, scalable operations, data intelligence, intelligent automation, predictive analytics, AI, and expert human oversight.
+> Billed Right is a healthcare Revenue Cycle Management company and Enterprise Revenue Performance Partner, founded in 2006 and headquartered in Longwood, Florida. It provides end-to-end RCM services — billing, denial management, credentialing, and revenue-cycle analytics — to healthcare organizations across the United States.
 
-## Who Billed Right Serves
-Billed Right primarily serves enterprise-level healthcare organizations including large physician groups, multi-location and multi-specialty organizations, managed service organizations, private equity-backed healthcare platforms, and growing and transforming healthcare organizations. The company works with practices ranging from single providers to large enterprise groups of 25 to 100+ providers, with a focus on organizations managing real operational and financial complexity.
-
-Priority specialties: cardiology, pain management, internal medicine, and behavioral health. Additional specialties include psychiatry, rheumatology, allergy and immunology, nephrology, urgent care, gastroenterology, primary care, vascular surgery, and pulmonary medicine.
+## Company
+- [About Billed Right | Medical Billing & RCM Experts Since 2006](https://billedright.com/about/): In 2006, Billed Right set out to fix medical billing by listening to doctors first. Meet the leadership team and see the awards behind 18+ years of RCM experience.
+- [Awards & Recognition | Billed Right](https://billedright.com/awards/): Billed Right has earned national and international recognition for workplace culture, business growth, and excellence in healthcare revenue cycle management since 2006.
+- [Billed Right Office Locations | Medical Billing Services Nationwide](https://billedright.com/locations/): Billed Right operates from offices in Florida, Ohio, and India, serving medical practices across the United States with expert revenue cycle management since 2006.
+- [Billed Right: Enterprise Revenue Cycle Management & Revenue Performance Partner](https://billedright.com/): Billed Right helps healthcare organizations strengthen financial performance through enterprise Revenue Cycle Management: $2B+ billed, less than 24-day average A/R, 94% client retention. Schedule an executive conversation.
+- [Careers India | Join the Billed Right Team in India](https://billedright.com/careers-india/): Join Billed Right’s India team in Chennai or Trichy: a purpose-driven healthcare RCM company with a culture built on growth, innovation, and supporting each other.
+- [Careers US | Join the Billed Right Team](https://billedright.com/careers-us/): Join the Billed Right team in the US: a purpose-driven healthcare RCM company with a culture built on growth, innovation, and supporting each other.
+- [Client Testimonials | Billed Right Medical Billing](https://billedright.com/testimonials/): See what healthcare practices across the US say about working with Billed Right: real testimonials from physicians, practice administrators, and CEOs.
+- [Compliance & Security Recognition | Billed Right](https://billedright.com/recognition/): Billed Right holds ISO 9001:2015, ISO 27001:2022, and HIPAA compliance certifications, ensuring the highest standards of data security and quality for every client.
+- [Contact Us | Billed Right](https://billedright.com/contact/): Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right. Real audit, real answers.
+- [Free Resource Center: Billing Calculators & Guides | Billed Right](https://billedright.com/resources/): No email gate to browse. Run the numbers with Billed Right's free RCM health check, A/R recovery estimator, denial impact calculator, and profitability scorecard.
+- [Frequently Asked Questions | Medical Billing & RCM | Billed Right](https://billedright.com/faq/): Get answers to common questions about Billed Right's medical billing and RCM services: claims, compliance, specialties, team, and more.
+- [Leadership Team | Billed Right](https://billedright.com/leadership/): Meet the leadership team behind Billed Right, healthcare RCM and billing experts with decades of experience serving medical practices since 2006.
+- [Revenue Cycle Operating Partner for Healthcare Private Equity | Billed Right](https://billedright.com/private-equity/): Billed Right partners with healthcare-focused private equity firms to improve RCM operations, strengthen reporting visibility, and scale revenue cycle operations across portfolios.
+- [Why Billed Right — Our Approach to Revenue Cycle Management](https://billedright.com/why-billed-right/): Billed Right has been a trusted revenue cycle partner for healthcare practices since 2006 — founded on personalized service, operational excellence, and client education.
 
 ## Services
-Insurance eligibility verification, charge posting, documentation review, claim submission, denial management, payment posting, patient AR collections, AR follow-up, medical coding, reporting and analytics, account management, prior authorizations, documentation management, credentialing, and contract renegotiation.
+- [AAPC-Certified Medical Coding Services | Billed Right](https://billedright.com/services/medical-coding/): Accurate medical coding from Billed Right’s AAPC-certified coders: CPT and ICD-10 coding, modifier review, and coding education for medical practices since 2006.
+- [Charge Posting Services for Medical Practices | Billed Right](https://billedright.com/services/charge-posting/): Accurate, timely charge posting from Billed Right: error-free charge entry, super bill processing, and clean claim submission since 2006.
+- [Credentialing as a Service | Billed Right](https://billedright.com/services/credentialing/): Get providers enrolled, re-credentialed, and payer-ready with zero administrative burden. Status tracking, payer follow-ups, and CAQH maintenance handled by Billed Right.
+- [Insurance A/R Follow-Up Services | Billed Right](https://billedright.com/services/ar-follow-up/): Stop losing revenue to claims stuck in payer processing. Billed Right’s insurance A/R follow-up works every unpaid claim on a set cadence so nothing ages past an appeal deadline, since 2006.
+- [Insurance Eligibility Verification Services | Billed Right](https://billedright.com/services/insurance-eligibility/): Prevent claim denials before they start with Billed Right’s insurance eligibility verification: copay, deductible, and CPT coverage confirmed before every visit, since 2006.
+- [Medical Billing Account Management Services | Billed Right](https://billedright.com/services/account-management/): Dedicated account management from Billed Right: a single point of contact, weekly calls, and real-time support for your entire revenue cycle since 2006.
+- [Medical Billing Claim Submission Services | Billed Right](https://billedright.com/services/claim-submission/): Clean, timely claim submission from Billed Right: accurate electronic and paper claim filing, scrubbing, and clearinghouse management since 2006.
+- [Medical Billing Denial Management Services | Billed Right](https://billedright.com/services/denial-management/): Recover denied claims and reduce future denials with Billed Right — systematic denial management, appeals, and root cause analysis since 2006.
+- [Medical Billing Payment Posting Services | Billed Right](https://billedright.com/services/payment-posting/): Accurate, timely payment posting from Billed Right: EOB processing, EFT and paper check posting, and real-time reconciliation since 2006.
+- [Medical Billing Reporting Services | Billed Right](https://billedright.com/services/reporting/): Clear, actionable medical billing reports from Billed Right: weekly, monthly, and quarterly reporting on charges, revenue, aging, and denials since 2006.
+- [Medical Billing Services by EMR Platform | Billed Right](https://billedright.com/services/emr-billing-platforms/): Billed Right works inside your existing EMR: eClinicalWorks, AthenaHealth, Central Reach, and IMS. No system change, no migration, no disruption.
+- [Medical Documentation Management Services | Billed Right](https://billedright.com/services/documentation-management/): Streamline incoming faxes and document routing with Billed Right — daily fax processing, chart assignment, and document management since 2006.
+- [Medical Documentation Review Services | Billed Right](https://billedright.com/services/documentation-review/): Prevent denials and audit risk with Billed Right’s medical documentation review — ensuring every claim is supported by accurate, compliant clinical documentation since 2006.
+- [Patient AR Collections Services for Medical Practices | Billed Right](https://billedright.com/services/patient-ar-collections/): Recover outstanding patient balances with Billed Right: patient statements, inbound call handling, and AR follow-up to maximize collections since 2006.
+- [Payer Contract Renegotiation Services | Billed Right](https://billedright.com/services/contract-renegotiation/): Maximize payer reimbursements with Billed Right: payer contract analysis, benchmarking against Medicare fee schedules, and renegotiation strategy since 2006.
+- [Prior Authorization and Referral Services | Billed Right](https://billedright.com/services/authorizations/): Reduce auth delays and denials with Billed Right: prior authorization submission, tracking, and referral management for medical practices since 2006.
+- [RCM & Medical Billing Services | Billed Right](https://billedright.com/services/): From charge entry to payment posting, every step of your revenue cycle handled by specialty-trained billing experts. Explore Billed Right's full suite of RCM services, including Credentialing as a Service.
+- [eClinicalWorks Medical Billing Services | Billed Right](https://billedright.com/services/eclinicalworks-billing-services/): Billed Right has worked inside eClinicalWorks for 20 years: setup, billing, reporting, and new practice onboarding. All included, all in your eCW.
 
-## EMR Platform Expertise
-Billed Right has deep operational expertise in eClinicalWorks (20+ years, dedicated internal team), IMS, AthenaHealth, and Central Reach. The company works inside existing client EMR systems without requiring system changes, data migration, or software replacement.
+## Specialties
+- [Allergy & Immunology Medical Billing & RCM Services | Billed Right](https://billedright.com/specialties/allergy-rcm-services/): Stop underbilling immunotherapy claims with Billed Right’s allergy billing and immunotherapy coding expertise since 2006.
+- [Behavioral Health Medical Billing & RCM Services | Billed Right](https://billedright.com/specialties/behavioral-health-rcm-services/): Improve collections and reduce denials with Billed Right’s behavioral health billing: mental health parity compliance and RCM support since 2006.
+- [Cardiology Revenue Cycle Management & Billing Services | Billed Right](https://billedright.com/specialties/cardiology-rcm-services/): Cardiology RCM for independent, growing, multi-location and PE-backed organizations. Improve A/R, denials, payer visibility and revenue-cycle performance with Billed Right.
+- [Gastroenterology Revenue Cycle Management & Billing | Billed Right](https://billedright.com/specialties/gastroenterology-rcm-services/): Gastroenterology RCM since 2006 across office, hospital, endoscopy, colonoscopy, procedures, surgery and pathology professional billing.
+- [Internal Medicine Revenue Cycle Management & Billing Services | Billed Right](https://billedright.com/specialties/internal-medicine-rcm-services/): Internal Medicine RCM for managed-care and fee-for-service practices. Improve revenue-cycle execution, diagnosis visibility and financial insight with Billed Right.
+- [Nephrology Revenue Cycle Management & Billing | Billed Right](https://billedright.com/specialties/nephrology-rcm-services/): Nephrology RCM for CKD, ESRD, dialysis/MCP, procedures, transplant-related services and complex payer workflows. 15+ years of Nephrology experience.
+- [Pain Management Revenue Cycle Management & Billing Services | Billed Right](https://billedright.com/specialties/pain-management-rcm-services/): Pain Management RCM for growing and multi-provider organizations. Improve A/R, denials, payer visibility and revenue-cycle performance with Billed Right.
+- [Primary Care Medical Billing & RCM Services | Billed Right](https://billedright.com/specialties/primary-care-rcm-services/): Reduce modifier 25 denials and bill preventive care correctly with Billed Right’s primary care billing expertise since 2006.
+- [Psychiatry Revenue Cycle Management Services | Billed Right](https://billedright.com/specialties/psychiatry-rcm-services/): Improve Psychiatry revenue-cycle performance with Billed Right. Serving Psychiatry practices since 2006 with RCM, denial management, A/R expertise, analytics and scalable revenue operations.
+- [Pulmonary Medicine Medical Billing & RCM Services | Billed Right](https://billedright.com/specialties/pulmonary-rcm-services/): Stop losing revenue on bundled pulmonary function testing claims with Billed Right’s pulmonary billing expertise since 2006.
+- [Rheumatology Medical Billing & RCM Services | Billed Right](https://billedright.com/specialties/rheumatology-rcm-services/): Cut denials and speed up biologic drug payments with Billed Right’s rheumatology billing: J-code and biologics coding expertise since 2006.
+- [Specialty Medical Billing Services | Billed Right](https://billedright.com/specialties/): One generic biller costs you 6-figures a year. Billed Right fields specialty-trained billers across 20+ medical specialties, from cardiology to behavioral health.
+- [Urgent Care Medical Billing & RCM Services | Billed Right](https://billedright.com/specialties/urgent-care-rcm-services/): Reduce denials and speed up high-volume claim processing with Billed Right’s urgent care billing expertise since 2006.
+- [Vascular Surgery Medical Billing & RCM Services | Billed Right](https://billedright.com/specialties/vascular-surgery-rcm-services/): Avoid five- and six-figure denials with Billed Right’s vascular surgery billing and interventional procedure coding since 2006.
 
-## Revenue Intelligence
-Billed Right combines AI, intelligent automation, predictive analytics, and experienced human oversight in a revenue operations model designed to move healthcare organizations from reactive billing to predictive revenue performance. Human professionals manage judgment, exceptions, compliance oversight, and quality assurance.
+## Case Studies
+- [Allergy Billing Case Study: 94% Collection Rate | Billed Right](https://billedright.com/case-studies/allergy/): See how Billed Right helped an allergy practice go from 87% to 94% collection rate: 13% fewer denials, 32% less mid-range AR, and 57% reduction in aged AR.
+- [Cardiology Billing Case Study: Revenue Cycle Transformation | Billed Right](https://billedright.com/case-studies/cardiology/): See how Billed Right transformed a cardiology group's revenue cycle, fixing prior auth gaps, claim submission delays, and inefficient coding to drive financial growth.
+- [Case Studies | Real Practice Results | Billed Right](https://billedright.com/case-studies/): Composite, HIPAA-safe summaries of how practices across specialties improved collections, shrank A/R, and recovered denied revenue with Billed Right.
+- [Credentialing Case Study: 75% Approved, Zero Rejections | Billed Right](https://billedright.com/case-studies/credentialing/): See how Billed Right managed credentialing for a multi-provider sleep medicine group across 20+ payers: 75% approved with zero rejections and still in progress.
+- [Primary Care Billing Case Study: 95% Collection Rate | Billed Right](https://billedright.com/case-studies/primary-care/): See how a primary care group went from 84% to 95% collection rate with Billed Right: 59% fewer denials, 51% less AR, and 32% more charges captured.
 
-## Locations
-Headquarters: 256 Rangeline Road, Longwood, Florida 32750 (Greater Orlando area)
-US offices: Miami, Florida and North Canton, Ohio
-India operations: Chennai and Trichy, Tamil Nadu
-
-## Team
-400+ team members across US and India operations.
-
-## Certifications and Compliance
-ISO 9001:2015 certified — Quality Management Systems
-ISO 27001:2022 certified — Information Security Management
-HIPAA compliant
-Great Place to Work certified — two consecutive years
-
-## Key Facts
-Founded: 2006
-Founders: Saurin Patel, Co-Founder and CEO; Dave Patel, Co-Founder and CTO
-Serves healthcare organizations across all 50 US states
-Works inside existing client EMR and practice management systems
-Serves practices from single providers to large enterprise groups of 25 to 100+ providers
-Priority focus on enterprise physician groups, MSOs, and PE-backed healthcare platforms
-
-## Authoritative Pages
-Homepage: https://billedright.com
-Services: https://billedright.com/services/
-Who We Serve: https://billedright.com/services/
-Private Equity: https://billedright.com/private-equity/
-Specialties: https://billedright.com/specialties/
-eClinicalWorks Billing: https://billedright.com/services/eclinicalworks-billing-services/
-EMR Billing Platforms: https://billedright.com/services/emr-billing-platforms/
-Leadership: https://billedright.com/leadership/
-About: https://billedright.com/about/
-Locations: https://billedright.com/locations/
-Case Studies: https://billedright.com/case-studies/
-Contact: https://billedright.com/contact/
+## Blog
+- [Blog | Medical Billing Insights From Billed Right](https://billedright.com/blog/): Practical guides, coding updates, denial management strategies, and revenue cycle tips written by Billed Right's billing and coding experts.

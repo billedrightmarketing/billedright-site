@@ -11,8 +11,8 @@ the result to dist/ using a clean-URL folder structure:
     pages/about.html        -> dist/about/index.html
     ...
 
-Also copies assets/, netlify.toml, sitemap.xml, robots.txt, llms.txt, and the
-favicon files (favicon.ico, favicon-32x32.png, favicon-16x16.png,
+Also copies assets/, netlify.toml, sitemap.xml, robots.txt, and the favicon
+files (favicon.ico, favicon-32x32.png, favicon-16x16.png,
 apple-touch-icon.png) into dist/.
 
 Blog posts are authored as markdown + frontmatter in content/blog/*.md (this
@@ -24,6 +24,11 @@ markdown/YAML packages are used (Netlify's build step deliberately avoids
 depending on `pip install` succeeding; see the netlify.toml comment), so
 frontmatter parsing and markdown rendering are both hand-rolled below,
 supporting only what the CMS fields and the template actually need.
+
+dist/llms.txt and dist/okf/ (an Open Knowledge Format v0.2 bundle) are
+generated — not copied — by generate_ai_files(), from the same
+PAGE_OUTPUT_PATHS/page metadata/blog post list as everything else. See that
+function's own comment for what's included/excluded.
 """
 import html
 import re
@@ -116,6 +121,11 @@ PAGE_OUTPUT_PATHS = {
     "thank-you/pulmonary": "thank-you/pulmonary/index.html",
     "thank-you/contact": "thank-you/contact/index.html",
     "thank-you/consultation": "thank-you/consultation/index.html",
+    # Netlify's custom-error-page convention: a 404.html at the publish
+    # directory ROOT (not nested in a folder) is served automatically for
+    # any unmatched route, no redirect rule required. Must stay a flat
+    # top-level path here for that to work.
+    "404": "404.html",
 }
 
 
@@ -295,6 +305,12 @@ def build_blog_posts() -> tuple:
             "title_image": fields.get("title_image", "").strip(),
             "body_md": body_md,
             "date_obj": parse_post_date(fields.get("date", ""), date_match.group(1) if date_match else None),
+            # CMS "Draft" checkbox (static/admin/config.yml). Draft posts still
+            # render on the live site like any other post (unchanged behavior)
+            # but are excluded from the generated llms.txt / okf/ AI-readable
+            # files by generate_ai_files() below — see TEST_POST_SLUGS, which
+            # this field supersedes for future posts.
+            "draft": fields.get("draft", "").strip().lower() == "true",
         })
 
     # Most recently published first; posts with an unparseable date sort last.
@@ -446,6 +462,279 @@ def render_blog_archive(all_posts: list) -> tuple:
     return "".join(buttons), "\n".join(cards)
 
 
+# ─────────────────────────────────────────────────────────────────────────
+# AI-readable site files: /llms.txt and /okf/ (Open Knowledge Format v0.2).
+#
+# Both are generated from the same data every other page is built from —
+# PAGE_OUTPUT_PATHS, each page's own <title>/<meta description>/<h2> markup,
+# and the parsed blog post list — so a new specialty/service page or blog
+# post is picked up automatically the next time build.py runs, with no
+# separate file to hand-maintain. Design-only edits (CSS, images, spacing)
+# never touch title/meta/h2 text, so they never produce a diff here.
+#
+# Pages are excluded automatically by rule (see ai_file_excluded()) rather
+# than via a hand-maintained include list: the 404 page, the retired
+# welcome-cbs redirect landing page, every thank-you/* confirmation page,
+# and the legal/compliance pages (Privacy Policy, Terms, SMS Consent —
+# already noindex and already absent from sitemap.xml, so this keeps the
+# same policy consistent here). Draft blog posts (CMS "Draft" checkbox,
+# or the two known legacy test posts in TEST_POST_SLUGS) are excluded the
+# same way. Individual blog posts are deliberately left out of llms.txt
+# itself (only the /blog/ hub is linked there, per llms.txt's own intent
+# to stay concise) but each gets a lightweight OKF concept file.
+# ─────────────────────────────────────────────────────────────────────────
+
+LEGAL_SLUGS = {"privacy-policy", "sms-consent", "terms-and-conditions"}
+
+# Short, deliberately conservative company summary for the llms.txt
+# blockquote. NOT sourced from pages/home.html's own <meta description>,
+# which currently repeats several claims
+# (docs/BILLED_RIGHT_FACTS_AND_GUARDRAILS.md lists "$2B+ billed", "94%
+# client retention", etc. under "Existing Staging Claims Requiring
+# Validation") — this file shouldn't propagate an unverified number into a
+# new AI-facing surface just because it's easy to scrape. Update this by
+# hand only if the company's core positioning statement changes.
+LLMS_TXT_SUMMARY = (
+    "Billed Right is a healthcare Revenue Cycle Management company and "
+    "Enterprise Revenue Performance Partner, founded in 2006 and "
+    "headquartered in Longwood, Florida. It provides end-to-end RCM "
+    "services — billing, denial management, credentialing, and revenue-cycle "
+    "analytics — to healthcare organizations across the United States."
+)
+
+_HTML_TAG_RE = re.compile(r"<[^>]+>")
+_TITLE_RE = re.compile(r"<title>(.*?)</title>", re.S)
+_DESCRIPTION_RE = re.compile(r'<meta\s+name="description"\s+content="(.*?)"', re.S)
+_H2_RE = re.compile(r"<h2[^>]*>(.*?)</h2>", re.S)
+
+
+def _clean_text(raw: str) -> str:
+    return html.unescape(_HTML_TAG_RE.sub("", raw)).strip()
+
+
+def extract_page_meta(html_text: str) -> dict:
+    """Pull the same title/description/heading data already authored on
+    every page — no new content, just reuse of what's already there."""
+    title_m = _TITLE_RE.search(html_text)
+    desc_m = _DESCRIPTION_RE.search(html_text)
+    h2s = [_clean_text(h) for h in _H2_RE.findall(html_text)]
+    return {
+        "title": _clean_text(title_m.group(1)) if title_m else "",
+        "description": _clean_text(desc_m.group(1)) if desc_m else "",
+        "h2s": [h for h in h2s if h][:8],
+    }
+
+
+def ai_file_excluded(slug: str) -> bool:
+    if slug in LEGAL_SLUGS or slug in ("404", "welcome-cbs"):
+        return True
+    if slug.startswith("thank-you/"):
+        return True
+    return False
+
+
+def canonical_url_for(output_rel_path: str) -> str:
+    if output_rel_path == "index.html":
+        return f"{SITE_URL}/"
+    if output_rel_path.endswith("/index.html"):
+        return f"{SITE_URL}/{output_rel_path[:-len('index.html')]}"
+    return f"{SITE_URL}/{output_rel_path}"
+
+
+_SECTION_PREFIXES = [
+    ("specialties/", "Specialties", "specialties"),
+    ("services/", "Services", "services"),
+    ("case-studies/", "Case Studies", "case-studies"),
+    ("blog/", "Blog", "blog"),
+]
+
+
+def classify_page(output_rel_path: str) -> tuple:
+    """Returns (llms_txt_section_name, okf_subdirectory) for a page, based
+    purely on its own URL structure — matches the site's actual
+    information architecture instead of a separately maintained list."""
+    for prefix, section, subdir in _SECTION_PREFIXES:
+        if output_rel_path.startswith(prefix):
+            return section, subdir
+    return "Company", "company"
+
+
+def okf_concept_path(output_rel_path: str, slug: str) -> str:
+    _, subdir = classify_page(output_rel_path)
+    if output_rel_path == "index.html":
+        return "company/home.md"
+    if output_rel_path == f"{subdir}/index.html":
+        # A section hub (services/specialties/case-studies/blog index) —
+        # sits as a file beside its own subdirectory of concept files.
+        return f"{subdir}.md"
+    leaf = slug.rsplit("/", 1)[-1]
+    return f"{subdir}/{leaf}.md"
+
+
+def okf_frontmatter(concept_type: str, title: str, description: str, resource: str, tags: list) -> str:
+    lines = ["---", f"type: {concept_type}"]
+    if title:
+        lines.append(f"title: {yaml_scalar(title)}")
+    if description:
+        lines.append(f"description: {yaml_scalar(description)}")
+    lines.append(f"resource: {resource}")
+    if tags:
+        lines.append("tags: [" + ", ".join(tags) + "]")
+    lines.append("---")
+    return "\n".join(lines)
+
+
+def yaml_scalar(value: str) -> str:
+    # Minimal safe YAML scalar quoting — same "don't need a real parser/
+    # library" philosophy as parse_frontmatter() above.
+    escaped = value.replace("\\", "\\\\").replace('"', '\\"')
+    return f'"{escaped}"'
+
+
+def generate_ai_files(all_output_paths: dict, blog_posts: list):
+    """Writes dist/llms.txt and the dist/okf/ bundle. See the module
+    comment above this function for what's included/excluded and why."""
+    okf_dir = DIST_DIR / "okf"
+    okf_dir.mkdir(parents=True, exist_ok=True)
+
+    sections = {"Company": [], "Services": [], "Specialties": [], "Case Studies": [], "Blog": []}
+
+    for slug, output_rel_path in all_output_paths.items():
+        if ai_file_excluded(slug):
+            continue
+        if slug.startswith("blog/"):
+            continue  # blog posts handled separately below (OKF only)
+
+        source_path = PAGES_DIR / f"{slug}.html"
+        if not source_path.exists():
+            source_path = PAGES_DIR / slug / "index.html"
+        if not source_path.exists():
+            continue
+        meta = extract_page_meta(source_path.read_text(encoding="utf-8"))
+        resource = canonical_url_for(output_rel_path)
+        section, subdir = classify_page(output_rel_path)
+        concept_rel = okf_concept_path(output_rel_path, slug)
+
+        sections[section].append({
+            "title": meta["title"] or slug,
+            "description": meta["description"],
+            "resource": resource,
+            "concept_rel": concept_rel,
+        })
+
+        concept_type = {
+            "Specialties": "SpecialtyPage",
+            "Services": "ServicePage",
+            "Case Studies": "CaseStudyPage",
+            "Blog": "WebPage",
+            "Company": "WebPage",
+        }[section]
+        tag_singular = {
+            "specialties": "specialty",
+            "services": "service",
+            "case-studies": "case-study",
+            "blog": "blog",
+            "company": "company",
+        }[subdir]
+        tags = [tag_singular]
+        body_lines = [f"# {meta['title'] or slug}", ""]
+        if meta["description"]:
+            body_lines += [meta["description"], ""]
+        if meta["h2s"]:
+            body_lines.append("## On This Page")
+            body_lines += [f"- {h}" for h in meta["h2s"]]
+            body_lines.append("")
+        body_lines.append(f"[View live page]({resource})")
+
+        concept_path = okf_dir / concept_rel
+        concept_path.parent.mkdir(parents=True, exist_ok=True)
+        concept_path.write_text(
+            okf_frontmatter(concept_type, meta["title"] or slug, meta["description"], resource, tags)
+            + "\n\n" + "\n".join(body_lines) + "\n",
+            encoding="utf-8",
+        )
+
+    # Blog posts: OKF concept files only (not listed individually in
+    # llms.txt — the /blog/ hub link above covers that, per llms.txt's own
+    # intent to stay a concise index rather than a full content dump).
+    for post in blog_posts:
+        if post["slug"] in TEST_POST_SLUGS or post.get("draft"):
+            continue
+        resource = f"{SITE_URL}/blog/{post['slug']}/"
+        tags = ["blog"]
+        if post["category"]:
+            tags.append(category_slug(post["category"]))
+        body_headings = [
+            line[3:].strip().strip("*").strip() for line in post["body_md"].splitlines()
+            if line.strip().startswith("## ")
+        ][:8]
+        body_lines = [f"# {post['title']}", ""]
+        if post["meta_description"]:
+            body_lines += [post["meta_description"], ""]
+        if post["category"]:
+            body_lines += [f"Category: {post['category']}", ""]
+        if body_headings:
+            body_lines.append("## On This Page")
+            body_lines += [f"- {h}" for h in body_headings]
+            body_lines.append("")
+        body_lines.append(f"[View live page]({resource})")
+
+        concept_path = okf_dir / "blog" / f"{post['slug']}.md"
+        concept_path.parent.mkdir(parents=True, exist_ok=True)
+        concept_path.write_text(
+            okf_frontmatter("BlogPosting", post["title"], post["meta_description"], resource, tags)
+            + "\n\n" + "\n".join(body_lines) + "\n",
+            encoding="utf-8",
+        )
+
+    # okf/index.md — bundle-root directory listing. Not itself a concept
+    # (index.md is a reserved OKF filename), so no `type` field.
+    index_lines = [
+        "---", 'okf_version: "0.2"', "---", "",
+        "# Billed Right — Open Knowledge Format Bundle", "",
+        "Machine-readable concept files describing Billed Right's public",
+        "website content. Each concept links back to its live page via its",
+        "`resource` field.", "",
+    ]
+    for section_name in ("Company", "Services", "Specialties", "Case Studies", "Blog"):
+        items = sections[section_name]
+        if not items:
+            continue
+        index_lines.append(f"## {section_name}")
+        for item in sorted(items, key=lambda x: x["title"]):
+            index_lines.append(f"- [{item['title']}](./{item['concept_rel']})")
+        index_lines.append("")
+    real_blog_posts = [p for p in blog_posts if p["slug"] not in TEST_POST_SLUGS and not p.get("draft")]
+    if real_blog_posts:
+        index_lines.append("## Blog Posts")
+        index_lines.append(f"- [{len(real_blog_posts)} articles](./blog/) — see individual concept files under `blog/`")
+        index_lines.append("")
+
+    (okf_dir / "index.md").write_text("\n".join(index_lines), encoding="utf-8")
+
+    # llms.txt
+    lines = ["# Billed Right", "", f"> {LLMS_TXT_SUMMARY}", ""]
+    for section_name in ("Company", "Services", "Specialties", "Case Studies"):
+        items = sections[section_name]
+        if not items:
+            continue
+        lines.append(f"## {section_name}")
+        for item in sorted(items, key=lambda x: x["title"]):
+            desc = f": {item['description']}" if item["description"] else ""
+            lines.append(f"- [{item['title']}]({item['resource']}){desc}")
+        lines.append("")
+    blog_items = sections["Blog"]
+    if blog_items:
+        lines.append("## Blog")
+        for item in blog_items:
+            desc = f": {item['description']}" if item["description"] else ""
+            lines.append(f"- [{item['title']}]({item['resource']}){desc}")
+        lines.append("")
+
+    (DIST_DIR / "llms.txt").write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+    print(f"  generated dist/llms.txt and dist/okf/ ({sum(len(v) for v in sections.values())} pages + {len(real_blog_posts)} blog posts)")
+
+
 def build():
     if DIST_DIR.exists():
         shutil.rmtree(DIST_DIR)
@@ -514,13 +803,17 @@ def build():
 
     # Copy root-level static files needed at the site root.
     for filename in (
-        "netlify.toml", "sitemap.xml", "robots.txt", "llms.txt",
+        "netlify.toml", "sitemap.xml", "robots.txt",
         "favicon.ico", "favicon-32x32.png", "favicon-16x16.png", "apple-touch-icon.png",
     ):
         src = ROOT / filename
         if src.exists():
             shutil.copy2(src, DIST_DIR / filename)
             print(f"  {filename} -> dist/{filename}")
+
+    # dist/llms.txt and dist/okf/ are generated, not copied — see
+    # generate_ai_files()'s own docstring/comment for what's included.
+    generate_ai_files(all_output_paths, blog_posts)
 
     print(f"\nBuild complete: {len(all_output_paths)} pages written to {DIST_DIR}")
 

@@ -24,4 +24,10 @@ collections:
         name: title_image
         widget: image
         required: false
+      - label: Draft
+        name: draft
+        widget: boolean
+        default: false
+        required: false
+        hint: "Test/unfinished posts only — keeps this post out of llms.txt and the /okf/ AI-readable files. Does not remove it from the live blog."
       - { label: Body, name: body, widget: markdown }

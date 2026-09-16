@@ -234,6 +234,14 @@
   [headers.values]
     Content-Type = "text/plain; charset=utf-8"
 
+# Open Knowledge Format bundle (build.py's generate_ai_files()) — plain
+# Markdown concept files, served with an explicit content type same as
+# llms.txt above rather than falling back to Netlify's default guess.
+[[headers]]
+  for = "/okf/*"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+
 # Security headers on every response. Deliberately no Cache-Control here —
 # it would collide with the immutable asset rules above (Netlify merges
 # matching header blocks, and HTML should revalidate on every request anyway).
