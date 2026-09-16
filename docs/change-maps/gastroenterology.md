@@ -4,6 +4,110 @@
 
 ## Implementation Log
 
+**2026-09-16 — Live-page feedback & freeze per
+`docs/specialty-pages/gastroenterology/Billed_Right_Gastroenterology_FINAL_Live_Page_Feedback_and_Freeze.md`.**
+Targeted revision pass only — no re-rebuild. Cross-referenced every item
+against the live page before editing (confirmed each quoted "current"
+string matched what was actually on the page). Changes:
+
+1. **Internal KPI-validation language removed from public copy** (doc §1)
+   — removed the sentence "Billed Right does not publish invented
+   Gastroenterology-specific performance numbers. Specialty KPI figures
+   will be added here once internally validated..." from beneath the
+   qualitative-outcomes KPI grid. The qualitative outcome cards themselves
+   are unchanged — this was purely an internal validation note that had
+   leaked into public copy, exactly as the doc describes. No KPI
+   placeholder or numbers were added in its place, per the doc's explicit
+   instruction ("do not create a KPI placeholder").
+2. **Unpublished resource cards removed** (doc §2) — the entire "More on
+   Gastroenterology billing" / "Gastroenterology Revenue Cycle Resources"
+   section was removed. All three cards ("Why Gastroenterology Revenue
+   Cycles Need Different Workflows...", "Screening vs Diagnostic
+   Colonoscopy...", "Professional vs Facility Billing in
+   Gastroenterology") had aspirational, specific-sounding titles but
+   linked only to the generic `/blog/` or `/resources/` hubs — none is an
+   actual, individually published article matching its stated title. Per
+   the doc's rule ("a resource may remain only if... the destination
+   content is complete"), the section was removed rather than genericized
+   or replaced with "coming soon" content.
+   **Flagged, not fixed elsewhere:** this identical pattern (aspirational
+   resource-card titles linking to generic hubs) exists on every other
+   specialty page rebuilt this session (Psychiatry, Cardiology, Pain
+   Management, Internal Medicine, Nephrology) — this task's scope is
+   Gastroenterology only, so those were left untouched, but the same
+   cleanup is likely needed there.
+3. **Stray "+" replaced with a proper icon** (doc §3) — the "Procedures &
+   Surgery" card in the "One Specialty. Multiple Revenue Paths." section
+   used a bare `<strong>+</strong>` character where every other card in
+   that grid uses a proper line-icon SVG. Replaced with the same
+   activity/pulse-line icon already used for the equivalent "high-value
+   procedures" concept on the Cardiology page, for visual consistency.
+   Verified on both desktop and mobile — renders as a clean icon, no
+   stray characters, correct spacing/alignment.
+4. **Competing Holistic Services CTA removed** (doc §4) — removed the
+   "Ask About Holistic Revenue Cycle Services" button from the end of the
+   Additional/Holistic Services callout. The callout itself (scope
+   clarification + service list: Prior Authorization, Medical Coding,
+   Credentialing, Documentation Management) is unchanged — it now ends
+   after the list with no CTA, so it reads as a scope clarification
+   rather than a second conversion funnel. The page's only conversion
+   path is now the final "Request a Revenue Cycle Assessment" section.
+5. **Testimonial source verification — flagged, not resolved** (doc §5).
+   I have no access to the original review source, Client Success
+   records, or the platform the testimonial was originally submitted on,
+   so I cannot personally confirm: whether it's from a real
+   client/reviewer, whether the Gastroenterology/Florida attribution is
+   accurate, whether the original source carried a five-star rating, or
+   whether Billed Right has publish rights in the manner displayed. Per
+   the doc's own instruction ("never add stars to make a testimonial look
+   like a five-star review" / "if it did not originate as five-star, keep
+   the testimonial but remove the stars"), I did **not** guess in either
+   direction — the 5-star display is unchanged, pending explicit
+   confirmation from Client Success/Legal. Note this is the same
+   sitewide display convention used on every testimonial across the site
+   (Nephrology, Internal Medicine, homepage, `why-billed-right.html`,
+   `testimonials.html`), not something unique to this page. This
+   testimonial already carries a `NEEDS VERIFICATION` row in
+   `docs/claims-register.md` from the original rebuild — unchanged by
+   this pass; still open.
+6. **Enterprise-scale language — correctly left out** (doc §6). The doc
+   explicitly says not to add this "automatically" and only if
+   multi-provider/multi-location GI experience is first-party verified.
+   No such verification was provided in this task, so no enterprise-scale
+   statement was added. No action needed — the page already didn't
+   contain this claim.
+7. **Section 7 ("Do Not Change These Strong Elements") — verified intact,
+   nothing touched.** Confirmed since-2006 experience language, office/
+   hospital/endoscopy/colonoscopy/procedures/pathology sections,
+   professional-vs-facility distinction, Prior Authorization/Medical
+   Coding scope statements, Intelligent RCM, eCW/IMS/AdvancedMD, Data-to-
+   Decisions, FAQs, final CTA, four-field form, PHI warning, and privacy/
+   consent language are all unchanged from the original rebuild.
+
+### Conflicts found
+None. Every instruction in this feedback doc was consistent with the
+original implementation doc and the V2 framework — nothing required
+choosing between conflicting sources.
+
+### Rule 10 — noted for future specialty builds (not actioned here)
+The feedback doc's §10 establishes three rules for "Primary Care and
+every specialty page going forward": (1) internal instructions must
+never appear in public copy, (2) unpublished resources must never appear
+as live cards, (3) scope-clarification sections must not create a
+competing CTA/funnel. These are process rules for *future* builds, not
+an instruction to retroactively fix other already-frozen specialty pages
+in this pass — no other page was touched, consistent with this task's
+explicit scope.
+
+### Freeze
+Per the doc's §9, the Gastroenterology commercial pillar is now frozen
+following this cleanup pass. Future growth should come from authority
+content, real proof, internal linking, technical SEO, backlinks/PR, and
+conversion optimization — not further pillar-page rewrites, absent new
+verified capabilities/proof or a material business change.
+
+---
+
 **2026-09-16 — Full rebuild per
 `docs/specialty-pages/gastroenterology/Billed_Right_Gastroenterology_FINAL_First_Time_Right_RCM_SEO_AEO_Implementation.md`
 (FINAL — Implementation Source of Truth).**
@@ -249,6 +353,38 @@ used on Psychiatry, Cardiology, Pain Management and Internal Medicine.
   page-speed/Core Web Vitals, and image compression **not independently
   re-verified** in this pass (image asset itself was not changed). No
   placeholders or internal notes left in the visible copy — PASS.
+
+## Live-Page Feedback & Freeze QA (doc §8)
+- **Content:** No internal instructions/validation notes visible — PASS
+  (removed, see item 1 above). No invented/unverified KPIs — PASS
+  (qualitative-only, unchanged). No composite/illustrative case presented
+  as real proof — PASS (none exists on the page). Testimonial and stars
+  — **UNCONFIRMED**, flagged for Client Success/Legal (see item 5 above).
+  Professional vs. facility scope accurate — PASS. Pathology scope
+  accurate — PASS. Medical Coding separately scoped — PASS. Prior
+  Authorization separately scoped — PASS. No unsupported enterprise-scale
+  claims — PASS.
+- **UX:** Stray "+" gone — PASS. Desktop layout clean — PASS (verified via
+  screenshot). Mobile layout clean — PASS (verified via screenshot at
+  375px). No unpublished/broken resource cards — PASS (section removed).
+  No competing Holistic-services CTA — PASS. Exactly one major final
+  conversion section — PASS. Mobile click-to-call — **UNCONFIRMED** (no
+  live device test in this environment, consistent with every prior
+  report). Chat does not interfere with CTA/form — PASS (verified no
+  layout collision in this and prior passes).
+- **Conversion/Privacy:** Four-field form present — PASS. PHI warning
+  present — PASS. Privacy Policy linked — PASS. Consent wording matches
+  sitewide-approved language — PASS. Zoho lead creation, page/source
+  attribution reaching CRM, and assignment/notification — **UNCONFIRMED**
+  — cannot be verified in this local/static environment (no live Netlify
+  Functions/Zoho endpoint), consistent with every prior specialty-page QA
+  report.
+- **SEO/Technical:** One H1 — PASS. Title/meta correct and unchanged —
+  PASS. Canonical correct — PASS. Indexable (`index, follow`) — PASS.
+  Internal links unaffected by this pass — PASS. Structured data
+  (JSON-LD) still parses without error and matches visible content (no
+  schema referenced the removed Resources section) — PASS. No
+  placeholders or broken links introduced — PASS.
 
 ## Not in scope / not touched
 - `netlify/functions/zoho-lead.js`, `build.py`, `templates/nav-template.html`,
