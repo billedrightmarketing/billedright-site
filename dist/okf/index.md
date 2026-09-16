@@ -45,7 +45,7 @@ website content. Each concept links back to its live page via its
 - [eClinicalWorks Medical Billing Services | Billed Right](./services/eclinicalworks-billing-services.md)
 
 ## Specialties
-- [Allergy & Immunology Medical Billing & RCM Services | Billed Right](./specialties/allergy-rcm-services.md)
+- [Allergy & Immunology Revenue Cycle Management | Billed Right](./specialties/allergy-rcm-services.md)
 - [Behavioral Health Revenue Cycle Management & Billing | Billed Right](./specialties/behavioral-health-rcm-services.md)
 - [Cardiology Revenue Cycle Management & Billing Services | Billed Right](./specialties/cardiology-rcm-services.md)
 - [Gastroenterology Revenue Cycle Management & Billing | Billed Right](./specialties/gastroenterology-rcm-services.md)
