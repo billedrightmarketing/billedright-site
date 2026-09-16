@@ -58,7 +58,7 @@ website content. Each concept links back to its live page via its
 - [Rheumatology Revenue Cycle Management & Billing | Billed Right](./specialties/rheumatology-rcm-services.md)
 - [Specialty Medical Billing Services | Billed Right](./specialties.md)
 - [Urgent Care Revenue Cycle Management & Billing | Billed Right](./specialties/urgent-care-rcm-services.md)
-- [Vascular Surgery Medical Billing & RCM Services | Billed Right](./specialties/vascular-surgery-rcm-services.md)
+- [Vascular Surgery Revenue Cycle Management & Billing | Billed Right](./specialties/vascular-surgery-rcm-services.md)
 
 ## Case Studies
 - [Allergy Billing Case Study: 94% Collection Rate | Billed Right](./case-studies/allergy.md)
