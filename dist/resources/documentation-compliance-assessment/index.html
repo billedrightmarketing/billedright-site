@@ -31,23 +31,23 @@ window.brLoadGTM = function() {
 <!-- ═══════════════════════════════════════════
   SEO META
   ═══════════════════════════════════════════ -->
-<title>Contact Us | Billed Right</title>
-<meta name="description" content="Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right. Real audit, real answers.">
+<title>Documentation & Coding Compliance Risk Self-Assessment | Billed Right</title>
+<meta name="description" content="A quick self-assessment of your practice's documentation review and audit-readiness practices, with a risk tier result. No email required.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://billedright.com/contact/">
+<link rel="canonical" href="https://billedright.com/resources/documentation-compliance-assessment/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="See Exactly What Your Practice Is Leaving Behind.">
-<meta property="og:description" content="Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right.">
-<meta property="og:url" content="https://billedright.com/contact/">
+<meta property="og:title" content="Documentation & Coding Compliance Risk Self-Assessment | Billed Right">
+<meta property="og:description" content="A quick self-assessment of your practice's documentation review and audit-readiness practices, with a risk tier result. No email required.">
+<meta property="og:url" content="https://billedright.com/resources/documentation-compliance-assessment/">
 <meta property="og:site_name" content="Billed Right">
 <meta property="og:image" content="https://billedright.com/og-image.jpg">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="See Exactly What Your Practice Is Leaving Behind.">
-<meta name="twitter:description" content="Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right.">
+<meta name="twitter:title" content="Documentation & Coding Compliance Risk Self-Assessment | Billed Right">
+<meta name="twitter:description" content="A quick self-assessment of your practice's documentation review and audit-readiness practices, with a risk tier result. No email required.">
 <meta name="twitter:image" content="https://billedright.com/og-image.jpg">
 <meta property="og:locale" content="en_US">
 <meta property="og:image:width" content="1200">
@@ -97,32 +97,19 @@ window.brLoadGTM = function() {
       "potentialAction": {"@type":"SearchAction","target":"https://billedright.com/?s={search_term_string}","query-input":"required name=search_term_string"}
     },
     {
-      "@type": "Service",
-      "name": "Revenue Cycle Management Services",
-      "provider": {"@id": "https://billedright.com/#organization"},
-      "areaServed": "US",
-      "serviceType": "Medical Billing and Revenue Cycle Management",
-      "description": "Credentialing, medical billing, denial management, A/R follow-up, charge posting, coding & audits, eligibility verification, and reporting for healthcare practices.",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "RCM Services",
-        "itemListElement": [
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Medical Billing"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Provider Credentialing"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Denial Management"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"A/R Follow-up"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Insurance Eligibility Verification"}}
-        ]
-      }
+      "@type": "WebPage",
+      "name": "Documentation & Coding Compliance Risk Self-Assessment",
+      "url": "https://billedright.com/resources/documentation-compliance-assessment/",
+      "description": "Free self-assessment quiz that scores a practice's documentation review and audit-readiness practices into a Low, Moderate, or High risk tier.",
+      "isPartOf": {"@id": "https://billedright.com/#website"},
+      "provider": {"@id": "https://billedright.com/#organization"}
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"How much can Billed Right improve my collections?","acceptedAnswer":{"@type":"Answer","text":"Billed Right clients see an average 94% lift in collections, with days in A/R reduced from 40+ to under 24 days on average."}},
-        {"@type":"Question","name":"What specialties does Billed Right serve?","acceptedAnswer":{"@type":"Answer","text":"Billed Right serves 20+ medical specialties including cardiology, behavioral health, internal medicine, pain management, orthopedics, pediatrics, ophthalmology, urgent care, neurology, nephrology, and multispecialty groups."}},
-        {"@type":"Question","name":"Is Billed Right HIPAA compliant?","acceptedAnswer":{"@type":"Answer","text":"Yes. Billed Right has maintained zero data breaches in 18+ years of operation. We are HIPAA compliant and use 256-bit encryption for all data in transit and at rest."}},
-        {"@type":"Question","name":"How long does it take to onboard with Billed Right?","acceptedAnswer":{"@type":"Answer","text":"Most practices are fully onboarded within 2–3 weeks, including EHR/PM system integration, payer setup, and team training."}},
-        {"@type":"Question","name":"What does Billed Right charge for medical billing services?","acceptedAnswer":{"@type":"Answer","text":"Billed Right uses a transparent percentage-of-collections pricing model with no setup fees and no long-term contracts required to get started. Contact us for a quote tailored to your specialty and volume."}}
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://billedright.com/"},
+        {"@type":"ListItem","position":2,"name":"Resources","item":"https://billedright.com/resources/"},
+        {"@type":"ListItem","position":3,"name":"Documentation & Coding Compliance Risk Self-Assessment","item":"https://billedright.com/resources/documentation-compliance-assessment/"}
       ]
     }
   ]
@@ -1567,6 +1554,113 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-orbit-hub, .br-ai-hub { animation: none !important; filter: none !important; }
   .br-ai-chip, .br-chip { animation-duration: 12s !important; }
 }
+
+/* ═══════════════════════════════════════════
+   AGING A/R RISK CALCULATOR (shares .br-calc-* rules with the
+   Denial Write-Off Recovery Calculator — same generic calculator UI)
+   ═══════════════════════════════════════════ */
+.br-calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.br-calc-input-wrap { position: relative; }
+.br-calc-dollar-prefix {
+  position: absolute; left: 15px; top: 41px; font-size: 14px; color: var(--text-muted); pointer-events: none;
+}
+.br-calc-input-wrap input[type="number"] { padding-left: 28px; }
+.br-calc-range-row { display: flex; align-items: center; gap: 14px; }
+.br-calc-range-row input[type="range"] {
+  flex: 1; -webkit-appearance: none; appearance: none; height: 6px; border-radius: 4px;
+  background: var(--border); outline: none; cursor: pointer;
+}
+.br-calc-range-row input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--brand); box-shadow: 0 2px 6px rgba(186,32,37,.4); cursor: pointer; border: 3px solid #fff;
+}
+.br-calc-range-row input[type="range"]::-moz-range-thumb {
+  width: 20px; height: 20px; border-radius: 50%; background: var(--brand);
+  box-shadow: 0 2px 6px rgba(186,32,37,.4); cursor: pointer; border: 3px solid #fff;
+}
+.br-calc-range-val {
+  min-width: 56px; text-align: center; font-size: 15px; font-weight: 800; color: var(--brand);
+  background: var(--brand-pale); border-radius: var(--r-sm); padding: 6px 8px; flex-shrink: 0;
+}
+.br-calc-result-card {
+  background: var(--navy); border-radius: var(--r-xl); padding: 36px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.br-calc-result-card::before {
+  content: ''; position: absolute; top: -80px; right: -80px; width: 240px; height: 240px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(186,32,37,.25), transparent 65%);
+}
+.br-calc-result-label {
+  position: relative; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.55); margin-bottom: 8px;
+}
+.br-calc-result-num {
+  position: relative; font-size: clamp(38px, 5vw, 56px); font-weight: 800; color: #fff; line-height: 1; margin-bottom: 6px;
+}
+.br-calc-result-sub { position: relative; font-size: 14px; color: rgba(255,255,255,.6); margin-bottom: 22px; }
+.br-calc-result-detail {
+  position: relative; display: flex; justify-content: center; gap: 28px; flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px;
+}
+.br-calc-result-detail div { text-align: center; }
+.br-calc-result-detail .rd-num { font-size: 19px; font-weight: 800; color: var(--brand); line-height: 1; margin-bottom: 4px; }
+.br-calc-result-detail .rd-lbl { font-size: 11px; color: rgba(255,255,255,.5); }
+.br-calc-cta-panel {
+  margin-top: 22px; border-radius: var(--r-lg); padding: 24px; text-align: center;
+  transition: background .25s, border-color .25s;
+}
+.br-calc-cta-panel.tier-soft { background: var(--bg-light); border: 1.5px solid var(--border); }
+.br-calc-cta-panel.tier-moderate { background: rgba(186,32,37,.06); border: 1.5px solid rgba(186,32,37,.2); }
+.br-calc-cta-panel.tier-urgent { background: rgba(186,32,37,.1); border: 1.5px solid rgba(186,32,37,.35); }
+.br-calc-cta-heading { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+.br-calc-cta-panel.tier-urgent .br-calc-cta-heading { color: var(--brand-dark); }
+.br-calc-cta-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+@media (max-width: 900px) {
+  .br-calc-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════
+   DOCUMENTATION & CODING COMPLIANCE RISK
+   SELF-ASSESSMENT
+   Scored yes/no quiz card + tier-colored risk result
+   banner (shares .br-calc-cta-panel tier-* rules above
+   for the CTA panel at the bottom).
+   ═══════════════════════════════════════════ */
+.br-quiz-progress {
+  font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 18px;
+}
+.br-quiz-q { margin-bottom: 26px; }
+.br-quiz-q:last-child { margin-bottom: 0; }
+.br-quiz-q-text { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 12px; line-height: 1.5; }
+.br-quiz-options { display: flex; gap: 10px; flex-wrap: wrap; }
+.br-quiz-opt {
+  flex: 1; min-width: 120px; text-align: center;
+  padding: 12px 16px; border-radius: var(--r-md);
+  border: 1.5px solid var(--border); background: var(--white);
+  font-size: 14px; font-weight: 600; color: var(--text-mid);
+  cursor: pointer; transition: border-color .15s, background .15s, color .15s;
+}
+.br-quiz-opt:hover { border-color: rgba(186,32,37,.35); }
+.br-quiz-opt.selected { border-color: var(--brand); background: var(--brand-pale); color: var(--brand); }
+.br-quiz-result-card {
+  background: var(--navy); border-radius: var(--r-xl); padding: 32px;
+  position: relative; overflow: hidden; text-align: center;
+}
+.br-quiz-result-card::before {
+  content: ''; position: absolute; top: -80px; right: -80px; width: 240px; height: 240px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(186,32,37,.25), transparent 65%);
+}
+.br-quiz-result-tier {
+  position: relative; display: inline-block; font-size: 12px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase; padding: 5px 14px; border-radius: 30px;
+  margin-bottom: 14px;
+}
+.br-quiz-result-tier.tier-low { background: rgba(16,185,129,.18); color: var(--success); }
+.br-quiz-result-tier.tier-moderate { background: rgba(186,32,37,.18); color: #ff8a8d; }
+.br-quiz-result-tier.tier-high { background: rgba(186,32,37,.3); color: #ffb3b5; }
+.br-quiz-result-heading { position: relative; font-size: clamp(22px, 3vw, 30px); font-weight: 800; color: #fff; margin-bottom: 10px; }
+.br-quiz-result-sub { position: relative; font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.7; max-width: 520px; margin: 0 auto; }
 </style>
 </head>
 <body>
@@ -2142,89 +2236,241 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-<main id="brpage-contact" class="br-page active" aria-label="Contact page">
-  <div class="br-page-hero" style="padding-bottom:52px"><div class="br-wrap"><span class="br-eyebrow" style="color:#fff">Get In Touch</span><h1>See Exactly What Your Practice Is Leaving Behind.</h1><p class="ph-sub" style="font-size:17px;color:rgba(255,255,255,.62);max-width:620px;margin:0 auto;line-height:1.7">Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right. Real audit. Real answers.</p></div></div>
-  <section class="br-section br-bg-light"><div class="br-wrap"><div class="br-contact-grid">
-    <div class="br-reveal">
-      <span class="br-eyebrow">Why Billed Right</span>
-      <h2 style="font-size:clamp(26px,3vw,38px);margin:12px 0 16px;color:var(--navy)">Start with an honest review of your claims.</h2>
-      <p style="font-size:16px;color:var(--text-muted);line-height:1.7">We send a specialist, not a sales rep, who pulls your actual data and shows you exactly what's leaking.</p>
-      <ul class="br-trust-list">
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>A real audit of recent claims, not a canned presentation</li>
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>Specialty-specific coding and denial insights</li>
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>Solution specialist, not a sales rep, responds within one business day</li>
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>Backed by our 120-day money-back guarantee</li>
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>18+ years of RCM expertise across 20+ specialties</li>
-      </ul>
-      <div class="br-contact-detail">
-        <div class="br-cd-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg><span>407-217-9281</span></div>
-        <div class="br-cd-item"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@billedright.com</span></div>
-        <div class="br-cd-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Orlando, FL: serving practices nationwide</span></div>
-        <div class="br-cd-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon–Fri, 9am–6pm ET</span></div>
+<main id="brpage-documentation-compliance-assessment" class="br-page active" aria-label="Documentation and coding compliance risk self-assessment">
+  <div class="br-page-hero">
+    <div class="br-wrap">
+      <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:14px">
+        <a href="/" style="color:rgba(255,255,255,.5)">Home</a><span style="margin:0 8px;color:rgba(255,255,255,.3)">/</span><a href="/resources/" style="color:rgba(255,255,255,.5)">Resources</a><span style="margin:0 8px;color:rgba(255,255,255,.3)">/</span><span style="color:rgba(255,255,255,.85)">Documentation Compliance Self-Assessment</span>
+      </p>
+      <span class="br-eyebrow" style="color:#fff">Free Self-Assessment</span>
+      <h1>Documentation &amp; Coding Compliance Risk Self-Assessment</h1>
+      <p class="ph-sub">Seven quick questions about your documentation review practices &mdash; get a risk tier, not a diagnosis, no email required.</p>
+    </div>
+  </div>
+
+  <section class="br-section br-bg-light">
+    <div class="br-wrap-sm">
+      <div class="br-form-card br-reveal">
+        <h3>Answer honestly for the most useful result</h3>
+        <p class="fsub">Seven yes/no questions about how documentation is reviewed before claims go out. Your result appears instantly below.</p>
+        <div class="br-quiz-progress" id="dq-progress">0 of 7 answered</div>
+
+        <div class="br-quiz-q" data-q="1">
+          <div class="br-quiz-q-text">1. Is documentation reviewed against the billed CPT and ICD-10 codes before the claim is submitted &mdash; not just after a denial comes back?</div>
+          <div class="br-quiz-options">
+            <button type="button" class="br-quiz-opt" data-val="yes">Yes</button>
+            <button type="button" class="br-quiz-opt" data-val="no">No</button>
+          </div>
+        </div>
+
+        <div class="br-quiz-q" data-q="2">
+          <div class="br-quiz-q-text">2. Is the E/M level billed checked against the documentation to confirm the notes actually support that level of complexity?</div>
+          <div class="br-quiz-options">
+            <button type="button" class="br-quiz-opt" data-val="yes">Yes</button>
+            <button type="button" class="br-quiz-opt" data-val="no">No</button>
+          </div>
+        </div>
+
+        <div class="br-quiz-q" data-q="3">
+          <div class="br-quiz-q-text">3. Are operative or procedure notes reviewed to confirm they support the billed procedure code before submission?</div>
+          <div class="br-quiz-options">
+            <button type="button" class="br-quiz-opt" data-val="yes">Yes</button>
+            <button type="button" class="br-quiz-opt" data-val="no">No</button>
+          </div>
+        </div>
+
+        <div class="br-quiz-q" data-q="4">
+          <div class="br-quiz-q-text">4. Is there a formal process for catching missing or incomplete documentation before it turns into a denial?</div>
+          <div class="br-quiz-options">
+            <button type="button" class="br-quiz-opt" data-val="yes">Yes</button>
+            <button type="button" class="br-quiz-opt" data-val="no">No</button>
+          </div>
+        </div>
+
+        <div class="br-quiz-q" data-q="5">
+          <div class="br-quiz-q-text">5. Do providers receive regular feedback or education on documentation gaps, rather than finding out only after something goes wrong?</div>
+          <div class="br-quiz-options">
+            <button type="button" class="br-quiz-opt" data-val="yes">Yes</button>
+            <button type="button" class="br-quiz-opt" data-val="no">No</button>
+          </div>
+        </div>
+
+        <div class="br-quiz-q" data-q="6">
+          <div class="br-quiz-q-text">6. Is documentation-related denial or error data tracked by provider and code type over time, so patterns can be spotted?</div>
+          <div class="br-quiz-options">
+            <button type="button" class="br-quiz-opt" data-val="yes">Yes</button>
+            <button type="button" class="br-quiz-opt" data-val="no">No</button>
+          </div>
+        </div>
+
+        <div class="br-quiz-q" data-q="7">
+          <div class="br-quiz-q-text">7. Does your practice follow a clear compliance process for late note amendments (dated and identified as an addendum, not backdated)?</div>
+          <div class="br-quiz-options">
+            <button type="button" class="br-quiz-opt" data-val="yes">Yes</button>
+            <button type="button" class="br-quiz-opt" data-val="no">No</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="br-quiz-result-card br-reveal" id="dq-result" style="display:none;margin-top:24px">
+        <div class="br-quiz-result-tier" id="dq-result-tier">Low Risk</div>
+        <div class="br-quiz-result-heading" id="dq-result-heading">Your result</div>
+        <p class="br-quiz-result-sub" id="dq-result-sub">Explanation goes here.</p>
+      </div>
+
+      <div class="br-calc-cta-panel tier-soft br-reveal" id="dq-cta-panel" style="display:none;margin-top:24px">
+        <div class="br-calc-cta-heading" id="dq-cta-heading">You're in a strong position</div>
+        <p class="br-calc-cta-sub" id="dq-cta-sub">Let's make sure it stays that way.</p>
+        <a href="#dq-lead-form" class="br-btn br-btn-red br-btn-lg" id="dq-cta-btn">Talk to Our Team <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
-    <div class="br-form-card br-reveal br-reveal-d1">
-      <h3>Talk to a Solution Specialist</h3>
-      <p class="fsub">Takes 2 minutes. A solution specialist responds within one business day.</p>
-      <form name="contact-billing-review-request" method="POST" data-netlify="true" action="/thank-you/contact/">
-      <input type="hidden" name="form-name" value="contact-billing-review-request">
-      <input type="hidden" name="bot-field" />
-      <input type="hidden" name="page_url" value="">
-      <div class="br-field"><label for="br-name">Name</label><input type="text" id="br-name" name="name" required autocomplete="name"></div>
-      <div class="br-field-row">
-        <div class="br-field"><label for="br-email">Work Email</label><input type="email" id="br-email" name="email" placeholder="you@yourpractice.com" autocomplete="email"></div>
-        <div class="br-field"><label for="br-phone">Phone Number</label><input type="tel" id="br-phone" name="phone" placeholder="(407) 000-0000" autocomplete="tel"></div>
+  </section>
+
+  <section class="br-section br-bg-white" id="dq-lead-form">
+    <div class="br-wrap-sm">
+      <div class="br-section-head center br-reveal">
+        <h2>Talk through your documentation practices</h2>
+        <p style="margin:0 auto">Share a few details and our team will walk through what a stronger documentation review process could look like for your practice.</p>
       </div>
-      <div class="br-field"><label for="br-practice">Practice Name</label><input type="text" id="br-practice" name="practice" placeholder="Your practice name" required autocomplete="organization"></div>
-      <div class="br-field"><label for="br-challenge">What's your biggest billing challenge?</label><textarea id="br-challenge" name="challenge" placeholder="Tell us where you're losing revenue..."></textarea></div>
-      <button type="submit" class="br-btn br-btn-red br-btn-lg" style="width:100%;justify-content:center" aria-label="Submit contact request">
-        Talk to a Solution Specialist
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </button>
-      <div class="br-hipaa-note"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Your information is HIPAA-protected. We will never share your practice data.</div>
-      <p class="br-form-fine">No contracts required.</p>
-      </form>
-      <script>
-      (function() {
-        var form = document.currentScript.previousElementSibling;
+      <div class="br-form-card br-reveal" style="max-width:480px;margin:0 auto">
+        <h3 id="dq-lead-heading">Talk to Our Team</h3>
+        <form name="documentation-compliance-assessment-request" method="POST" data-netlify="true" action="/thank-you/contact/">
+          <input type="hidden" name="form-name" value="documentation-compliance-assessment-request">
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="page_url" value="">
+          <input type="hidden" name="calculator_context" id="dq-context-field" value="">
+          <div class="br-field"><label for="dq-lead-name">Name</label><input type="text" id="dq-lead-name" name="name" required autocomplete="name"></div>
+          <div class="br-field"><label for="dq-lead-email">Work Email</label><input type="email" id="dq-lead-email" name="email" required autocomplete="email"></div>
+          <div class="br-field"><label for="dq-lead-phone">Phone Number</label><input type="tel" id="dq-lead-phone" name="phone" autocomplete="tel"></div>
+          <div class="br-field"><label for="dq-lead-practice">Practice / Organization</label><input type="text" id="dq-lead-practice" name="practice" required autocomplete="organization"></div>
+          <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-muted);line-height:1.5;margin-bottom:10px;cursor:pointer"><input type="checkbox" name="consent" value="yes" style="margin-top:3px;flex-shrink:0">I agree to allow Billed Right to use the information provided to contact me. I understand that my information may be processed by authorized service providers supporting Billed Right's business operations, as described in the <a href="/privacy-policy/" style="color:var(--brand);text-decoration:underline">Privacy Policy</a>.</label>
+          <p style="font-size:11.5px;color:var(--text-muted);line-height:1.5;margin:0 0 18px">Please do not include patient or protected health information (PHI) in this form.</p>
+          <button type="submit" class="br-btn br-btn-red br-btn-lg" style="width:100%;justify-content:center" aria-label="Submit request" id="dq-lead-submit">Talk to Our Team</button>
+        </form>
+        <script>window.brWireLeadForm(document.currentScript.previousElementSibling, { formSource: "documentation-compliance-assessment" });</script>
+        <p style="text-align:center;margin-top:16px;font-size:14px;color:var(--text-muted)">Prefer to talk now? <a href="tel:+14072179281" style="color:var(--brand);font-weight:700">407-217-9281</a></p>
+      </div>
+    </div>
+  </section>
 
-        // Well-known medicine/science names (real historical figures + TV
-        // doctors) — same fixed list used on the contact modal. Randomized
-        // per page load, independently of the modal's own pick.
-        var BR_NAME_EXAMPLES = ['Albert Einstein', 'Marie Curie', 'Jonas Salk', 'Louis Pasteur', 'Florence Nightingale', 'Alexander Fleming', 'Elizabeth Blackwell', 'Meredith Grey', 'Gregory House', 'Derek Shepherd', 'Shaun Murphy', 'Doogie Howser', 'John Watson', 'Cristina Yang'];
-        var nameInput = document.getElementById('br-name');
-        if (nameInput) {
-          nameInput.placeholder = 'e.g. ' + BR_NAME_EXAMPLES[Math.floor(Math.random() * BR_NAME_EXAMPLES.length)];
-        }
+  <section class="br-section-tight br-bg-light">
+    <div class="br-wrap-sm">
+      <div style="text-align:center">
+        <a href="/resources/" class="br-learn" style="justify-content:center;font-size:14px">&larr; Back to all free tools</a>
+      </div>
+    </div>
+  </section>
 
-        // Email and phone are each optional individually, but at least one
-        // is required so a solution specialist has a way to respond.
-        // Native `required` can't express "one of two fields", so this
-        // listener (registered before brWireLeadForm's own submit handler)
-        // checks it and, on failure, stops that handler from also running
-        // via stopImmediatePropagation.
-        var emailEl = document.getElementById('br-email');
-        var phoneEl = document.getElementById('br-phone');
-        form.addEventListener('submit', function(e) {
-          if (!emailEl.value.trim() && !phoneEl.value.trim()) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            var msg = form.querySelector('.br-contact-validation-error');
-            if (!msg) {
-              msg = document.createElement('div');
-              msg.className = 'br-contact-validation-error br-lead-form-error';
-              form.appendChild(msg);
-            }
-            msg.textContent = 'Please provide an email address or phone number.';
-            (emailEl || phoneEl).focus();
-          }
+  <script>
+  (function () {
+    'use strict';
+
+    var TOTAL_Q = 7;
+    var answers = {};
+
+    var progressEl = document.getElementById('dq-progress');
+    var resultCard = document.getElementById('dq-result');
+    var resultTierEl = document.getElementById('dq-result-tier');
+    var resultHeadingEl = document.getElementById('dq-result-heading');
+    var resultSubEl = document.getElementById('dq-result-sub');
+    var ctaPanel = document.getElementById('dq-cta-panel');
+    var ctaHeading = document.getElementById('dq-cta-heading');
+    var ctaSub = document.getElementById('dq-cta-sub');
+    var ctaBtn = document.getElementById('dq-cta-btn');
+    var leadHeading = document.getElementById('dq-lead-heading');
+    var leadSubmit = document.getElementById('dq-lead-submit');
+    var contextField = document.getElementById('dq-context-field');
+
+    // This is a risk-tier result only, not a dollar figure — audit/compliance
+    // risk can't be honestly quantified without real practice data (see
+    // task requirement 2), so scoring is a simple "no" count across 7
+    // yes/no questions on documentation review practices.
+    var TIERS = {
+      low: {
+        label: 'Low Risk',
+        heading: "You're in a good position",
+        sub: 'Your practice already has several of the core documentation review habits in place that keep denials, downcodes, and audit exposure lower.',
+        ctaHeading: "You're in a strong position",
+        ctaSub: "Let's make sure it stays that way as your practice grows and payer requirements change.",
+        ctaBtn: 'Talk to Our Team'
+      },
+      moderate: {
+        label: 'Moderate Risk',
+        heading: 'There are gaps worth closing',
+        sub: 'Some documentation review practices are in place, but the gaps you flagged are common places where denials, downcodes, and audit risk start to build up.',
+        ctaHeading: 'There are gaps worth closing',
+        ctaSub: 'A focused documentation review process can close these specific gaps without overhauling how your practice already works.',
+        ctaBtn: 'See How Documentation Review Helps'
+      },
+      high: {
+        label: 'High Risk',
+        heading: 'This is worth addressing soon',
+        sub: "Several of the safeguards that typically catch documentation mismatches before they become denials or audit triggers don't appear to be in place yet.",
+        ctaHeading: 'This is worth addressing soon',
+        ctaSub: 'The gaps you flagged are the kind that tend to compound over time. Let’s talk through what a documentation review process would catch.',
+        ctaBtn: 'Talk to Our Team This Week'
+      }
+    };
+
+    function getTier(noCount) {
+      if (noCount <= 2) return 'low';
+      if (noCount <= 4) return 'moderate';
+      return 'high';
+    }
+
+    function updateProgress() {
+      var answeredCount = Object.keys(answers).length;
+      progressEl.textContent = answeredCount + ' of ' + TOTAL_Q + ' answered';
+      if (answeredCount === TOTAL_Q) {
+        showResult();
+      } else {
+        resultCard.style.display = 'none';
+        ctaPanel.style.display = 'none';
+      }
+    }
+
+    function showResult() {
+      var noCount = 0;
+      Object.keys(answers).forEach(function (q) {
+        if (answers[q] === 'no') noCount++;
+      });
+
+      var tierKey = getTier(noCount);
+      var tier = TIERS[tierKey];
+
+      resultTierEl.textContent = tier.label;
+      resultTierEl.className = 'br-quiz-result-tier tier-' + tierKey;
+      resultHeadingEl.textContent = tier.heading;
+      resultSubEl.textContent = tier.sub;
+      resultCard.style.display = 'block';
+
+      var ctaTierClass = tierKey === 'low' ? 'tier-soft' : (tierKey === 'moderate' ? 'tier-moderate' : 'tier-urgent');
+      ctaPanel.className = 'br-calc-cta-panel ' + ctaTierClass + ' br-reveal';
+      ctaHeading.textContent = tier.ctaHeading;
+      ctaSub.textContent = tier.ctaSub;
+      ctaBtn.childNodes[0].nodeValue = tier.ctaBtn + ' ';
+      ctaPanel.style.display = 'block';
+      leadHeading.textContent = tier.ctaBtn;
+      leadSubmit.textContent = tier.ctaBtn;
+
+      contextField.value = 'Lead source: Documentation Compliance Self-Assessment — result: ' + tier.label;
+    }
+
+    document.querySelectorAll('.br-quiz-q').forEach(function (qEl) {
+      var qNum = qEl.getAttribute('data-q');
+      qEl.querySelectorAll('.br-quiz-opt').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          answers[qNum] = btn.getAttribute('data-val');
+          qEl.querySelectorAll('.br-quiz-opt').forEach(function (b) { b.classList.remove('selected'); });
+          btn.classList.add('selected');
+          updateProgress();
         });
+      });
+    });
 
-        window.brWireLeadForm(form, { formSource: 'contact-page' });
-      })();
-      </script>
-    </div>
-  </div></div></section>
+    updateProgress();
+  })();
+  </script>
 </main>
 
 <footer class="br-footer" role="contentinfo">

@@ -2,8 +2,9 @@
 //
 // Receives a submission from one of the site's forms (contact form,
 // per-service "consultation request" forms, per-specialty "brochure
-// request" forms, case study forms, the chat widget's contact form) and
-// creates a Lead in Zoho CRM via the Zoho CRM v3 REST API.
+// request" forms, case study forms, the chat widget's contact form,
+// self-serve calculator/quiz tool forms on /resources/) and creates a Lead
+// in Zoho CRM via the Zoho CRM v3 REST API.
 //
 // NOT wired to any form yet — see the report from this pass for what
 // still needs to happen before a real submission reaches this function.
@@ -217,6 +218,32 @@ function buildLeadPayload(fields, contact) {
 
   if (fields.specialty) {
     lead.Specialty_Multi_Select = [mapSpecialty(fields.specialty)];
+  }
+
+  // Calculator/quiz tools on /resources/ (the Denial Write-Off Recovery
+  // Calculator, form_source "denial-writeoff-calculator"; the Aging A/R
+  // Risk Calculator, form_source "aging-ar-risk-calculator"; the
+  // In-House vs. Outsourced Billing Cost Comparison, form_source
+  // "in-house-vs-outsourced-calculator"; the Documentation & Coding
+  // Compliance Risk Self-Assessment, form_source
+  // "documentation-compliance-assessment"; the Prior Authorization
+  // Burden Calculator, form_source
+  // "prior-authorization-burden-calculator"; the Credentialing
+  // Readiness Self-Assessment, form_source
+  // "credentialing-readiness-assessment"; the Payer Enrollment
+  // Backlog Revenue Impact Calculator, form_source
+  // "payer-enrollment-backlog-calculator"; and the RCM Health Check
+  // Quiz, form_source "rcm-health-check-quiz") each send a
+  // calculator_context field built client-side with the visitor's
+  // actual inputs/result (e.g. "Lead source: Aging A/R Risk Calculator
+  // — estimated $X at risk..." or "Lead source: RCM Health Check Quiz
+  // — flagged areas: ..."). This is the most specific, highest-signal
+  // context available for the lead, so it goes first in Description —
+  // ahead of the brochure/Source Page lines below, which still run
+  // unconditionally afterward. Any other form simply won't send this
+  // field, so this is a no-op for every other form.
+  if (fields.calculator_context) {
+    descriptionParts.push(fields.calculator_context);
   }
 
   // The 13 specialty "brochure request" forms only (form_source values

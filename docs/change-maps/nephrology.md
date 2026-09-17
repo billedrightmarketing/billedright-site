@@ -4,6 +4,134 @@
 
 ## Implementation Log
 
+**2026-09-16 — Live-page cleanup & freeze per
+`docs/specialty-pages/nephrology/Billed_Right_Nephrology_FINAL_Live_Page_Cleanup_and_Freeze_CORRECTED.md`.**
+Targeted revision pass only — no re-rebuild. Cross-referenced every item
+against the live page before editing (confirmed each quoted "current"
+string matched what was actually on the page). **Note on document
+versioning:** the task described this doc as "CORRECTED," implying an
+earlier, uncorrected version might exist elsewhere in the project — I
+searched the full repository and found no earlier or alternate version
+of this feedback anywhere; only this CORRECTED file exists. Flagging
+this per the task's own instruction, since there was nothing to
+reconcile against.
+
+Changes:
+
+1. **Internal KPI-validation language removed from public copy** (doc §1)
+   — removed "Billed Right does not publish invented Nephrology-specific
+   performance numbers. Specialty KPI figures will be added here once
+   internally validated..." from beneath the qualitative-outcomes KPI
+   grid. The qualitative outcome cards themselves are unchanged; no KPI
+   placeholder or numbers were added in its place.
+2. **"Beyond Office Visits" disclaimer rewritten into customer-facing
+   language** (doc §2) — replaced "Billed Right does not perform
+   transplant clinical coordination, manage organ allocation, provide
+   clinical research administration or manage research protocols,
+   provide clinical care, provide pharmacy management, or perform
+   Medical Coding as a standard included service. Every statement above
+   is tied to revenue-cycle experience." with the doc's exact
+   recommended replacement: "Billed Right supports the revenue-cycle
+   workflows associated with Nephrology professional services, including
+   complex service environments such as transplant- and research-related
+   care, within the client's contracted scope. Clinical care, transplant
+   coordination and other clinical responsibilities remain with the
+   provider organization." Same scope boundary, simplified wording.
+3. **Transplant FAQ wording cleaned up** (doc §3) — replaced "Billed
+   Right has revenue-cycle experience supporting Nephrology organizations
+   that provide transplant-related services. Billed Right's role is
+   revenue-cycle focused and does not include clinical transplant
+   management unless a separate non-clinical service is explicitly
+   contracted and validated." with the doc's exact recommended
+   replacement: "Billed Right supports transplant-related professional
+   revenue-cycle workflows within the client's contracted scope. Clinical
+   transplant coordination and clinical care remain with the provider
+   organization." **Applied in both places this text existed** — the
+   visible FAQ answer and the matching `FAQPage` JSON-LD schema entry —
+   since the doc's own QA checklist (§9) requires "structured data
+   matches visible content," and leaving the schema with the old
+   "validated" wording while the visible FAQ used the new copy would have
+   created exactly the visible/structured-data mismatch the QA is meant
+   to catch.
+4. **Mid-page Holistic Services CTA removed** (doc §4) — removed the
+   "Ask About Holistic Revenue Cycle Services" button from the end of the
+   Additional/Holistic Services callout. The scope-clarification callout
+   itself (Prior Authorization, Medical Coding, Credentialing,
+   Documentation Management list) is unchanged — it now ends after the
+   list with no CTA. The page's only conversion path is the final
+   "Find Out Where Your Nephrology Revenue Cycle Is Losing Performance"
+   section.
+5. **Unpublished "Resources & Insights" cards removed** (doc §5) — the
+   entire "Nephrology Revenue Cycle Resources" section was removed. All
+   three cards ("Nephrology Revenue Cycle Management: Why CKD, ESRD and
+   Dialysis Create Different Financial Workflows", "ESRD Monthly
+   Capitation Payment...", "Medicare Secondary Payer and ESRD...") had
+   specific-sounding titles but linked only to the generic `/blog/` or
+   `/resources/` hubs — none is an actual, individually published
+   article matching its stated title. Same defect and same fix as
+   applied to Gastroenterology's equivalent section in that page's own
+   live-feedback pass.
+6. **Testimonial star-source verification — flagged, not resolved** (doc
+   §6). `docs/claims-register.md` already marks this testimonial's
+   general authenticity/approval as **VERIFIED**, sourced from the
+   original implementation doc's explicit confirmation ("The existing
+   Florida Nephrology Office Manager testimonial is authentic and
+   approved"). However, that confirmation does not specifically address
+   whether the **original source carried a five-star rating** — a
+   narrower question this cleanup doc raises for the first time. I have
+   no access to the original review platform/source to confirm this
+   specific point, so per the doc's own instruction not to guess in
+   either direction, the 5-star display is unchanged pending explicit
+   confirmation from Client Success/Legal. This is the same sitewide
+   display convention used on every testimonial across the site, not
+   something unique to this page.
+7. **Confirmed absent, correctly not added** (doc §7) — the doc
+   explicitly states an earlier review incorrectly flagged a 24–48 hour
+   denial/appeal promise, a same-business-day claims promise, and
+   "Reviewed by Billed Right's Nephrology billing team" as present on
+   this page. Searched the live page for all three; none exist (the
+   "Reviewed by..." rolling-years line was already replaced with the
+   evergreen "More than 15 years of Nephrology RCM experience" statement
+   during the original rebuild). No changes made — correctly left alone
+   per the doc's explicit "do not add these items" instruction.
+8. **Section 8 ("Preserve the Strong Live Elements") — verified intact,
+   nothing touched.** Confirmed 15+ years experience language, 30+
+   provider enterprise proof, eCW/Epic, CKD/ESRD/dialysis-MCP, Medicare/
+   payer coordination, procedures/surgery, transplant/research revenue-
+   cycle framing, coding education, Medical Coding/Prior Authorization
+   scope statements, Intelligent RCM, Data-to-Decisions, four-field form,
+   PHI warning, and privacy/consent language are all unchanged from the
+   original rebuild.
+
+### Conflicts found
+None. Every instruction in this cleanup doc was consistent with the
+original implementation doc and the V2 framework — nothing required
+choosing between conflicting sources.
+
+### Rule 11 — noted for future specialty builds (not actioned here)
+The doc's §11 lists six lessons to carry forward to "Primary Care and all
+future specialty MDs" (internal notes never become public copy, words
+like "validate"/"publish blocker" stay internal, unpublished resources
+never appear as live cards, scope sections shouldn't create competing
+CTAs, testimonial stars must match the source, post-build QA must compare
+the rendered page against the final MD). These are process rules for
+*future* builds, not an instruction to retroactively fix other
+already-frozen specialty pages in this pass — no other page was touched,
+consistent with this task's explicit scope. (Note: items 2–4 of this list
+overlap with lessons already recorded in Gastroenterology's equivalent
+cleanup pass from the same review cycle.)
+
+### Freeze
+Per the doc's §10, the Nephrology commercial pillar is now frozen
+following this cleanup pass, pending the build/push steps below. Future
+growth should come from authority content, real proof, eCW/Epic content,
+dialysis/MCP content, enterprise Nephrology content, internal linking,
+technical SEO, backlinks/PR, and conversion optimization — not further
+pillar-page rewrites, absent new verified capabilities/proof or a
+material business change.
+
+---
+
 **2026-09-16 — Full rebuild per
 `docs/specialty-pages/nephrology/Billed_Right_Nephrology_FINAL_First_Time_Right_RCM_SEO_AEO_Implementation.md`
 (FINAL — Implementation Source of Truth).**
@@ -252,6 +380,42 @@ the other specialty pages' treatment.
   all balanced) — PASS. Sitemap inclusion, page-speed/Core Web Vitals,
   and image compression **not independently re-verified** in this pass
   (image asset itself was not changed).
+
+## Live-Page Cleanup & Freeze QA (doc §9)
+- **Content:** No internal implementation/validation wording visible —
+  PASS (removed, items 1–3 above). KPI-validation sentence removed —
+  PASS. Transplant scope language customer-facing — PASS. "Beyond Office
+  Visits" scope language concise — PASS. No unsupported service
+  expansion — PASS. Medical Coding separately scoped — PASS. Prior
+  Authorization separately scoped — PASS. Transplant/research language
+  stays non-clinical and revenue-cycle focused — PASS. 15+ years accurate
+  and unchanged — PASS. 30+ provider enterprise proof remains visible —
+  PASS. eCW and Epic remain prominent — PASS. Intelligent RCM remains
+  concrete — PASS. Data-to-Decisions remains executive-oriented — PASS.
+- **Proof:** Nephrology testimonial source — **UNCONFIRMED** for the
+  specific five-star-origin question (see item 6 above); general
+  authenticity already VERIFIED in `docs/claims-register.md`. No
+  fabricated/composite proof introduced — PASS.
+- **Resources:** Every live resource exists / destination published /
+  link works — PASS (unpublished section removed entirely rather than
+  fixed in place). No future/unpublished resource cards remain — PASS.
+- **Conversion:** Holistic Services mid-page CTA removed — PASS. Exactly
+  one major final conversion section remains — PASS. Four-field form
+  present — PASS. PHI warning present — PASS. Privacy Policy linked —
+  PASS. Consent language matches sitewide-approved wording — PASS. Zoho
+  lead creation, page/source attribution reaching CRM, assignment/
+  notification, and mobile click-to-call — **UNCONFIRMED** — cannot be
+  verified in this local/static environment (no live Netlify
+  Functions/Zoho endpoint), consistent with every prior specialty-page QA
+  report. Chat does not block CTA/form — PASS (verified no layout
+  collision).
+- **Technical/UX:** One H1 — PASS. Title/meta correct and unchanged —
+  PASS. Canonical correct — PASS. Indexable (`index, follow`) — PASS.
+  Internal links unaffected by this pass — PASS. Structured data
+  (JSON-LD) still parses without error and now matches the visible FAQ
+  text exactly (see item 3 above) — PASS. Desktop and mobile layouts
+  verified clean via screenshot — PASS. No placeholders, broken links, or
+  accidental implementation text remaining — PASS.
 
 ## Not in scope / not touched
 - `netlify/functions/zoho-lead.js`, `build.py`, `templates/nav-template.html`,

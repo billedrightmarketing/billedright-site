@@ -31,23 +31,23 @@ window.brLoadGTM = function() {
 <!-- ═══════════════════════════════════════════
   SEO META
   ═══════════════════════════════════════════ -->
-<title>Contact Us | Billed Right</title>
-<meta name="description" content="Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right. Real audit, real answers.">
+<title>Aging A/R Risk Calculator | Billed Right</title>
+<meta name="description" content="See how much of your aged A/R is actually at risk of never being collected, based on your own historical recovery rate. No email required.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://billedright.com/contact/">
+<link rel="canonical" href="https://billedright.com/resources/aging-ar-risk-calculator/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="See Exactly What Your Practice Is Leaving Behind.">
-<meta property="og:description" content="Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right.">
-<meta property="og:url" content="https://billedright.com/contact/">
+<meta property="og:title" content="Aging A/R Risk Calculator | Billed Right">
+<meta property="og:description" content="See how much of your aged A/R is actually at risk of never being collected, based on your own historical recovery rate. No email required.">
+<meta property="og:url" content="https://billedright.com/resources/aging-ar-risk-calculator/">
 <meta property="og:site_name" content="Billed Right">
 <meta property="og:image" content="https://billedright.com/og-image.jpg">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="See Exactly What Your Practice Is Leaving Behind.">
-<meta name="twitter:description" content="Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right.">
+<meta name="twitter:title" content="Aging A/R Risk Calculator | Billed Right">
+<meta name="twitter:description" content="See how much of your aged A/R is actually at risk of never being collected, based on your own historical recovery rate. No email required.">
 <meta name="twitter:image" content="https://billedright.com/og-image.jpg">
 <meta property="og:locale" content="en_US">
 <meta property="og:image:width" content="1200">
@@ -97,32 +97,19 @@ window.brLoadGTM = function() {
       "potentialAction": {"@type":"SearchAction","target":"https://billedright.com/?s={search_term_string}","query-input":"required name=search_term_string"}
     },
     {
-      "@type": "Service",
-      "name": "Revenue Cycle Management Services",
-      "provider": {"@id": "https://billedright.com/#organization"},
-      "areaServed": "US",
-      "serviceType": "Medical Billing and Revenue Cycle Management",
-      "description": "Credentialing, medical billing, denial management, A/R follow-up, charge posting, coding & audits, eligibility verification, and reporting for healthcare practices.",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "RCM Services",
-        "itemListElement": [
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Medical Billing"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Provider Credentialing"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Denial Management"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"A/R Follow-up"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Insurance Eligibility Verification"}}
-        ]
-      }
+      "@type": "WebPage",
+      "name": "Aging A/R Risk Calculator",
+      "url": "https://billedright.com/resources/aging-ar-risk-calculator/",
+      "description": "Free calculator estimating how much of a practice's aged A/R (90+ days) is actually at risk of never being collected, based on the practice's own historical collection rate.",
+      "isPartOf": {"@id": "https://billedright.com/#website"},
+      "provider": {"@id": "https://billedright.com/#organization"}
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"How much can Billed Right improve my collections?","acceptedAnswer":{"@type":"Answer","text":"Billed Right clients see an average 94% lift in collections, with days in A/R reduced from 40+ to under 24 days on average."}},
-        {"@type":"Question","name":"What specialties does Billed Right serve?","acceptedAnswer":{"@type":"Answer","text":"Billed Right serves 20+ medical specialties including cardiology, behavioral health, internal medicine, pain management, orthopedics, pediatrics, ophthalmology, urgent care, neurology, nephrology, and multispecialty groups."}},
-        {"@type":"Question","name":"Is Billed Right HIPAA compliant?","acceptedAnswer":{"@type":"Answer","text":"Yes. Billed Right has maintained zero data breaches in 18+ years of operation. We are HIPAA compliant and use 256-bit encryption for all data in transit and at rest."}},
-        {"@type":"Question","name":"How long does it take to onboard with Billed Right?","acceptedAnswer":{"@type":"Answer","text":"Most practices are fully onboarded within 2–3 weeks, including EHR/PM system integration, payer setup, and team training."}},
-        {"@type":"Question","name":"What does Billed Right charge for medical billing services?","acceptedAnswer":{"@type":"Answer","text":"Billed Right uses a transparent percentage-of-collections pricing model with no setup fees and no long-term contracts required to get started. Contact us for a quote tailored to your specialty and volume."}}
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://billedright.com/"},
+        {"@type":"ListItem","position":2,"name":"Resources","item":"https://billedright.com/resources/"},
+        {"@type":"ListItem","position":3,"name":"Aging A/R Risk Calculator","item":"https://billedright.com/resources/aging-ar-risk-calculator/"}
       ]
     }
   ]
@@ -1567,6 +1554,70 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-orbit-hub, .br-ai-hub { animation: none !important; filter: none !important; }
   .br-ai-chip, .br-chip { animation-duration: 12s !important; }
 }
+
+/* ═══════════════════════════════════════════
+   AGING A/R RISK CALCULATOR (shares .br-calc-* rules with the
+   Denial Write-Off Recovery Calculator — same generic calculator UI)
+   ═══════════════════════════════════════════ */
+.br-calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.br-calc-input-wrap { position: relative; }
+.br-calc-dollar-prefix {
+  position: absolute; left: 15px; top: 41px; font-size: 14px; color: var(--text-muted); pointer-events: none;
+}
+.br-calc-input-wrap input[type="number"] { padding-left: 28px; }
+.br-calc-range-row { display: flex; align-items: center; gap: 14px; }
+.br-calc-range-row input[type="range"] {
+  flex: 1; -webkit-appearance: none; appearance: none; height: 6px; border-radius: 4px;
+  background: var(--border); outline: none; cursor: pointer;
+}
+.br-calc-range-row input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--brand); box-shadow: 0 2px 6px rgba(186,32,37,.4); cursor: pointer; border: 3px solid #fff;
+}
+.br-calc-range-row input[type="range"]::-moz-range-thumb {
+  width: 20px; height: 20px; border-radius: 50%; background: var(--brand);
+  box-shadow: 0 2px 6px rgba(186,32,37,.4); cursor: pointer; border: 3px solid #fff;
+}
+.br-calc-range-val {
+  min-width: 56px; text-align: center; font-size: 15px; font-weight: 800; color: var(--brand);
+  background: var(--brand-pale); border-radius: var(--r-sm); padding: 6px 8px; flex-shrink: 0;
+}
+.br-calc-result-card {
+  background: var(--navy); border-radius: var(--r-xl); padding: 36px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.br-calc-result-card::before {
+  content: ''; position: absolute; top: -80px; right: -80px; width: 240px; height: 240px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(186,32,37,.25), transparent 65%);
+}
+.br-calc-result-label {
+  position: relative; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.55); margin-bottom: 8px;
+}
+.br-calc-result-num {
+  position: relative; font-size: clamp(38px, 5vw, 56px); font-weight: 800; color: #fff; line-height: 1; margin-bottom: 6px;
+}
+.br-calc-result-sub { position: relative; font-size: 14px; color: rgba(255,255,255,.6); margin-bottom: 22px; }
+.br-calc-result-detail {
+  position: relative; display: flex; justify-content: center; gap: 28px; flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px;
+}
+.br-calc-result-detail div { text-align: center; }
+.br-calc-result-detail .rd-num { font-size: 19px; font-weight: 800; color: var(--brand); line-height: 1; margin-bottom: 4px; }
+.br-calc-result-detail .rd-lbl { font-size: 11px; color: rgba(255,255,255,.5); }
+.br-calc-cta-panel {
+  margin-top: 22px; border-radius: var(--r-lg); padding: 24px; text-align: center;
+  transition: background .25s, border-color .25s;
+}
+.br-calc-cta-panel.tier-soft { background: var(--bg-light); border: 1.5px solid var(--border); }
+.br-calc-cta-panel.tier-moderate { background: rgba(186,32,37,.06); border: 1.5px solid rgba(186,32,37,.2); }
+.br-calc-cta-panel.tier-urgent { background: rgba(186,32,37,.1); border: 1.5px solid rgba(186,32,37,.35); }
+.br-calc-cta-heading { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+.br-calc-cta-panel.tier-urgent .br-calc-cta-heading { color: var(--brand-dark); }
+.br-calc-cta-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+@media (max-width: 900px) {
+  .br-calc-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -2142,89 +2193,200 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-<main id="brpage-contact" class="br-page active" aria-label="Contact page">
-  <div class="br-page-hero" style="padding-bottom:52px"><div class="br-wrap"><span class="br-eyebrow" style="color:#fff">Get In Touch</span><h1>See Exactly What Your Practice Is Leaving Behind.</h1><p class="ph-sub" style="font-size:17px;color:rgba(255,255,255,.62);max-width:620px;margin:0 auto;line-height:1.7">Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right. Real audit. Real answers.</p></div></div>
-  <section class="br-section br-bg-light"><div class="br-wrap"><div class="br-contact-grid">
-    <div class="br-reveal">
-      <span class="br-eyebrow">Why Billed Right</span>
-      <h2 style="font-size:clamp(26px,3vw,38px);margin:12px 0 16px;color:var(--navy)">Start with an honest review of your claims.</h2>
-      <p style="font-size:16px;color:var(--text-muted);line-height:1.7">We send a specialist, not a sales rep, who pulls your actual data and shows you exactly what's leaking.</p>
-      <ul class="br-trust-list">
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>A real audit of recent claims, not a canned presentation</li>
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>Specialty-specific coding and denial insights</li>
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>Solution specialist, not a sales rep, responds within one business day</li>
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>Backed by our 120-day money-back guarantee</li>
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>18+ years of RCM expertise across 20+ specialties</li>
-      </ul>
-      <div class="br-contact-detail">
-        <div class="br-cd-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg><span>407-217-9281</span></div>
-        <div class="br-cd-item"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@billedright.com</span></div>
-        <div class="br-cd-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Orlando, FL: serving practices nationwide</span></div>
-        <div class="br-cd-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon–Fri, 9am–6pm ET</span></div>
+<main id="brpage-aging-ar-risk-calculator" class="br-page active" aria-label="Aging A/R risk calculator">
+  <div class="br-page-hero">
+    <div class="br-wrap">
+      <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:14px">
+        <a href="/" style="color:rgba(255,255,255,.5)">Home</a><span style="margin:0 8px;color:rgba(255,255,255,.3)">/</span><a href="/resources/" style="color:rgba(255,255,255,.5)">Resources</a><span style="margin:0 8px;color:rgba(255,255,255,.3)">/</span><span style="color:rgba(255,255,255,.85)">Aging A/R Risk Calculator</span>
+      </p>
+      <span class="br-eyebrow" style="color:#fff">Free Calculator</span>
+      <h1>Aging A/R Risk Calculator</h1>
+      <p class="ph-sub">Not every aged claim gets collected. See how much of your 90+ day A/R is realistically at risk based on your own track record &mdash; no email required to see your result.</p>
+    </div>
+  </div>
+
+  <section class="br-section br-bg-light">
+    <div class="br-wrap-sm">
+      <div class="br-calc-grid br-reveal">
+        <div class="br-form-card">
+          <h3>Run the numbers</h3>
+          <p class="fsub">Three inputs. Your result updates instantly below.</p>
+
+          <div class="br-field br-calc-input-wrap">
+            <label for="ar-total">Total current A/R balance ($)</label>
+            <span class="br-calc-dollar-prefix">$</span>
+            <input type="number" id="ar-total" min="0" step="100" placeholder="e.g. 150000" inputmode="decimal">
+          </div>
+
+          <div class="br-field">
+            <label for="ar-aged-pct">Percentage of that A/R aged 90+ days</label>
+            <div class="br-calc-range-row">
+              <input type="range" id="ar-aged-pct" min="0" max="100" step="1" value="0">
+              <span class="br-calc-range-val" id="ar-aged-pct-val">0%</span>
+            </div>
+          </div>
+
+          <div class="br-field">
+            <label for="ar-collection-rate">Historical collection rate on aged claims (%)</label>
+            <input type="number" id="ar-collection-rate" min="0" max="100" step="1" placeholder="e.g. 20" inputmode="decimal">
+          </div>
+
+          <p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin-top:18px">Use your own historical rate for claims that have already gone past 90 days &mdash; not your overall collection rate.</p>
+        </div>
+
+        <div class="br-calc-result-card">
+          <div class="br-calc-result-label">Estimated Amount At Risk</div>
+          <div class="br-calc-result-num" id="ar-at-risk">$0</div>
+          <div class="br-calc-result-sub">Out of <strong id="ar-aged-total" style="color:#fff">$0</strong> currently aged 90+ days</div>
+          <div class="br-calc-result-detail">
+            <div><div class="rd-num" id="ar-aged-total-echo">$0</div><div class="rd-lbl">Total Aged A/R (90+)</div></div>
+            <div><div class="rd-num" id="ar-collection-rate-echo">0%</div><div class="rd-lbl">Historical Collection Rate</div></div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:13px;color:var(--text-muted);line-height:1.65;text-align:center;max-width:640px;margin:22px auto 0">The longer a claim sits past 90 days, the less likely it is to be collected. This estimate is based on the figures you entered.</p>
+
+      <div class="br-calc-cta-panel tier-soft br-reveal" id="ar-cta-panel">
+        <div class="br-calc-cta-heading" id="ar-cta-heading">Worth a closer look</div>
+        <p class="br-calc-cta-sub" id="ar-cta-sub">A gap like this is worth a closer look with our team.</p>
+        <a href="#ar-calc-lead-form" class="br-btn br-btn-red br-btn-lg" id="ar-cta-btn">Talk to Our Team <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
-    <div class="br-form-card br-reveal br-reveal-d1">
-      <h3>Talk to a Solution Specialist</h3>
-      <p class="fsub">Takes 2 minutes. A solution specialist responds within one business day.</p>
-      <form name="contact-billing-review-request" method="POST" data-netlify="true" action="/thank-you/contact/">
-      <input type="hidden" name="form-name" value="contact-billing-review-request">
-      <input type="hidden" name="bot-field" />
-      <input type="hidden" name="page_url" value="">
-      <div class="br-field"><label for="br-name">Name</label><input type="text" id="br-name" name="name" required autocomplete="name"></div>
-      <div class="br-field-row">
-        <div class="br-field"><label for="br-email">Work Email</label><input type="email" id="br-email" name="email" placeholder="you@yourpractice.com" autocomplete="email"></div>
-        <div class="br-field"><label for="br-phone">Phone Number</label><input type="tel" id="br-phone" name="phone" placeholder="(407) 000-0000" autocomplete="tel"></div>
+  </section>
+
+  <section class="br-section br-bg-white" id="ar-calc-lead-form">
+    <div class="br-wrap-sm">
+      <div class="br-section-head center br-reveal">
+        <h2>Start with a focused AR Rescue Assessment</h2>
+        <p style="margin:0 auto">AR Rescue is a contained, fast-acting first step aimed at your aged claims specifically &mdash; not a full RCM commitment. Share a few details and our team will review your aging report with you.</p>
       </div>
-      <div class="br-field"><label for="br-practice">Practice Name</label><input type="text" id="br-practice" name="practice" placeholder="Your practice name" required autocomplete="organization"></div>
-      <div class="br-field"><label for="br-challenge">What's your biggest billing challenge?</label><textarea id="br-challenge" name="challenge" placeholder="Tell us where you're losing revenue..."></textarea></div>
-      <button type="submit" class="br-btn br-btn-red br-btn-lg" style="width:100%;justify-content:center" aria-label="Submit contact request">
-        Talk to a Solution Specialist
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </button>
-      <div class="br-hipaa-note"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Your information is HIPAA-protected. We will never share your practice data.</div>
-      <p class="br-form-fine">No contracts required.</p>
-      </form>
-      <script>
-      (function() {
-        var form = document.currentScript.previousElementSibling;
-
-        // Well-known medicine/science names (real historical figures + TV
-        // doctors) — same fixed list used on the contact modal. Randomized
-        // per page load, independently of the modal's own pick.
-        var BR_NAME_EXAMPLES = ['Albert Einstein', 'Marie Curie', 'Jonas Salk', 'Louis Pasteur', 'Florence Nightingale', 'Alexander Fleming', 'Elizabeth Blackwell', 'Meredith Grey', 'Gregory House', 'Derek Shepherd', 'Shaun Murphy', 'Doogie Howser', 'John Watson', 'Cristina Yang'];
-        var nameInput = document.getElementById('br-name');
-        if (nameInput) {
-          nameInput.placeholder = 'e.g. ' + BR_NAME_EXAMPLES[Math.floor(Math.random() * BR_NAME_EXAMPLES.length)];
-        }
-
-        // Email and phone are each optional individually, but at least one
-        // is required so a solution specialist has a way to respond.
-        // Native `required` can't express "one of two fields", so this
-        // listener (registered before brWireLeadForm's own submit handler)
-        // checks it and, on failure, stops that handler from also running
-        // via stopImmediatePropagation.
-        var emailEl = document.getElementById('br-email');
-        var phoneEl = document.getElementById('br-phone');
-        form.addEventListener('submit', function(e) {
-          if (!emailEl.value.trim() && !phoneEl.value.trim()) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            var msg = form.querySelector('.br-contact-validation-error');
-            if (!msg) {
-              msg = document.createElement('div');
-              msg.className = 'br-contact-validation-error br-lead-form-error';
-              form.appendChild(msg);
-            }
-            msg.textContent = 'Please provide an email address or phone number.';
-            (emailEl || phoneEl).focus();
-          }
-        });
-
-        window.brWireLeadForm(form, { formSource: 'contact-page' });
-      })();
-      </script>
+      <div class="br-form-card br-reveal" style="max-width:480px;margin:0 auto">
+        <h3 id="ar-lead-form-heading">Talk to Our Team</h3>
+        <form name="aging-ar-risk-calculator-request" method="POST" data-netlify="true" action="/thank-you/contact/">
+          <input type="hidden" name="form-name" value="aging-ar-risk-calculator-request">
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="page_url" value="">
+          <input type="hidden" name="calculator_context" id="ar-context-field" value="">
+          <div class="br-field"><label for="ar-lead-name">Name</label><input type="text" id="ar-lead-name" name="name" required autocomplete="name"></div>
+          <div class="br-field"><label for="ar-lead-email">Work Email</label><input type="email" id="ar-lead-email" name="email" required autocomplete="email"></div>
+          <div class="br-field"><label for="ar-lead-phone">Phone Number</label><input type="tel" id="ar-lead-phone" name="phone" autocomplete="tel"></div>
+          <div class="br-field"><label for="ar-lead-practice">Practice / Organization</label><input type="text" id="ar-lead-practice" name="practice" required autocomplete="organization"></div>
+          <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-muted);line-height:1.5;margin-bottom:10px;cursor:pointer"><input type="checkbox" name="consent" value="yes" style="margin-top:3px;flex-shrink:0">I agree to allow Billed Right to use the information provided to contact me. I understand that my information may be processed by authorized service providers supporting Billed Right's business operations, as described in the <a href="/privacy-policy/" style="color:var(--brand);text-decoration:underline">Privacy Policy</a>.</label>
+          <p style="font-size:11.5px;color:var(--text-muted);line-height:1.5;margin:0 0 18px">Please do not include patient or protected health information (PHI) in this form.</p>
+          <button type="submit" class="br-btn br-btn-red br-btn-lg" style="width:100%;justify-content:center" aria-label="Submit request" id="ar-lead-form-submit">Talk to Our Team</button>
+        </form>
+        <script>window.brWireLeadForm(document.currentScript.previousElementSibling, { formSource: "aging-ar-risk-calculator" });</script>
+        <p style="text-align:center;margin-top:16px;font-size:14px;color:var(--text-muted)">Prefer to talk now? <a href="tel:+14072179281" style="color:var(--brand);font-weight:700">407-217-9281</a></p>
+      </div>
     </div>
-  </div></div></section>
+  </section>
+
+  <section class="br-section-tight br-bg-light">
+    <div class="br-wrap-sm">
+      <div style="text-align:center">
+        <a href="/resources/" class="br-learn" style="justify-content:center;font-size:14px">&larr; Back to all free tools</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function () {
+    'use strict';
+
+    var totalInput = document.getElementById('ar-total');
+    var agedPctInput = document.getElementById('ar-aged-pct');
+    var agedPctVal = document.getElementById('ar-aged-pct-val');
+    var collectionRateInput = document.getElementById('ar-collection-rate');
+    var atRiskEl = document.getElementById('ar-at-risk');
+    var agedTotalEl = document.getElementById('ar-aged-total');
+    var agedTotalEchoEl = document.getElementById('ar-aged-total-echo');
+    var collectionRateEchoEl = document.getElementById('ar-collection-rate-echo');
+    var ctaPanel = document.getElementById('ar-cta-panel');
+    var ctaHeading = document.getElementById('ar-cta-heading');
+    var ctaSub = document.getElementById('ar-cta-sub');
+    var ctaBtn = document.getElementById('ar-cta-btn');
+    var contextField = document.getElementById('ar-context-field');
+    var leadFormHeading = document.getElementById('ar-lead-form-heading');
+    var leadFormSubmit = document.getElementById('ar-lead-form-submit');
+
+    function fmtUSD(n) {
+      return '$' + Math.round(n).toLocaleString('en-US');
+    }
+
+    // AR Rescue is framed throughout as a contained, fast-acting entry
+    // point aimed specifically at the aged-claims backlog just
+    // calculated above — not a full RCM commitment. See requirement 3.
+    var TIERS = {
+      soft: {
+        heading: 'Worth a closer look',
+        sub: "A gap like this is worth a closer look with our team.",
+        btnText: 'Talk to Our Team'
+      },
+      moderate: {
+        heading: 'This is real money at risk',
+        sub: 'An AR Rescue Assessment is a focused, fast-acting first step aimed at this specific backlog — not a full RCM commitment.',
+        btnText: 'Get an AR Rescue Assessment'
+      },
+      urgent: {
+        heading: 'This needs attention now',
+        sub: 'At this level, every week of waiting costs real money. AR Rescue is a contained engagement built to start recovering this backlog quickly.',
+        btnText: 'Start AR Rescue This Week'
+      }
+    };
+
+    function getTier(atRisk) {
+      if (atRisk < 25000) return 'soft';
+      if (atRisk <= 100000) return 'moderate';
+      return 'urgent';
+    }
+
+    function recalc() {
+      var total = parseFloat(totalInput.value) || 0;
+      var agedPct = parseFloat(agedPctInput.value) || 0;
+      // Historical collection rate is intentionally left blank by
+      // default (never pre-filled or suggested) — see requirement 1.
+      // Until the visitor enters one, it's treated as 0 for the
+      // calculation, same as any other empty numeric input on this page.
+      var collectionRate = parseFloat(collectionRateInput.value) || 0;
+
+      if (total < 0) total = 0;
+      if (agedPct < 0) agedPct = 0;
+      if (agedPct > 100) agedPct = 100;
+      if (collectionRate < 0) collectionRate = 0;
+      if (collectionRate > 100) collectionRate = 100;
+
+      var agedAR = total * (agedPct / 100);
+      var atRisk = agedAR * (1 - collectionRate / 100);
+
+      agedPctVal.textContent = agedPct + '%';
+      atRiskEl.textContent = fmtUSD(atRisk);
+      agedTotalEl.textContent = fmtUSD(agedAR);
+      agedTotalEchoEl.textContent = fmtUSD(agedAR);
+      collectionRateEchoEl.textContent = collectionRate + '%';
+
+      var tierKey = getTier(atRisk);
+      var tier = TIERS[tierKey];
+      ctaPanel.className = 'br-calc-cta-panel tier-' + tierKey;
+      ctaHeading.textContent = tier.heading;
+      ctaSub.textContent = tier.sub;
+      ctaBtn.childNodes[0].nodeValue = tier.btnText + ' ';
+      leadFormHeading.textContent = tier.btnText;
+      leadFormSubmit.textContent = tier.btnText;
+
+      contextField.value =
+        'Lead source: Aging A/R Risk Calculator — estimated ' + fmtUSD(atRisk) +
+        ' at risk (based on ' + fmtUSD(total) + ' total A/R, ' + agedPct +
+        '% aged 90+, ' + collectionRate + '% historical collection rate)';
+    }
+
+    totalInput.addEventListener('input', recalc);
+    agedPctInput.addEventListener('input', recalc);
+    collectionRateInput.addEventListener('input', recalc);
+
+    recalc();
+  })();
+  </script>
 </main>
 
 <footer class="br-footer" role="contentinfo">

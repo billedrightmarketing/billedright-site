@@ -10,6 +10,7 @@ website content. Each concept links back to its live page via its
 
 ## Company
 - [About Billed Right | Medical Billing & RCM Experts Since 2006](./company/about.md)
+- [Aging A/R Risk Calculator | Billed Right](./company/aging-ar-risk-calculator.md)
 - [Awards & Recognition | Billed Right](./company/awards.md)
 - [Billed Right Office Locations | Medical Billing Services Nationwide](./company/locations.md)
 - [Billed Right: Enterprise Revenue Cycle Management & Revenue Performance Partner](./company/home.md)
@@ -18,9 +19,16 @@ website content. Each concept links back to its live page via its
 - [Client Testimonials | Billed Right Medical Billing](./company/testimonials.md)
 - [Compliance & Security Recognition | Billed Right](./company/recognition.md)
 - [Contact Us | Billed Right](./company/contact.md)
+- [Credentialing Readiness Self-Assessment | Billed Right](./company/credentialing-readiness-assessment.md)
+- [Denial Write-Off Recovery Calculator | Billed Right](./company/denial-write-off-calculator.md)
+- [Documentation & Coding Compliance Risk Self-Assessment | Billed Right](./company/documentation-compliance-assessment.md)
 - [Free Resource Center: Billing Calculators & Guides | Billed Right](./company/resources.md)
 - [Frequently Asked Questions | Medical Billing & RCM | Billed Right](./company/faq.md)
+- [In-House vs. Outsourced Billing Cost Comparison | Billed Right](./company/in-house-vs-outsourced-calculator.md)
 - [Leadership Team | Billed Right](./company/leadership.md)
+- [Payer Enrollment Backlog Revenue Impact Calculator | Billed Right](./company/payer-enrollment-backlog-calculator.md)
+- [Prior Authorization Burden Calculator | Billed Right](./company/prior-authorization-burden-calculator.md)
+- [RCM Health Check Quiz | Billed Right](./company/rcm-health-check-quiz.md)
 - [Revenue Cycle Operating Partner for Healthcare Private Equity | Billed Right](./company/private-equity.md)
 - [Why Billed Right — Our Approach to Revenue Cycle Management](./company/why-billed-right.md)
 
@@ -52,7 +60,7 @@ website content. Each concept links back to its live page via its
 - [Internal Medicine Revenue Cycle Management & Billing Services | Billed Right](./specialties/internal-medicine-rcm-services.md)
 - [Nephrology Revenue Cycle Management & Billing | Billed Right](./specialties/nephrology-rcm-services.md)
 - [Pain Management Revenue Cycle Management & Billing Services | Billed Right](./specialties/pain-management-rcm-services.md)
-- [Primary Care Medical Billing & RCM Services | Billed Right](./specialties/primary-care-rcm-services.md)
+- [Primary Care Revenue Cycle Management & Billing | Billed Right](./specialties/primary-care-rcm-services.md)
 - [Psychiatry Revenue Cycle Management Services | Billed Right](./specialties/psychiatry-rcm-services.md)
 - [Pulmonary Medicine Medical Billing & RCM Services | Billed Right](./specialties/pulmonary-rcm-services.md)
 - [Rheumatology Revenue Cycle Management & Billing | Billed Right](./specialties/rheumatology-rcm-services.md)

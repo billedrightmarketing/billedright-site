@@ -31,23 +31,23 @@ window.brLoadGTM = function() {
 <!-- ═══════════════════════════════════════════
   SEO META
   ═══════════════════════════════════════════ -->
-<title>Contact Us | Billed Right</title>
-<meta name="description" content="Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right. Real audit, real answers.">
+<title>In-House vs. Outsourced Billing Cost Comparison | Billed Right</title>
+<meta name="description" content="Compare the true fully-loaded cost of your in-house billing team against an outsourced RCM rate you set yourself. No email required.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://billedright.com/contact/">
+<link rel="canonical" href="https://billedright.com/resources/in-house-vs-outsourced-calculator/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="See Exactly What Your Practice Is Leaving Behind.">
-<meta property="og:description" content="Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right.">
-<meta property="og:url" content="https://billedright.com/contact/">
+<meta property="og:title" content="In-House vs. Outsourced Billing Cost Comparison | Billed Right">
+<meta property="og:description" content="Compare the true fully-loaded cost of your in-house billing team against an outsourced RCM rate you set yourself. No email required.">
+<meta property="og:url" content="https://billedright.com/resources/in-house-vs-outsourced-calculator/">
 <meta property="og:site_name" content="Billed Right">
 <meta property="og:image" content="https://billedright.com/og-image.jpg">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="See Exactly What Your Practice Is Leaving Behind.">
-<meta name="twitter:description" content="Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right.">
+<meta name="twitter:title" content="In-House vs. Outsourced Billing Cost Comparison | Billed Right">
+<meta name="twitter:description" content="Compare the true fully-loaded cost of your in-house billing team against an outsourced RCM rate you set yourself. No email required.">
 <meta name="twitter:image" content="https://billedright.com/og-image.jpg">
 <meta property="og:locale" content="en_US">
 <meta property="og:image:width" content="1200">
@@ -97,32 +97,19 @@ window.brLoadGTM = function() {
       "potentialAction": {"@type":"SearchAction","target":"https://billedright.com/?s={search_term_string}","query-input":"required name=search_term_string"}
     },
     {
-      "@type": "Service",
-      "name": "Revenue Cycle Management Services",
-      "provider": {"@id": "https://billedright.com/#organization"},
-      "areaServed": "US",
-      "serviceType": "Medical Billing and Revenue Cycle Management",
-      "description": "Credentialing, medical billing, denial management, A/R follow-up, charge posting, coding & audits, eligibility verification, and reporting for healthcare practices.",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "RCM Services",
-        "itemListElement": [
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Medical Billing"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Provider Credentialing"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Denial Management"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"A/R Follow-up"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Insurance Eligibility Verification"}}
-        ]
-      }
+      "@type": "WebPage",
+      "name": "In-House vs. Outsourced Billing Cost Comparison",
+      "url": "https://billedright.com/resources/in-house-vs-outsourced-calculator/",
+      "description": "Free calculator comparing the fully-loaded annual cost of an in-house billing team against an outsourced RCM rate the visitor sets themselves.",
+      "isPartOf": {"@id": "https://billedright.com/#website"},
+      "provider": {"@id": "https://billedright.com/#organization"}
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"How much can Billed Right improve my collections?","acceptedAnswer":{"@type":"Answer","text":"Billed Right clients see an average 94% lift in collections, with days in A/R reduced from 40+ to under 24 days on average."}},
-        {"@type":"Question","name":"What specialties does Billed Right serve?","acceptedAnswer":{"@type":"Answer","text":"Billed Right serves 20+ medical specialties including cardiology, behavioral health, internal medicine, pain management, orthopedics, pediatrics, ophthalmology, urgent care, neurology, nephrology, and multispecialty groups."}},
-        {"@type":"Question","name":"Is Billed Right HIPAA compliant?","acceptedAnswer":{"@type":"Answer","text":"Yes. Billed Right has maintained zero data breaches in 18+ years of operation. We are HIPAA compliant and use 256-bit encryption for all data in transit and at rest."}},
-        {"@type":"Question","name":"How long does it take to onboard with Billed Right?","acceptedAnswer":{"@type":"Answer","text":"Most practices are fully onboarded within 2–3 weeks, including EHR/PM system integration, payer setup, and team training."}},
-        {"@type":"Question","name":"What does Billed Right charge for medical billing services?","acceptedAnswer":{"@type":"Answer","text":"Billed Right uses a transparent percentage-of-collections pricing model with no setup fees and no long-term contracts required to get started. Contact us for a quote tailored to your specialty and volume."}}
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://billedright.com/"},
+        {"@type":"ListItem","position":2,"name":"Resources","item":"https://billedright.com/resources/"},
+        {"@type":"ListItem","position":3,"name":"In-House vs. Outsourced Billing Cost Comparison","item":"https://billedright.com/resources/in-house-vs-outsourced-calculator/"}
       ]
     }
   ]
@@ -1567,6 +1554,108 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-orbit-hub, .br-ai-hub { animation: none !important; filter: none !important; }
   .br-ai-chip, .br-chip { animation-duration: 12s !important; }
 }
+
+/* ═══════════════════════════════════════════
+   AGING A/R RISK CALCULATOR (shares .br-calc-* rules with the
+   Denial Write-Off Recovery Calculator — same generic calculator UI)
+   ═══════════════════════════════════════════ */
+.br-calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.br-calc-input-wrap { position: relative; }
+.br-calc-dollar-prefix {
+  position: absolute; left: 15px; top: 41px; font-size: 14px; color: var(--text-muted); pointer-events: none;
+}
+.br-calc-input-wrap input[type="number"] { padding-left: 28px; }
+.br-calc-range-row { display: flex; align-items: center; gap: 14px; }
+.br-calc-range-row input[type="range"] {
+  flex: 1; -webkit-appearance: none; appearance: none; height: 6px; border-radius: 4px;
+  background: var(--border); outline: none; cursor: pointer;
+}
+.br-calc-range-row input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--brand); box-shadow: 0 2px 6px rgba(186,32,37,.4); cursor: pointer; border: 3px solid #fff;
+}
+.br-calc-range-row input[type="range"]::-moz-range-thumb {
+  width: 20px; height: 20px; border-radius: 50%; background: var(--brand);
+  box-shadow: 0 2px 6px rgba(186,32,37,.4); cursor: pointer; border: 3px solid #fff;
+}
+.br-calc-range-val {
+  min-width: 56px; text-align: center; font-size: 15px; font-weight: 800; color: var(--brand);
+  background: var(--brand-pale); border-radius: var(--r-sm); padding: 6px 8px; flex-shrink: 0;
+}
+.br-calc-result-card {
+  background: var(--navy); border-radius: var(--r-xl); padding: 36px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.br-calc-result-card::before {
+  content: ''; position: absolute; top: -80px; right: -80px; width: 240px; height: 240px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(186,32,37,.25), transparent 65%);
+}
+.br-calc-result-label {
+  position: relative; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.55); margin-bottom: 8px;
+}
+.br-calc-result-num {
+  position: relative; font-size: clamp(38px, 5vw, 56px); font-weight: 800; color: #fff; line-height: 1; margin-bottom: 6px;
+}
+.br-calc-result-sub { position: relative; font-size: 14px; color: rgba(255,255,255,.6); margin-bottom: 22px; }
+.br-calc-result-detail {
+  position: relative; display: flex; justify-content: center; gap: 28px; flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px;
+}
+.br-calc-result-detail div { text-align: center; }
+.br-calc-result-detail .rd-num { font-size: 19px; font-weight: 800; color: var(--brand); line-height: 1; margin-bottom: 4px; }
+.br-calc-result-detail .rd-lbl { font-size: 11px; color: rgba(255,255,255,.5); }
+.br-calc-cta-panel {
+  margin-top: 22px; border-radius: var(--r-lg); padding: 24px; text-align: center;
+  transition: background .25s, border-color .25s;
+}
+.br-calc-cta-panel.tier-soft { background: var(--bg-light); border: 1.5px solid var(--border); }
+.br-calc-cta-panel.tier-moderate { background: rgba(186,32,37,.06); border: 1.5px solid rgba(186,32,37,.2); }
+.br-calc-cta-panel.tier-urgent { background: rgba(186,32,37,.1); border: 1.5px solid rgba(186,32,37,.35); }
+.br-calc-cta-heading { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+.br-calc-cta-panel.tier-urgent .br-calc-cta-heading { color: var(--brand-dark); }
+.br-calc-cta-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+@media (max-width: 900px) {
+  .br-calc-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════
+   IN-HOUSE VS. OUTSOURCED BILLING COST COMPARISON
+   Side-by-side cost totals + an honest, direction-neutral
+   savings/additional-cost banner (shares .br-calc-* rules above
+   for the input card, slider and CTA panel).
+   ═══════════════════════════════════════════ */
+.br-cost-compare-card {
+  background: var(--navy); border-radius: var(--r-xl); padding: 32px;
+  position: relative; overflow: hidden;
+}
+.br-cost-compare-card::before {
+  content: ''; position: absolute; top: -80px; right: -80px; width: 240px; height: 240px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(186,32,37,.25), transparent 65%);
+}
+.br-cost-compare-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 22px; }
+.br-cost-compare-col {
+  text-align: center; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r-lg); padding: 18px 12px;
+}
+.br-cost-compare-lbl {
+  font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(255,255,255,.5); margin-bottom: 8px;
+}
+.br-cost-compare-num { font-size: clamp(22px, 3vw, 30px); font-weight: 800; color: #fff; line-height: 1; }
+.br-cost-diff-banner {
+  position: relative; text-align: center; border-radius: var(--r-lg); padding: 18px;
+  border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px;
+}
+.br-cost-diff-lbl {
+  font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.br-cost-diff-banner.is-savings .br-cost-diff-lbl { color: var(--success); }
+.br-cost-diff-banner.is-cost .br-cost-diff-lbl { color: var(--brand); }
+.br-cost-diff-banner.is-equal .br-cost-diff-lbl { color: rgba(255,255,255,.7); }
+.br-cost-diff-num { font-size: clamp(28px, 4vw, 40px); font-weight: 800; line-height: 1; color: #fff; }
+.br-cost-diff-sub { font-size: 13px; color: rgba(255,255,255,.55); margin-top: 8px; }
 </style>
 </head>
 <body>
@@ -2142,89 +2231,197 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-<main id="brpage-contact" class="br-page active" aria-label="Contact page">
-  <div class="br-page-hero" style="padding-bottom:52px"><div class="br-wrap"><span class="br-eyebrow" style="color:#fff">Get In Touch</span><h1>See Exactly What Your Practice Is Leaving Behind.</h1><p class="ph-sub" style="font-size:17px;color:rgba(255,255,255,.62);max-width:620px;margin:0 auto;line-height:1.7">Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right. Real audit. Real answers.</p></div></div>
-  <section class="br-section br-bg-light"><div class="br-wrap"><div class="br-contact-grid">
-    <div class="br-reveal">
-      <span class="br-eyebrow">Why Billed Right</span>
-      <h2 style="font-size:clamp(26px,3vw,38px);margin:12px 0 16px;color:var(--navy)">Start with an honest review of your claims.</h2>
-      <p style="font-size:16px;color:var(--text-muted);line-height:1.7">We send a specialist, not a sales rep, who pulls your actual data and shows you exactly what's leaking.</p>
-      <ul class="br-trust-list">
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>A real audit of recent claims, not a canned presentation</li>
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>Specialty-specific coding and denial insights</li>
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>Solution specialist, not a sales rep, responds within one business day</li>
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>Backed by our 120-day money-back guarantee</li>
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>18+ years of RCM expertise across 20+ specialties</li>
-      </ul>
-      <div class="br-contact-detail">
-        <div class="br-cd-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg><span>407-217-9281</span></div>
-        <div class="br-cd-item"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@billedright.com</span></div>
-        <div class="br-cd-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Orlando, FL: serving practices nationwide</span></div>
-        <div class="br-cd-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon–Fri, 9am–6pm ET</span></div>
+<main id="brpage-in-house-vs-outsourced-calculator" class="br-page active" aria-label="In-house vs. outsourced billing cost comparison">
+  <div class="br-page-hero">
+    <div class="br-wrap">
+      <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:14px">
+        <a href="/" style="color:rgba(255,255,255,.5)">Home</a><span style="margin:0 8px;color:rgba(255,255,255,.3)">/</span><a href="/resources/" style="color:rgba(255,255,255,.5)">Resources</a><span style="margin:0 8px;color:rgba(255,255,255,.3)">/</span><span style="color:rgba(255,255,255,.85)">In-House vs. Outsourced</span>
+      </p>
+      <span class="br-eyebrow" style="color:#fff">Free Calculator</span>
+      <h1>In-House vs. Outsourced Billing Cost Comparison</h1>
+      <p class="ph-sub">Compare the true fully-loaded cost of your in-house billing team against an outsourced rate you set yourself &mdash; no email required to see your result.</p>
+    </div>
+  </div>
+
+  <section class="br-section br-bg-light">
+    <div class="br-wrap-sm">
+      <div class="br-calc-grid br-reveal">
+        <div class="br-form-card">
+          <h3>Run the numbers</h3>
+          <p class="fsub">Four inputs, plus a rate you control. Your result updates instantly below.</p>
+
+          <div class="br-field">
+            <label for="io-staff-count">Number of in-house billing staff</label>
+            <input type="number" id="io-staff-count" min="0" step="1" placeholder="e.g. 3" inputmode="numeric">
+          </div>
+
+          <div class="br-field br-calc-input-wrap">
+            <label for="io-salary">Average fully-loaded salary per staff member ($/year)</label>
+            <span class="br-calc-dollar-prefix">$</span>
+            <input type="number" id="io-salary" min="0" step="1000" placeholder="e.g. 55000" inputmode="decimal">
+          </div>
+
+          <div class="br-field br-calc-input-wrap">
+            <label for="io-software-cost">Annual billing software/clearinghouse cost ($)</label>
+            <span class="br-calc-dollar-prefix">$</span>
+            <input type="number" id="io-software-cost" min="0" step="500" placeholder="e.g. 12000" inputmode="decimal">
+          </div>
+
+          <div class="br-field br-calc-input-wrap">
+            <label for="io-collections">Current annual collections ($)</label>
+            <span class="br-calc-dollar-prefix">$</span>
+            <input type="number" id="io-collections" min="0" step="1000" placeholder="e.g. 2000000" inputmode="decimal">
+          </div>
+
+          <div class="br-field">
+            <label for="io-rate-slider">Estimated outsourced RCM rate (% of collections): <span id="io-rate-val">6.5%</span></label>
+            <div class="br-calc-range-row">
+              <input type="range" id="io-rate-slider" min="5" max="8" step="0.25" value="6.5">
+            </div>
+            <p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin-top:10px">This starting point is adjustable and is not a quote. Move the slider to match any real quote you're comparing against.</p>
+          </div>
+        </div>
+
+        <div class="br-cost-compare-card">
+          <div class="br-cost-compare-grid">
+            <div class="br-cost-compare-col">
+              <div class="br-cost-compare-lbl">In-House Annual Cost</div>
+              <div class="br-cost-compare-num" id="io-inhouse-cost">$0</div>
+            </div>
+            <div class="br-cost-compare-col">
+              <div class="br-cost-compare-lbl">Outsourced Estimate</div>
+              <div class="br-cost-compare-num" id="io-outsourced-cost">$0</div>
+            </div>
+          </div>
+          <div class="br-cost-diff-banner is-equal" id="io-diff-banner">
+            <div class="br-cost-diff-lbl" id="io-diff-lbl">Enter Your Numbers Above</div>
+            <div class="br-cost-diff-num" id="io-diff-num">$0</div>
+            <div class="br-cost-diff-sub" id="io-diff-sub">Fill in the fields to see how the two compare.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="br-calc-cta-panel tier-soft br-reveal">
+        <div class="br-calc-cta-heading">See what this looks like for your practice specifically</div>
+        <p class="br-calc-cta-sub">Every practice's mix of staff, software and collections is different. A smaller team can also benefit from specific services without full outsourcing &mdash; let's talk through what fits.</p>
+        <a href="#io-calc-lead-form" class="br-btn br-btn-red br-btn-lg">Talk to Our Team <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
-    <div class="br-form-card br-reveal br-reveal-d1">
-      <h3>Talk to a Solution Specialist</h3>
-      <p class="fsub">Takes 2 minutes. A solution specialist responds within one business day.</p>
-      <form name="contact-billing-review-request" method="POST" data-netlify="true" action="/thank-you/contact/">
-      <input type="hidden" name="form-name" value="contact-billing-review-request">
-      <input type="hidden" name="bot-field" />
-      <input type="hidden" name="page_url" value="">
-      <div class="br-field"><label for="br-name">Name</label><input type="text" id="br-name" name="name" required autocomplete="name"></div>
-      <div class="br-field-row">
-        <div class="br-field"><label for="br-email">Work Email</label><input type="email" id="br-email" name="email" placeholder="you@yourpractice.com" autocomplete="email"></div>
-        <div class="br-field"><label for="br-phone">Phone Number</label><input type="tel" id="br-phone" name="phone" placeholder="(407) 000-0000" autocomplete="tel"></div>
+  </section>
+
+  <section class="br-section br-bg-white" id="io-calc-lead-form">
+    <div class="br-wrap-sm">
+      <div class="br-section-head center br-reveal">
+        <h2>Talk through your specific numbers</h2>
+        <p style="margin:0 auto">Share a few details and our team will walk through what a realistic comparison looks like for your practice.</p>
       </div>
-      <div class="br-field"><label for="br-practice">Practice Name</label><input type="text" id="br-practice" name="practice" placeholder="Your practice name" required autocomplete="organization"></div>
-      <div class="br-field"><label for="br-challenge">What's your biggest billing challenge?</label><textarea id="br-challenge" name="challenge" placeholder="Tell us where you're losing revenue..."></textarea></div>
-      <button type="submit" class="br-btn br-btn-red br-btn-lg" style="width:100%;justify-content:center" aria-label="Submit contact request">
-        Talk to a Solution Specialist
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </button>
-      <div class="br-hipaa-note"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Your information is HIPAA-protected. We will never share your practice data.</div>
-      <p class="br-form-fine">No contracts required.</p>
-      </form>
-      <script>
-      (function() {
-        var form = document.currentScript.previousElementSibling;
-
-        // Well-known medicine/science names (real historical figures + TV
-        // doctors) — same fixed list used on the contact modal. Randomized
-        // per page load, independently of the modal's own pick.
-        var BR_NAME_EXAMPLES = ['Albert Einstein', 'Marie Curie', 'Jonas Salk', 'Louis Pasteur', 'Florence Nightingale', 'Alexander Fleming', 'Elizabeth Blackwell', 'Meredith Grey', 'Gregory House', 'Derek Shepherd', 'Shaun Murphy', 'Doogie Howser', 'John Watson', 'Cristina Yang'];
-        var nameInput = document.getElementById('br-name');
-        if (nameInput) {
-          nameInput.placeholder = 'e.g. ' + BR_NAME_EXAMPLES[Math.floor(Math.random() * BR_NAME_EXAMPLES.length)];
-        }
-
-        // Email and phone are each optional individually, but at least one
-        // is required so a solution specialist has a way to respond.
-        // Native `required` can't express "one of two fields", so this
-        // listener (registered before brWireLeadForm's own submit handler)
-        // checks it and, on failure, stops that handler from also running
-        // via stopImmediatePropagation.
-        var emailEl = document.getElementById('br-email');
-        var phoneEl = document.getElementById('br-phone');
-        form.addEventListener('submit', function(e) {
-          if (!emailEl.value.trim() && !phoneEl.value.trim()) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            var msg = form.querySelector('.br-contact-validation-error');
-            if (!msg) {
-              msg = document.createElement('div');
-              msg.className = 'br-contact-validation-error br-lead-form-error';
-              form.appendChild(msg);
-            }
-            msg.textContent = 'Please provide an email address or phone number.';
-            (emailEl || phoneEl).focus();
-          }
-        });
-
-        window.brWireLeadForm(form, { formSource: 'contact-page' });
-      })();
-      </script>
+      <div class="br-form-card br-reveal" style="max-width:480px;margin:0 auto">
+        <h3>Talk to Our Team</h3>
+        <form name="in-house-vs-outsourced-calculator-request" method="POST" data-netlify="true" action="/thank-you/contact/">
+          <input type="hidden" name="form-name" value="in-house-vs-outsourced-calculator-request">
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="page_url" value="">
+          <input type="hidden" name="calculator_context" id="io-context-field" value="">
+          <div class="br-field"><label for="io-lead-name">Name</label><input type="text" id="io-lead-name" name="name" required autocomplete="name"></div>
+          <div class="br-field"><label for="io-lead-email">Work Email</label><input type="email" id="io-lead-email" name="email" required autocomplete="email"></div>
+          <div class="br-field"><label for="io-lead-phone">Phone Number</label><input type="tel" id="io-lead-phone" name="phone" autocomplete="tel"></div>
+          <div class="br-field"><label for="io-lead-practice">Practice / Organization</label><input type="text" id="io-lead-practice" name="practice" required autocomplete="organization"></div>
+          <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-muted);line-height:1.5;margin-bottom:10px;cursor:pointer"><input type="checkbox" name="consent" value="yes" style="margin-top:3px;flex-shrink:0">I agree to allow Billed Right to use the information provided to contact me. I understand that my information may be processed by authorized service providers supporting Billed Right's business operations, as described in the <a href="/privacy-policy/" style="color:var(--brand);text-decoration:underline">Privacy Policy</a>.</label>
+          <p style="font-size:11.5px;color:var(--text-muted);line-height:1.5;margin:0 0 18px">Please do not include patient or protected health information (PHI) in this form.</p>
+          <button type="submit" class="br-btn br-btn-red br-btn-lg" style="width:100%;justify-content:center" aria-label="Submit request">Talk to Our Team</button>
+        </form>
+        <script>window.brWireLeadForm(document.currentScript.previousElementSibling, { formSource: "in-house-vs-outsourced-calculator" });</script>
+        <p style="text-align:center;margin-top:16px;font-size:14px;color:var(--text-muted)">Prefer to talk now? <a href="tel:+14072179281" style="color:var(--brand);font-weight:700">407-217-9281</a></p>
+      </div>
     </div>
-  </div></div></section>
+  </section>
+
+  <section class="br-section-tight br-bg-light">
+    <div class="br-wrap-sm">
+      <div style="text-align:center">
+        <a href="/resources/" class="br-learn" style="justify-content:center;font-size:14px">&larr; Back to all free tools</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function () {
+    'use strict';
+
+    var staffInput = document.getElementById('io-staff-count');
+    var salaryInput = document.getElementById('io-salary');
+    var softwareInput = document.getElementById('io-software-cost');
+    var collectionsInput = document.getElementById('io-collections');
+    var rateSlider = document.getElementById('io-rate-slider');
+    var rateVal = document.getElementById('io-rate-val');
+    var inhouseCostEl = document.getElementById('io-inhouse-cost');
+    var outsourcedCostEl = document.getElementById('io-outsourced-cost');
+    var diffBanner = document.getElementById('io-diff-banner');
+    var diffLbl = document.getElementById('io-diff-lbl');
+    var diffNum = document.getElementById('io-diff-num');
+    var diffSub = document.getElementById('io-diff-sub');
+    var contextField = document.getElementById('io-context-field');
+
+    function fmtUSD(n) {
+      var sign = n < 0 ? '-' : '';
+      return sign + '$' + Math.round(Math.abs(n)).toLocaleString('en-US');
+    }
+
+    function recalc() {
+      var staff = parseFloat(staffInput.value) || 0;
+      var salary = parseFloat(salaryInput.value) || 0;
+      var software = parseFloat(softwareInput.value) || 0;
+      var collections = parseFloat(collectionsInput.value) || 0;
+      var rate = parseFloat(rateSlider.value) || 0;
+
+      if (staff < 0) staff = 0;
+      if (salary < 0) salary = 0;
+      if (software < 0) software = 0;
+      if (collections < 0) collections = 0;
+
+      rateVal.textContent = rate + '%';
+
+      var inHouseCost = (staff * salary) + software;
+      var outsourcedCost = collections * (rate / 100);
+      // Positive diff = in-house costs more than outsourced (savings from
+      // outsourcing). Negative diff = outsourced would cost more. Neither
+      // outcome is ever hidden or forced — see requirement 3.
+      var diff = inHouseCost - outsourcedCost;
+
+      inhouseCostEl.textContent = fmtUSD(inHouseCost);
+      outsourcedCostEl.textContent = fmtUSD(outsourcedCost);
+
+      if (diff > 0) {
+        diffBanner.className = 'br-cost-diff-banner is-savings';
+        diffLbl.textContent = 'Potential Annual Savings';
+        diffNum.textContent = fmtUSD(diff);
+        diffSub.textContent = 'Outsourcing at this rate could cost less than your current in-house setup.';
+      } else if (diff < 0) {
+        diffBanner.className = 'br-cost-diff-banner is-cost';
+        diffLbl.textContent = 'Additional Annual Cost';
+        diffNum.textContent = fmtUSD(Math.abs(diff));
+        diffSub.textContent = 'At this rate, outsourcing would cost more than your current in-house setup. A smaller team can still benefit from specific services without full outsourcing.';
+      } else {
+        diffBanner.className = 'br-cost-diff-banner is-equal';
+        diffLbl.textContent = 'About the Same';
+        diffNum.textContent = '$0';
+        diffSub.textContent = 'At this rate, in-house and outsourced costs come out about even for your numbers.';
+      }
+
+      contextField.value =
+        'Lead source: In-House vs. Outsourced Calculator — in-house annual cost ' + fmtUSD(inHouseCost) +
+        ' vs. outsourced estimate ' + fmtUSD(outsourcedCost) + ' at ' + rate + '% rate';
+    }
+
+    staffInput.addEventListener('input', recalc);
+    salaryInput.addEventListener('input', recalc);
+    softwareInput.addEventListener('input', recalc);
+    collectionsInput.addEventListener('input', recalc);
+    rateSlider.addEventListener('input', recalc);
+
+    recalc();
+  })();
+  </script>
 </main>
 
 <footer class="br-footer" role="contentinfo">

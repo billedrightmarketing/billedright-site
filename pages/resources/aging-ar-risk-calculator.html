@@ -31,23 +31,23 @@ window.brLoadGTM = function() {
 <!-- ═══════════════════════════════════════════
   SEO META
   ═══════════════════════════════════════════ -->
-<title>Contact Us | Billed Right</title>
-<meta name="description" content="Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right. Real audit, real answers.">
+<title>Aging A/R Risk Calculator | Billed Right</title>
+<meta name="description" content="See how much of your aged A/R is actually at risk of never being collected, based on your own historical recovery rate. No email required.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://billedright.com/contact/">
+<link rel="canonical" href="https://billedright.com/resources/aging-ar-risk-calculator/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="See Exactly What Your Practice Is Leaving Behind.">
-<meta property="og:description" content="Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right.">
-<meta property="og:url" content="https://billedright.com/contact/">
+<meta property="og:title" content="Aging A/R Risk Calculator | Billed Right">
+<meta property="og:description" content="See how much of your aged A/R is actually at risk of never being collected, based on your own historical recovery rate. No email required.">
+<meta property="og:url" content="https://billedright.com/resources/aging-ar-risk-calculator/">
 <meta property="og:site_name" content="Billed Right">
 <meta property="og:image" content="https://billedright.com/og-image.jpg">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="See Exactly What Your Practice Is Leaving Behind.">
-<meta name="twitter:description" content="Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right.">
+<meta name="twitter:title" content="Aging A/R Risk Calculator | Billed Right">
+<meta name="twitter:description" content="See how much of your aged A/R is actually at risk of never being collected, based on your own historical recovery rate. No email required.">
 <meta name="twitter:image" content="https://billedright.com/og-image.jpg">
 <meta property="og:locale" content="en_US">
 <meta property="og:image:width" content="1200">
@@ -97,32 +97,19 @@ window.brLoadGTM = function() {
       "potentialAction": {"@type":"SearchAction","target":"https://billedright.com/?s={search_term_string}","query-input":"required name=search_term_string"}
     },
     {
-      "@type": "Service",
-      "name": "Revenue Cycle Management Services",
-      "provider": {"@id": "https://billedright.com/#organization"},
-      "areaServed": "US",
-      "serviceType": "Medical Billing and Revenue Cycle Management",
-      "description": "Credentialing, medical billing, denial management, A/R follow-up, charge posting, coding & audits, eligibility verification, and reporting for healthcare practices.",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "RCM Services",
-        "itemListElement": [
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Medical Billing"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Provider Credentialing"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Denial Management"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"A/R Follow-up"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Insurance Eligibility Verification"}}
-        ]
-      }
+      "@type": "WebPage",
+      "name": "Aging A/R Risk Calculator",
+      "url": "https://billedright.com/resources/aging-ar-risk-calculator/",
+      "description": "Free calculator estimating how much of a practice's aged A/R (90+ days) is actually at risk of never being collected, based on the practice's own historical collection rate.",
+      "isPartOf": {"@id": "https://billedright.com/#website"},
+      "provider": {"@id": "https://billedright.com/#organization"}
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"How much can Billed Right improve my collections?","acceptedAnswer":{"@type":"Answer","text":"Billed Right clients see an average 94% lift in collections, with days in A/R reduced from 40+ to under 24 days on average."}},
-        {"@type":"Question","name":"What specialties does Billed Right serve?","acceptedAnswer":{"@type":"Answer","text":"Billed Right serves 20+ medical specialties including cardiology, behavioral health, internal medicine, pain management, orthopedics, pediatrics, ophthalmology, urgent care, neurology, nephrology, and multispecialty groups."}},
-        {"@type":"Question","name":"Is Billed Right HIPAA compliant?","acceptedAnswer":{"@type":"Answer","text":"Yes. Billed Right has maintained zero data breaches in 18+ years of operation. We are HIPAA compliant and use 256-bit encryption for all data in transit and at rest."}},
-        {"@type":"Question","name":"How long does it take to onboard with Billed Right?","acceptedAnswer":{"@type":"Answer","text":"Most practices are fully onboarded within 2–3 weeks, including EHR/PM system integration, payer setup, and team training."}},
-        {"@type":"Question","name":"What does Billed Right charge for medical billing services?","acceptedAnswer":{"@type":"Answer","text":"Billed Right uses a transparent percentage-of-collections pricing model with no setup fees and no long-term contracts required to get started. Contact us for a quote tailored to your specialty and volume."}}
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://billedright.com/"},
+        {"@type":"ListItem","position":2,"name":"Resources","item":"https://billedright.com/resources/"},
+        {"@type":"ListItem","position":3,"name":"Aging A/R Risk Calculator","item":"https://billedright.com/resources/aging-ar-risk-calculator/"}
       ]
     }
   ]
@@ -1567,6 +1554,70 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-orbit-hub, .br-ai-hub { animation: none !important; filter: none !important; }
   .br-ai-chip, .br-chip { animation-duration: 12s !important; }
 }
+
+/* ═══════════════════════════════════════════
+   AGING A/R RISK CALCULATOR (shares .br-calc-* rules with the
+   Denial Write-Off Recovery Calculator — same generic calculator UI)
+   ═══════════════════════════════════════════ */
+.br-calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.br-calc-input-wrap { position: relative; }
+.br-calc-dollar-prefix {
+  position: absolute; left: 15px; top: 41px; font-size: 14px; color: var(--text-muted); pointer-events: none;
+}
+.br-calc-input-wrap input[type="number"] { padding-left: 28px; }
+.br-calc-range-row { display: flex; align-items: center; gap: 14px; }
+.br-calc-range-row input[type="range"] {
+  flex: 1; -webkit-appearance: none; appearance: none; height: 6px; border-radius: 4px;
+  background: var(--border); outline: none; cursor: pointer;
+}
+.br-calc-range-row input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--brand); box-shadow: 0 2px 6px rgba(186,32,37,.4); cursor: pointer; border: 3px solid #fff;
+}
+.br-calc-range-row input[type="range"]::-moz-range-thumb {
+  width: 20px; height: 20px; border-radius: 50%; background: var(--brand);
+  box-shadow: 0 2px 6px rgba(186,32,37,.4); cursor: pointer; border: 3px solid #fff;
+}
+.br-calc-range-val {
+  min-width: 56px; text-align: center; font-size: 15px; font-weight: 800; color: var(--brand);
+  background: var(--brand-pale); border-radius: var(--r-sm); padding: 6px 8px; flex-shrink: 0;
+}
+.br-calc-result-card {
+  background: var(--navy); border-radius: var(--r-xl); padding: 36px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.br-calc-result-card::before {
+  content: ''; position: absolute; top: -80px; right: -80px; width: 240px; height: 240px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(186,32,37,.25), transparent 65%);
+}
+.br-calc-result-label {
+  position: relative; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.55); margin-bottom: 8px;
+}
+.br-calc-result-num {
+  position: relative; font-size: clamp(38px, 5vw, 56px); font-weight: 800; color: #fff; line-height: 1; margin-bottom: 6px;
+}
+.br-calc-result-sub { position: relative; font-size: 14px; color: rgba(255,255,255,.6); margin-bottom: 22px; }
+.br-calc-result-detail {
+  position: relative; display: flex; justify-content: center; gap: 28px; flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px;
+}
+.br-calc-result-detail div { text-align: center; }
+.br-calc-result-detail .rd-num { font-size: 19px; font-weight: 800; color: var(--brand); line-height: 1; margin-bottom: 4px; }
+.br-calc-result-detail .rd-lbl { font-size: 11px; color: rgba(255,255,255,.5); }
+.br-calc-cta-panel {
+  margin-top: 22px; border-radius: var(--r-lg); padding: 24px; text-align: center;
+  transition: background .25s, border-color .25s;
+}
+.br-calc-cta-panel.tier-soft { background: var(--bg-light); border: 1.5px solid var(--border); }
+.br-calc-cta-panel.tier-moderate { background: rgba(186,32,37,.06); border: 1.5px solid rgba(186,32,37,.2); }
+.br-calc-cta-panel.tier-urgent { background: rgba(186,32,37,.1); border: 1.5px solid rgba(186,32,37,.35); }
+.br-calc-cta-heading { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+.br-calc-cta-panel.tier-urgent .br-calc-cta-heading { color: var(--brand-dark); }
+.br-calc-cta-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+@media (max-width: 900px) {
+  .br-calc-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -1577,754 +1628,205 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
      JS-enabled visitors is gated in templates/nav-template.html. -->
 <div class="br-reset">
 
-<!-- Deferred: only exists site-wide to catch a Netlify Identity
-     invite/recovery link (#invite_token=...) that a content editor
-     might land on from any page, not just /admin/. defer keeps it off
-     the critical rendering path since it's irrelevant to almost every
-     visitor. -->
-<script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<nav class="br-nav" role="navigation" aria-label="Main navigation">
-  <div class="br-nav-inner">
-    <!-- Logo -->
-    <a href="/" class="br-logo" aria-label="Billed Right Home">
-      <img src="/assets/images/billedright-logo.png" alt="Billed Right — Where We Bill Right" width="246" height="72" fetchpriority="high" style="display:block;height:36px;width:auto;max-width:180px">
-    </a>
+{{NAV}}
 
-    <!-- Nav links -->
-    <div class="br-nav-links" role="list">
+<main id="brpage-aging-ar-risk-calculator" class="br-page active" aria-label="Aging A/R risk calculator">
+  <div class="br-page-hero">
+    <div class="br-wrap">
+      <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:14px">
+        <a href="/" style="color:rgba(255,255,255,.5)">Home</a><span style="margin:0 8px;color:rgba(255,255,255,.3)">/</span><a href="/resources/" style="color:rgba(255,255,255,.5)">Resources</a><span style="margin:0 8px;color:rgba(255,255,255,.3)">/</span><span style="color:rgba(255,255,255,.85)">Aging A/R Risk Calculator</span>
+      </p>
+      <span class="br-eyebrow" style="color:#fff">Free Calculator</span>
+      <h1>Aging A/R Risk Calculator</h1>
+      <p class="ph-sub">Not every aged claim gets collected. See how much of your 90+ day A/R is realistically at risk based on your own track record &mdash; no email required to see your result.</p>
+    </div>
+  </div>
 
-      <!-- Home -->
-      <div class="br-nav-item" id="mega-item-home">
-        <a href="/" class="br-has-mega" aria-haspopup="true" aria-expanded="false" id="mega-btn-home" data-brpage="home">Home</a>
-        <div class="br-mega" id="br-mega-home" role="region" aria-label="Home menu">
-          <div class="br-mega-inner cols-2">
-            <div style="max-width:240px">
-              <ul class="br-mega-links">
-                <li><a href="/why-billed-right/">Why Billed Right</a></li>
-                <li><a href="/about/">About Us</a></li>
-                <li><a href="/faq/">FAQ</a></li>
-                <li><a href="/testimonials/">Testimonials</a></li>
-              </ul>
+  <section class="br-section br-bg-light">
+    <div class="br-wrap-sm">
+      <div class="br-calc-grid br-reveal">
+        <div class="br-form-card">
+          <h3>Run the numbers</h3>
+          <p class="fsub">Three inputs. Your result updates instantly below.</p>
+
+          <div class="br-field br-calc-input-wrap">
+            <label for="ar-total">Total current A/R balance ($)</label>
+            <span class="br-calc-dollar-prefix">$</span>
+            <input type="number" id="ar-total" min="0" step="100" placeholder="e.g. 150000" inputmode="decimal">
+          </div>
+
+          <div class="br-field">
+            <label for="ar-aged-pct">Percentage of that A/R aged 90+ days</label>
+            <div class="br-calc-range-row">
+              <input type="range" id="ar-aged-pct" min="0" max="100" step="1" value="0">
+              <span class="br-calc-range-val" id="ar-aged-pct-val">0%</span>
             </div>
-            <div>
-              <span class="br-mega-col-head">Company</span>
-              <ul class="br-mega-links">
-                <li><a href="/leadership/">Leadership</a></li>
-                <li><a href="/careers-us/">Careers US</a></li>
-                <li><a href="/careers-india/">Careers India</a></li>
-                <li><a href="/awards/">Awards</a></li>
-                <li><a href="/recognition/">Recognition</a></li>
-                <li><a href="/locations/">Locations</a></li>
-              </ul>
-            </div>
+          </div>
+
+          <div class="br-field">
+            <label for="ar-collection-rate">Historical collection rate on aged claims (%)</label>
+            <input type="number" id="ar-collection-rate" min="0" max="100" step="1" placeholder="e.g. 20" inputmode="decimal">
+          </div>
+
+          <p style="font-size:12px;color:var(--text-muted);line-height:1.6;margin-top:18px">Use your own historical rate for claims that have already gone past 90 days &mdash; not your overall collection rate.</p>
+        </div>
+
+        <div class="br-calc-result-card">
+          <div class="br-calc-result-label">Estimated Amount At Risk</div>
+          <div class="br-calc-result-num" id="ar-at-risk">$0</div>
+          <div class="br-calc-result-sub">Out of <strong id="ar-aged-total" style="color:#fff">$0</strong> currently aged 90+ days</div>
+          <div class="br-calc-result-detail">
+            <div><div class="rd-num" id="ar-aged-total-echo">$0</div><div class="rd-lbl">Total Aged A/R (90+)</div></div>
+            <div><div class="rd-num" id="ar-collection-rate-echo">0%</div><div class="rd-lbl">Historical Collection Rate</div></div>
           </div>
         </div>
       </div>
 
-      <!-- Who We Serve -->
-      <div class="br-nav-item" id="mega-item-serve">
-        <span class="br-has-mega" role="button" aria-haspopup="true" aria-expanded="false" id="mega-btn-serve">Who We Serve</span>
-        <div class="br-mega" id="br-mega-serve" role="region" aria-label="Who We Serve menu">
-          <div class="br-mega-inner cols-3">
-            <div>
-              <span class="br-mega-col-head">Who We Help</span>
-              <div class="br-mega-audience">
-                <a href="/services/" class="br-mega-aud-card">
-                  <div class="br-mega-aud-icon"><svg viewBox="0 0 24 24"><path d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-3"/><path d="M9 15h3l8.5-8.5a1.5 1.5 0 00-3-3L9 12v3z"/></svg></div>
-                  <div><div class="br-mega-aud-label">CPAs</div><div class="br-mega-aud-sub">Billing compliance & revenue support</div></div>
-                </a>
-                <a href="/services/" class="br-mega-aud-card">
-                  <div class="br-mega-aud-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-                  <div><div class="br-mega-aud-label">Private Practices</div><div class="br-mega-aud-sub">Full-service RCM & billing</div></div>
-                </a>
-                <a href="/private-equity/" class="br-mega-aud-card">
-                  <div class="br-mega-aud-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
-                  <div><div class="br-mega-aud-label">Private Equity</div><div class="br-mega-aud-sub">Portfolio-level RCM oversight</div></div>
-                </a>
-              </div>
-            </div>
-            <div>
-              <span class="br-mega-col-head">Revenue Cycle Management</span>
-              <ul class="br-mega-links">
-                <li><a href="/services/insurance-eligibility/" >Insurance Eligibility</a></li>
-                <li><a href="/services/charge-posting/" >Charge Posting</a></li>
-                <li><a href="/services/documentation-review/" >Documentation Review</a></li>
-                <li><a href="/services/claim-submission/" >Claim Submission</a></li>
-                <li><a href="/services/denial-management/" >Denial Management</a></li>
-                <li><a href="/services/payment-posting/" >Payment Posting</a></li>
-                <li><a href="/services/patient-ar-collections/" >Patient AR Collections</a></li>
-                <li><a href="/services/ar-follow-up/" >Account Receivables Follow-up</a></li>
-                <li><a href="/services/reporting/" >Reporting</a></li>
-                <li><a href="/services/account-management/" >Account Management</a></li>
-                <li><a href="/services/eclinicalworks-billing-services/" >eClinicalWorks Billing</a></li>
-                <li><a href="/services/emr-billing-platforms/" >EMR Billing Platforms</a></li>
-              </ul>
-            </div>
-            <div>
-              <span class="br-mega-col-head">Support Services</span>
-              <ul class="br-mega-links">
-                <li><a href="/services/credentialing/" >Credentialing</a></li>
-                <li><a href="/services/authorizations/" >Authorizations</a></li>
-                <li><a href="/services/medical-coding/" >Medical Coding</a></li>
-                <li><a href="/services/documentation-management/" >Documentation Management</a></li>
-                <li><a href="/services/contract-renegotiation/" >Contract Renegotiation</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <p style="font-size:13px;color:var(--text-muted);line-height:1.65;text-align:center;max-width:640px;margin:22px auto 0">The longer a claim sits past 90 days, the less likely it is to be collected. This estimate is based on the figures you entered.</p>
+
+      <div class="br-calc-cta-panel tier-soft br-reveal" id="ar-cta-panel">
+        <div class="br-calc-cta-heading" id="ar-cta-heading">Worth a closer look</div>
+        <p class="br-calc-cta-sub" id="ar-cta-sub">A gap like this is worth a closer look with our team.</p>
+        <a href="#ar-calc-lead-form" class="br-btn br-btn-red br-btn-lg" id="ar-cta-btn">Talk to Our Team <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
+    </div>
+  </section>
 
-      <!-- Credentialing -->
-      <a href="/services/credentialing/" class="br-nav-direct" data-brpage="credentialing">Credentialing</a>
-
-      <!-- Specialties -->
-      <div class="br-nav-item" id="mega-item-spec">
-        <span class="br-has-mega" role="button" aria-haspopup="true" aria-expanded="false" id="mega-btn-spec">Specialties</span>
-        <div class="br-mega" id="br-mega-spec" role="region" aria-label="Specialties menu">
-          <div class="br-mega-inner cols-2">
-            <div>
-              <span class="br-mega-col-head">Medical Specialties</span>
-              <div class="br-mega-spec-grid">
-                <a href="/specialties/cardiology-rcm-services/" >Cardiology</a>
-                <a href="/specialties/primary-care-rcm-services/" >Primary Care</a>
-                <a href="/specialties/pain-management-rcm-services/" >Pain Management</a>
-                <a href="/specialties/behavioral-health-rcm-services/" >Behavioral Health</a>
-                <a href="/specialties/psychiatry-rcm-services/" >Psychiatry</a>
-                <a href="/specialties/rheumatology-rcm-services/" >Rheumatology</a>
-                <a href="/specialties/internal-medicine-rcm-services/" >Internal Medicine</a>
-                <a href="/specialties/allergy-rcm-services/" >Allergy</a>
-                <a href="/specialties/nephrology-rcm-services/" >Nephrology</a>
-                <a href="/specialties/urgent-care-rcm-services/" >Urgent Care</a>
-                <a href="/specialties/gastroenterology-rcm-services/" >Gastroenterology</a>
-                <a href="/specialties/vascular-surgery-rcm-services/" >Vascular Surgery</a>
-                <a href="/specialties/pulmonary-rcm-services/" >Pulmonary</a>
-              </div>
-            </div>
-            <div style="display:flex;align-items:center">
-              <div style="background:linear-gradient(135deg,var(--navy),var(--navy-dark));border-radius:var(--r-xl);padding:28px;position:relative;overflow:hidden;width:100%">
-                <div style="position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(186,32,37,.2),transparent 65%)"></div>
-                <span class="br-eyebrow" style="color:var(--brand);position:relative">Specialty Billing</span>
-                <h4 style="font-size:16px;color:#fff;margin:8px 0 10px;position:relative">Specialty-trained billers for your exact claim type.</h4>
-                <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:18px;position:relative">Every specialty has unique coding rules, payer behavior, and denial patterns. We staff accordingly.</p>
-                <a href="/specialties/" class="br-btn br-btn-red br-btn-sm" style="position:relative">See all specialties <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-              </div>
-            </div>
-          </div>
-        </div>
+  <section class="br-section br-bg-white" id="ar-calc-lead-form">
+    <div class="br-wrap-sm">
+      <div class="br-section-head center br-reveal">
+        <h2>Start with a focused AR Rescue Assessment</h2>
+        <p style="margin:0 auto">AR Rescue is a contained, fast-acting first step aimed at your aged claims specifically &mdash; not a full RCM commitment. Share a few details and our team will review your aging report with you.</p>
       </div>
-
-      <!-- Resources -->
-      <div class="br-nav-item" id="mega-item-res">
-        <span class="br-has-mega" role="button" aria-haspopup="true" aria-expanded="false" id="mega-btn-res">Resources</span>
-        <div class="br-mega" id="br-mega-res" role="region" aria-label="Resources menu">
-          <div class="br-mega-inner cols-2r">
-            <div>
-              <span class="br-mega-col-head">Educational Resources</span>
-              <ul class="br-mega-links">
-                <li><a href="/blog/" >Blog</a></li>
-                <li><a href="/resources/" >RCM Health Check</a></li>
-                <li><a href="/resources/" >A/R Recovery Estimator Calculator</a></li>
-                <li><a href="/resources/" >Medical Billing Outsourcing Calculator</a></li>
-                <li><a href="/resources/" >How Much Revenue Are You Losing? — Calculator</a></li>
-                <li><a href="/resources/" >Claim Denial Impact Calculator</a></li>
-                <li><a href="/resources/" >Is AI the Cure for Claim Denials? (White Paper)</a></li>
-                <li><a href="/resources/" >Practice Profitability Scorecard</a></li>
-                <li><a href="/resources/" >Front Desk Workflow Audit</a></li>
-              </ul>
-            </div>
-            <div>
-              <span class="br-mega-col-head">Case Studies</span>
-              <ul class="br-mega-links">
-                <li><a href="/case-studies/" style="font-weight:700">All Case Studies</a></li>
-                <li><a href="/case-studies/primary-care/" >Primary Care Case Study</a></li>
-                <li><a href="/case-studies/cardiology/" >Cardiology Case Study</a></li>
-                <li><a href="/case-studies/allergy/" >Allergy Practice Case Study</a></li>
-                <li><a href="/case-studies/credentialing/" >Credentialing Case Study</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div class="br-form-card br-reveal" style="max-width:480px;margin:0 auto">
+        <h3 id="ar-lead-form-heading">Talk to Our Team</h3>
+        <form name="aging-ar-risk-calculator-request" method="POST" data-netlify="true" action="/thank-you/contact/">
+          <input type="hidden" name="form-name" value="aging-ar-risk-calculator-request">
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="page_url" value="">
+          <input type="hidden" name="calculator_context" id="ar-context-field" value="">
+          <div class="br-field"><label for="ar-lead-name">Name</label><input type="text" id="ar-lead-name" name="name" required autocomplete="name"></div>
+          <div class="br-field"><label for="ar-lead-email">Work Email</label><input type="email" id="ar-lead-email" name="email" required autocomplete="email"></div>
+          <div class="br-field"><label for="ar-lead-phone">Phone Number</label><input type="tel" id="ar-lead-phone" name="phone" autocomplete="tel"></div>
+          <div class="br-field"><label for="ar-lead-practice">Practice / Organization</label><input type="text" id="ar-lead-practice" name="practice" required autocomplete="organization"></div>
+          <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-muted);line-height:1.5;margin-bottom:10px;cursor:pointer"><input type="checkbox" name="consent" value="yes" style="margin-top:3px;flex-shrink:0">I agree to allow Billed Right to use the information provided to contact me. I understand that my information may be processed by authorized service providers supporting Billed Right's business operations, as described in the <a href="/privacy-policy/" style="color:var(--brand);text-decoration:underline">Privacy Policy</a>.</label>
+          <p style="font-size:11.5px;color:var(--text-muted);line-height:1.5;margin:0 0 18px">Please do not include patient or protected health information (PHI) in this form.</p>
+          <button type="submit" class="br-btn br-btn-red br-btn-lg" style="width:100%;justify-content:center" aria-label="Submit request" id="ar-lead-form-submit">Talk to Our Team</button>
+        </form>
+        <script>window.brWireLeadForm(document.currentScript.previousElementSibling, { formSource: "aging-ar-risk-calculator" });</script>
+        <p style="text-align:center;margin-top:16px;font-size:14px;color:var(--text-muted)">Prefer to talk now? <a href="tel:+14072179281" style="color:var(--brand);font-weight:700">407-217-9281</a></p>
       </div>
-
-      <!-- Contact Us removed — single CTA button in nav right handles this -->
-
     </div>
+  </section>
 
-    <!-- Right -->
-    <div class="br-nav-right">
-      <a href="tel:+14072179281" class="br-nav-phone" aria-label="Call Billed Right">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-        407-217-9281
-      </a>
-      <a href="https://hub.billedright.com/brhub/login?redirect=%2Fbrhub%2F%3F" class="br-nav-phone" aria-label="Client Portal">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        Client Portal
-      </a>
-      <a href="/contact/" class="br-btn br-btn-red br-btn-sm" style="color:#fff">Schedule an Executive Conversation</a>
+  <section class="br-section-tight br-bg-light">
+    <div class="br-wrap-sm">
+      <div style="text-align:center">
+        <a href="/resources/" class="br-learn" style="justify-content:center;font-size:14px">&larr; Back to all free tools</a>
+      </div>
     </div>
+  </section>
 
-    <!-- Hamburger -->
-    <button class="br-hamburger" id="br-hamburger" aria-label="Toggle menu" aria-expanded="false" onclick="brToggleMenu()">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+  <script>
+  (function () {
+    'use strict';
 
-<!-- Mobile menu -->
-<div class="br-mobile-menu" id="br-mobile-menu" role="dialog" aria-label="Mobile navigation">
+    var totalInput = document.getElementById('ar-total');
+    var agedPctInput = document.getElementById('ar-aged-pct');
+    var agedPctVal = document.getElementById('ar-aged-pct-val');
+    var collectionRateInput = document.getElementById('ar-collection-rate');
+    var atRiskEl = document.getElementById('ar-at-risk');
+    var agedTotalEl = document.getElementById('ar-aged-total');
+    var agedTotalEchoEl = document.getElementById('ar-aged-total-echo');
+    var collectionRateEchoEl = document.getElementById('ar-collection-rate-echo');
+    var ctaPanel = document.getElementById('ar-cta-panel');
+    var ctaHeading = document.getElementById('ar-cta-heading');
+    var ctaSub = document.getElementById('ar-cta-sub');
+    var ctaBtn = document.getElementById('ar-cta-btn');
+    var contextField = document.getElementById('ar-context-field');
+    var leadFormHeading = document.getElementById('ar-lead-form-heading');
+    var leadFormSubmit = document.getElementById('ar-lead-form-submit');
 
-  <!-- Home -->
-  <a href="/" class="br-mob-direct" data-brpage="home">Home</a>
-  <a href="/why-billed-right/" class="br-mob-sub-link">Why Billed Right</a>
-  <a href="/about/" class="br-mob-sub-link">About Us</a>
-  <a href="/faq/" class="br-mob-sub-link">FAQ</a>
-  <a href="/testimonials/" class="br-mob-sub-link">Testimonials</a>
-  <span class="br-mob-sub-head">Company</span>
-  <a href="/leadership/" class="br-mob-sub-link indent">Leadership</a>
-  <a href="/careers-us/" class="br-mob-sub-link indent">Careers US</a>
-  <a href="/careers-india/" class="br-mob-sub-link indent">Careers India</a>
-  <a href="/awards/" class="br-mob-sub-link indent">Awards</a>
-  <a href="/recognition/" class="br-mob-sub-link indent">Recognition</a>
-  <a href="/locations/" class="br-mob-sub-link indent">Locations</a>
+    function fmtUSD(n) {
+      return '$' + Math.round(n).toLocaleString('en-US');
+    }
 
-  <!-- Who We Serve -->
-  <div class="br-mob-item" id="mob-serve">
-    <div class="br-mob-trigger" onclick="brToggleMob(this)">
-      Who We Serve
-      <span class="br-mob-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
-    </div>
-    <div class="br-mob-sub">
-      <span class="br-mob-sub-head">Who We Help</span>
-      <a href="/services/" class="br-mob-sub-link">CPAs</a>
-      <a href="/services/" class="br-mob-sub-link">Private Practices</a>
-      <a href="/private-equity/" class="br-mob-sub-link">Private Equity</a>
-      <span class="br-mob-sub-head">Revenue Cycle Management</span>
-      <a href="/services/insurance-eligibility/" class="br-mob-sub-link indent">Insurance Eligibility</a>
-      <a href="/services/charge-posting/" class="br-mob-sub-link indent">Charge Posting</a>
-      <a href="/services/documentation-review/" class="br-mob-sub-link indent">Documentation Review</a>
-      <a href="/services/claim-submission/" class="br-mob-sub-link indent">Claim Submission</a>
-      <a href="/services/denial-management/" class="br-mob-sub-link indent">Denial Management</a>
-      <a href="/services/payment-posting/" class="br-mob-sub-link indent">Payment Posting</a>
-      <a href="/services/patient-ar-collections/" class="br-mob-sub-link indent">Patient AR Collections</a>
-      <a href="/services/ar-follow-up/" class="br-mob-sub-link indent">Account Receivables Follow-up</a>
-      <a href="/services/reporting/" class="br-mob-sub-link indent">Reporting</a>
-      <a href="/services/account-management/" class="br-mob-sub-link indent">Account Management</a>
-      <a href="/services/eclinicalworks-billing-services/" class="br-mob-sub-link indent">eClinicalWorks Billing</a>
-      <a href="/services/emr-billing-platforms/" class="br-mob-sub-link indent">EMR Billing Platforms</a>
-      <span class="br-mob-sub-head">Support Services</span>
-      <a href="/services/credentialing/" class="br-mob-sub-link indent">Credentialing</a>
-      <a href="/services/authorizations/" class="br-mob-sub-link indent">Authorizations</a>
-      <a href="/services/medical-coding/" class="br-mob-sub-link indent">Medical Coding</a>
-      <a href="/services/documentation-management/" class="br-mob-sub-link indent">Documentation Management</a>
-      <a href="/services/contract-renegotiation/" class="br-mob-sub-link indent">Contract Renegotiation</a>
-    </div>
-  </div>
-
-  <!-- Credentialing -->
-  <a href="/services/credentialing/" class="br-mob-direct" data-brpage="credentialing">Credentialing</a>
-
-  <!-- Specialties -->
-  <div class="br-mob-item" id="mob-spec">
-    <div class="br-mob-trigger" onclick="brToggleMob(this)">
-      Specialties
-      <span class="br-mob-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
-    </div>
-    <div class="br-mob-sub">
-      <span class="br-mob-sub-head">Medical Specialties</span>
-      <a href="/specialties/cardiology-rcm-services/" class="br-mob-sub-link">Cardiology</a>
-      <a href="/specialties/primary-care-rcm-services/" class="br-mob-sub-link">Primary Care</a>
-      <a href="/specialties/pain-management-rcm-services/" class="br-mob-sub-link">Pain Management</a>
-      <a href="/specialties/behavioral-health-rcm-services/" class="br-mob-sub-link">Behavioral Health</a>
-      <a href="/specialties/psychiatry-rcm-services/" class="br-mob-sub-link">Psychiatry</a>
-      <a href="/specialties/rheumatology-rcm-services/" class="br-mob-sub-link">Rheumatology</a>
-      <a href="/specialties/internal-medicine-rcm-services/" class="br-mob-sub-link">Internal Medicine</a>
-      <a href="/specialties/allergy-rcm-services/" class="br-mob-sub-link">Allergy</a>
-      <a href="/specialties/nephrology-rcm-services/" class="br-mob-sub-link">Nephrology</a>
-      <a href="/specialties/urgent-care-rcm-services/" class="br-mob-sub-link">Urgent Care</a>
-      <a href="/specialties/gastroenterology-rcm-services/" class="br-mob-sub-link">Gastroenterology</a>
-      <a href="/specialties/vascular-surgery-rcm-services/" class="br-mob-sub-link">Vascular Surgery</a>
-      <a href="/specialties/pulmonary-rcm-services/" class="br-mob-sub-link">Pulmonary</a>
-    </div>
-  </div>
-
-  <!-- Resources -->
-  <div class="br-mob-item" id="mob-res">
-    <div class="br-mob-trigger" onclick="brToggleMob(this)">
-      Resources
-      <span class="br-mob-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
-    </div>
-    <div class="br-mob-sub">
-      <span class="br-mob-sub-head">Educational Resources</span>
-      <a href="/blog/" class="br-mob-sub-link">Blog</a>
-      <a href="/resources/" class="br-mob-sub-link">RCM Health Check</a>
-      <a href="/resources/" class="br-mob-sub-link">A/R Recovery Estimator</a>
-      <a href="/resources/" class="br-mob-sub-link">Medical Billing Outsourcing Calculator</a>
-      <a href="/resources/" class="br-mob-sub-link">How Much Revenue Are You Losing?</a>
-      <a href="/resources/" class="br-mob-sub-link">Claim Denial Impact Calculator</a>
-      <a href="/resources/" class="br-mob-sub-link">Is AI the Cure for Claim Denials?</a>
-      <a href="/resources/" class="br-mob-sub-link">Practice Profitability Scorecard</a>
-      <a href="/resources/" class="br-mob-sub-link">Front Desk Workflow Audit</a>
-      <span class="br-mob-sub-head">Case Studies</span>
-      <a href="/case-studies/" class="br-mob-sub-link" style="font-weight:700">All Case Studies</a>
-      <a href="/case-studies/primary-care/" class="br-mob-sub-link">Primary Care Case Study</a>
-      <a href="/case-studies/cardiology/" class="br-mob-sub-link">Cardiology Case Study</a>
-      <a href="/case-studies/allergy/" class="br-mob-sub-link">Allergy Practice Case Study</a>
-      <a href="/case-studies/credentialing/" class="br-mob-sub-link">Credentialing Case Study</a>
-    </div>
-  </div>
-
-  <!-- Contact Us -->
-  <a href="/contact/" class="br-mob-direct" data-brpage="contact">Contact Us</a>
-
-  <div class="br-mob-cta">
-    <a href="/contact/" class="br-btn br-btn-red" style="width:100%;justify-content:center;color:#fff">Schedule an Executive Conversation <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-  </div>
-
-  <a href="https://hub.billedright.com/brhub/login?redirect=%2Fbrhub%2F%3F" class="br-mob-direct">Client Portal</a>
-</div>
-
-<!-- Spacer for fixed nav -->
-<div style="height:60px" aria-hidden="true"></div>
-
-<script src="/assets/js/br-lead-form.js?v=1"></script>
-<script defer src="/assets/js/br-chat-widget.js?v=9"></script>
-<script defer src="/assets/js/br-analytics-events.js?v=1"></script>
-<script>
-/* The identity widget script above is now deferred, so window.netlifyIdentity
-   isn't guaranteed to exist yet at this point in parsing — wait for it. */
-document.addEventListener("DOMContentLoaded", function () {
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
+    // AR Rescue is framed throughout as a contained, fast-acting entry
+    // point aimed specifically at the aged-claims backlog just
+    // calculated above — not a full RCM commitment. See requirement 3.
+    var TIERS = {
+      soft: {
+        heading: 'Worth a closer look',
+        sub: "A gap like this is worth a closer look with our team.",
+        btnText: 'Talk to Our Team'
+      },
+      moderate: {
+        heading: 'This is real money at risk',
+        sub: 'An AR Rescue Assessment is a focused, fast-acting first step aimed at this specific backlog — not a full RCM commitment.',
+        btnText: 'Get an AR Rescue Assessment'
+      },
+      urgent: {
+        heading: 'This needs attention now',
+        sub: 'At this level, every week of waiting costs real money. AR Rescue is a contained engagement built to start recovering this backlog quickly.',
+        btnText: 'Start AR Rescue This Week'
       }
-    });
-  }
-});
-</script>
-<script>
-/* Populates every form's hidden page_url field with the URL of the page
-   it was loaded on. Deferred to DOMContentLoaded — this nav fragment is
-   injected near the top of <body>, before the page's own forms (and
-   before the chat widget builds its own form), so a synchronous script
-   here would run before any of them exist in the DOM. This site is
-   fully static multi-page (no client-side routing), so "page load" and
-   "form render" always happen together — no need to re-populate later. */
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll('input[name="page_url"]').forEach(function (el) {
-    el.value = window.location.href;
-  });
-});
-</script>
+    };
 
-<!-- Microsoft Clarity — deferred until first genuine user interaction
-     (scroll, click, keydown, or touchstart), or a 5s fallback timeout so
-     no-interaction sessions still get tracked. Registers only lightweight
-     passive window listeners up front; the actual Clarity tag (and its
-     network request) doesn't load until one of those fires. Checked
-     against br-chat-widget.js and br-analytics-events.js: no conflicts —
-     their scroll/click/keydown listeners are scoped to specific elements
-     or `document` (not `window`), none call stopPropagation on these
-     event types, so this fires independently alongside them.
-
-     Consent-gated: this block only DEFINES window.brLoadClarity() (the
-     immediate loader) and window.brArmClarityDeferred() (arms the
-     interaction/timeout listeners above) — neither is called here. The
-     cookie-consent script below decides when/whether to call either one,
-     so Clarity can never fire before a visitor has made a consent choice,
-     even if the interaction/timeout condition is met first. -->
-<script type="text/javascript">
-(function() {
-  var loaded = false;
-  function loadClarity() {
-    if (loaded) return;
-    loaded = true;
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "yiqpm5h0ek");
-  }
-  function armDeferred() {
-    function triggerLoad() {
-      loadClarity();
-      ['scroll','click','keydown','touchstart'].forEach(function(evt){
-        window.removeEventListener(evt, triggerLoad);
-      });
+    function getTier(atRisk) {
+      if (atRisk < 25000) return 'soft';
+      if (atRisk <= 100000) return 'moderate';
+      return 'urgent';
     }
-    ['scroll','click','keydown','touchstart'].forEach(function(evt){
-      window.addEventListener(evt, triggerLoad, { passive: true });
-    });
-    setTimeout(triggerLoad, 5000);
-  }
-  window.brLoadClarity = loadClarity;
-  window.brArmClarityDeferred = armDeferred;
-})();
-</script>
 
-<!-- Cookie consent — gates the two Analytics-category scripts (GA4, which
-     is configured inside the Google Tag Manager container loaded via
-     window.brLoadGTM() in every page's <head>, and Microsoft Clarity,
-     defined just above) behind an explicit visitor choice. Necessary
-     scripts — br-lead-form.js's Zoho submission (fires only when a
-     visitor voluntarily submits a form with their own information),
-     br-chat-widget.js, br-analytics-events.js's dataLayer pushes (inert
-     without GTM loaded), and core site functionality — are unaffected and
-     always run, since none of them are passive tracking.
+    function recalc() {
+      var total = parseFloat(totalInput.value) || 0;
+      var agedPct = parseFloat(agedPctInput.value) || 0;
+      // Historical collection rate is intentionally left blank by
+      // default (never pre-filled or suggested) — see requirement 1.
+      // Until the visitor enters one, it's treated as 0 for the
+      // calculation, same as any other empty numeric input on this page.
+      var collectionRate = parseFloat(collectionRateInput.value) || 0;
 
-     Consent is stored in localStorage as cookie_consent
-     ("accepted"/"rejected") + cookie_consent_date (ISO timestamp) and is
-     treated as expired after ~12 months, at which point the banner
-     reappears. If localStorage is unavailable (e.g. locked-down private
-     browsing), consent is treated as unset so we fail toward showing the
-     banner rather than silently loading analytics. -->
-<script>
-(function() {
-  'use strict';
-  var CONSENT_KEY = 'cookie_consent';
-  var CONSENT_DATE_KEY = 'cookie_consent_date';
-  var CONSENT_MAX_AGE_MS = 365 * 24 * 60 * 60 * 1000;
+      if (total < 0) total = 0;
+      if (agedPct < 0) agedPct = 0;
+      if (agedPct > 100) agedPct = 100;
+      if (collectionRate < 0) collectionRate = 0;
+      if (collectionRate > 100) collectionRate = 100;
 
-  function getStoredConsent() {
-    var value, dateStr;
-    try {
-      value = window.localStorage.getItem(CONSENT_KEY);
-      dateStr = window.localStorage.getItem(CONSENT_DATE_KEY);
-    } catch (e) {
-      return null;
+      var agedAR = total * (agedPct / 100);
+      var atRisk = agedAR * (1 - collectionRate / 100);
+
+      agedPctVal.textContent = agedPct + '%';
+      atRiskEl.textContent = fmtUSD(atRisk);
+      agedTotalEl.textContent = fmtUSD(agedAR);
+      agedTotalEchoEl.textContent = fmtUSD(agedAR);
+      collectionRateEchoEl.textContent = collectionRate + '%';
+
+      var tierKey = getTier(atRisk);
+      var tier = TIERS[tierKey];
+      ctaPanel.className = 'br-calc-cta-panel tier-' + tierKey;
+      ctaHeading.textContent = tier.heading;
+      ctaSub.textContent = tier.sub;
+      ctaBtn.childNodes[0].nodeValue = tier.btnText + ' ';
+      leadFormHeading.textContent = tier.btnText;
+      leadFormSubmit.textContent = tier.btnText;
+
+      contextField.value =
+        'Lead source: Aging A/R Risk Calculator — estimated ' + fmtUSD(atRisk) +
+        ' at risk (based on ' + fmtUSD(total) + ' total A/R, ' + agedPct +
+        '% aged 90+, ' + collectionRate + '% historical collection rate)';
     }
-    if (!value || !dateStr) return null;
-    var storedDate = new Date(dateStr);
-    if (isNaN(storedDate.getTime())) return null;
-    if (Date.now() - storedDate.getTime() > CONSENT_MAX_AGE_MS) return null;
-    return (value === 'accepted' || value === 'rejected') ? value : null;
-  }
 
-  function storeConsent(choice) {
-    try {
-      window.localStorage.setItem(CONSENT_KEY, choice);
-      window.localStorage.setItem(CONSENT_DATE_KEY, new Date().toISOString());
-    } catch (e) {
-      // Storage blocked — the banner will simply re-show on the next
-      // page load, which is the safe failure mode.
-    }
-  }
+    totalInput.addEventListener('input', recalc);
+    agedPctInput.addEventListener('input', recalc);
+    collectionRateInput.addEventListener('input', recalc);
 
-  function loadAnalyticsImmediately() {
-    if (typeof window.brLoadGTM === 'function') window.brLoadGTM();
-    if (typeof window.brLoadClarity === 'function') window.brLoadClarity();
-  }
-
-  function armAnalyticsDeferred() {
-    // GTM was never deferred (it loads as soon as consent allows it, same
-    // as its original unconditional behavior); Clarity keeps its existing
-    // interaction/5s-timeout deferral for returning, already-consented
-    // visitors.
-    if (typeof window.brLoadGTM === 'function') window.brLoadGTM();
-    if (typeof window.brArmClarityDeferred === 'function') window.brArmClarityDeferred();
-  }
-
-  // While the banner is visible, it shares the bottom-right corner of the
-  // viewport with br-chat-widget.js's launcher/teaser/FAB menu (all
-  // position:fixed there too). Rather than hardcoding offsets that would
-  // drift out of sync with that file's own values, measure the banner's
-  // actual rendered height and push those elements up by exactly that
-  // much via a CSS custom property, restoring them the moment the banner
-  // closes.
-  var bannerResizeHandler = null;
-  function ensureBannerOffsetStyle() {
-    if (document.getElementById('br-cookie-banner-offset-style')) return;
-    var style = document.createElement('style');
-    style.id = 'br-cookie-banner-offset-style';
-    style.textContent =
-      'body.br-cookie-banner-open #br-chat-launcher{bottom:calc(var(--br-banner-h,90px) + 24px)!important}' +
-      'body.br-cookie-banner-open #br-chat-teaser{bottom:calc(var(--br-banner-h,90px) + 82px)!important}' +
-      'body.br-cookie-banner-open #br-fab-menu{bottom:calc(var(--br-banner-h,90px) + 92px)!important}';
-    document.head.appendChild(style);
-  }
-  function measureBannerHeight() {
-    var el = document.getElementById('br-cookie-banner');
-    if (el) document.documentElement.style.setProperty('--br-banner-h', el.offsetHeight + 'px');
-  }
-
-  function hideBanner() {
-    var el = document.getElementById('br-cookie-banner');
-    if (el) el.parentNode.removeChild(el);
-    document.body.classList.remove('br-cookie-banner-open');
-    if (bannerResizeHandler) {
-      window.removeEventListener('resize', bannerResizeHandler);
-      bannerResizeHandler = null;
-    }
-  }
-
-  function buildBanner() {
-    var banner = document.createElement('div');
-    banner.id = 'br-cookie-banner';
-    banner.setAttribute('role', 'region');
-    banner.setAttribute('aria-label', 'Cookie consent');
-    banner.style.cssText =
-      'position:fixed;left:0;right:0;bottom:0;z-index:99999;' +
-      'background:#31425E;color:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;' +
-      'padding:18px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;' +
-      'gap:16px 24px;box-shadow:0 -8px 32px rgba(26,37,53,.35)';
-
-    var text = document.createElement('p');
-    text.style.cssText =
-      'margin:0;font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.85);' +
-      'flex:1 1 320px;max-width:640px';
-    text.innerHTML =
-      'We use cookies for essential site functionality and, with your consent, for analytics. ' +
-      '<a href="/privacy-policy/" style="color:#fff;text-decoration:underline;font-weight:600">Read our Privacy Policy</a>.';
-
-    var actions = document.createElement('div');
-    actions.style.cssText = 'display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0';
-
-    var acceptBtn = document.createElement('button');
-    acceptBtn.type = 'button';
-    acceptBtn.textContent = 'Accept All';
-    acceptBtn.style.cssText =
-      'background:#BA2025;color:#fff;border:none;border-radius:8px;padding:11px 22px;' +
-      'font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap';
-    acceptBtn.addEventListener('click', function() {
-      storeConsent('accepted');
-      hideBanner();
-      loadAnalyticsImmediately();
-    });
-
-    var rejectBtn = document.createElement('button');
-    rejectBtn.type = 'button';
-    rejectBtn.textContent = 'Reject Non-Essential';
-    rejectBtn.style.cssText =
-      'background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:8px;' +
-      'padding:11px 22px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap';
-    rejectBtn.addEventListener('click', function() {
-      storeConsent('rejected');
-      hideBanner();
-    });
-
-    actions.appendChild(acceptBtn);
-    actions.appendChild(rejectBtn);
-    banner.appendChild(text);
-    banner.appendChild(actions);
-    return banner;
-  }
-
-  function showBanner() {
-    if (document.getElementById('br-cookie-banner')) return;
-    function render() {
-      ensureBannerOffsetStyle();
-      document.body.appendChild(buildBanner());
-      document.body.classList.add('br-cookie-banner-open');
-      measureBannerHeight();
-      bannerResizeHandler = measureBannerHeight;
-      window.addEventListener('resize', bannerResizeHandler);
-    }
-    if (document.body) render();
-    else document.addEventListener('DOMContentLoaded', render);
-  }
-
-  var consent = getStoredConsent();
-  if (consent === 'accepted') {
-    armAnalyticsDeferred();
-  } else if (consent === 'rejected') {
-    // Valid, stored rejection — no banner, no analytics load, this visit
-    // or any future one until the choice expires or is cleared.
-  } else {
-    showBanner();
-  }
-
-  window.brConsentAnalyticsAllowed = function() {
-    return getStoredConsent() === 'accepted';
-  };
-})();
-</script>
-
-
-<main id="brpage-contact" class="br-page active" aria-label="Contact page">
-  <div class="br-page-hero" style="padding-bottom:52px"><div class="br-wrap"><span class="br-eyebrow" style="color:#fff">Get In Touch</span><h1>See Exactly What Your Practice Is Leaving Behind.</h1><p class="ph-sub" style="font-size:17px;color:rgba(255,255,255,.62);max-width:620px;margin:0 auto;line-height:1.7">Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right. Real audit. Real answers.</p></div></div>
-  <section class="br-section br-bg-light"><div class="br-wrap"><div class="br-contact-grid">
-    <div class="br-reveal">
-      <span class="br-eyebrow">Why Billed Right</span>
-      <h2 style="font-size:clamp(26px,3vw,38px);margin:12px 0 16px;color:var(--navy)">Start with an honest review of your claims.</h2>
-      <p style="font-size:16px;color:var(--text-muted);line-height:1.7">We send a specialist, not a sales rep, who pulls your actual data and shows you exactly what's leaking.</p>
-      <ul class="br-trust-list">
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>A real audit of recent claims, not a canned presentation</li>
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>Specialty-specific coding and denial insights</li>
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>Solution specialist, not a sales rep, responds within one business day</li>
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>Backed by our 120-day money-back guarantee</li>
-        <li><span class="br-trust-tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>18+ years of RCM expertise across 20+ specialties</li>
-      </ul>
-      <div class="br-contact-detail">
-        <div class="br-cd-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg><span>407-217-9281</span></div>
-        <div class="br-cd-item"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@billedright.com</span></div>
-        <div class="br-cd-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Orlando, FL: serving practices nationwide</span></div>
-        <div class="br-cd-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mon–Fri, 9am–6pm ET</span></div>
-      </div>
-    </div>
-    <div class="br-form-card br-reveal br-reveal-d1">
-      <h3>Talk to a Solution Specialist</h3>
-      <p class="fsub">Takes 2 minutes. A solution specialist responds within one business day.</p>
-      <form name="contact-billing-review-request" method="POST" data-netlify="true" action="/thank-you/contact/">
-      <input type="hidden" name="form-name" value="contact-billing-review-request">
-      <input type="hidden" name="bot-field" />
-      <input type="hidden" name="page_url" value="">
-      <div class="br-field"><label for="br-name">Name</label><input type="text" id="br-name" name="name" required autocomplete="name"></div>
-      <div class="br-field-row">
-        <div class="br-field"><label for="br-email">Work Email</label><input type="email" id="br-email" name="email" placeholder="you@yourpractice.com" autocomplete="email"></div>
-        <div class="br-field"><label for="br-phone">Phone Number</label><input type="tel" id="br-phone" name="phone" placeholder="(407) 000-0000" autocomplete="tel"></div>
-      </div>
-      <div class="br-field"><label for="br-practice">Practice Name</label><input type="text" id="br-practice" name="practice" placeholder="Your practice name" required autocomplete="organization"></div>
-      <div class="br-field"><label for="br-challenge">What's your biggest billing challenge?</label><textarea id="br-challenge" name="challenge" placeholder="Tell us where you're losing revenue..."></textarea></div>
-      <button type="submit" class="br-btn br-btn-red br-btn-lg" style="width:100%;justify-content:center" aria-label="Submit contact request">
-        Talk to a Solution Specialist
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </button>
-      <div class="br-hipaa-note"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Your information is HIPAA-protected. We will never share your practice data.</div>
-      <p class="br-form-fine">No contracts required.</p>
-      </form>
-      <script>
-      (function() {
-        var form = document.currentScript.previousElementSibling;
-
-        // Well-known medicine/science names (real historical figures + TV
-        // doctors) — same fixed list used on the contact modal. Randomized
-        // per page load, independently of the modal's own pick.
-        var BR_NAME_EXAMPLES = ['Albert Einstein', 'Marie Curie', 'Jonas Salk', 'Louis Pasteur', 'Florence Nightingale', 'Alexander Fleming', 'Elizabeth Blackwell', 'Meredith Grey', 'Gregory House', 'Derek Shepherd', 'Shaun Murphy', 'Doogie Howser', 'John Watson', 'Cristina Yang'];
-        var nameInput = document.getElementById('br-name');
-        if (nameInput) {
-          nameInput.placeholder = 'e.g. ' + BR_NAME_EXAMPLES[Math.floor(Math.random() * BR_NAME_EXAMPLES.length)];
-        }
-
-        // Email and phone are each optional individually, but at least one
-        // is required so a solution specialist has a way to respond.
-        // Native `required` can't express "one of two fields", so this
-        // listener (registered before brWireLeadForm's own submit handler)
-        // checks it and, on failure, stops that handler from also running
-        // via stopImmediatePropagation.
-        var emailEl = document.getElementById('br-email');
-        var phoneEl = document.getElementById('br-phone');
-        form.addEventListener('submit', function(e) {
-          if (!emailEl.value.trim() && !phoneEl.value.trim()) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            var msg = form.querySelector('.br-contact-validation-error');
-            if (!msg) {
-              msg = document.createElement('div');
-              msg.className = 'br-contact-validation-error br-lead-form-error';
-              form.appendChild(msg);
-            }
-            msg.textContent = 'Please provide an email address or phone number.';
-            (emailEl || phoneEl).focus();
-          }
-        });
-
-        window.brWireLeadForm(form, { formSource: 'contact-page' });
-      })();
-      </script>
-    </div>
-  </div></div></section>
+    recalc();
+  })();
+  </script>
 </main>
 
-<footer class="br-footer" role="contentinfo">
-  <div class="br-wrap">
-    <div class="br-footer-grid">
-
-      <!-- Col 1: Logo + Address + Subscribe + Follow Us -->
-      <div>
-        <img src="/assets/images/billedright-logo-white.png" alt="Billed Right — Where We Bill Right" width="250" height="100" style="display:block;height:50px;width:auto;max-width:200px;margin-bottom:14px">
-        <p class="br-footer-address">256 Rangeline Road,<br>Longwood, Florida 32750.</p>
-        <div class="br-footer-subscribe">
-          <h5>Subscribe</h5>
-          <div class="br-footer-subscribe-form">
-            <input type="email" placeholder="Your email address" aria-label="Email address">
-            <button type="button">Submit</button>
-          </div>
-        </div>
-        <div class="br-footer-social" style="margin-top:18px">
-          <a href="https://www.facebook.com/billedright/" class="br-social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-            <span class="br-social-icon"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></span>
-          </a>
-          <a href="https://x.com/billedright" class="br-social-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
-            <span class="br-social-icon"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.261 5.638L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" fill="#fff"/></svg></span>
-          </a>
-          <a href="https://www.linkedin.com/company/billed-right/" class="br-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-            <span class="br-social-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
-          </a>
-          <a href="https://www.youtube.com/@billedright" class="br-social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
-            <span class="br-social-icon"><svg viewBox="0 0 24 24" fill="white"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"/></svg></span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Col 2: Solutions -->
-      <div class="br-footer-col">
-        <h4>Solutions</h4>
-        <ul>
-          <li><a href="/services/">Revenue Cycle Management</a></li>
-          <li><a href="/services/denial-management/">Denial Management</a></li>
-          <li><a href="/services/medical-coding/">Medical Coding</a></li>
-          <li><a href="/services/credentialing/">Credentialing</a></li>
-          <li><a href="/services/insurance-eligibility/">Insurance Eligibility</a></li>
-          <li><a href="/services/ar-follow-up/">A/R Follow-Up</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 3: Who We Serve + Technology & Revenue Intelligence -->
-      <div class="br-footer-col">
-        <h4>Who We Serve</h4>
-        <ul>
-          <li><a href="/private-equity/">Private Equity-Backed Healthcare</a></li>
-          <li><a href="/why-billed-right/">Why Billed Right</a></li>
-        </ul>
-        <h4 style="margin-top:22px">Technology &amp; Revenue Intelligence</h4>
-        <ul>
-          <li><a href="/services/emr-billing-platforms/">EMR &amp; Billing Platforms</a></li>
-          <li><a href="/services/eclinicalworks-billing-services/">eClinicalWorks Billing</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 4: Specialties -->
-      <div class="br-footer-col">
-        <h4>Specialties</h4>
-        <ul>
-          <li><a href="/specialties/cardiology-rcm-services/">Cardiology</a></li>
-          <li><a href="/specialties/pain-management-rcm-services/">Pain Management</a></li>
-          <li><a href="/specialties/internal-medicine-rcm-services/">Internal Medicine</a></li>
-          <li><a href="/specialties/behavioral-health-rcm-services/">Behavioral Health</a></li>
-          <li><a href="/specialties/">All Specialties</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 5: Resources + Company -->
-      <div class="br-footer-col">
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="/resources/">Resource Center</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/case-studies/">Case Studies</a></li>
-          <li><a href="/faq/">FAQ</a></li>
-          <li><a href="/testimonials/">Testimonials</a></li>
-        </ul>
-        <h4 style="margin-top:22px">Company</h4>
-        <ul>
-          <li><a href="/about/">About Us</a></li>
-          <li><a href="/leadership/">Leadership</a></li>
-          <li><a href="/careers-us/">Careers</a></li>
-          <li><a href="/awards/">Awards &amp; Recognition</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul>
-      </div>
-
-    </div>
-    <div class="br-footer-bottom">
-      <span>© 2026 Billed Right. All rights reserved. &nbsp;|&nbsp; <a href="/privacy-policy/">Privacy Policy</a> &nbsp;|&nbsp; <a href="/terms-and-conditions/">Terms &amp; Conditions</a> &nbsp;|&nbsp; <a href="/sms-consent/">SMS Consent</a> &nbsp;|&nbsp; <a href="/sitemap.xml">Sitemap</a></span>
-      <div class="br-footer-badges"><span>HIPAA Compliant</span><span>AAPC Certified</span></div>
-    </div>
-  </div>
-</footer>
-
+{{FOOTER}}
 
 </div>
 <script>
