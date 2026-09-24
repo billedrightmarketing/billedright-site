@@ -686,6 +686,29 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 .br-journey-card p { font-size: 13px; font-weight: 600; color: var(--navy); line-height: 1.4; }
 
 /* ═══════════════════════════════════════════
+   ABOUT BILLED RIGHT — office / team / client photos
+   Bento grid: one tall photo left, two stacked right.
+   Each tile is a background-image div (not <img>) so a
+   missing file falls back to the gradient placeholder
+   below instead of a broken-image icon.
+   ═══════════════════════════════════════════ */
+.br-about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 20px; }
+.br-about-col { display: flex; flex-direction: column; gap: 20px; }
+.br-about-photo {
+  position: relative; overflow: hidden; border-radius: var(--r-xl);
+  background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+  background-size: cover; background-position: center;
+  box-shadow: var(--sh-sm);
+}
+.br-about-grid .br-about-photo.tall { min-height: 100%; }
+.br-about-col .br-about-photo { min-height: 220px; }
+.br-about-caption {
+  position: absolute; inset: auto 0 0 0; padding: 20px;
+  background: linear-gradient(to top, rgba(15,25,35,.85), transparent 65%);
+}
+.br-about-caption span { font-size: 13.5px; font-weight: 700; color: #fff; }
+
+/* ═══════════════════════════════════════════
    HIPAA STRIP — navy bg
    ═══════════════════════════════════════════ */
 .br-hipaa { background: var(--navy); padding: 56px 0; position: relative; overflow: hidden; }
@@ -1553,6 +1576,8 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-result-col:nth-child(2n) { border-right: none; }
   .br-result-col    { border-bottom: 1px solid rgba(255,255,255,.07); }
   .br-journey-grid  { grid-template-columns: repeat(2,1fr); }
+  .br-about-grid    { grid-template-columns: 1fr; }
+  .br-about-grid .br-about-photo.tall { min-height: 220px; }
   .br-blog-grid     { grid-template-columns: 1fr; }
   .br-hero h1 { font-size: 34px; }
   .br-hero-stats { flex-direction: column; gap: 16px; }
@@ -2426,6 +2451,30 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="br-journey-card br-reveal br-reveal-d2"><div class="br-journey-top"><div class="br-journey-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><span class="br-journey-year">2015</span></div><p>Expanded into specialty-focused billing</p></div>
         <div class="br-journey-card br-reveal br-reveal-d3"><div class="br-journey-top"><div class="br-journey-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><span class="br-journey-year">2020</span></div><p>Operational maturity & deep client partnerships</p></div>
         <div class="br-journey-card br-reveal br-reveal-d4"><div class="br-journey-top"><div class="br-journey-icon"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/></svg></div><span class="br-journey-year">Today</span></div><p>Performance-driven healthcare revenue solutions</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT BILLED RIGHT — office / team / client photos -->
+  <section class="br-section br-bg-white" aria-labelledby="about-photos-h2">
+    <div class="br-wrap">
+      <div class="br-section-head center br-reveal">
+        <span class="br-eyebrow">About Billed Right</span>
+        <h2 id="about-photos-h2">The team behind your revenue cycle.</h2>
+        <p>Billed Right is a real operating team, not an offshore black box. Here's a look at our office, our people, and the client relationships we build every day.</p>
+      </div>
+      <div class="br-about-grid br-reveal">
+        <div class="br-about-photo tall" style="background-image:url('/assets/images/about/billed-right-office.webp')">
+          <div class="br-about-caption"><span>Our Office</span></div>
+        </div>
+        <div class="br-about-col">
+          <div class="br-about-photo" style="background-image:url('/assets/images/about/billed-right-team.webp')">
+            <div class="br-about-caption"><span>Our Team</span></div>
+          </div>
+          <div class="br-about-photo" style="background-image:url('/assets/images/about/billed-right-client-meeting.webp')">
+            <div class="br-about-caption"><span>Meeting With Clients</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

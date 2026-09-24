@@ -16,8 +16,8 @@ Billed Right helps healthcare organizations strengthen financial performance thr
 - Revenue operations become harder as healthcare organizations grow and change.
 - Experienced RCM. Intelligent execution. Executive visibility.
 - Transforming RCM since 2006
+- The team behind your revenue cycle.
 - Built for responsible healthcare revenue operations.
 - Move from retrospective reporting toward earlier, better decisions.
-- Our Primary Values
 
 [View live page](https://billedright.com/)
