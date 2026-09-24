@@ -1625,7 +1625,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
       <div class="br-nav-item" id="mega-item-serve">
         <a href="/who-we-serve/" class="br-has-mega" aria-haspopup="true" aria-expanded="false" id="mega-btn-serve">Who We Serve</a>
         <div class="br-mega" id="br-mega-serve" role="region" aria-label="Who We Serve menu">
-          <div class="br-mega-inner cols-3">
+          <div class="br-mega-inner cols-3" style="grid-template-columns:0.85fr 1.25fr 0.85fr 0.75fr">
             <div>
               <a href="/who-we-serve/" class="br-mega-col-head" style="text-decoration:none">Who We Help</a>
               <div class="br-mega-audience">
@@ -1656,8 +1656,6 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
                 <li><a href="/services/ar-follow-up/" >Account Receivables Follow-up</a></li>
                 <li><a href="/services/reporting/" >Reporting</a></li>
                 <li><a href="/services/account-management/" >Account Management</a></li>
-                <li><a href="/services/eclinicalworks-billing-services/" >eClinicalWorks Billing</a></li>
-                <li><a href="/services/emr-billing-platforms/" >EMR Billing Platforms</a></li>
               </ul>
             </div>
             <div>
@@ -1668,6 +1666,13 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
                 <li><a href="/services/medical-coding/" >Medical Coding</a></li>
                 <li><a href="/services/documentation-management/" >Documentation Management</a></li>
                 <li><a href="/services/contract-renegotiation/" >Contract Renegotiation</a></li>
+              </ul>
+            </div>
+            <div>
+              <span class="br-mega-col-head">Getting Started</span>
+              <ul class="br-mega-links">
+                <li><a href="/services/ar-rescue/" >AR Rescue</a></li>
+                <li><a href="/services/financial-assessment/" >Financial Assessment</a></li>
               </ul>
             </div>
           </div>
@@ -1717,7 +1722,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
       <div class="br-nav-item" id="mega-item-res">
         <span class="br-has-mega" role="button" aria-haspopup="true" aria-expanded="false" id="mega-btn-res">Resources</span>
         <div class="br-mega" id="br-mega-res" role="region" aria-label="Resources menu">
-          <div class="br-mega-inner cols-2r">
+          <div class="br-mega-inner cols-2r" style="grid-template-columns:1.3fr 1fr 0.8fr">
             <div>
               <span class="br-mega-col-head">Educational Resources</span>
               <ul class="br-mega-links">
@@ -1740,6 +1745,13 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
                 <li><a href="/case-studies/cardiology/" >Cardiology Case Study</a></li>
                 <li><a href="/case-studies/allergy/" >Allergy Practice Case Study</a></li>
                 <li><a href="/case-studies/credentialing/" >Credentialing Case Study</a></li>
+              </ul>
+            </div>
+            <div>
+              <span class="br-mega-col-head">EMR &amp; Technology</span>
+              <ul class="br-mega-links">
+                <li><a href="/services/eclinicalworks-billing-services/" >eClinicalWorks Billing</a></li>
+                <li><a href="/services/emr-billing-platforms/" >EMR Billing Platforms</a></li>
               </ul>
             </div>
           </div>
@@ -1809,14 +1821,15 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
       <a href="/services/ar-follow-up/" class="br-mob-sub-link indent">Account Receivables Follow-up</a>
       <a href="/services/reporting/" class="br-mob-sub-link indent">Reporting</a>
       <a href="/services/account-management/" class="br-mob-sub-link indent">Account Management</a>
-      <a href="/services/eclinicalworks-billing-services/" class="br-mob-sub-link indent">eClinicalWorks Billing</a>
-      <a href="/services/emr-billing-platforms/" class="br-mob-sub-link indent">EMR Billing Platforms</a>
       <span class="br-mob-sub-head">Support Services</span>
       <a href="/services/credentialing/" class="br-mob-sub-link indent">Credentialing</a>
       <a href="/services/authorizations/" class="br-mob-sub-link indent">Authorizations</a>
       <a href="/services/medical-coding/" class="br-mob-sub-link indent">Medical Coding</a>
       <a href="/services/documentation-management/" class="br-mob-sub-link indent">Documentation Management</a>
       <a href="/services/contract-renegotiation/" class="br-mob-sub-link indent">Contract Renegotiation</a>
+      <span class="br-mob-sub-head">Getting Started</span>
+      <a href="/services/ar-rescue/" class="br-mob-sub-link indent">AR Rescue</a>
+      <a href="/services/financial-assessment/" class="br-mob-sub-link indent">Financial Assessment</a>
     </div>
   </div>
 
@@ -1870,6 +1883,9 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
       <a href="/case-studies/cardiology/" class="br-mob-sub-link">Cardiology Case Study</a>
       <a href="/case-studies/allergy/" class="br-mob-sub-link">Allergy Practice Case Study</a>
       <a href="/case-studies/credentialing/" class="br-mob-sub-link">Credentialing Case Study</a>
+      <span class="br-mob-sub-head">EMR &amp; Technology</span>
+      <a href="/services/eclinicalworks-billing-services/" class="br-mob-sub-link">eClinicalWorks Billing</a>
+      <a href="/services/emr-billing-platforms/" class="br-mob-sub-link">EMR Billing Platforms</a>
     </div>
   </div>
 
@@ -2145,7 +2161,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <main id="brpage-case-studies" class="br-page active" aria-label="Case studies — practice results">
   <div class="br-page-hero"><div class="br-wrap"><span class="br-eyebrow" style="color:#fff">Case Studies</span><h1>Real Practices. Real Revenue Recovered.</h1><p class="ph-sub" style="font-size:17px;color:rgba(255,255,255,.62);max-width:640px;margin:0 auto 0;line-height:1.7">Composite, HIPAA-safe summaries of how practices across specialties improved collections, shrank A/R, and recovered denied revenue with Billed Right.</p></div></div>
   <section class="br-section br-bg-light"><div class="br-wrap">
-    <div class="br-filter-bar br-reveal"><button class="br-filter-btn active" onclick="brFilterBlog('all',this)">All Specialties</button><button class="br-filter-btn" onclick="brFilterBlog('cardiology',this)">Cardiology</button><button class="br-filter-btn" onclick="brFilterBlog('behavioral',this)">Behavioral Health</button><button class="br-filter-btn" onclick="brFilterBlog('ortho',this)">Orthopedics</button><button class="br-filter-btn" onclick="brFilterBlog('peds',this)">Pediatrics</button><button class="br-filter-btn" onclick="brFilterBlog('multispecialty',this)">Multispecialty</button></div>
+    <div class="br-filter-bar br-reveal"><button class="br-filter-btn active" onclick="brFilterBlog('all',this)">All Specialties</button><button class="br-filter-btn" onclick="brFilterBlog('cardiology',this)">Cardiology</button><button class="br-filter-btn" onclick="brFilterBlog('behavioral',this)">Behavioral Health</button><button class="br-filter-btn" onclick="brFilterBlog('ortho',this)">Orthopedics</button><button class="br-filter-btn" onclick="brFilterBlog('peds',this)">Pediatrics</button><button class="br-filter-btn" onclick="brFilterBlog('multispecialty',this)">Multispecialty</button><button class="br-filter-btn" onclick="brFilterBlog('pain',this)">Pain Management</button></div>
 
     <div class="br-case-grid br-reveal">
       <div class="br-case-card" data-cat="cardiology"><span class="br-tool-cat">Cardiology · 6 providers</span><h3>Cardiology Group Cuts Days in A/R Nearly in Half</h3><div class="br-case-block"><b>Challenge</b><p>Cath lab modifier errors and NCCI bundling edits were driving a denial rate above 14%, with A/R aging past 38 days.</p></div><div class="br-case-block"><b>Solution</b><p>Specialty-trained coders rebuilt the claim edit rules and ran a 90-day backlog cleanup alongside new submissions.</p></div><div class="br-case-kpis"><div class="br-case-kpi"><div class="br-case-kpi-num">+38%</div><div class="br-case-kpi-lbl">Collections increase</div></div><div class="br-case-kpi"><div class="br-case-kpi-num">19 days</div><div class="br-case-kpi-lbl">Days in A/R (from 38)</div></div><div class="br-case-kpi"><div class="br-case-kpi-num">−61%</div><div class="br-case-kpi-lbl">Denial reduction</div></div></div><div class="br-case-quote">"We finally have visibility into where every claim stands. That alone changed how we run the practice."</div><div class="br-case-who">Practice Administrator, Cardiology Group, FL</div><div class="br-case-foot"><span class="br-case-timeline">Results over <strong>6 months</strong></span><a href="#" class="br-pdf-cta">Download PDF <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></div></div>
@@ -2159,6 +2175,16 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="br-case-card" data-cat="multispecialty"><span class="br-tool-cat">Multispecialty · 14 providers</span><h3>Multispecialty Group Standardizes Reporting Across Locations</h3><div class="br-case-block"><b>Challenge</b><p>Three locations ran on inconsistent billing processes with no unified view of performance across the group.</p></div><div class="br-case-block"><b>Solution</b><p>Standardized workflows across all locations and rolled out a single custom reporting dashboard for leadership.</p></div><div class="br-case-kpis"><div class="br-case-kpi"><div class="br-case-kpi-num">+31%</div><div class="br-case-kpi-lbl">Collections increase</div></div><div class="br-case-kpi"><div class="br-case-kpi-num">21 days</div><div class="br-case-kpi-lbl">Days in A/R (from 36)</div></div><div class="br-case-kpi"><div class="br-case-kpi-num">−47%</div><div class="br-case-kpi-lbl">Denial reduction</div></div></div><div class="br-case-quote">"For the first time, leadership can see all three locations in one dashboard."</div><div class="br-case-who">COO, Multispecialty Group, NC</div><div class="br-case-foot"><span class="br-case-timeline">Results over <strong>7 months</strong></span><a href="#" class="br-pdf-cta">Download PDF <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></div></div>
 
       <div class="br-case-card" data-cat="cardiology"><span class="br-tool-cat">Cardiology · 2 providers</span><h3>Solo Cardiology Practice Survives a PM System Migration</h3><div class="br-case-block"><b>Challenge</b><p>A practice-management system switch threatened to interrupt claims submission for several weeks.</p></div><div class="br-case-block"><b>Solution</b><p>Parallel-ran both systems during transition and re-mapped claim templates to avoid any submission gap.</p></div><div class="br-case-kpis"><div class="br-case-kpi"><div class="br-case-kpi-num">0 days</div><div class="br-case-kpi-lbl">Submission downtime</div></div><div class="br-case-kpi"><div class="br-case-kpi-num">20 days</div><div class="br-case-kpi-lbl">Days in A/R maintained</div></div><div class="br-case-kpi"><div class="br-case-kpi-num">+12%</div><div class="br-case-kpi-lbl">Collections increase</div></div></div><div class="br-case-quote">"They adapted right alongside us as we switched systems. We never lost a beat."</div><div class="br-case-who">Solo Practitioner, Cardiology, FL</div><div class="br-case-foot"><span class="br-case-timeline">Results over <strong>2 months</strong></span><a href="#" class="br-pdf-cta">Download PDF <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></div></div>
+
+      <div class="br-case-card" data-cat="cardiology"><span class="br-tool-cat">Cardiology · AR Rescue</span><h3>Cardiology Group: Denial Rate Cut by More Than Half in 60 Days</h3><div class="br-case-block"><b>Before</b><p>Losing more than $1M annually to denials, underpayments, and expired filing windows, with over a third of receivables aged past 90 days.</p></div><div class="br-case-block"><b>Within 60 Days</b><p>Denial rate cut from over 20% to under 10%, monthly collections stabilized in the high six figures, and charge entry lag brought under control.</p></div><div class="br-case-kpis"><div class="br-case-kpi"><div class="br-case-kpi-num">20% &rarr; &lt;10%</div><div class="br-case-kpi-lbl">Denial rate</div></div><div class="br-case-kpi"><div class="br-case-kpi-num">High 6-Figures</div><div class="br-case-kpi-lbl">Monthly collections</div></div><div class="br-case-kpi"><div class="br-case-kpi-num">Controlled</div><div class="br-case-kpi-lbl">Charge entry lag</div></div></div><div class="br-case-quote">This is an early-stage result from an active engagement, 60 to 120 days into the relationship, and reflects one client's experience. Results vary by practice.</div><div class="br-case-foot"><span class="br-case-timeline">Results over <strong>60 days</strong></span><a href="/case-studies/cardiology-denial-reduction/" class="br-pdf-cta">Read full case study <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+
+      <div class="br-case-card" data-cat="multispecialty"><span class="br-tool-cat">Multi-Specialty · Onboarding</span><h3>Multi-Specialty Practice: Aging Receivables Cut Nearly in Half in Under 4 Months</h3><div class="br-case-block"><b>Before</b><p>Carrying a heavy concentration of aged receivables, with over 70% of total A/R sitting past the 90-day mark.</p></div><div class="br-case-block"><b>Within 4 Months</b><p>Receivables aged past 90 days cut nearly in half, total outstanding A/R reduced by roughly a third, and the share of fresh claims nearly quadrupled.</p></div><div class="br-case-kpis"><div class="br-case-kpi"><div class="br-case-kpi-num">~50%</div><div class="br-case-kpi-lbl">Aged A/R cut</div></div><div class="br-case-kpi"><div class="br-case-kpi-num">~33%</div><div class="br-case-kpi-lbl">Total A/R reduced</div></div><div class="br-case-kpi"><div class="br-case-kpi-num">~4x</div><div class="br-case-kpi-lbl">Fresh claims share</div></div></div><div class="br-case-quote">This is an early-stage result from an active engagement, 60 to 120 days into the relationship, and reflects one client's experience. Results vary by practice.</div><div class="br-case-foot"><span class="br-case-timeline">Results over <strong>~4 months</strong></span><a href="/case-studies/multispecialty-ar-cleanup/" class="br-pdf-cta">Read full case study <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+
+      <div class="br-case-card" data-cat="pain"><span class="br-tool-cat">Pain Management · Financial Assessment</span><h3>Pain Management Practice: Denial Rate Reduced by Two-Thirds in 90 Days</h3><div class="br-case-block"><b>Before</b><p>A comprehensive Financial Assessment identified key opportunities across denials, collections, and workflow efficiency ahead of engagement.</p></div><div class="br-case-block"><b>Within 90 Days</b><p>Denial rate reduced from the mid-teens to the low single digits, with modest early revenue growth and core workflows stabilized.</p></div><div class="br-case-kpis"><div class="br-case-kpi"><div class="br-case-kpi-num">~2/3</div><div class="br-case-kpi-lbl">Denial rate cut</div></div><div class="br-case-kpi"><div class="br-case-kpi-num">Mid-Teens &rarr; Low Single Digits</div><div class="br-case-kpi-lbl">Denial rate</div></div><div class="br-case-kpi"><div class="br-case-kpi-num">Modest</div><div class="br-case-kpi-lbl">Early revenue growth</div></div></div><div class="br-case-quote">This is an early-stage result from an active engagement, 60 to 120 days into the relationship, and reflects one client's experience. Results vary by practice.</div><div class="br-case-foot"><span class="br-case-timeline">Results over <strong>90 days</strong></span><a href="/case-studies/pain-management-denial-reduction/" class="br-pdf-cta">Read full case study <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+
+      <div class="br-case-card" data-cat="multispecialty"><span class="br-tool-cat">Multi-Specialty Medical Center · Onboarding</span><h3>Medical Center: 90+ Day Receivables Cut by More Than 80% in Five Months</h3><div class="br-case-block"><b>Before</b><p>Managing an elevated denial rate and a high concentration of aging receivables, with nearly half of all A/R sitting past 90 days.</p></div><div class="br-case-block"><b>Within ~5 Months</b><p>Receivables aged past 90 days cut by more than 80%, total outstanding A/R reduced by more than half, and denial rate brought down from nearly 30% to single digits.</p></div><div class="br-case-kpis"><div class="br-case-kpi"><div class="br-case-kpi-num">80%+</div><div class="br-case-kpi-lbl">Aged A/R cut</div></div><div class="br-case-kpi"><div class="br-case-kpi-num">50%+</div><div class="br-case-kpi-lbl">Total A/R reduced</div></div><div class="br-case-kpi"><div class="br-case-kpi-num">~30% &rarr; Single Digits</div><div class="br-case-kpi-lbl">Denial rate</div></div></div><div class="br-case-quote">This is an early-stage result from an active engagement, 60 to 120 days into the relationship, and reflects one client's experience. Results vary by practice.</div><div class="br-case-foot"><span class="br-case-timeline">Results over <strong>~5 months</strong></span><a href="/case-studies/medical-center-turnaround/" class="br-pdf-cta">Read full case study <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+
+      <div class="br-case-card" data-cat="cardiology"><span class="br-tool-cat">Cardiology · AR Rescue-Style Recovery</span><h3>Independent Cardiology Practice: Aged Receivables and Denials Brought Below Industry Benchmark in 90 Days</h3><div class="br-case-block"><b>Before</b><p>Elevated denial and aging levels, above recognized industry benchmarks for both metrics.</p></div><div class="br-case-block"><b>Within 90 Days</b><p>Aged receivables brought to the low double digits and denial rate reduced from the high 20s to the high single digits, both at or below benchmark.</p></div><div class="br-case-kpis"><div class="br-case-kpi"><div class="br-case-kpi-num">Low Double Digits</div><div class="br-case-kpi-lbl">Aged A/R, below benchmark</div></div><div class="br-case-kpi"><div class="br-case-kpi-num">High 20s &rarr; High Single Digits</div><div class="br-case-kpi-lbl">Denial rate</div></div></div><div class="br-case-quote">This is an early-stage result from an active engagement, 60 to 120 days into the relationship, and reflects one client's experience. Results vary by practice.</div><div class="br-case-foot"><span class="br-case-timeline">Results over <strong>90 days</strong></span><a href="/case-studies/independent-cardiology-benchmark/" class="br-pdf-cta">Read full case study <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
     </div>
   </div></section>
 

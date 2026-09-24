@@ -36,8 +36,10 @@ website content. Each concept links back to its live page via its
 
 ## Services
 - [AAPC-Certified Medical Coding Services | Billed Right](./services/medical-coding.md)
+- [AR Rescue: Recover Aged Claims Fast | Billed Right](./services/ar-rescue.md)
 - [Charge Posting Services for Medical Practices | Billed Right](./services/charge-posting.md)
 - [Credentialing as a Service for Medical Groups | Billed Right](./services/credentialing.md)
+- [Financial Assessment: Revenue Cycle Audit | Billed Right](./services/financial-assessment.md)
 - [Insurance A/R Follow-Up Services | Billed Right](./services/ar-follow-up.md)
 - [Insurance Eligibility Verification Services | Billed Right](./services/insurance-eligibility.md)
 - [Medical Billing Account Management Services | Billed Right](./services/account-management.md)
@@ -73,8 +75,13 @@ website content. Each concept links back to its live page via its
 ## Case Studies
 - [Allergy Billing Case Study: 94% Collection Rate | Billed Right](./case-studies/allergy.md)
 - [Cardiology Billing Case Study: Revenue Cycle Transformation | Billed Right](./case-studies/cardiology.md)
+- [Cardiology Case Study: AR and Denials Below Benchmark | Billed Right](./case-studies/independent-cardiology-benchmark.md)
+- [Cardiology Case Study: Denial Rate Cut by Half in 60 Days | Billed Right](./case-studies/cardiology-denial-reduction.md)
 - [Case Studies | Real Practice Results | Billed Right](./case-studies.md)
 - [Credentialing Case Study: 75% Approved, Zero Rejections | Billed Right](./case-studies/credentialing.md)
+- [Medical Center Case Study: 90+ Day AR Cut Over 80% | Billed Right](./case-studies/medical-center-turnaround.md)
+- [Multi-Specialty Case Study: Aging AR Cut Nearly in Half | Billed Right](./case-studies/multispecialty-ar-cleanup.md)
+- [Pain Management Case Study: Denial Rate Cut by Two-Thirds | Billed Right](./case-studies/pain-management-denial-reduction.md)
 - [Primary Care Billing Case Study: 95% Collection Rate | Billed Right](./case-studies/primary-care.md)
 
 ## Blog
