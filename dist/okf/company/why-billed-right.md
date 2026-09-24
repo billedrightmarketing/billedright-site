@@ -1,19 +1,23 @@
 ---
 type: WebPage
-title: "Why Billed Right — Our Approach to Revenue Cycle Management"
-description: "Billed Right has been a trusted revenue cycle partner for healthcare practices since 2006 — founded on personalized service, operational excellence, and client education."
+title: "Why Choose Billed Right for Revenue Cycle Management?"
+description: "Discover why healthcare organizations choose Billed Right for specialty RCM expertise, accountable service, Intelligent RCM, Data-to-Decisions and scalable revenue-cycle execution."
 resource: https://billedright.com/why-billed-right/
 tags: [company]
 ---
 
-# Why Billed Right — Our Approach to Revenue Cycle Management
+# Why Choose Billed Right for Revenue Cycle Management?
 
-Billed Right has been a trusted revenue cycle partner for healthcare practices since 2006 — founded on personalized service, operational excellence, and client education.
+Discover why healthcare organizations choose Billed Right for specialty RCM expertise, accountable service, Intelligent RCM, Data-to-Decisions and scalable revenue-cycle execution.
 
 ## On This Page
-- Our Story
-- Our Primary Values
-- What Our Clients Say
-- Ready to Work With a Team That Treats Your Practice Like a Partner?
+- What Should You Expect From an RCM Partner?
+- Nearly Two Decades of Revenue-Cycle Experience
+- Specialty Revenue Cycles Are Not Interchangeable
+- Your Revenue Cycle Has an Owner
+- Reporting Is Not the Same as Decision Support
+- Technology With an Operating Purpose
+- An Operating Model Designed to Grow With the Organization
+- Better RCM Should Not Require a Technology Rip-and-Replace
 
 [View live page](https://billedright.com/why-billed-right/)

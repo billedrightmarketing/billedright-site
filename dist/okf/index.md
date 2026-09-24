@@ -29,13 +29,15 @@ website content. Each concept links back to its live page via its
 - [Payer Enrollment Backlog Revenue Impact Calculator | Billed Right](./company/payer-enrollment-backlog-calculator.md)
 - [Prior Authorization Burden Calculator | Billed Right](./company/prior-authorization-burden-calculator.md)
 - [RCM Health Check Quiz | Billed Right](./company/rcm-health-check-quiz.md)
+- [Revenue Cycle Management for CPAs & Healthcare Advisors | Billed Right](./company/cpas-healthcare-financial-advisors.md)
 - [Revenue Cycle Operating Partner for Healthcare Private Equity | Billed Right](./company/private-equity.md)
-- [Why Billed Right — Our Approach to Revenue Cycle Management](./company/why-billed-right.md)
+- [Who We Serve | Billed Right](./company/who-we-serve.md)
+- [Why Choose Billed Right for Revenue Cycle Management?](./company/why-billed-right.md)
 
 ## Services
 - [AAPC-Certified Medical Coding Services | Billed Right](./services/medical-coding.md)
 - [Charge Posting Services for Medical Practices | Billed Right](./services/charge-posting.md)
-- [Credentialing as a Service | Billed Right](./services/credentialing.md)
+- [Credentialing as a Service for Medical Groups | Billed Right](./services/credentialing.md)
 - [Insurance A/R Follow-Up Services | Billed Right](./services/ar-follow-up.md)
 - [Insurance Eligibility Verification Services | Billed Right](./services/insurance-eligibility.md)
 - [Medical Billing Account Management Services | Billed Right](./services/account-management.md)

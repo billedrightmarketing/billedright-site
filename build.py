@@ -101,6 +101,8 @@ PAGE_OUTPUT_PATHS = {
     "awards": "awards/index.html",
     "recognition": "recognition/index.html",
     "private-equity": "private-equity/index.html",
+    "who-we-serve": "who-we-serve/index.html",
+    "who-we-serve/cpas-healthcare-financial-advisors": "who-we-serve/cpas-healthcare-financial-advisors/index.html",
     # Redirect-landing page for the retired Custom Billing Service of Ohio
     # (billingmyservices.com) domain — not linked from nav and deliberately
     # excluded from sitemap.xml (see the page's own noindex meta tags).

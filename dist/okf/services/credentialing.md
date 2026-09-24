@@ -1,16 +1,23 @@
 ---
 type: ServicePage
-title: "Credentialing as a Service | Billed Right"
-description: "Get providers enrolled, re-credentialed, and payer-ready with zero administrative burden. Status tracking, payer follow-ups, and CAQH maintenance handled by Billed Right."
+title: "Credentialing as a Service for Medical Groups | Billed Right"
+description: "Billed Right provides fully managed Credentialing as a Service for growing medical groups, including payer enrollment, CAQH, re-credentialing, monitoring, hospital privileges and multi-location support."
 resource: https://billedright.com/services/credentialing/
 tags: [service]
 ---
 
-# Credentialing as a Service | Billed Right
+# Credentialing as a Service for Medical Groups | Billed Right
 
-Get providers enrolled, re-credentialed, and payer-ready with zero administrative burden. Status tracking, payer follow-ups, and CAQH maintenance handled by Billed Right.
+Billed Right provides fully managed Credentialing as a Service for growing medical groups, including payer enrollment, CAQH, re-credentialing, monitoring, hospital privileges and multi-location support.
 
 ## On This Page
-- Provider enrollment delays cost $1,200–$2,000 per day in lost revenue.
+- Credentialing Delays Become Revenue Delays
+- Managed Enrollment. Continuous Monitoring. Clear Visibility.
+- Full-Service Credentialing From Enrollment Through Ongoing Maintenance
+- Submitting the Application Is Only the Beginning
+- One Operating Model From Provider Intake Through Renewal
+- Automation Handles the Repetitive Work. Credentialing Specialists Handle the Exceptions.
+- Collect Provider Information Once. Reuse It Across the Workflow.
+- Keep CAQH Current Without Waiting for a Deadline
 
 [View live page](https://billedright.com/services/credentialing/)
