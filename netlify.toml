@@ -169,6 +169,933 @@
   status = 301
   force = true
 
+# ═══════════════════════════════════════════════════════════════
+# Legacy WordPress site migration redirects
+# Mapped from docs/legacy-sitemaps/ (Page/Post/Service/Caregiver
+# sitemaps) against the new static site, 2026-09-29 audit. Two
+# referenced legacy sitemaps (practice-sitemap.xml and
+# testimonial_category-sitemap.xml) were confirmed by leadership to
+# have never had pages — no redirects needed for those.
+#
+# Deliberately NOT redirected (left to 404 / dropped per leadership,
+# 2026-09-29):
+#   /sitemap-1/ (WordPress/Yoast artifact, not real content)
+#   /brochure-download/ (not important)
+#   /practice-profitability-scorecard/ (resource retired)
+#   /front-desk-workflow-audit/ (resource retired)
+#
+# Flagged, no redirect yet (revisit later):
+#   /medical-billing-services-jacksonville-florida/
+#   /medical-billing-services-in-port-st-lucie-florida/
+#   /medical-billing-services-in-hialeah-florida-billed-right/
+#   /medical-billing-services-in-st-petersburg-florida-billed-right/
+#     -> city pages are planned but don't exist yet
+#   /service/pain-areas/
+#     -> possible page to recreate (provider pain areas), no target yet
+# ═══════════════════════════════════════════════════════════════
+
+# --- Page_Sitemap ---
+[[redirects]]
+  from = "/pain-management/"
+  to = "/specialties/pain-management-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/how-much-revenue-are-you-losing-calculator/"
+  to = "/resources/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/allergy-practice-care-study/"
+  to = "/case-studies/allergy/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/primary-care-case-study/"
+  to = "/case-studies/primary-care/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/billed-right-miami/"
+  to = "/locations/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/billed-right-orlando/"
+  to = "/locations/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/medical-billing-in-ohio/"
+  to = "/welcome-cbs/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/medical-billing-careers/"
+  to = "/careers-us/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/optimize-your-revenue-cycle-quiz/"
+  to = "/resources/rcm-health-check-quiz/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/frequently-asked-questions/"
+  to = "/faq/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/revenue-cycle-management-services/"
+  to = "/services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/credentialing-case-study/"
+  to = "/case-studies/credentialing/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/rcm-health-check/"
+  to = "/resources/rcm-health-check-quiz/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/how-ai-the-cure-for-claim-denials-download-white-paper/"
+  to = "/resources/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/customer-testimonials/"
+  to = "/testimonials/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/pulmonary/"
+  to = "/specialties/pulmonary-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/behavioral-health/"
+  to = "/specialties/behavioral-health-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/internal-medicine/"
+  to = "/specialties/internal-medicine-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/medical-billing-calculator/"
+  to = "/resources/in-house-vs-outsourced-calculator/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/calculator-to-estimate-financial-impact-of-denied-claims/"
+  to = "/resources/denial-write-off-calculator/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/cardiology-case-study/"
+  to = "/case-studies/cardiology/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/gastroenterology/"
+  to = "/specialties/gastroenterology-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/primary-care/"
+  to = "/specialties/primary-care-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/vascular-surgery/"
+  to = "/specialties/vascular-surgery-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/why-billed-right-for-cardiology-billing/"
+  to = "/specialties/cardiology-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/specialty-billing-for-cardiologists-mobile/"
+  to = "/specialties/cardiology-rcm-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/revenue-cycle-management-company/"
+  to = "/about/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/eclinicalworks-partnership-page/"
+  to = "/services/eclinicalworks-billing-services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/healthcare-leadership/"
+  to = "/leadership/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/fte-support/"
+  to = "/services/"
+  status = 301
+  force = true
+
+# --- Caregiver (staff bio pages, consolidated onto /leadership/) ---
+[[redirects]]
+  from = "/caregiver/"
+  to = "/leadership/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/caregiver/dave-patel/"
+  to = "/leadership/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/caregiver/kalyan-anant/"
+  to = "/leadership/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/caregiver/saurin-patel/"
+  to = "/leadership/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/caregiver/maryan-hennen/"
+  to = "/leadership/"
+  status = 301
+  force = true
+
+# --- Service.xml (old site used singular /service/, new site uses /services/) ---
+[[redirects]]
+  from = "/service/"
+  to = "/services/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/service/contract-renegotiation/"
+  to = "/services/contract-renegotiation/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/service/credentialing/"
+  to = "/services/credentialing/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/service/documentation-management/"
+  to = "/services/documentation-management/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/service/charge-posting/"
+  to = "/services/charge-posting/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/service/documentation-review/"
+  to = "/services/documentation-review/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/service/accounts-receivable-management-services/"
+  to = "/services/patient-ar-collections/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/service/authorizations/"
+  to = "/services/authorizations/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/service/medical-coding/"
+  to = "/services/medical-coding/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/service/account-management/"
+  to = "/services/account-management/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/service/medical-billing-denial-management/"
+  to = "/services/denial-management/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/service/payment-posting/"
+  to = "/services/payment-posting/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/service/account-receivables-follow-up/"
+  to = "/services/ar-follow-up/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/service/medical-billing-reporting/"
+  to = "/services/reporting/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/service/medical-claim-submission/"
+  to = "/services/claim-submission/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/service/insurance-eligibility-billing-services/"
+  to = "/services/insurance-eligibility/"
+  status = 301
+  force = true
+
+# --- Post_Sitemap: 106 blog posts, bare-root -> /blog/<slug>/ ---
+# Legacy WordPress blog posts lived at the bare root (no /blog/ prefix).
+# /blog/ was only ever the index page on the old site. All 106 posts
+# confirmed to exist under the same slug at /blog/<slug>/ on the new site
+# (see docs/legacy-sitemaps/ audit, 2026-09-29).
+[[redirects]]
+  from = "/8-ways-to-make-prior-authorizations-easier-for-your-practice/"
+  to = "/blog/8-ways-to-make-prior-authorizations-easier-for-your-practice/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/9-medical-billing-kpis-for-success-within-your-healthcare-practice/"
+  to = "/blog/9-medical-billing-kpis-for-success-within-your-healthcare-practice/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/automating-billing-with-rcm-software/"
+  to = "/blog/automating-billing-with-rcm-software/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/benefits-of-outsourced-revenue-cycle-management/"
+  to = "/blog/benefits-of-outsourced-revenue-cycle-management/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/best-practices-for-avoiding-eligibility-check-issues/"
+  to = "/blog/best-practices-for-avoiding-eligibility-check-issues/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/best-practices-for-maintaining-compliance-in-medical-practices/"
+  to = "/blog/best-practices-for-maintaining-compliance-in-medical-practices/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/best-practices-for-reducing-claims-denials-and-optimizing-revenue/"
+  to = "/blog/best-practices-for-reducing-claims-denials-and-optimizing-revenue/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/billed-right-achieves-iso-270012022-certification/"
+  to = "/blog/billed-right-achieves-iso-270012022-certification/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/billed-right-at-the-42nd-annual-aoa-convention-a-weekend-of-connection-insight/"
+  to = "/blog/billed-right-at-the-42nd-annual-aoa-convention-a-weekend-of-connection-insight/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/billing-and-coding-guidelines-every-pain-management-practice-should-know/"
+  to = "/blog/billing-and-coding-guidelines-every-pain-management-practice-should-know/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/boost-practice-revenue-enhancing-medical-coding-accuracy-through-audits/"
+  to = "/blog/boost-practice-revenue-enhancing-medical-coding-accuracy-through-audits/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/boost-your-rcm-exploring-the-pros-and-cons-of-outsourced-services/"
+  to = "/blog/boost-your-rcm-exploring-the-pros-and-cons-of-outsourced-services/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/charting-your-success-scalability-and-outsourced-rcm-solutions/"
+  to = "/blog/charting-your-success-scalability-and-outsourced-rcm-solutions/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/common-reasons-for-claims-appeals-revealed/"
+  to = "/blog/common-reasons-for-claims-appeals-revealed/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/compliance-plan-essentials-keeping-your-healthcare-practice-safe/"
+  to = "/blog/compliance-plan-essentials-keeping-your-healthcare-practice-safe/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/decoding-denial-codes-in-healthcare/"
+  to = "/blog/decoding-denial-codes-in-healthcare/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/driving-revenue-growth-comprehensive-guide-to-medical-coding-audits/"
+  to = "/blog/driving-revenue-growth-comprehensive-guide-to-medical-coding-audits/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/elevate-and-improve-the-medical-billing-workflow/"
+  to = "/blog/elevate-and-improve-the-medical-billing-workflow/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/elevate-your-practice-demystifying-revenue-optimization-in-healthcare/"
+  to = "/blog/elevate-your-practice-demystifying-revenue-optimization-in-healthcare/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/empower-your-revenue-cycle-what-is-eligibility-verification-essential-facts/"
+  to = "/blog/empower-your-revenue-cycle-what-is-eligibility-verification-essential-facts/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/empowering-healthcare-professionals-harnessing-ai-to-enhance-patient-outcomes/"
+  to = "/blog/empowering-healthcare-professionals-harnessing-ai-to-enhance-patient-outcomes/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/empowering-your-practice-the-crucial-role-of-quarterly-rcm-reviews/"
+  to = "/blog/empowering-your-practice-the-crucial-role-of-quarterly-rcm-reviews/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/enhance-your-coding-audits-with-tools-and-software/"
+  to = "/blog/enhance-your-coding-audits-with-tools-and-software/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/exploring-revenue-cycle-management-navigating-financial-waters/"
+  to = "/blog/exploring-revenue-cycle-management-navigating-financial-waters/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/financial-literacy-in-healthcare-strengthening-revenue-cycle-management/"
+  to = "/blog/financial-literacy-in-healthcare-strengthening-revenue-cycle-management/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/floridas-push-to-end-vaccine-mandates-what-doctors-and-practice-managers-need-to-know/"
+  to = "/blog/floridas-push-to-end-vaccine-mandates-what-doctors-and-practice-managers-need-to-know/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/great-place-to-work-recognition-2025/"
+  to = "/blog/great-place-to-work-recognition-2025/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guide-on-ar-management-in-healthcare/"
+  to = "/blog/guide-on-ar-management-in-healthcare/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guide-on-how-to-prepare-for-a-coding-audit/"
+  to = "/blog/guide-on-how-to-prepare-for-a-coding-audit/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/helping-private-practices-understand-ais-growing-role/"
+  to = "/blog/helping-private-practices-understand-ais-growing-role/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/hhs-task-force-on-ai-regulation-in-healthcare/"
+  to = "/blog/hhs-task-force-on-ai-regulation-in-healthcare/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-clearinghouses-support-the-revenue-cycle/"
+  to = "/blog/how-clearinghouses-support-the-revenue-cycle/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-provider-credentialing-impacts-revenue-optimization/"
+  to = "/blog/how-provider-credentialing-impacts-revenue-optimization/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-strong-documentation-improves-coding-audits/"
+  to = "/blog/how-strong-documentation-improves-coding-audits/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-audit-billing-and-coding-without-leaving-revenue-behind/"
+  to = "/blog/how-to-audit-billing-and-coding-without-leaving-revenue-behind/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-build-an-effective-rcm-training-program/"
+  to = "/blog/how-to-build-an-effective-rcm-training-program/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-collaborate-with-payers-for-revenue-resubmission/"
+  to = "/blog/how-to-collaborate-with-payers-for-revenue-resubmission/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-conduct-a-medical-coding-audit-for-revenue-optimization/"
+  to = "/blog/how-to-conduct-a-medical-coding-audit-for-revenue-optimization/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-customize-rcm-reviews-for-different-medical-practices/"
+  to = "/blog/how-to-customize-rcm-reviews-for-different-medical-practices/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-evaluate-the-performance-of-your-outsourced-rcm-partner/"
+  to = "/blog/how-to-evaluate-the-performance-of-your-outsourced-rcm-partner/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-expedite-provider-credentialing-and-increase-revenue/"
+  to = "/blog/how-to-expedite-provider-credentialing-and-increase-revenue/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-master-appeal-letters-for-claims/"
+  to = "/blog/how-to-master-appeal-letters-for-claims/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-monitor-patient-satisfaction-in-a-value-based-care-model/"
+  to = "/blog/how-to-monitor-patient-satisfaction-in-a-value-based-care-model/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-optimize-rcm-for-home-health-providers/"
+  to = "/blog/how-to-optimize-rcm-for-home-health-providers/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-prepare-effectively-for-annual-financial-audits/"
+  to = "/blog/how-to-prepare-effectively-for-annual-financial-audits/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-set-kpi-targets-for-stronger-rcm-performance/"
+  to = "/blog/how-to-set-kpi-targets-for-stronger-rcm-performance/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-spot-and-fix-revenue-gaps-during-quarterly-reviews/"
+  to = "/blog/how-to-spot-and-fix-revenue-gaps-during-quarterly-reviews/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-streamline-automated-enrollment-in-healthcare/"
+  to = "/blog/how-to-streamline-automated-enrollment-in-healthcare/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-streamline-billing-and-boost-revenue/"
+  to = "/blog/how-to-streamline-billing-and-boost-revenue/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-to-train-new-hires-in-rcm-and-transform-your-onboarding/"
+  to = "/blog/how-to-train-new-hires-in-rcm-and-transform-your-onboarding/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/importance-of-ar-efficency/"
+  to = "/blog/importance-of-ar-efficency/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/importance-of-data-preparation-for-rcm-reviews/"
+  to = "/blog/importance-of-data-preparation-for-rcm-reviews/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/importance-of-financial-management-in-healthcare/"
+  to = "/blog/importance-of-financial-management-in-healthcare/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/importance-of-ongoing-education-in-rcm/"
+  to = "/blog/importance-of-ongoing-education-in-rcm/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/incentive-programs-in-value-based-care-that-improve-patient-outcomes/"
+  to = "/blog/incentive-programs-in-value-based-care-that-improve-patient-outcomes/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/initiative-signals-for-revenue-cycle-management/"
+  to = "/blog/initiative-signals-for-revenue-cycle-management/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/integrating-eligibility-verification-systems-in-healthcare/"
+  to = "/blog/integrating-eligibility-verification-systems-in-healthcare/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/integrating-value-based-care-with-rcm-systems-for-profitability/"
+  to = "/blog/integrating-value-based-care-with-rcm-systems-for-profitability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/is-your-practice-losing-money-how-two-of-our-revenue-calculators-can-help-you-find-out/"
+  to = "/blog/is-your-practice-losing-money-how-two-of-our-revenue-calculators-can-help-you-find-out/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lean-private-practice-solutions-medical-office-sharing/"
+  to = "/blog/lean-private-practice-solutions-medical-office-sharing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/making-value-based-care-work-financially-for-specialty-practices/"
+  to = "/blog/making-value-based-care-work-financially-for-specialty-practices/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/master-medicare-and-medicaid-credentialing/"
+  to = "/blog/master-medicare-and-medicaid-credentialing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/master-payer-contract-negotiation/"
+  to = "/blog/master-payer-contract-negotiation/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mastering-denial-management-and-its-importance/"
+  to = "/blog/mastering-denial-management-and-its-importance/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mastering-rcm-strategies-to-avoid-common-mistakes/"
+  to = "/blog/mastering-rcm-strategies-to-avoid-common-mistakes/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/medical-staff-training-essentials-for-compliance-management/"
+  to = "/blog/medical-staff-training-essentials-for-compliance-management/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/medicare-fraud-scheme-alert/"
+  to = "/blog/medicare-fraud-scheme-alert/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/navigating-burnout-cdcs-analysis-of-us-healthcare-workers-struggles/"
+  to = "/blog/navigating-burnout-cdcs-analysis-of-us-healthcare-workers-struggles/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/navigating-the-revenue-cycle-rcm-essentials-for-cardiology-practices/"
+  to = "/blog/navigating-the-revenue-cycle-rcm-essentials-for-cardiology-practices/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/navigating-the-shift-from-fee-for-service-to-value-based-care/"
+  to = "/blog/navigating-the-shift-from-fee-for-service-to-value-based-care/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/optimize-revenue-cycle-performance-with-financial-benchmark/"
+  to = "/blog/optimize-revenue-cycle-performance-with-financial-benchmark/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/optimizing-healthcare-operations-provider-enrollment-vs-credentialing-explained/"
+  to = "/blog/optimizing-healthcare-operations-provider-enrollment-vs-credentialing-explained/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/outsourced-vs-in-house-rcm-how-to-choose-the-right-model/"
+  to = "/blog/outsourced-vs-in-house-rcm-how-to-choose-the-right-model/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pros-and-cons-of-in-house-medical-billing-is-it-worth-the-investment/"
+  to = "/blog/pros-and-cons-of-in-house-medical-billing-is-it-worth-the-investment/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/proven-ways-to-reduce-patient-billing-errors-and-increase-revenue/"
+  to = "/blog/proven-ways-to-reduce-patient-billing-errors-and-increase-revenue/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/rcm-best-practices-for-gastroenterology-practices/"
+  to = "/blog/rcm-best-practices-for-gastroenterology-practices/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/rcm-best-practices-for-multi-specialty-medical-practices/"
+  to = "/blog/rcm-best-practices-for-multi-specialty-medical-practices/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/rcm-contract-negotiation-best-practices-with-vendors/"
+  to = "/blog/rcm-contract-negotiation-best-practices-with-vendors/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/rcm-to-boost-profitability-in-physical-therapy-clinics/"
+  to = "/blog/rcm-to-boost-profitability-in-physical-therapy-clinics/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/should-primary-care-practices-add-pharmacy-technicians-to-their-care-team/"
+  to = "/blog/should-primary-care-practices-add-pharmacy-technicians-to-their-care-team/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/significance-of-rcm-staff-training-to-boost-billing-performance/"
+  to = "/blog/significance-of-rcm-staff-training-to-boost-billing-performance/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/simplifying-audit-tracking-and-team-performance-in-rcm/"
+  to = "/blog/simplifying-audit-tracking-and-team-performance-in-rcm/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/simplifying-revenue-cycle-management-without-sacrificing-results/"
+  to = "/blog/simplifying-revenue-cycle-management-without-sacrificing-results/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/smart-appeal-strategies-that-recover-more-denied-claims/"
+  to = "/blog/smart-appeal-strategies-that-recover-more-denied-claims/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/staff-training-for-handling-denials/"
+  to = "/blog/staff-training-for-handling-denials/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/the-blueprint-for-excellence-key-skills-for-rcm-professionals/"
+  to = "/blog/the-blueprint-for-excellence-key-skills-for-rcm-professionals/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/the-documentation-that-wins-appeals-and-protects-your-revenue/"
+  to = "/blog/the-documentation-that-wins-appeals-and-protects-your-revenue/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/the-leadership-skills-every-rcm-driven-practice-needs-right-now/"
+  to = "/blog/the-leadership-skills-every-rcm-driven-practice-needs-right-now/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/the-power-of-real-time-rcm-analytics-insights-that-drive-action/"
+  to = "/blog/the-power-of-real-time-rcm-analytics-insights-that-drive-action/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/the-role-of-oig-in-rcm-compliance/"
+  to = "/blog/the-role-of-oig-in-rcm-compliance/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/the-ultimate-guide-to-medical-billing/"
+  to = "/blog/the-ultimate-guide-to-medical-billing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/the-ultimate-guide-to-rcm-training-for-specialty-practices/"
+  to = "/blog/the-ultimate-guide-to-rcm-training-for-specialty-practices/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/top-strategies-to-boost-in-house-rcm/"
+  to = "/blog/top-strategies-to-boost-in-house-rcm/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/understanding-credentialing-chaos/"
+  to = "/blog/understanding-credentialing-chaos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/understanding-denial-codes-in-medical-billing/"
+  to = "/blog/understanding-denial-codes-in-medical-billing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/understanding-denials-in-healthcare-revenue-cycle/"
+  to = "/blog/understanding-denials-in-healthcare-revenue-cycle/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/understanding-healthcare-compliance-what-every-practice-needs-to-know/"
+  to = "/blog/understanding-healthcare-compliance-what-every-practice-needs-to-know/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/understanding-quality-metrics-in-valued-based-care/"
+  to = "/blog/understanding-quality-metrics-in-valued-based-care/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/understanding-revenue-cycle-management-in-large-practices/"
+  to = "/blog/understanding-revenue-cycle-management-in-large-practices/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/unlocking-success-revenue-optimization-tips-for-private-practices/"
+  to = "/blog/unlocking-success-revenue-optimization-tips-for-private-practices/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/what-proper-documentation-really-means-for-compliance/"
+  to = "/blog/what-proper-documentation-really-means-for-compliance/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/what-strong-hipaa-compliance-looks-like-in-rcm/"
+  to = "/blog/what-strong-hipaa-compliance-looks-like-in-rcm/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/where-to-look-for-hidden-growth-inside-your-medical-practice/"
+  to = "/blog/where-to-look-for-hidden-growth-inside-your-medical-practice/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/why-clear-patient-statements-improve-cash-flow-and-trust/"
+  to = "/blog/why-clear-patient-statements-improve-cash-flow-and-trust/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/why-financial-benchmarks-should-guide-every-rcm-review/"
+  to = "/blog/why-financial-benchmarks-should-guide-every-rcm-review/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/why-timely-claims-resubmissions-matter-for-revenue/"
+  to = "/blog/why-timely-claims-resubmissions-matter-for-revenue/"
+  status = 301
+  force = true
+
 # Long-lived caching for immutable static assets
 [[headers]]
   for = "/assets/*"
