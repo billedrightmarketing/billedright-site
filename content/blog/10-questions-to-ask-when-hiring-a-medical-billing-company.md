@@ -28,6 +28,6 @@ With the answers to these questions in hand, you will be more prepared to choose
 
 ## **Who is Billed Right and How Can They Help with Your Medical Billing? **
 
-[Founded in 2006, Billed Right is a Florida-based company providing leading and innovative expertise in [revenue cycle management solutions](https://billedright.com/revenue-cycle-management-company/) while building meaningful partnerships with our clients. Guided by our mission, we empower doctors to focus on delivering the best patient care. Driven by our vision, we focus on leading in revenue cycle and operational management for healthcare organizations of all specialties. As a company, we take pride in delivering experience and unsurpassed business solutions to meet and enhance the needs of our healthcare providers.
+[Founded in 2006, Billed Right is a Florida-based company providing leading and innovative expertise in [revenue cycle management solutions](https://billedright.com/about/) while building meaningful partnerships with our clients. Guided by our mission, we empower doctors to focus on delivering the best patient care. Driven by our vision, we focus on leading in revenue cycle and operational management for healthcare organizations of all specialties. As a company, we take pride in delivering experience and unsurpassed business solutions to meet and enhance the needs of our healthcare providers.
 
 [Contact Billed Right](https://billedright.com/contact/) to schedule a consultation and learn more about how becoming a strategic partner with us can benefit your practice.
