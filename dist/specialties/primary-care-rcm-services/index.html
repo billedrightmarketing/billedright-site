@@ -2495,7 +2495,26 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </section>
 
-  <!-- 16. AUTHENTIC TESTIMONIAL IF AVAILABLE — none verified as Primary Care-specific; omitted per doc §19 -->
+  <!-- 16. AUTHENTIC CLIENT PROOF (real, named Primary Care video testimonial) -->
+  <section class="br-section-tight br-bg-light">
+    <div class="br-wrap-sm">
+      <div class="br-section-head center br-reveal"><span class="br-eyebrow">Real Client Perspective</span><h2>Authentic Primary Care Client Proof</h2></div>
+      <div class="br-video-testi br-reveal">
+        <div class="br-video-thumb">
+          <div class="br-yt-facade" onclick="brLoadYT(this)" style="cursor:pointer;position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:inherit" data-vid="gkwX_IkO3gs">
+            <img src="https://i.ytimg.com/vi/gkwX_IkO3gs/sddefault.jpg" alt="Dr. Maria Concepcion, Family Care, Davenport FL — video testimonial for Billed Right" loading="lazy" width="640" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:.9">
+            <div class="br-play-btn" style="position:absolute"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></div>
+          </div>
+        </div>
+        <div class="br-video-content">
+          <h3>Hear From Dr. Maria Concepcion</h3>
+          <p>&ldquo;I can't even explain because you guys saved my life years ago. Within 6 months you recovered 100 thousand dollars for me. I got a good support system and that's you guys &mdash; so thank you, I really appreciate it.&rdquo;</p>
+          <div><strong style="display:block;color:#fff;font-weight:700;font-size:14px">Dr. Maria Concepcion</strong><span style="color:rgba(255,255,255,.6);font-size:12.5px">Maria Concepcion MD Family Care &mdash; Davenport, FL</span></div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:8px" class="br-reveal"><a href="/testimonials/" class="br-learn" style="justify-content:center">Read all client testimonials <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </section>
 
   <!-- 17. AUTHORITY RESOURCES — omitted; no published Primary Care resource content meets the V4 Resource Publication Rule yet -->
 
@@ -2567,7 +2586,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="br-field"><label for="pc-email">Work Email</label><input type="email" id="pc-email" name="email" required autocomplete="email"></div>
           <div class="br-field"><label for="pc-phone">Phone Number</label><input type="tel" id="pc-phone" name="phone" autocomplete="tel"></div>
           <div class="br-field"><label for="pc-practice">Practice / Organization</label><input type="text" id="pc-practice" name="practice" required autocomplete="organization"></div>
-          <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-muted);line-height:1.5;margin-bottom:10px;cursor:pointer"><input type="checkbox" name="consent" value="yes" style="margin-top:3px;flex-shrink:0">I agree to allow Billed Right to use the information provided to contact me. I understand that my information may be processed by authorized service providers supporting Billed Right's business operations, as described in the <a href="/privacy-policy/" style="color:var(--brand);text-decoration:underline">Privacy Policy</a>.</label>
+          <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-muted);line-height:1.5;margin-bottom:10px;cursor:pointer"><input type="checkbox" name="consent" value="yes" required style="margin-top:3px;flex-shrink:0">I agree to allow Billed Right to use the information provided to contact me. I understand that my information may be processed by authorized service providers supporting Billed Right's business operations, as described in the <a href="/privacy-policy/" style="color:var(--brand);text-decoration:underline">Privacy Policy</a>.</label>
           <p style="font-size:11.5px;color:var(--text-muted);line-height:1.5;margin:0 0 18px">Please do not include patient or protected health information (PHI) in this form.</p>
           <button type="submit" class="br-btn br-btn-red br-btn-lg" style="width:100%;justify-content:center" aria-label="Submit revenue cycle assessment request">Request a Revenue Cycle Assessment</button>
         </form>

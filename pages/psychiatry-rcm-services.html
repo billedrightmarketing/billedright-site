@@ -1830,6 +1830,19 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
        one exists. -->
   <section class="br-section-tight br-bg-white">
     <div class="br-wrap-sm">
+      <div class="br-video-testi br-reveal">
+        <div class="br-video-thumb">
+          <div class="br-yt-facade" onclick="brLoadYT(this)" style="cursor:pointer;position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:inherit" data-vid="tHq0_gR3xhQ">
+            <img src="https://i.ytimg.com/vi/tHq0_gR3xhQ/sddefault.jpg" alt="Dr. Jose Prieto, Psychiatry, Sebring FL — video testimonial for Billed Right" loading="lazy" width="640" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:.9">
+            <div class="br-play-btn" style="position:absolute"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></div>
+          </div>
+        </div>
+        <div class="br-video-content">
+          <h3>Hear From Dr. Jose Prieto</h3>
+          <p>&ldquo;My practice has thrived since I met Billed Right, my income has increased twofold. It has been an excellent and brilliant idea since the moment I met them.&rdquo;</p>
+          <div><strong style="display:block;color:#fff;font-weight:700;font-size:14px">Dr. Jose Prieto</strong><span style="color:rgba(255,255,255,.6);font-size:12.5px">Psychiatry &mdash; Sebring, FL</span></div>
+        </div>
+      </div>
       <div class="br-testi-card br-reveal" style="text-align:center">
         <div class="br-stars" style="display:flex;justify-content:center">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <p style="font-size:16px;margin-bottom:14px">&ldquo;I have been associated with Billed Right for the past two years since I started my practice. Billed Right has been incredibly helpful in assisting my practice with initial credentialing, providing prompt responses to all of my requests, and excellent service to address my concerns. I am very satisfied with their timely insurance billing, collections, low AR, and patient accounts management.&rdquo;</p>
@@ -1925,7 +1938,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
           <div class="br-field"><label for="psy-email">Work Email</label><input type="email" id="psy-email" name="email" required autocomplete="email"></div>
           <div class="br-field"><label for="psy-phone">Phone Number</label><input type="tel" id="psy-phone" name="phone" autocomplete="tel"></div>
           <div class="br-field"><label for="psy-practice">Organization / Practice Name</label><input type="text" id="psy-practice" name="practice" required autocomplete="organization"></div>
-          <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-muted);line-height:1.5;margin-bottom:18px;cursor:pointer"><input type="checkbox" name="consent" value="yes" style="margin-top:3px;flex-shrink:0">I agree to allow Billed Right to use the information provided to contact me. I understand my data will be handled securely and not shared with third parties.</label>
+          <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-muted);line-height:1.5;margin-bottom:18px;cursor:pointer"><input type="checkbox" name="consent" value="yes" required style="margin-top:3px;flex-shrink:0">I agree to allow Billed Right to use the information provided to contact me. I understand my data will be handled securely and not shared with third parties.</label>
           <button type="submit" class="br-btn br-btn-red br-btn-lg" style="width:100%;justify-content:center" aria-label="Submit revenue cycle assessment request">Schedule a Revenue Cycle Assessment</button>
         </form>
         <script>window.brWireLeadForm(document.currentScript.previousElementSibling, { formSource: "psychiatry-assessment" });</script>

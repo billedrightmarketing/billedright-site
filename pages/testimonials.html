@@ -1369,6 +1369,12 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 .br-video-content { position: relative; z-index: 1; }
 .br-video-content h3 { font-size: 22px; color: #fff; margin-bottom: 12px; }
 .br-video-content p { font-size: 14.5px; color: rgba(255,255,255,.62); line-height: 1.7; margin-bottom: 18px; }
+.br-vidgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.br-vidgrid-card { display: flex; flex-direction: column; }
+.br-vidgrid-card .br-video-thumb { margin-bottom: 16px; }
+.br-vidgrid-card p { font-size: 13.5px; color: var(--text-mid); line-height: 1.65; margin-bottom: 12px; flex-grow: 1; }
+.br-vidgrid-who strong { display: block; color: var(--navy); font-size: 14px; font-weight: 700; }
+.br-vidgrid-who span { color: var(--text-muted); font-size: 12px; }
 .br-doctor-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
 .br-doctor-card {
   background: var(--white); border: 1px solid var(--border); border-radius: var(--r-lg);
@@ -1522,7 +1528,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-email-cta       { grid-template-columns: 1fr; gap: 20px; }
   .br-email-form      { min-width: 0; }
   .br-leak-card,.br-video-testi { grid-template-columns: 1fr; }
-  .br-leadmag-grid,.br-tool-grid,.br-case-grid,.br-doctor-grid { grid-template-columns: repeat(2,1fr); }
+  .br-leadmag-grid,.br-tool-grid,.br-case-grid,.br-doctor-grid,.br-vidgrid { grid-template-columns: repeat(2,1fr); }
   .br-explore-grid    { grid-template-columns: 1fr; }
   .br-impl-timeline   { grid-template-columns: repeat(5,1fr); }
 }
@@ -1551,7 +1557,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-field-row { grid-template-columns: 1fr; }
   .br-certs-grid { grid-template-columns: repeat(2,1fr); }
   .br-spec-stats { gap: 24px; }
-  .br-leadmag-grid,.br-tool-grid,.br-case-grid,.br-doctor-grid { grid-template-columns: 1fr; }
+  .br-leadmag-grid,.br-tool-grid,.br-case-grid,.br-doctor-grid,.br-vidgrid { grid-template-columns: 1fr; }
   .br-impl-timeline { grid-template-columns: 1fr; gap: 24px; }
   .br-impl-step::before { display: none; }
   .br-compare-table th, .br-compare-table td { padding: 13px 14px; font-size: 13px; }
@@ -1623,6 +1629,65 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
         <div class="br-metric-card br-reveal br-reveal-d1"><div class="br-metric-num">4.9 Yrs</div><div class="br-metric-label">Average Client Tenure</div></div>
         <div class="br-metric-card br-reveal br-reveal-d2"><div class="br-metric-num">94%+</div><div class="br-metric-label">Client Retention Rate</div></div>
         <div class="br-metric-card br-reveal br-reveal-d3"><div class="br-metric-num">20+ Yrs</div><div class="br-metric-label">Of Service</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VIDEO TESTIMONIALS ═══ -->
+  <section class="br-section br-bg-white" aria-labelledby="video-testi-h2">
+    <div class="br-wrap">
+      <div class="br-section-head center br-reveal"><span class="br-eyebrow">Watch &amp; Listen</span><h2 id="video-testi-h2">Video testimonials from our clients.</h2></div>
+      <div class="br-vidgrid">
+        <div class="br-vidgrid-card br-reveal">
+          <div class="br-video-thumb">
+            <div class="br-yt-facade" onclick="brLoadYT(this)" style="cursor:pointer;position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:inherit" data-vid="tHq0_gR3xhQ">
+              <img src="https://i.ytimg.com/vi/tHq0_gR3xhQ/sddefault.jpg" alt="Dr. Jose Prieto video testimonial for Billed Right" loading="lazy" width="640" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:.9">
+              <div class="br-play-btn" style="position:absolute"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></div>
+            </div>
+          </div>
+          <p>&ldquo;My practice has thrived since I met Billed Right, my income has increased twofold.&rdquo;</p>
+          <div class="br-vidgrid-who"><strong>Dr. Jose Prieto</strong><span>Psychiatry &mdash; Sebring, FL</span></div>
+        </div>
+        <div class="br-vidgrid-card br-reveal br-reveal-d1">
+          <div class="br-video-thumb">
+            <div class="br-yt-facade" onclick="brLoadYT(this)" style="cursor:pointer;position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:inherit" data-vid="t76DbjunEBc">
+              <img src="https://i.ytimg.com/vi/t76DbjunEBc/sddefault.jpg" alt="Dr. Shazia Nasir video testimonial for Billed Right" loading="lazy" width="640" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:.9">
+              <div class="br-play-btn" style="position:absolute"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></div>
+            </div>
+          </div>
+          <p>&ldquo;The best thing about Billed Right is that they keep educating themselves and us about whatever is changing in healthcare.&rdquo;</p>
+          <div class="br-vidgrid-who"><strong>Dr. Shazia Nasir</strong><span>Internal Medicine &mdash; Clermont, FL</span></div>
+        </div>
+        <div class="br-vidgrid-card br-reveal br-reveal-d2">
+          <div class="br-video-thumb">
+            <div class="br-yt-facade" onclick="brLoadYT(this)" style="cursor:pointer;position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:inherit" data-vid="UjtBltBRHLc">
+              <img src="https://i.ytimg.com/vi/UjtBltBRHLc/sddefault.jpg" alt="Dr. Fabio Echevarria video testimonial for Billed Right" loading="lazy" width="640" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:.9">
+              <div class="br-play-btn" style="position:absolute"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></div>
+            </div>
+          </div>
+          <p>&ldquo;Since the third day of signing the contract they have been very helpful. Big recommendation, very happy with them.&rdquo;</p>
+          <div class="br-vidgrid-who"><strong>Dr. Fabio Echevarria</strong><span>Internal Medicine &mdash; Clermont, FL</span></div>
+        </div>
+        <div class="br-vidgrid-card br-reveal br-reveal-d3">
+          <div class="br-video-thumb">
+            <div class="br-yt-facade" onclick="brLoadYT(this)" style="cursor:pointer;position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:inherit" data-vid="gkwX_IkO3gs">
+              <img src="https://i.ytimg.com/vi/gkwX_IkO3gs/sddefault.jpg" alt="Dr. Maria Concepcion video testimonial for Billed Right" loading="lazy" width="640" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:.9">
+              <div class="br-play-btn" style="position:absolute"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></div>
+            </div>
+          </div>
+          <p>&ldquo;Within 6 months you recovered 100 thousand dollars for me. I got a good support system and that's you guys.&rdquo;</p>
+          <div class="br-vidgrid-who"><strong>Dr. Maria Concepcion</strong><span>Family Care &mdash; Davenport, FL</span></div>
+        </div>
+        <div class="br-vidgrid-card br-reveal br-reveal-d4">
+          <div class="br-video-thumb">
+            <div class="br-yt-facade" onclick="brLoadYT(this)" style="cursor:pointer;position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:inherit" data-vid="_LXTAk6EBLU">
+              <img src="https://i.ytimg.com/vi/_LXTAk6EBLU/sddefault.jpg" alt="Dr. Vikas Verma video testimonial for Billed Right" loading="lazy" width="640" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:.9">
+              <div class="br-play-btn" style="position:absolute"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></div>
+            </div>
+          </div>
+          <p>&ldquo;Our revenue stream has been positively impacted by Billed Right being very proactive and on top of things.&rdquo;</p>
+          <div class="br-vidgrid-who"><strong>Dr. Vikas Verma</strong><span>Interventional Cardiology &mdash; FL</span></div>
+        </div>
       </div>
     </div>
   </section>

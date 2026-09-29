@@ -2467,11 +2467,10 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div class="br-field-row">
           <div class="br-field"><label for="cs-email">Email</label><input type="email" id="cs-email" name="email" required autocomplete="email"></div>
-          <div class="br-field"><label for="cs-phone">Phone Number</label><input type="tel" id="cs-phone" name="phone" required autocomplete="tel"></div>
+          <div class="br-field"><label for="cs-phone">Phone Number</label><input type="tel" id="cs-phone" name="phone" autocomplete="tel"></div>
         </div>
         <div class="br-field"><label for="cs-practice">Practice Name</label><input type="text" id="cs-practice" name="practice" required autocomplete="organization"></div>
-        <div class="br-field-row">
-          <div class="br-field"><label for="cs-specialty">Specialty</label><select id="cs-specialty" name="specialty"><option value="">Select specialty</option>
+        <div class="br-field"><label for="cs-specialty">Specialty</label><select id="cs-specialty" name="specialty"><option value="">Select specialty</option>
                 <option>Internal Medicine</option>
                 <option>Cardiology</option>
                 <option>Behavioral Health</option>
@@ -2485,28 +2484,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <option>Vascular Surgery</option>
                 <option>Allergy</option>
                 <option>Pulmonary</option></select></div>
-          <div class="br-field"><label for="cs-collections">Average Monthly Collections</label><input type="text" id="cs-collections" name="avg-monthly-collections" placeholder="$50,000"></div>
-        </div>
-        <div class="br-field-row">
-          <div class="br-field"><label for="cs-providers">Number of Providers</label><input type="text" id="cs-providers" name="num-providers" placeholder="2"></div>
-          <div class="br-field"><label for="cs-service">Service Interested In</label><select id="cs-service" name="service-interested"><option value="">Select service</option>
-                <option>Insurance Eligibility Verification</option>
-                <option>Charge Posting</option>
-                <option>Documentation Review</option>
-                <option>Claim Submission</option>
-                <option>Denial Management</option>
-                <option>Medical Coding</option>
-                <option>Payment Posting</option>
-                <option>Patient AR Collections</option>
-                <option>AR Follow-Up</option>
-                <option>Reporting</option>
-                <option>Authorizations</option>
-                <option>Account Management</option>
-                <option>Documentation Management</option>
-                <option>Contract Renegotiation</option></select></div>
-        </div>
-        <div class="br-field"><label for="cs-help">How Can We Help</label><textarea id="cs-help" name="how-can-we-help" placeholder="Tell us where you're losing revenue..."></textarea></div>
-        <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-muted);line-height:1.5;margin-bottom:18px;cursor:pointer"><input type="checkbox" name="consent" value="yes" style="margin-top:3px;flex-shrink:0">I agree to allow Billed Right to use the information provided to contact me. My data will be handled securely and not shared with third parties.</label>
+        <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-muted);line-height:1.5;margin-bottom:18px;cursor:pointer"><input type="checkbox" name="consent" value="yes" required style="margin-top:3px;flex-shrink:0">I agree to allow Billed Right to use the information provided to contact me. My data will be handled securely and not shared with third parties.</label>
         <button type="submit" class="br-btn br-btn-red br-btn-lg" style="width:100%;justify-content:center" aria-label="Submit case study inquiry form">Submit</button>
         </form>
         <script>window.brWireLeadForm(document.currentScript.previousElementSibling, { formSource: "primary-care-case-study" });</script>
