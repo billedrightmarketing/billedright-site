@@ -15,6 +15,7 @@ Join Billed Right’s India team in Chennai or Trichy: a purpose-driven healthca
 - Why Choose Billed Right
 - Our Work Culture
 - Our 6 Stage Recruitment Process
+- A look inside our India team.
 - Our Fantastic Benefits
 - Why You Should Consider Applying
 - Get Ready For Applying!

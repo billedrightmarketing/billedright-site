@@ -15,9 +15,9 @@ Join the Billed Right team in the US: a purpose-driven healthcare RCM company wi
 - Why Choose Billed Right
 - Our Work Culture
 - Our 6 Stage Recruitment Process
+- A look inside our US team.
 - Our Fantastic Benefits
 - Meet our Team
 - Get Ready For Applying!
-- Why You Should Consider Applying
 
 [View live page](https://billedright.com/careers-us/)
