@@ -1272,6 +1272,40 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 .br-tech-pill svg { width: 17px; height: 17px; stroke: var(--brand); stroke-width: 1.9; fill: none; flex-shrink: 0; }
 
 /* ═══════════════════════════════════════════
+   WHO DO WE WORK WITH — auto-scrolling logo slider
+   Grayscale by default, full color on hover/focus.
+   Track is the logo list duplicated once so the loop is seamless;
+   animation pauses on hover so a logo can actually be clicked.
+   ═══════════════════════════════════════════ */
+.br-logos-viewport { overflow: hidden; position: relative; }
+.br-logos-viewport::before, .br-logos-viewport::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+}
+.br-logos-viewport::before { left: 0; background: linear-gradient(to right, var(--white), transparent); }
+.br-logos-viewport::after { right: 0; background: linear-gradient(to left, var(--white), transparent); }
+.br-logos-track {
+  display: flex; align-items: center; width: max-content;
+  animation: br-logos-scroll 36s linear infinite;
+}
+.br-logos-viewport:hover .br-logos-track { animation-play-state: paused; }
+@keyframes br-logos-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.br-logo-slide {
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  width: 180px; height: 90px; margin: 0 8px;
+}
+.br-logo-slide img {
+  max-width: 130px; max-height: 48px; width: auto; height: auto;
+  filter: grayscale(100%); opacity: .55;
+  transition: filter .2s ease, opacity .2s ease, transform .2s ease;
+}
+.br-logo-slide:hover img, .br-logo-slide:focus-visible img {
+  filter: grayscale(0%); opacity: 1; transform: scale(1.05);
+}
+
+/* ═══════════════════════════════════════════
    IMPLEMENTATION TIMELINE
    ═══════════════════════════════════════════ */
 .br-impl-timeline { display: grid; grid-template-columns: repeat(5,1fr); gap: 0; }
@@ -1584,6 +1618,9 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-hero-stat:not(:last-child) { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); padding-bottom: 16px; margin-bottom: 0; padding-right: 0; margin-right: 0; }
   .br-final-cta { padding: 40px 24px; }
   .br-cred-banner { padding: 36px 24px; }
+  .br-leak-card { padding: 36px 24px; }
+  .br-leak-card > * { min-width: 0; }
+  .br-leak-content > a.br-btn { white-space: normal; width: 100%; text-align: center; justify-content: center; }
   .br-bar-row { grid-template-columns: 1fr; gap: 8px; }
   .br-footer-grid { grid-template-columns: 1fr 1fr; }
   .br-field-row { grid-template-columns: 1fr; }
@@ -2471,7 +2508,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="br-about-photo" style="background-image:url('/assets/images/about/billed-right-team.webp')">
             <div class="br-about-caption"><span>Our Team</span></div>
           </div>
-          <div class="br-about-photo" style="background-image:url('/assets/images/about/billed-right-client-meeting.webp')">
+          <div class="br-about-photo" style="background-image:url('/assets/images/about/billed-right-client-meeting.webp');background-position:center top">
             <div class="br-about-caption"><span>Meeting With Clients</span></div>
           </div>
         </div>
@@ -2630,6 +2667,19 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="br-section br-bg-white" aria-labelledby="testi-h2">
     <div class="br-wrap">
       <div class="br-section-head center br-reveal"><span class="br-eyebrow">Testimonials</span><h2 id="testi-h2">Long-term partnerships built on trust.</h2></div>
+      <div class="br-video-testi br-reveal">
+        <div class="br-video-thumb">
+          <div class="br-yt-facade" onclick="brLoadYT(this)" style="cursor:pointer;position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:inherit" data-vid="YlI1207AK20">
+            <img src="https://i.ytimg.com/vi/YlI1207AK20/sddefault.jpg" alt="What Our Clients Say About Billed Right — physician and practice video testimonials" loading="lazy" width="640" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:.9">
+            <div class="br-play-btn" style="position:absolute"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></div>
+          </div>
+        </div>
+        <div class="br-video-content">
+          <h3>Hear directly from our clients.</h3>
+          <p>Physicians and practice leaders across Cardiology, Internal Medicine, Psychiatry, and Primary Care talk about what changed after partnering with Billed Right.</p>
+          <a href="/testimonials/" class="br-btn br-btn-outline">Watch All Client Stories <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
       <div class="br-g2">
         <div class="br-testi-card br-reveal"><div class="br-stars">★★★★★</div><p>&ldquo;Billed Right has a depth that similar service organizations do not. There is not a one or two-person team that handles everything. It is an organization that as a team understands our account. We have senior leadership, on the ground leadership, and day-to-day team members that know our account. That is not easy to replace and certainly, at our size, not something we could bring internally without a significant commitment to infrastructure. Ultimately you will choose an outside billing partner for the simple reason of increasing collections. This will happen with Billed Right &mdash; but to us, as much as increasing our cash flow is their team of professionals. I like them, respect the contribution they make to our company and openly offer my personal recommendation.&rdquo;</p><div class="br-testi-who">&mdash; CEO, Pain Management, CA</div></div>
         <div class="br-testi-card br-reveal br-reveal-d1"><div class="br-stars">★★★★★</div><p>&ldquo;We have had a long-term relationship with Billed Right and their dependability is truly excellent. I personally have worked hand in hand with their management team for over four years and I have been continually impressed with their work ethic and flexibility. They offer a vast array of services above and beyond claim generation and payment posting including custom reporting, transparent quality assurance checks, guideline and coding clarifications, strategic input, and more. It is a huge relief knowing that no matter what strategic initiative we undertake, our billing team will not only reliably adapt to the change but will also be a valuable partner making the project a success.&rdquo;</p><div class="br-testi-who">&mdash; Manager, Multi-Specialty Group, CA</div></div>
@@ -2724,6 +2774,43 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="br-tech-pill"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009.6 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9.6a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33h0a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v0a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>API &amp; HL7/FHIR integration</div>
         <div class="br-tech-pill"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Real-time payer portals</div>
         <div class="br-tech-pill"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Custom reporting dashboards</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO DO WE WORK WITH -->
+  <section class="br-section br-bg-white" aria-labelledby="logos-h2">
+    <div class="br-wrap">
+      <div class="br-section-head center br-reveal"><span class="br-eyebrow">Integrations</span><h2 id="logos-h2">Who do we work with.</h2><p>The EHR, practice management, and clearinghouse platforms we already bill inside every day.</p></div>
+      <div class="br-logos-viewport br-reveal">
+        <div class="br-logos-track">
+          <a class="br-logo-slide" href="https://www.eclinicalworks.com/" target="_blank" rel="noopener" aria-label="eClinicalWorks"><img src="/assets/images/who-do-we-work-with/eclinical.png" alt="eClinicalWorks" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.advancedmd.com/" target="_blank" rel="noopener" aria-label="AdvancedMD"><img src="/assets/images/who-do-we-work-with/advancemd.png" alt="AdvancedMD" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.kareo.com/" target="_blank" rel="noopener" aria-label="Kareo"><img src="/assets/images/who-do-we-work-with/kareo.png" alt="Kareo" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.drchrono.com/" target="_blank" rel="noopener" aria-label="DrChrono"><img src="/assets/images/who-do-we-work-with/drchrono.png" alt="DrChrono" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.curemd.com/" target="_blank" rel="noopener" aria-label="CureMD"><img src="/assets/images/who-do-we-work-with/curemd.png" alt="CureMD" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.micromd.com/" target="_blank" rel="noopener" aria-label="MicroMD"><img src="/assets/images/who-do-we-work-with/micro-md.png" alt="MicroMD" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.e-mds.com/" target="_blank" rel="noopener" aria-label="e-MDs"><img src="/assets/images/who-do-we-work-with/emds.jpg" alt="e-MDs" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.meditab.com/" target="_blank" rel="noopener" aria-label="Meditab"><img src="/assets/images/who-do-we-work-with/metlab.png" alt="Meditab" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.availity.com/" target="_blank" rel="noopener" aria-label="Availity"><img src="/assets/images/who-do-we-work-with/availity.png" alt="Availity" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.billflash.com/" target="_blank" rel="noopener" aria-label="BillFlash"><img src="/assets/images/who-do-we-work-with/billflash.jpg" alt="BillFlash" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.officemate.net/" target="_blank" rel="noopener" aria-label="OfficeMate"><img src="/assets/images/who-do-we-work-with/office-mates.png" alt="OfficeMate" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.lightningstep.com/" target="_blank" rel="noopener" aria-label="Lightning Step"><img src="/assets/images/who-do-we-work-with/lightning.png" alt="Lightning Step" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.primeclinical.com/" target="_blank" rel="noopener" aria-label="Prime Clinical Systems"><img src="/assets/images/who-do-we-work-with/prime-clinical.png" alt="Prime Clinical Systems" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.eclinicalworks.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/eclinical.png" alt="" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.advancedmd.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/advancemd.png" alt="" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.kareo.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/kareo.png" alt="" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.drchrono.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/drchrono.png" alt="" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.curemd.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/curemd.png" alt="" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.micromd.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/micro-md.png" alt="" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.e-mds.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/emds.jpg" alt="" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.meditab.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/metlab.png" alt="" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.availity.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/availity.png" alt="" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.billflash.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/billflash.jpg" alt="" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.officemate.net/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/office-mates.png" alt="" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.lightningstep.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/lightning.png" alt="" loading="lazy"></a>
+          <a class="br-logo-slide" href="https://www.primeclinical.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/prime-clinical.png" alt="" loading="lazy"></a>
+        </div>
       </div>
     </div>
   </section>
