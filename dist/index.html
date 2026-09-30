@@ -787,14 +787,14 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   position: absolute; left: 50%; top: 50%;
   transform: translate(-50%, -50%); border-radius: 50%;
 }
-.br-ai-ring-1 { width: 160px; height: 160px; border: 1px solid rgba(186,32,37,.2); animation: br-spin-cw 18s linear infinite; }
-.br-ai-ring-2 { width: 280px; height: 280px; border: 1px solid rgba(49,66,94,.12); animation: br-spin-ccw 28s linear infinite; }
-.br-ai-ring-3 { width: 360px; height: 360px; border: 1px solid rgba(49,66,94,.06); animation: br-spin-cw 42s linear infinite; }
+.br-ai-ring-1 { width: 42%; height: 42%; border: 1px solid rgba(186,32,37,.2); animation: br-spin-cw 18s linear infinite; }
+.br-ai-ring-2 { width: 74%; height: 74%; border: 1px solid rgba(49,66,94,.12); animation: br-spin-ccw 28s linear infinite; }
+.br-ai-ring-3 { width: 95%; height: 95%; border: 1px solid rgba(49,66,94,.06); animation: br-spin-cw 42s linear infinite; }
 .br-ai-ring-1::before { content:''; position:absolute; top:-4px; left:50%; transform:translateX(-50%); width:8px; height:8px; border-radius:50%; background:var(--brand); box-shadow:0 0 8px var(--brand); }
 .br-ai-ring-2::before { content:''; position:absolute; top:-3px; left:30%; width:6px; height:6px; border-radius:50%; background:var(--navy); opacity:.5; }
 .br-ai-hub {
   position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-  width: 90px; height: 90px; border-radius: 18px;
+  width: 24%; height: 24%; min-width: 60px; min-height: 60px; max-width: 90px; max-height: 90px; border-radius: 18px;
   background: linear-gradient(135deg, var(--brand), var(--brand-dark));
   display: flex; align-items: center; justify-content: center;
   filter: drop-shadow(0 0 18px rgba(186,32,37,.4)); z-index: 4;
@@ -891,7 +891,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 .br-spec-stat .ss-num { font-size: 32px; font-weight: 800; color: var(--brand); line-height: 1; }
 .br-spec-stat .ss-lbl { font-size: 12px; color: rgba(255,255,255,.5); margin-top: 4px; text-transform: uppercase; letter-spacing: .1em; }
 
-.br-spec-tiles { display: grid; grid-template-columns: repeat(6,1fr); gap: 12px; }
+.br-spec-tiles { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 12px; }
 .br-spec-tile {
   background: var(--white); border: 1px solid var(--border);
   border-radius: var(--r-lg); padding: 20px 14px; text-align: center;
@@ -1579,7 +1579,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-g4,.br-metric-cards { grid-template-columns: repeat(2,1fr); }
   .br-results-grid    { grid-template-columns: repeat(4,1fr); }
   .br-love-grid       { grid-template-columns: repeat(3,1fr); }
-  .br-spec-tiles      { grid-template-columns: repeat(4,1fr); }
+  .br-spec-tiles      { grid-template-columns: repeat(4,minmax(0,1fr)); }
   .br-journey-grid    { grid-template-columns: repeat(3,1fr); }
   .br-hipaa-inner     { grid-template-columns: 1fr; }
   .br-certs-grid      { grid-template-columns: repeat(2,1fr); }
@@ -1605,7 +1605,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-orbit { display: none; }
   .br-g2,.br-g3,.br-services-grid,.br-spec-detail-grid,.br-team-grid,.br-awards-grid { grid-template-columns: 1fr; }
   .br-metric-cards,.br-love-grid { grid-template-columns: 1fr 1fr; }
-  .br-spec-tiles    { grid-template-columns: repeat(3,1fr); }
+  .br-spec-tiles    { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .br-results-grid  { grid-template-columns: repeat(2,1fr); }
   .br-result-col:nth-child(2n) { border-right: none; }
   .br-result-col    { border-bottom: 1px solid rgba(255,255,255,.07); }
@@ -1617,6 +1617,8 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-hero-stats { flex-direction: column; gap: 16px; }
   .br-hero-stat:not(:last-child) { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); padding-bottom: 16px; margin-bottom: 0; padding-right: 0; margin-right: 0; }
   .br-final-cta { padding: 40px 24px; }
+  .br-final-cta .br-cta-row .br-btn { width: 100%; justify-content: center; }
+  .br-ai-wrap { padding: 32px 24px; }
   .br-cred-banner { padding: 36px 24px; }
   .br-leak-card { padding: 36px 24px; }
   .br-leak-card > * { min-width: 0; }
@@ -1629,7 +1631,17 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-leadmag-grid,.br-tool-grid,.br-case-grid,.br-doctor-grid { grid-template-columns: 1fr; }
   .br-impl-timeline { grid-template-columns: 1fr; gap: 24px; }
   .br-impl-step::before { display: none; }
-  .br-compare-table th, .br-compare-table td { padding: 13px 14px; font-size: 13px; }
+  .br-compare-wrap { overflow-x: visible; }
+  .br-compare-table, .br-compare-table tbody, .br-compare-table tr, .br-compare-table td { display: block; width: 100%; }
+  .br-compare-table thead { display: none; }
+  .br-compare-table { background: var(--white); min-width: 0; }
+  .br-compare-table tr { margin-bottom: 14px; border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; }
+  .br-compare-table tr:last-child { margin-bottom: 0; }
+  .br-compare-table td { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; font-size: 13px; border-bottom: 1px solid var(--border); border-right: none; }
+  .br-compare-table td:last-child { border-bottom: none; }
+  .br-compare-table td:first-child { background: var(--bg-light); font-weight: 700; color: var(--navy); }
+  .br-compare-table td[data-label]::before { content: attr(data-label); font-weight: 700; color: var(--text-muted); font-size: 11.5px; text-transform: uppercase; letter-spacing: .04em; }
+  .br-compare-table td.br-col-us { background: rgba(186,32,37,.06); }
   .br-search-row { flex-direction: column; }
   .br-nav-links, .br-nav-right { display: none; }
   .br-hamburger { display: flex; }
@@ -2647,18 +2659,18 @@ document.addEventListener("DOMContentLoaded", function () {
         <a href="/specialties/" class="br-btn br-btn-outline-dark">All specialties <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="br-spec-tiles">
-        <a href="/cardiology-rcm-services/" class="br-spec-tile br-reveal"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg><p>Cardiology</p></a>
-        <a href="/primary-care-rcm-services/" class="br-spec-tile br-reveal br-reveal-d1"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><p>Primary Care</p></a>
-        <a href="/pain-management-rcm-services/" class="br-spec-tile br-reveal br-reveal-d2"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 8v8M8 12h8"/></svg><p>Pain Management</p></a>
-        <a href="/behavioral-health-rcm-services/" class="br-spec-tile br-reveal br-reveal-d3"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><p>Behavioral Health</p></a>
-        <a href="/internal-medicine-rcm-services/" class="br-spec-tile br-reveal br-reveal-d4"><svg viewBox="0 0 24 24"><path d="M4.5 12.5l3-3 3 3 3-3 3 3"/><circle cx="12" cy="12" r="10"/></svg><p>Internal Medicine</p></a>
-        <a href="/psychiatry-rcm-services/" class="br-spec-tile br-reveal br-reveal-d5"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/></svg><p>Psychiatry</p></a>
-        <a href="/urgent-care-rcm-services/" class="br-spec-tile br-reveal"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><p>Urgent Care</p></a>
-        <a href="/gastroenterology-rcm-services/" class="br-spec-tile br-reveal br-reveal-d1"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><p>Gastroenterology</p></a>
-        <a href="/nephrology-rcm-services/" class="br-spec-tile br-reveal br-reveal-d2"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><p>Nephrology</p></a>
-        <a href="/rheumatology-rcm-services/" class="br-spec-tile br-reveal br-reveal-d3"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><p>Rheumatology</p></a>
-        <a href="/allergy-rcm-services/" class="br-spec-tile br-reveal br-reveal-d4"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><p>Allergy &amp; Immunology</p></a>
-        <a href="/vascular-surgery-rcm-services/" class="br-spec-tile br-reveal br-reveal-d5"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg><p>Vascular Surgery</p></a>
+        <a href="/specialties/cardiology-rcm-services/" class="br-spec-tile br-reveal"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg><p>Cardiology</p></a>
+        <a href="/specialties/primary-care-rcm-services/" class="br-spec-tile br-reveal br-reveal-d1"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><p>Primary Care</p></a>
+        <a href="/specialties/pain-management-rcm-services/" class="br-spec-tile br-reveal br-reveal-d2"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 8v8M8 12h8"/></svg><p>Pain Management</p></a>
+        <a href="/specialties/behavioral-health-rcm-services/" class="br-spec-tile br-reveal br-reveal-d3"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><p>Behavioral Health</p></a>
+        <a href="/specialties/internal-medicine-rcm-services/" class="br-spec-tile br-reveal br-reveal-d4"><svg viewBox="0 0 24 24"><path d="M4.5 12.5l3-3 3 3 3-3 3 3"/><circle cx="12" cy="12" r="10"/></svg><p>Internal Medicine</p></a>
+        <a href="/specialties/psychiatry-rcm-services/" class="br-spec-tile br-reveal br-reveal-d5"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/></svg><p>Psychiatry</p></a>
+        <a href="/specialties/urgent-care-rcm-services/" class="br-spec-tile br-reveal"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><p>Urgent Care</p></a>
+        <a href="/specialties/gastroenterology-rcm-services/" class="br-spec-tile br-reveal br-reveal-d1"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><p>Gastroenterology</p></a>
+        <a href="/specialties/nephrology-rcm-services/" class="br-spec-tile br-reveal br-reveal-d2"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg><p>Nephrology</p></a>
+        <a href="/specialties/rheumatology-rcm-services/" class="br-spec-tile br-reveal br-reveal-d3"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><p>Rheumatology</p></a>
+        <a href="/specialties/allergy-rcm-services/" class="br-spec-tile br-reveal br-reveal-d4"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><p>Allergy &amp; Immunology</p></a>
+        <a href="/specialties/vascular-surgery-rcm-services/" class="br-spec-tile br-reveal br-reveal-d5"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg><p>Vascular Surgery</p></a>
       </div>
     </div>
   </section>
@@ -2720,12 +2732,12 @@ document.addEventListener("DOMContentLoaded", function () {
   <!-- LEAD MAGNET SHOWCASE -->
   <section class="br-section br-bg-light" aria-labelledby="leadmag-h2">
     <div class="br-wrap">
-      <div class="br-section-head center br-reveal"><span class="br-eyebrow">Free Tools</span><h2 id="leadmag-h2">Calculators built for operators, not consultants.</h2><p>No email gate to look around. Run the numbers, see where you stand, then decide if it's worth a conversation.</p></div>
+      <div class="br-section-head center br-reveal"><span class="br-eyebrow">Free Tools</span><h2 id="leadmag-h2">Calculators built for operators, not consultants.</h2><p>Run the numbers, see where you stand, then decide if it's worth a conversation.</p></div>
       <div class="br-leadmag-grid">
-        <a href="/resources/" class="br-leadmag-card br-reveal" style="display:block"><div class="br-leadmag-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><h3>Credentialing Timeline Calculator</h3><p>Estimate your real enrollment timeline by payer and specialty.</p><span class="br-learn">Try it <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <a href="/resources/" class="br-leadmag-card br-reveal br-reveal-d1" style="display:block"><div class="br-leadmag-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3>Medical Billing ROI Calculator</h3><p>See projected collections lift from outsourcing your billing.</p><span class="br-learn">Try it <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <a href="/resources/" class="br-leadmag-card br-reveal br-reveal-d2" style="display:block"><div class="br-leadmag-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Revenue Leak Assessment</h3><p>A 60-second directional read on where collections are slipping.</p><span class="br-learn">Try it <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <a href="/resources/" class="br-leadmag-card br-reveal br-reveal-d3" style="display:block"><div class="br-leadmag-icon"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></div><h3>Denial Cost Calculator</h3><p>Quantify what unworked denials are actually costing you per year.</p><span class="br-learn">Try it <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="/resources/credentialing-readiness-assessment/" class="br-leadmag-card br-reveal" style="display:block"><div class="br-leadmag-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><h3>Credentialing Readiness Assessment</h3><p>Estimate your real enrollment timeline by payer and specialty.</p><span class="br-learn">Try it <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="/resources/in-house-vs-outsourced-calculator/" class="br-leadmag-card br-reveal br-reveal-d1" style="display:block"><div class="br-leadmag-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3>In-House vs. Outsourced Calculator</h3><p>See projected collections lift from outsourcing your billing.</p><span class="br-learn">Try it <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="/resources/rcm-health-check-quiz/" class="br-leadmag-card br-reveal br-reveal-d2" style="display:block"><div class="br-leadmag-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>RCM Health Check Quiz</h3><p>A 60-second directional read on where collections are slipping.</p><span class="br-learn">Try it <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="/resources/denial-write-off-calculator/" class="br-leadmag-card br-reveal br-reveal-d3" style="display:block"><div class="br-leadmag-icon"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg></div><h3>Denial Write-Off Recovery Calculator</h3><p>Quantify what unworked denials are actually costing you per year.</p><span class="br-learn">Try it <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
     </div>
   </section>
@@ -2753,11 +2765,11 @@ document.addEventListener("DOMContentLoaded", function () {
         <table class="br-compare-table">
           <thead><tr><th>What matters</th><th>In-house billing</th><th>Typical billing company</th><th class="br-col-us">Billed Right</th></tr></thead>
           <tbody>
-            <tr><td>Specialty-trained billers</td><td><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td class="br-col-us"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Yes</td></tr>
-            <tr><td>Real-time A/R visibility</td><td><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></td><td class="br-col-us"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Yes</td></tr>
-            <tr><td>Dedicated account manager (not a queue)</td><td><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></td><td><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td class="br-col-us"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Yes</td></tr>
-            <tr><td>Credentialing handled in-house</td><td><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td class="br-col-us"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Yes</td></tr>
-            <tr><td>Money-back guarantee</td><td>—</td><td><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td class="br-col-us"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> 120 days</td></tr>
+            <tr><td>Specialty-trained billers</td><td data-label="In-house billing"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td data-label="Typical billing company"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td class="br-col-us" data-label="Billed Right"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Yes</td></tr>
+            <tr><td>Real-time A/R visibility</td><td data-label="In-house billing"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td data-label="Typical billing company"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></td><td class="br-col-us" data-label="Billed Right"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Yes</td></tr>
+            <tr><td>Dedicated account manager (not a queue)</td><td data-label="In-house billing"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></td><td data-label="Typical billing company"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td class="br-col-us" data-label="Billed Right"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Yes</td></tr>
+            <tr><td>Credentialing handled in-house</td><td data-label="In-house billing"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td data-label="Typical billing company"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td class="br-col-us" data-label="Billed Right"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Yes</td></tr>
+            <tr><td>Money-back guarantee</td><td data-label="In-house billing">—</td><td data-label="Typical billing company"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td class="br-col-us" data-label="Billed Right"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> 120 days</td></tr>
           </tbody>
         </table>
       </div>
@@ -2837,9 +2849,9 @@ document.addEventListener("DOMContentLoaded", function () {
         <a href="/resources/" class="br-btn br-btn-outline-dark">Visit resource center <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="br-latest-grid">
-        <a href="/blog/" class="br-latest-card br-reveal" style="display:block"><span class="br-tool-cat">Blog</span><h3>Denial Management 101: Recover Revenue You've Already Earned</h3><p>90% of denied claims are recoverable. Most organizations recover fewer than half.</p><span class="br-learn">Read <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <a href="/case-studies/" class="br-latest-card br-reveal br-reveal-d1" style="display:block"><span class="br-tool-cat">Case Study</span><h3>Behavioral Health Group Cuts Days in A/R From 41 to 22</h3><p>A composite look at how a multi-provider behavioral health practice turned around its revenue cycle.</p><span class="br-learn">Read <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <a href="/resources/" class="br-latest-card br-reveal br-reveal-d2" style="display:block"><span class="br-tool-cat">Calculator</span><h3>Medical Billing ROI Calculator</h3><p>Estimate the collections lift you'd see from outsourcing your billing.</p><span class="br-learn">Try it <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="/blog/mastering-denial-management-and-its-importance/" class="br-latest-card br-reveal" style="display:block"><span class="br-tool-cat">Blog</span><h3>Mastering Revenue Optimization: Delving Into Denial Management</h3><p>What denial management actually is, and strategies to recover revenue and streamline the process.</p><span class="br-learn">Read <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="/case-studies/pain-management-denial-reduction/" class="br-latest-card br-reveal br-reveal-d1" style="display:block"><span class="br-tool-cat">Case Study</span><h3>Pain Management: Denial Rate Cut by Two-Thirds</h3><p>How a pain management practice brought its denial rate down and kept it there.</p><span class="br-learn">Read <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="/resources/in-house-vs-outsourced-calculator/" class="br-latest-card br-reveal br-reveal-d2" style="display:block"><span class="br-tool-cat">Calculator</span><h3>In-House vs. Outsourced Calculator</h3><p>Estimate the collections lift you'd see from outsourcing your billing.</p><span class="br-learn">Try it <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
     </div>
   </section>
