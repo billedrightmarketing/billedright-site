@@ -199,8 +199,11 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 /* ── Utilities ── */
-.br-wrap    { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
-.br-wrap-sm { max-width: 900px;  margin: 0 auto; padding: 0 28px; }
+.br-wrap    { max-width: 1240px; margin: 0 auto; padding: 0 28px; width: 100%; }
+.br-swipe-hint { display: none; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--text-muted); margin: -10px 0 16px; }
+.br-swipe-hint svg { width: 14px; height: 14px; stroke: var(--brand); stroke-width: 2.4; fill: none; animation: br-swipe-nudge 1.6s ease-in-out infinite; }
+@keyframes br-swipe-nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+.br-wrap-sm { max-width: 900px;  margin: 0 auto; padding: 0 28px; width: 100%; }
 .br-section { padding: 88px 0; }
 .br-section-tight { padding: 60px 0; }
 .br-bg-white  { background: var(--white); }
@@ -1096,7 +1099,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
    FOOTER
    ═══════════════════════════════════════════ */
 .br-footer { background: var(--navy-dark); padding: 60px 0 24px; }
-.br-footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 36px; margin-bottom: 44px; }
+.br-footer-grid { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr); gap: 36px; margin-bottom: 44px; }
 .br-footer-brand p { font-size: 14px; color: rgba(255,255,255,.5); margin-top: 14px; max-width: 340px; line-height: 1.7; }
 .br-footer-address { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.7; margin: 14px 0 20px; }
 .br-footer-subscribe h5 { font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
@@ -1524,7 +1527,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-certs-grid      { grid-template-columns: repeat(3,1fr); }
   .br-ai-wrap         { grid-template-columns: 1fr; }
   .br-cred-banner     { grid-template-columns: 1fr; gap: 28px; }
-  .br-footer-grid     { grid-template-columns: 1fr 1fr 1fr; }
+  .br-footer-grid     { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .br-testi-grid      { grid-template-columns: 1fr; }
   .br-video-section   { grid-template-columns: 1fr; }
   .br-email-cta       { grid-template-columns: 1fr; gap: 20px; }
@@ -1541,6 +1544,13 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 }
 @media (max-width: 768px) {
   .br-section { padding: 60px 0; }
+  .br-btn-lg { white-space: normal; max-width: 100%; text-align: center; }
+  .br-swipe-hint { display: inline-flex; }
+  .br-latest-grid {
+    display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; gap: 16px; padding-bottom: 8px; scrollbar-width: thin;
+  }
+  .br-latest-grid > a, .br-latest-grid > div.br-latest-card { flex: 0 0 84%; scroll-snap-align: start; }
   .br-g2,.br-g3,.br-services-grid,.br-spec-detail-grid,.br-team-grid,.br-awards-grid { grid-template-columns: 1fr; }
   .br-metric-cards,.br-love-grid { grid-template-columns: 1fr 1fr; }
   .br-spec-tiles    { grid-template-columns: repeat(3,1fr); }
@@ -1555,7 +1565,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-final-cta { padding: 40px 24px; }
   .br-cred-banner { padding: 36px 24px; }
   .br-bar-row { grid-template-columns: 1fr; gap: 8px; }
-  .br-footer-grid { grid-template-columns: 1fr 1fr; }
+  .br-footer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .br-field-row { grid-template-columns: 1fr; }
   .br-certs-grid { grid-template-columns: repeat(2,1fr); }
   .br-spec-stats { gap: 24px; }
@@ -2215,8 +2225,8 @@ document.addEventListener("DOMContentLoaded", function () {
       <h1>Internal Medicine Revenue Cycle Management Services</h1>
       <p class="ph-sub">Internal Medicine revenue performance depends on more than submitting claims. Billed Right helps practices manage the financial complexity of managed care and fee-for-service reimbursement through disciplined revenue-cycle execution, diagnosis-capture visibility, provider education, intelligent automation and decision-ready financial data.</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:40px">
-        <a href="#internal-medicine-assessment-form" class="br-btn br-btn-red br-btn-lg">Schedule a Revenue Cycle Assessment <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="tel:+14072179281" class="br-btn br-btn-outline br-btn-lg"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>Talk to an Internal Medicine RCM Expert</a>
+        <a href="#internal-medicine-assessment-form" class="br-btn br-btn-red br-btn-lg">Schedule an Executive Conversation <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="tel:+14072179281" class="br-btn br-btn-outline br-btn-lg"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.01 1.19 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>Talk to a Solution Specialist</a>
       </div>
       <div class="br-spec-stats" style="flex-wrap:wrap;row-gap:20px">
         <div><div class="br-leak-stat" style="font-size:22px;margin-bottom:2px">Since Our Earliest Years</div><div class="br-leak-stat-lbl" style="margin-bottom:0">Internal Medicine Relationships Dating to 2007</div></div>
@@ -2226,6 +2236,64 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     </div>
   </div>
+
+  <!-- 13. VERIFIED KPIs -->
+  <section class="br-section br-bg-light">
+    <div class="br-wrap">
+      <div class="br-section-head center br-reveal"><span class="br-eyebrow">What to Expect</span><h2>What Internal Medicine Organizations Can Expect From Billed Right</h2></div>
+      <div style="background:var(--navy);border-radius:var(--r-xl);padding:32px" class="br-reveal">
+        <div class="br-psy-kpi-grid">
+          <div class="br-cred-stat"><div class="br-cred-stat-num">97%</div><div class="br-cred-stat-lbl">Achieving Collections up to</div></div>
+          <div class="br-cred-stat"><div class="br-cred-stat-num">20</div><div class="br-cred-stat-lbl">Reduction in days in AR</div></div>
+          <div class="br-cred-stat"><div class="br-cred-stat-num">1%</div><div class="br-cred-stat-lbl">Error Ratio</div></div>
+          <div class="br-cred-stat"><div class="br-cred-stat-num">&lt;48 hrs</div><div class="br-cred-stat-lbl">TAT for processing a claim</div></div>
+          <div class="br-cred-stat"><div class="br-cred-stat-num">&lt;1%</div><div class="br-cred-stat-lbl">Reduce &lsquo;No Response&rsquo;</div></div>
+          <div class="br-cred-stat"><div class="br-cred-stat-num">28</div><div class="br-cred-stat-lbl">TAT for Payment</div></div>
+          <div class="br-cred-stat"><div class="br-cred-stat-num">Since 2007</div><div class="br-cred-stat-lbl">Internal Medicine Client Relationships</div></div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:16px;text-align:center">Figures reflect Billed Right's published performance data. Results vary based on client circumstances, payer mix, scope, starting performance and other factors.</p>
+    </div>
+  </section>
+
+  <!-- 15. AUTHENTIC CLIENT PROOF (testimonial only — no composite case study) -->
+  <section class="br-section-tight br-bg-light">
+    <div class="br-wrap-sm">
+      <div class="br-section-head center br-reveal"><span class="br-eyebrow">Real Client Perspective</span><h2>Authentic Internal Medicine Client Proof</h2></div>
+      <div class="br-video-testi br-reveal">
+        <div class="br-video-thumb">
+          <div class="br-yt-facade" onclick="brLoadYT(this)" style="cursor:pointer;position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:inherit" data-vid="t76DbjunEBc">
+            <img src="https://i.ytimg.com/vi/t76DbjunEBc/sddefault.jpg" alt="Dr. Shazia Nasir, Internal Medicine, Clermont FL — video testimonial for Billed Right" loading="lazy" width="640" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:.9">
+            <div class="br-play-btn" style="position:absolute"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></div>
+          </div>
+        </div>
+        <div class="br-video-content">
+          <h3>Hear From Dr. Shazia Nasir</h3>
+          <p>&ldquo;The best thing about Billed Right is that they keep educating themselves and us about whatever is changing in healthcare and all the new coding requirements.&rdquo;</p>
+          <div><strong style="display:block;color:#fff;font-weight:700;font-size:14px">Dr. Shazia Nasir</strong><span style="color:rgba(255,255,255,.6);font-size:12.5px">South Lake Medical Center &mdash; Clermont, FL</span></div>
+        </div>
+      </div>
+      <div class="br-video-testi br-reveal">
+        <div class="br-video-thumb">
+          <div class="br-yt-facade" onclick="brLoadYT(this)" style="cursor:pointer;position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:inherit" data-vid="UjtBltBRHLc">
+            <img src="https://i.ytimg.com/vi/UjtBltBRHLc/sddefault.jpg" alt="Dr. Fabio Echevarria, Internal Medicine, Clermont FL — video testimonial for Billed Right" loading="lazy" width="640" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:.9">
+            <div class="br-play-btn" style="position:absolute"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></div>
+          </div>
+        </div>
+        <div class="br-video-content">
+          <h3>Hear From Dr. Fabio Echevarria</h3>
+          <p>&ldquo;...which I have been using for seven, eight years. Very happy since the beginning. I mean, since the third day of signing the contract they have been very helpful. Big recommendation, very happy with them.&rdquo;</p>
+          <div><strong style="display:block;color:#fff;font-weight:700;font-size:14px">Dr. Fabio Echevarria</strong><span style="color:rgba(255,255,255,.6);font-size:12.5px">Internal Medicine &mdash; Clermont, FL</span></div>
+        </div>
+      </div>
+      <div class="br-testi-card br-reveal" style="text-align:center">
+        <div class="br-stars" style="display:flex;justify-content:center">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p style="font-size:16px;margin-bottom:14px">&ldquo;Billed Right has exceeded my expectations! They have taken a huge load off my office staff and my office revenue is up since hiring them. Their support staff is always very helpful and fast to respond to my questions. I would highly recommend Billed Right for any medical practice.&rdquo;</p>
+        <div class="br-testi-who" style="margin-bottom:18px">Internal Medicine Provider, FL</div>
+        <a href="/testimonials/" class="br-learn" style="justify-content:center">Read More Client Stories <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
 
   <!-- 2. WHY INTERNAL MEDICINE RCM IS FINANCIALLY DIFFERENT -->
   <section class="br-section br-bg-white">
@@ -2449,25 +2517,6 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </section>
 
-  <!-- 13. VERIFIED KPIs -->
-  <section class="br-section br-bg-light">
-    <div class="br-wrap">
-      <div class="br-section-head center br-reveal"><span class="br-eyebrow">What to Expect</span><h2>What Internal Medicine Organizations Can Expect From Billed Right</h2></div>
-      <div style="background:var(--navy);border-radius:var(--r-xl);padding:32px" class="br-reveal">
-        <div class="br-psy-kpi-grid">
-          <div class="br-cred-stat"><div class="br-cred-stat-num">97%</div><div class="br-cred-stat-lbl">Achieving Collections up to</div></div>
-          <div class="br-cred-stat"><div class="br-cred-stat-num">20</div><div class="br-cred-stat-lbl">Reduction in days in AR</div></div>
-          <div class="br-cred-stat"><div class="br-cred-stat-num">1%</div><div class="br-cred-stat-lbl">Error Ratio</div></div>
-          <div class="br-cred-stat"><div class="br-cred-stat-num">&lt;48 hrs</div><div class="br-cred-stat-lbl">TAT for processing a claim</div></div>
-          <div class="br-cred-stat"><div class="br-cred-stat-num">&lt;1%</div><div class="br-cred-stat-lbl">Reduce &lsquo;No Response&rsquo;</div></div>
-          <div class="br-cred-stat"><div class="br-cred-stat-num">28</div><div class="br-cred-stat-lbl">TAT for Payment</div></div>
-          <div class="br-cred-stat"><div class="br-cred-stat-num">Since 2007</div><div class="br-cred-stat-lbl">Internal Medicine Client Relationships</div></div>
-        </div>
-      </div>
-      <p style="font-size:13px;color:var(--text-muted);margin-top:16px;text-align:center">Figures reflect Billed Right's published performance data. Results vary based on client circumstances, payer mix, scope, starting performance and other factors.</p>
-    </div>
-  </section>
-
   <!-- 14. BUILT FOR MULTI-PROVIDER & MULTI-LOCATION ORGANIZATIONS -->
   <section class="br-section br-bg-white">
     <div class="br-wrap">
@@ -2492,49 +2541,11 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </section>
 
-  <!-- 15. AUTHENTIC CLIENT PROOF (testimonial only — no composite case study) -->
-  <section class="br-section-tight br-bg-light">
-    <div class="br-wrap-sm">
-      <div class="br-section-head center br-reveal"><span class="br-eyebrow">Real Client Perspective</span><h2>Authentic Internal Medicine Client Proof</h2></div>
-      <div class="br-video-testi br-reveal">
-        <div class="br-video-thumb">
-          <div class="br-yt-facade" onclick="brLoadYT(this)" style="cursor:pointer;position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:inherit" data-vid="t76DbjunEBc">
-            <img src="https://i.ytimg.com/vi/t76DbjunEBc/sddefault.jpg" alt="Dr. Shazia Nasir, Internal Medicine, Clermont FL — video testimonial for Billed Right" loading="lazy" width="640" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:.9">
-            <div class="br-play-btn" style="position:absolute"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></div>
-          </div>
-        </div>
-        <div class="br-video-content">
-          <h3>Hear From Dr. Shazia Nasir</h3>
-          <p>&ldquo;The best thing about Billed Right is that they keep educating themselves and us about whatever is changing in healthcare and all the new coding requirements.&rdquo;</p>
-          <div><strong style="display:block;color:#fff;font-weight:700;font-size:14px">Dr. Shazia Nasir</strong><span style="color:rgba(255,255,255,.6);font-size:12.5px">South Lake Medical Center &mdash; Clermont, FL</span></div>
-        </div>
-      </div>
-      <div class="br-video-testi br-reveal">
-        <div class="br-video-thumb">
-          <div class="br-yt-facade" onclick="brLoadYT(this)" style="cursor:pointer;position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:inherit" data-vid="UjtBltBRHLc">
-            <img src="https://i.ytimg.com/vi/UjtBltBRHLc/sddefault.jpg" alt="Dr. Fabio Echevarria, Internal Medicine, Clermont FL — video testimonial for Billed Right" loading="lazy" width="640" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:.9">
-            <div class="br-play-btn" style="position:absolute"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></div>
-          </div>
-        </div>
-        <div class="br-video-content">
-          <h3>Hear From Dr. Fabio Echevarria</h3>
-          <p>&ldquo;...which I have been using for seven, eight years. Very happy since the beginning. I mean, since the third day of signing the contract they have been very helpful. Big recommendation, very happy with them.&rdquo;</p>
-          <div><strong style="display:block;color:#fff;font-weight:700;font-size:14px">Dr. Fabio Echevarria</strong><span style="color:rgba(255,255,255,.6);font-size:12.5px">Internal Medicine &mdash; Clermont, FL</span></div>
-        </div>
-      </div>
-      <div class="br-testi-card br-reveal" style="text-align:center">
-        <div class="br-stars" style="display:flex;justify-content:center">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p style="font-size:16px;margin-bottom:14px">&ldquo;Billed Right has exceeded my expectations! They have taken a huge load off my office staff and my office revenue is up since hiring them. Their support staff is always very helpful and fast to respond to my questions. I would highly recommend Billed Right for any medical practice.&rdquo;</p>
-        <div class="br-testi-who" style="margin-bottom:18px">Internal Medicine Provider, FL</div>
-        <a href="/testimonials/" class="br-learn" style="justify-content:center">Read More Client Stories <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
-  </section>
-
   <!-- 16. RESOURCES -->
   <section class="br-section br-bg-white">
     <div class="br-wrap">
       <div class="br-section-head center br-reveal"><span class="br-eyebrow">Resources &amp; Insights</span><h2>Internal Medicine Revenue Cycle Resources</h2></div>
+      <div class="br-swipe-hint">Swipe to see more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       <div class="br-latest-grid">
         <div class="br-latest-card br-reveal" onclick="window.location='/blog/'" style="cursor:pointer"><span class="br-tool-cat">Blog</span><h3>Managed Care vs. Fee-for-Service: Why Internal Medicine Revenue Cycles Need Different Workflows</h3><p>Why a single revenue-cycle approach doesn't work when a practice is reimbursed through more than one model.</p><span class="br-learn">Read <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
         <div class="br-latest-card br-reveal br-reveal-d1" onclick="window.location='/resources/'" style="cursor:pointer"><span class="br-tool-cat">Resource</span><h3>Why Accurate Diagnosis Capture Matters in Internal Medicine Revenue Operations</h3><p>How diagnosis-capture gaps affect data visibility, and what disciplined workflows look like.</p><span class="br-learn">Get it <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
@@ -2606,7 +2617,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p style="margin:8px auto 0">Let's talk about your managed-care and fee-for-service mix, revenue-cycle challenges, reporting needs, technology environment and growth priorities.</p>
       </div>
       <div class="br-form-card br-reveal" style="max-width:480px;margin:0 auto">
-        <h3>Schedule a Revenue Cycle Assessment</h3>
+        <h3>Schedule an Executive Conversation</h3>
         <form name="internal-medicine-assessment-request" method="POST" data-netlify="true" action="/thank-you/internal-medicine/">
           <input type="hidden" name="form-name" value="internal-medicine-assessment-request">
           <input type="hidden" name="bot-field" />
@@ -2618,10 +2629,10 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="br-field"><label for="im-practice">Organization / Practice Name</label><input type="text" id="im-practice" name="practice" required autocomplete="organization"></div>
           <label style="display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--text-muted);line-height:1.5;margin-bottom:10px;cursor:pointer"><input type="checkbox" name="consent" value="yes" required style="margin-top:3px;flex-shrink:0">I agree to allow Billed Right to use the information provided to contact me. Information may be processed by authorized service providers supporting these functions, as described in our <a href="/privacy-policy/" style="color:var(--brand);text-decoration:underline">Privacy Policy</a>.</label>
           <p style="font-size:11.5px;color:var(--text-muted);line-height:1.5;margin:0 0 18px">Please do not include patient or protected health information (PHI) in this form.</p>
-          <button type="submit" class="br-btn br-btn-red br-btn-lg" style="width:100%;justify-content:center" aria-label="Submit revenue cycle assessment request">Schedule a Revenue Cycle Assessment</button>
+          <button type="submit" class="br-btn br-btn-red br-btn-lg" style="width:100%;justify-content:center" aria-label="Submit executive conversation request">Schedule an Executive Conversation</button>
         </form>
         <script>window.brWireLeadForm(document.currentScript.previousElementSibling, { formSource: "internal-medicine-assessment" });</script>
-        <p style="text-align:center;margin-top:16px;font-size:14px;color:var(--text-muted)">Prefer to talk? <a href="tel:+14072179281" style="color:var(--brand);font-weight:700">Talk to an Internal Medicine RCM Expert</a> &mdash; 407-217-9281</p>
+        <p style="text-align:center;margin-top:16px;font-size:14px;color:var(--text-muted)">Prefer to talk? <a href="tel:+14072179281" style="color:var(--brand);font-weight:700">Talk to a Solution Specialist</a> &mdash; 407-217-9281</p>
       </div>
     </div>
   </section>

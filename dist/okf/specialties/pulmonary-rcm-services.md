@@ -11,6 +11,7 @@ tags: [specialty]
 Stop losing revenue on bundled pulmonary function testing claims with Billed Right’s pulmonary billing expertise since 2006.
 
 ## On This Page
+- Results Reflected in Our KPIs
 - More on pulmonary medicine billing.
 - Ready to Strengthen Your Pulmonary Practice Revenue Cycle?
 

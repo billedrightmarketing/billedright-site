@@ -11,13 +11,13 @@ tags: [specialty]
 Gastroenterology RCM since 2006 across office, hospital, endoscopy, colonoscopy, procedures, surgery and pathology professional billing.
 
 ## On This Page
+- What Gastroenterology Leaders Should Expect From a Disciplined Revenue Cycle
+- What a Gastroenterology Client Says About Billed Right
 - Gastroenterology Experience Across the Full Professional Revenue Cycle
 - One Specialty. Multiple Revenue Paths.
 - Where GI Revenue Performance Breaks Down
 - One Accountable Revenue Cycle Across GI Services
 - Endoscopy and Colonoscopy Revenue Requires More Than Procedure Submission
 - Professional GI Billing in Hospital and Surgical-Center Settings
-- Pathology Revenue Is Part of the Gastroenterology Financial Picture
-- Revenue-Cycle Experience Beyond the Office
 
 [View live page](https://billedright.com/specialties/gastroenterology-rcm-services/)
