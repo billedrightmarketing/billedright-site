@@ -1357,7 +1357,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 .br-video-thumb {
   aspect-ratio: 16/10; background: linear-gradient(135deg,#2e3f5c,#1a2535);
   border-radius: var(--r-lg); display: flex; align-items: center; justify-content: center;
-  position: relative; z-index: 1; border: 1px solid rgba(255,255,255,.1);
+  position: relative; z-index: 1; border: 1px solid rgba(255,255,255,.1); overflow: hidden;
 }
 .br-play-btn {
   width: 62px; height: 62px; border-radius: 50%; background: var(--brand);
@@ -1648,7 +1648,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
         <div class="br-vidgrid-card">
           <div class="br-video-thumb">
             <div class="br-yt-facade" onclick="brLoadYT(this)" style="cursor:pointer;position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:inherit" data-vid="tHq0_gR3xhQ">
-              <img src="https://i.ytimg.com/vi/tHq0_gR3xhQ/sddefault.jpg" alt="Dr. Jose Prieto video testimonial for Billed Right" loading="lazy" width="640" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:.9">
+              <img src="https://i.ytimg.com/vi/tHq0_gR3xhQ/sddefault.jpg" alt="Dr. Jose Prieto video testimonial for Billed Right" width="640" height="400" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:.9">
               <div class="br-play-btn" style="position:absolute"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></div>
             </div>
           </div>
