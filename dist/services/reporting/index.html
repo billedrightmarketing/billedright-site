@@ -196,8 +196,11 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 /* ── Utilities ── */
-.br-wrap    { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
-.br-wrap-sm { max-width: 900px;  margin: 0 auto; padding: 0 28px; }
+.br-wrap    { max-width: 1240px; margin: 0 auto; padding: 0 28px; width: 100%; }
+.br-swipe-hint { display: none; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--text-muted); margin: -10px 0 16px; }
+.br-swipe-hint svg { width: 14px; height: 14px; stroke: var(--brand); stroke-width: 2.4; fill: none; animation: br-swipe-nudge 1.6s ease-in-out infinite; }
+@keyframes br-swipe-nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+.br-wrap-sm { max-width: 900px;  margin: 0 auto; padding: 0 28px; width: 100%; }
 .br-section { padding: 88px 0; }
 .br-section-tight { padding: 60px 0; }
 .br-bg-white  { background: var(--white); }
@@ -1093,7 +1096,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
    FOOTER
    ═══════════════════════════════════════════ */
 .br-footer { background: var(--navy-dark); padding: 60px 0 24px; }
-.br-footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 36px; margin-bottom: 44px; }
+.br-footer-grid { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr); gap: 36px; margin-bottom: 44px; }
 .br-footer-brand p { font-size: 14px; color: rgba(255,255,255,.5); margin-top: 14px; max-width: 340px; line-height: 1.7; }
 .br-footer-address { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.7; margin: 14px 0 20px; }
 .br-footer-subscribe h5 { font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
@@ -1521,7 +1524,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-certs-grid      { grid-template-columns: repeat(3,1fr); }
   .br-ai-wrap         { grid-template-columns: 1fr; }
   .br-cred-banner     { grid-template-columns: 1fr; gap: 28px; }
-  .br-footer-grid     { grid-template-columns: 1fr 1fr 1fr; }
+  .br-footer-grid     { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .br-testi-grid      { grid-template-columns: 1fr; }
   .br-video-section   { grid-template-columns: 1fr; }
   .br-email-cta       { grid-template-columns: 1fr; gap: 20px; }
@@ -1538,6 +1541,13 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 }
 @media (max-width: 768px) {
   .br-section { padding: 60px 0; }
+  .br-btn-lg { white-space: normal; max-width: 100%; text-align: center; }
+  .br-swipe-hint { display: inline-flex; }
+  .br-latest-grid {
+    display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; gap: 16px; padding-bottom: 8px; scrollbar-width: thin;
+  }
+  .br-latest-grid > a, .br-latest-grid > div.br-latest-card { flex: 0 0 84%; scroll-snap-align: start; }
   .br-g2,.br-g3,.br-services-grid,.br-spec-detail-grid,.br-team-grid,.br-awards-grid { grid-template-columns: 1fr; }
   .br-metric-cards,.br-love-grid { grid-template-columns: 1fr 1fr; }
   .br-spec-tiles    { grid-template-columns: repeat(3,1fr); }
@@ -1552,7 +1562,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-final-cta { padding: 40px 24px; }
   .br-cred-banner { padding: 36px 24px; }
   .br-bar-row { grid-template-columns: 1fr; gap: 8px; }
-  .br-footer-grid { grid-template-columns: 1fr 1fr; }
+  .br-footer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .br-field-row { grid-template-columns: 1fr; }
   .br-certs-grid { grid-template-columns: repeat(2,1fr); }
   .br-spec-stats { gap: 24px; }
@@ -2342,6 +2352,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="br-section br-bg-light">
     <div class="br-wrap">
       <div class="br-section-head center br-reveal"><span class="br-eyebrow">Resources &amp; Insights</span><h2>More on billing reporting.</h2></div>
+      <div class="br-swipe-hint">Swipe to see more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       <div class="br-latest-grid">
         <div class="br-latest-card br-reveal" onclick="window.location='/blog/'" style="cursor:pointer"><span class="br-tool-cat">Blog</span><h3>The 5 Medical Billing KPIs Every Practice Should Be Reviewing Every Month</h3><p>A closer look at the core metrics that reveal whether a revenue cycle is actually healthy.</p><span class="br-learn">Read <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
         <div class="br-latest-card br-reveal br-reveal-d1" onclick="window.location='/resources/'" style="cursor:pointer"><span class="br-tool-cat">Calculator</span><h3>Practice Profitability Scorecard</h3><p>Get a quick read on how your practice's billing performance stacks up against industry benchmarks.</p><span class="br-learn">Get it <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>

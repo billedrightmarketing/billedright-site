@@ -165,8 +165,8 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 /* ── Utilities ── */
-.br-wrap    { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
-.br-wrap-sm { max-width: 900px;  margin: 0 auto; padding: 0 28px; }
+.br-wrap    { max-width: 1240px; margin: 0 auto; padding: 0 28px; width: 100%; }
+.br-wrap-sm { max-width: 900px;  margin: 0 auto; padding: 0 28px; width: 100%; }
 .br-section { padding: 88px 0; }
 .br-section-tight { padding: 60px 0; }
 .br-bg-white  { background: var(--white); }
@@ -1062,7 +1062,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
    FOOTER
    ═══════════════════════════════════════════ */
 .br-footer { background: var(--navy-dark); padding: 60px 0 24px; }
-.br-footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 36px; margin-bottom: 44px; }
+.br-footer-grid { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr); gap: 36px; margin-bottom: 44px; }
 .br-footer-brand p { font-size: 14px; color: rgba(255,255,255,.5); margin-top: 14px; max-width: 340px; line-height: 1.7; }
 .br-footer-address { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.7; margin: 14px 0 20px; }
 .br-footer-subscribe h5 { font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
@@ -1490,7 +1490,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-certs-grid      { grid-template-columns: repeat(3,1fr); }
   .br-ai-wrap         { grid-template-columns: 1fr; }
   .br-cred-banner     { grid-template-columns: 1fr; gap: 28px; }
-  .br-footer-grid     { grid-template-columns: 1fr 1fr 1fr; }
+  .br-footer-grid     { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .br-testi-grid      { grid-template-columns: 1fr; }
   .br-video-section   { grid-template-columns: 1fr; }
   .br-email-cta       { grid-template-columns: 1fr; gap: 20px; }
@@ -1507,6 +1507,13 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 }
 @media (max-width: 768px) {
   .br-section { padding: 60px 0; }
+  .br-btn-lg { white-space: normal; max-width: 100%; text-align: center; }
+  .br-swipe-hint { display: inline-flex; }
+  .br-latest-grid {
+    display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; gap: 16px; padding-bottom: 8px; scrollbar-width: thin;
+  }
+  .br-latest-grid > a, .br-latest-grid > div.br-latest-card { flex: 0 0 84%; scroll-snap-align: start; }
   .br-g2,.br-g3,.br-services-grid,.br-spec-detail-grid,.br-team-grid,.br-awards-grid { grid-template-columns: 1fr; }
   .br-metric-cards,.br-love-grid { grid-template-columns: 1fr 1fr; }
   .br-spec-tiles    { grid-template-columns: repeat(3,1fr); }
@@ -1521,7 +1528,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-final-cta { padding: 40px 24px; }
   .br-cred-banner { padding: 36px 24px; }
   .br-bar-row { grid-template-columns: 1fr; gap: 8px; }
-  .br-footer-grid { grid-template-columns: 1fr 1fr; }
+  .br-footer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .br-field-row { grid-template-columns: 1fr; }
   .br-certs-grid { grid-template-columns: repeat(2,1fr); }
   .br-spec-stats { gap: 24px; }

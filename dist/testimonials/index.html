@@ -120,7 +120,7 @@ window.brLoadGTM = function() {
       "mainEntity": [
         {"@type":"Question","name":"How much can Billed Right improve my collections?","acceptedAnswer":{"@type":"Answer","text":"Billed Right clients see an average 94% lift in collections, with days in A/R reduced from 40+ to under 24 days on average."}},
         {"@type":"Question","name":"What specialties does Billed Right serve?","acceptedAnswer":{"@type":"Answer","text":"Billed Right serves 20+ medical specialties including cardiology, behavioral health, internal medicine, pain management, orthopedics, pediatrics, ophthalmology, urgent care, neurology, nephrology, and multispecialty groups."}},
-        {"@type":"Question","name":"Is Billed Right HIPAA compliant?","acceptedAnswer":{"@type":"Answer","text":"Yes. Billed Right has maintained zero data breaches in 18+ years of operation. We are HIPAA compliant and use 256-bit encryption for all data in transit and at rest."}},
+        {"@type":"Question","name":"Is Billed Right HIPAA compliant?","acceptedAnswer":{"@type":"Answer","text":"Yes. Billed Right has maintained zero data breaches in 20+ years of operation. We are HIPAA compliant and use 256-bit encryption for all data in transit and at rest."}},
         {"@type":"Question","name":"How long does it take to onboard with Billed Right?","acceptedAnswer":{"@type":"Answer","text":"Most practices are fully onboarded within 2–3 weeks, including EHR/PM system integration, payer setup, and team training."}},
         {"@type":"Question","name":"What does Billed Right charge for medical billing services?","acceptedAnswer":{"@type":"Answer","text":"Billed Right uses a transparent percentage-of-collections pricing model with no setup fees and no long-term contracts required to get started. Contact us for a quote tailored to your specialty and volume."}}
       ]
@@ -195,8 +195,8 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 /* ── Utilities ── */
-.br-wrap    { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
-.br-wrap-sm { max-width: 900px;  margin: 0 auto; padding: 0 28px; }
+.br-wrap    { max-width: 1240px; margin: 0 auto; padding: 0 28px; width: 100%; }
+.br-wrap-sm { max-width: 900px;  margin: 0 auto; padding: 0 28px; width: 100%; }
 .br-section { padding: 88px 0; }
 .br-section-tight { padding: 60px 0; }
 .br-bg-white  { background: var(--white); }
@@ -1091,7 +1091,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
    FOOTER
    ═══════════════════════════════════════════ */
 .br-footer { background: var(--navy-dark); padding: 60px 0 24px; }
-.br-footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 36px; margin-bottom: 44px; }
+.br-footer-grid { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr); gap: 36px; margin-bottom: 44px; }
 .br-footer-brand p { font-size: 14px; color: rgba(255,255,255,.5); margin-top: 14px; max-width: 340px; line-height: 1.7; }
 .br-footer-address { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.7; margin: 14px 0 20px; }
 .br-footer-subscribe h5 { font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
@@ -1522,7 +1522,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-certs-grid      { grid-template-columns: repeat(3,1fr); }
   .br-ai-wrap         { grid-template-columns: 1fr; }
   .br-cred-banner     { grid-template-columns: 1fr; gap: 28px; }
-  .br-footer-grid     { grid-template-columns: 1fr 1fr 1fr; }
+  .br-footer-grid     { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .br-testi-grid      { grid-template-columns: 1fr; }
   .br-video-section   { grid-template-columns: 1fr; }
   .br-email-cta       { grid-template-columns: 1fr; gap: 20px; }
@@ -1539,6 +1539,13 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 }
 @media (max-width: 768px) {
   .br-section { padding: 60px 0; }
+  .br-btn-lg { white-space: normal; max-width: 100%; text-align: center; }
+  .br-swipe-hint { display: inline-flex; }
+  .br-latest-grid {
+    display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; gap: 16px; padding-bottom: 8px; scrollbar-width: thin;
+  }
+  .br-latest-grid > a, .br-latest-grid > div.br-latest-card { flex: 0 0 84%; scroll-snap-align: start; }
   .br-g2,.br-g3,.br-services-grid,.br-spec-detail-grid,.br-team-grid,.br-awards-grid { grid-template-columns: 1fr; }
   .br-metric-cards,.br-love-grid { grid-template-columns: 1fr 1fr; }
   .br-spec-tiles    { grid-template-columns: repeat(3,1fr); }
@@ -1553,7 +1560,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-final-cta { padding: 40px 24px; }
   .br-cred-banner { padding: 36px 24px; }
   .br-bar-row { grid-template-columns: 1fr; gap: 8px; }
-  .br-footer-grid { grid-template-columns: 1fr 1fr; }
+  .br-footer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .br-field-row { grid-template-columns: 1fr; }
   .br-certs-grid { grid-template-columns: repeat(2,1fr); }
   .br-spec-stats { gap: 24px; }
@@ -1579,10 +1586,10 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-hero-grid { animation: none !important; }
   .br-orbit-hub, .br-ai-hub { animation: none !important; filter: none !important; }
   .br-ai-chip, .br-chip { animation-duration: 12s !important; }
-  .br-testi-masonry { columns: 1; }
+  .br-testi-masonry { columns: 1 !important; }
 }
 @media (max-width: 1024px) and (min-width: 769px) {
-  .br-testi-masonry { columns: 2; }
+  .br-testi-masonry { columns: 2 !important; }
 }
 
 /* ═══════════════════════════════════════════

@@ -1,16 +1,16 @@
 ---
 type: WebPage
 title: "Contact Us | Billed Right"
-description: "Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right. Real audit, real answers."
+description: "Schedule a discovery call with a Billed Right specialist. We'll learn about your practice and recommend the right next step, often an AR Rescue engagement or a Financial Assessment."
 resource: https://billedright.com/contact/
 tags: [company]
 ---
 
 # Contact Us | Billed Right
 
-Send us a snapshot of your billing and we'll show you where revenue is being lost and what you'd recover with Billed Right. Real audit, real answers.
+Schedule a discovery call with a Billed Right specialist. We'll learn about your practice and recommend the right next step, often an AR Rescue engagement or a Financial Assessment.
 
 ## On This Page
-- Start with an honest review of your claims.
+- Start with a real conversation, not a sales pitch.
 
 [View live page](https://billedright.com/contact/)

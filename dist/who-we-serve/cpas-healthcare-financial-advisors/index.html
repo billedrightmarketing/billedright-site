@@ -205,8 +205,11 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 /* ── Utilities ── */
-.br-wrap    { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
-.br-wrap-sm { max-width: 900px;  margin: 0 auto; padding: 0 28px; }
+.br-wrap    { max-width: 1240px; margin: 0 auto; padding: 0 28px; width: 100%; }
+.br-swipe-hint { display: none; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--text-muted); margin: -10px 0 16px; }
+.br-swipe-hint svg { width: 14px; height: 14px; stroke: var(--brand); stroke-width: 2.4; fill: none; animation: br-swipe-nudge 1.6s ease-in-out infinite; }
+@keyframes br-swipe-nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+.br-wrap-sm { max-width: 900px;  margin: 0 auto; padding: 0 28px; width: 100%; }
 .br-section { padding: 88px 0; }
 .br-section-tight { padding: 60px 0; }
 .br-bg-white  { background: var(--white); }
@@ -261,7 +264,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 
 /* Grid helpers */
 .br-g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.br-g3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.br-g3 { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
 .br-g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
 .br-g5 { display: grid; grid-template-columns: repeat(5,1fr); gap: 16px; }
 .br-g6 { display: grid; grid-template-columns: repeat(6,1fr); gap: 16px; }
@@ -1102,7 +1105,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
    FOOTER
    ═══════════════════════════════════════════ */
 .br-footer { background: var(--navy-dark); padding: 60px 0 24px; }
-.br-footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 36px; margin-bottom: 44px; }
+.br-footer-grid { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr); gap: 36px; margin-bottom: 44px; }
 .br-footer-brand p { font-size: 14px; color: rgba(255,255,255,.5); margin-top: 14px; max-width: 340px; line-height: 1.7; }
 .br-footer-address { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.7; margin: 14px 0 20px; }
 .br-footer-subscribe h5 { font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
@@ -1530,7 +1533,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-certs-grid      { grid-template-columns: repeat(3,1fr); }
   .br-ai-wrap         { grid-template-columns: 1fr; }
   .br-cred-banner     { grid-template-columns: 1fr; gap: 28px; }
-  .br-footer-grid     { grid-template-columns: 1fr 1fr 1fr; }
+  .br-footer-grid     { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .br-testi-grid      { grid-template-columns: 1fr; }
   .br-video-section   { grid-template-columns: 1fr; }
   .br-email-cta       { grid-template-columns: 1fr; gap: 20px; }
@@ -1547,6 +1550,13 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 }
 @media (max-width: 768px) {
   .br-section { padding: 60px 0; }
+  .br-btn-lg { white-space: normal; max-width: 100%; text-align: center; }
+  .br-swipe-hint { display: inline-flex; }
+  .br-latest-grid {
+    display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; gap: 16px; padding-bottom: 8px; scrollbar-width: thin;
+  }
+  .br-latest-grid > a, .br-latest-grid > div.br-latest-card { flex: 0 0 84%; scroll-snap-align: start; }
   .br-g2,.br-g3,.br-services-grid,.br-spec-detail-grid,.br-team-grid,.br-awards-grid { grid-template-columns: 1fr; }
   .br-metric-cards,.br-love-grid { grid-template-columns: 1fr 1fr; }
   .br-spec-tiles    { grid-template-columns: repeat(3,1fr); }
@@ -1561,7 +1571,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-final-cta { padding: 40px 24px; }
   .br-cred-banner { padding: 36px 24px; }
   .br-bar-row { grid-template-columns: 1fr; gap: 8px; }
-  .br-footer-grid { grid-template-columns: 1fr 1fr; }
+  .br-footer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .br-field-row { grid-template-columns: 1fr; }
   .br-certs-grid { grid-template-columns: repeat(2,1fr); }
   .br-spec-stats { gap: 24px; }
@@ -2222,7 +2232,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <p class="ph-sub">When a medical practice's financial results show declining cash flow, growing A/R, inconsistent collections or unexplained revenue leakage, the cause often begins inside the revenue cycle. Billed Right partners with CPAs and healthcare financial advisors to identify what is happening between services delivered and cash collected, improve RCM execution and provide the operational revenue data needed for better financial decisions.</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:28px">
         <a href="#cpa-assessment-form" class="br-btn br-btn-red br-btn-lg">Discuss a Client's Revenue Cycle <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="#cpa-assessment-form" class="br-btn br-btn-outline br-btn-lg">Request a Revenue Performance Assessment</a>
+        <a href="#cpa-assessment-form" class="br-btn br-btn-outline br-btn-lg">Schedule an Executive Conversation</a>
       </div>
       <p style="font-size:13.5px;color:rgba(255,255,255,.6);max-width:640px;margin:0 auto"><strong style="color:#fff">You remain the trusted financial advisor.</strong> Billed Right strengthens the revenue-cycle operation behind the numbers.</p>
     </div>
@@ -2393,7 +2403,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="br-section br-bg-light">
     <div class="br-wrap">
       <div class="br-section-head center br-reveal"><span class="br-eyebrow">Service Scope</span><h2>End-to-End Revenue Cycle Management</h2></div>
-      <div class="br-g3 br-reveal" style="grid-template-columns:repeat(3,1fr)">
+      <div class="br-g3 br-reveal">
         <div class="br-card"><h3 style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:10px">Revenue Capture</h3><p style="font-size:13.5px;color:var(--text-muted);line-height:1.6">Eligibility and insurance verification, front-end revenue-cycle workflows, claim-quality processes and charge/claim workflow within contracted scope.</p></div>
         <div class="br-card"><h3 style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:10px">Claims &amp; Payments</h3><p style="font-size:13.5px;color:var(--text-muted);line-height:1.6">Claim submission, rejection management, payment posting and reconciliation workflows within scope.</p></div>
         <div class="br-card"><h3 style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:10px">Denials &amp; A/R</h3><p style="font-size:13.5px;color:var(--text-muted);line-height:1.6">Denial management, A/R follow-up, prioritization, payer issue resolution and recurring root-cause analysis.</p></div>
@@ -2532,6 +2542,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="br-section br-bg-light">
     <div class="br-wrap">
       <div class="br-section-head center br-reveal"><span class="br-eyebrow">Resources &amp; Insights</span><h2>More on Revenue-Cycle Financial Visibility</h2></div>
+      <div class="br-swipe-hint">Swipe to see more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       <div class="br-latest-grid br-reveal">
         <div class="br-latest-card" onclick="window.location='/blog/are-your-accounts-receivables-going-in-the-wrong-direction/'" style="cursor:pointer"><span class="br-tool-cat">Blog</span><h3>Are Your Accounts Receivables Going in the Wrong Direction?</h3><p>What growing or aging A/R usually signals about the operation behind it.</p><span class="br-learn">Read <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
         <div class="br-latest-card" onclick="window.location='/blog/empowering-your-practice-the-crucial-role-of-quarterly-rcm-reviews/'" style="cursor:pointer"><span class="br-tool-cat">Blog</span><h3>The Crucial Role of Quarterly RCM Reviews</h3><p>Why a regular operational review matters for evaluating a billing operation's performance.</p><span class="br-learn">Read <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>

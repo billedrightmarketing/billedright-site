@@ -1,14 +1,14 @@
 ---
 type: WebPage
 title: "About Billed Right | Medical Billing & RCM Experts Since 2006"
-description: "In 2006, Billed Right set out to fix medical billing by listening to doctors first. Meet the leadership team and see the awards behind 18+ years of RCM experience."
+description: "In 2006, Billed Right set out to fix medical billing by listening to doctors first. Meet the leadership team and see the awards behind 20+ years of RCM experience."
 resource: https://billedright.com/about/
 tags: [company]
 ---
 
 # About Billed Right | Medical Billing & RCM Experts Since 2006
 
-In 2006, Billed Right set out to fix medical billing by listening to doctors first. Meet the leadership team and see the awards behind 18+ years of RCM experience.
+In 2006, Billed Right set out to fix medical billing by listening to doctors first. Meet the leadership team and see the awards behind 20+ years of RCM experience.
 
 ## On This Page
 - Get to Know Your Experts

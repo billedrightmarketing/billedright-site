@@ -189,8 +189,8 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 }
 
 /* ── Utilities ── */
-.br-wrap    { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
-.br-wrap-sm { max-width: 900px;  margin: 0 auto; padding: 0 28px; }
+.br-wrap    { max-width: 1240px; margin: 0 auto; padding: 0 28px; width: 100%; }
+.br-wrap-sm { max-width: 900px;  margin: 0 auto; padding: 0 28px; width: 100%; }
 .br-section { padding: 88px 0; }
 .br-section-tight { padding: 60px 0; }
 .br-bg-white  { background: var(--white); }
@@ -1126,7 +1126,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
    FOOTER
    ═══════════════════════════════════════════ */
 .br-footer { background: var(--navy-dark); padding: 60px 0 24px; }
-.br-footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 36px; margin-bottom: 44px; }
+.br-footer-grid { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr); gap: 36px; margin-bottom: 44px; }
 .br-footer-brand p { font-size: 14px; color: rgba(255,255,255,.5); margin-top: 14px; max-width: 340px; line-height: 1.7; }
 .br-footer-address { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.7; margin: 14px 0 20px; }
 .br-footer-subscribe h5 { font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
@@ -1327,6 +1327,10 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
    LATEST RESOURCES — homepage preview
    ═══════════════════════════════════════════ */
 .br-latest-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.br-latest-viewport { position: relative; }
+.br-swipe-hint { display: none; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--text-muted); margin: -22px 0 18px; }
+.br-swipe-hint svg { width: 14px; height: 14px; stroke: var(--brand); stroke-width: 2.4; fill: none; animation: br-swipe-nudge 1.6s ease-in-out infinite; }
+@keyframes br-swipe-nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
 .br-latest-card {
   background: var(--white); border: 1px solid var(--border); border-radius: var(--r-lg);
   padding: 26px; transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
@@ -1585,7 +1589,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-certs-grid      { grid-template-columns: repeat(2,1fr); }
   .br-ai-wrap         { grid-template-columns: 1fr; }
   .br-cred-banner     { grid-template-columns: 1fr; gap: 28px; }
-  .br-footer-grid     { grid-template-columns: 1fr 1fr 1fr; }
+  .br-footer-grid     { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .br-testi-grid      { grid-template-columns: 1fr; }
   .br-video-section   { grid-template-columns: 1fr; }
   .br-email-cta       { grid-template-columns: 1fr; gap: 20px; }
@@ -1602,6 +1606,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
 }
 @media (max-width: 768px) {
   .br-section { padding: 60px 0; }
+  .br-btn-lg { white-space: normal; max-width: 100%; text-align: center; }
   .br-orbit { display: none; }
   .br-g2,.br-g3,.br-services-grid,.br-spec-detail-grid,.br-team-grid,.br-awards-grid { grid-template-columns: 1fr; }
   .br-metric-cards,.br-love-grid { grid-template-columns: 1fr 1fr; }
@@ -1617,31 +1622,41 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
   .br-hero-stats { flex-direction: column; gap: 16px; }
   .br-hero-stat:not(:last-child) { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); padding-bottom: 16px; margin-bottom: 0; padding-right: 0; margin-right: 0; }
   .br-final-cta { padding: 40px 24px; }
-  .br-final-cta .br-cta-row .br-btn { width: 100%; justify-content: center; }
   .br-ai-wrap { padding: 32px 24px; }
   .br-cred-banner { padding: 36px 24px; }
   .br-leak-card { padding: 36px 24px; }
   .br-leak-card > * { min-width: 0; }
   .br-leak-content > a.br-btn { white-space: normal; width: 100%; text-align: center; justify-content: center; }
   .br-bar-row { grid-template-columns: 1fr; gap: 8px; }
-  .br-footer-grid { grid-template-columns: 1fr 1fr; }
+  .br-footer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .br-field-row { grid-template-columns: 1fr; }
   .br-certs-grid { grid-template-columns: repeat(2,1fr); }
   .br-spec-stats { gap: 24px; }
   .br-leadmag-grid,.br-tool-grid,.br-case-grid,.br-doctor-grid { grid-template-columns: 1fr; }
+  .br-swipe-hint { display: inline-flex; }
+  .br-latest-grid {
+    display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; gap: 16px; padding-bottom: 8px; scrollbar-width: thin;
+  }
+  .br-latest-grid .br-latest-card { flex: 0 0 84%; scroll-snap-align: start; }
+  .br-latest-viewport::after {
+    content: ''; position: absolute; top: 0; right: 0; bottom: 16px; width: 48px;
+    background: linear-gradient(to left, var(--white), transparent); pointer-events: none;
+  }
   .br-impl-timeline { grid-template-columns: 1fr; gap: 24px; }
   .br-impl-step::before { display: none; }
-  .br-compare-wrap { overflow-x: visible; }
-  .br-compare-table, .br-compare-table tbody, .br-compare-table tr, .br-compare-table td { display: block; width: 100%; }
+  .br-compare-wrap { overflow-x: visible; box-shadow: none; }
+  .br-compare-table, .br-compare-table tbody { display: block; width: 100%; }
   .br-compare-table thead { display: none; }
-  .br-compare-table { background: var(--white); min-width: 0; }
-  .br-compare-table tr { margin-bottom: 14px; border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; }
-  .br-compare-table tr:last-child { margin-bottom: 0; }
-  .br-compare-table td { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; font-size: 13px; border-bottom: 1px solid var(--border); border-right: none; }
-  .br-compare-table td:last-child { border-bottom: none; }
-  .br-compare-table td:first-child { background: var(--bg-light); font-weight: 700; color: var(--navy); }
-  .br-compare-table td[data-label]::before { content: attr(data-label); font-weight: 700; color: var(--text-muted); font-size: 11.5px; text-transform: uppercase; letter-spacing: .04em; }
-  .br-compare-table td.br-col-us { background: rgba(186,32,37,.06); }
+  .br-compare-table { background: var(--white); min-width: 0; border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; }
+  .br-compare-table tr { display: flex; flex-wrap: wrap; align-items: center; padding: 14px 16px 12px; border-bottom: 1px solid var(--border); }
+  .br-compare-table tr:last-child { border-bottom: none; }
+  .br-compare-table td { border: none; padding: 0; }
+  .br-compare-table td:first-child { flex: 0 0 100%; font-weight: 700; color: var(--navy); font-size: 13.5px; margin-bottom: 12px; background: none; }
+  .br-compare-table td:not(:first-child) { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 8px 2px; }
+  .br-compare-table td[data-label]::before { content: attr(data-label); font-size: 9.5px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .02em; }
+  .br-compare-table td.br-col-us { background: var(--brand-pale); border-radius: var(--r-md); font-weight: 700; color: var(--brand); font-size: 11px; }
+  .br-compare-table td.br-col-us[data-label]::before { color: var(--brand); }
   .br-search-row { flex-direction: column; }
   .br-nav-links, .br-nav-right { display: none; }
   .br-hamburger { display: flex; }
@@ -2717,7 +2732,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="br-leak-step"><span class="br-leak-step-n">2</span>Share your denial rate &amp; days in A/R</div>
             <div class="br-leak-step"><span class="br-leak-step-n">3</span>Get a directional read on revenue performance</div>
           </div>
-          <a href="/contact/" class="br-btn br-btn-red br-btn-lg">Request a Revenue Performance Assessment <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="/contact/" class="br-btn br-btn-red br-btn-lg">Schedule an Executive Conversation <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <div class="br-leak-panel">
           <span class="br-leak-time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Takes minutes, not weeks</span>
@@ -2765,11 +2780,11 @@ document.addEventListener("DOMContentLoaded", function () {
         <table class="br-compare-table">
           <thead><tr><th>What matters</th><th>In-house billing</th><th>Typical billing company</th><th class="br-col-us">Billed Right</th></tr></thead>
           <tbody>
-            <tr><td>Specialty-trained billers</td><td data-label="In-house billing"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td data-label="Typical billing company"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td class="br-col-us" data-label="Billed Right"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Yes</td></tr>
-            <tr><td>Real-time A/R visibility</td><td data-label="In-house billing"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td data-label="Typical billing company"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></td><td class="br-col-us" data-label="Billed Right"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Yes</td></tr>
-            <tr><td>Dedicated account manager (not a queue)</td><td data-label="In-house billing"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></td><td data-label="Typical billing company"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td class="br-col-us" data-label="Billed Right"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Yes</td></tr>
-            <tr><td>Credentialing handled in-house</td><td data-label="In-house billing"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td data-label="Typical billing company"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td class="br-col-us" data-label="Billed Right"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> Yes</td></tr>
-            <tr><td>Money-back guarantee</td><td data-label="In-house billing">—</td><td data-label="Typical billing company"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td class="br-col-us" data-label="Billed Right"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> 120 days</td></tr>
+            <tr><td>Specialty-trained billers</td><td data-label="In-house"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td data-label="Typical"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td class="br-col-us" data-label="Billed Right"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></td></tr>
+            <tr><td>Real-time A/R visibility</td><td data-label="In-house"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td data-label="Typical"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></td><td class="br-col-us" data-label="Billed Right"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></td></tr>
+            <tr><td>Dedicated account manager (not a queue)</td><td data-label="In-house"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></td><td data-label="Typical"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td class="br-col-us" data-label="Billed Right"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></td></tr>
+            <tr><td>Credentialing handled in-house</td><td data-label="In-house"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td data-label="Typical"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td class="br-col-us" data-label="Billed Right"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></td></tr>
+            <tr><td>Money-back guarantee</td><td data-label="In-house">—</td><td data-label="Typical"><span class="br-compare-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td class="br-col-us" data-label="Billed Right"><span class="br-compare-yes"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span> 120 days</td></tr>
           </tbody>
         </table>
       </div>
@@ -2848,10 +2863,13 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="br-reveal"><span class="br-eyebrow">Latest Resources</span><h2 id="latest-h2" style="font-size:clamp(26px,3vw,38px);color:var(--navy)">Blogs, downloads, and calculators.</h2></div>
         <a href="/resources/" class="br-btn br-btn-outline-dark">Visit resource center <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <div class="br-latest-grid">
-        <a href="/blog/mastering-denial-management-and-its-importance/" class="br-latest-card br-reveal" style="display:block"><span class="br-tool-cat">Blog</span><h3>Mastering Revenue Optimization: Delving Into Denial Management</h3><p>What denial management actually is, and strategies to recover revenue and streamline the process.</p><span class="br-learn">Read <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <a href="/case-studies/pain-management-denial-reduction/" class="br-latest-card br-reveal br-reveal-d1" style="display:block"><span class="br-tool-cat">Case Study</span><h3>Pain Management: Denial Rate Cut by Two-Thirds</h3><p>How a pain management practice brought its denial rate down and kept it there.</p><span class="br-learn">Read <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <a href="/resources/in-house-vs-outsourced-calculator/" class="br-latest-card br-reveal br-reveal-d2" style="display:block"><span class="br-tool-cat">Calculator</span><h3>In-House vs. Outsourced Calculator</h3><p>Estimate the collections lift you'd see from outsourcing your billing.</p><span class="br-learn">Try it <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <div class="br-swipe-hint">Swipe to see more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="br-latest-viewport">
+        <div class="br-latest-grid">
+          <a href="/blog/mastering-denial-management-and-its-importance/" class="br-latest-card br-reveal" style="display:block"><span class="br-tool-cat">Blog</span><h3>Mastering Revenue Optimization: Delving Into Denial Management</h3><p>What denial management actually is, and strategies to recover revenue and streamline the process.</p><span class="br-learn">Read <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          <a href="/case-studies/pain-management-denial-reduction/" class="br-latest-card br-reveal br-reveal-d1" style="display:block"><span class="br-tool-cat">Case Study</span><h3>Pain Management: Denial Rate Cut by Two-Thirds</h3><p>How a pain management practice brought its denial rate down and kept it there.</p><span class="br-learn">Read <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          <a href="/resources/in-house-vs-outsourced-calculator/" class="br-latest-card br-reveal br-reveal-d2" style="display:block"><span class="br-tool-cat">Calculator</span><h3>In-House vs. Outsourced Calculator</h3><p>Estimate the collections lift you'd see from outsourcing your billing.</p><span class="br-learn">Try it <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
       </div>
     </div>
   </section>
