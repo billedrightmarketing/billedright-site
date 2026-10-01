@@ -1096,6 +1096,139 @@
   status = 301
   force = true
 
+# ═══════════════════════════════════════════════════════════════
+# Broken internal links, 2026-10-01 audit
+# (billedright.com_internal_broken_links_20261001.csv) — old URLs
+# linked from inside our own blog post content that 404 today.
+# None of these appeared in the five legacy sitemaps audited on
+# 2026-09-29, so they were missed by the redirect map above.
+# ═══════════════════════════════════════════════════════════════
+
+# --- Blog posts not covered by the original Post_Sitemap list ---
+[[redirects]]
+  from = "/effective-burnout-strategies-for-healthcare/"
+  to = "/blog/effective-burnout-strategies-for-healthcare/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/what-is-remote-patient-monitoring/"
+  to = "/blog/what-is-remote-patient-monitoring/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/time-management-tips-for-busy-professionals/"
+  to = "/blog/time-management-tips-for-busy-professionals/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/rcm-outsourcing/"
+  to = "/blog/rcm-outsourcing/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/understanding-target-market-medical-practice/"
+  to = "/blog/understanding-target-market-medical-practice/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ai-chatbots-transforming-healthcare-practices/"
+  to = "/blog/ai-chatbots-transforming-healthcare-practices/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/amazon-launches-aws-healthscribe-ai/"
+  to = "/blog/amazon-launches-aws-healthscribe-ai/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/the-no-surprises-act-what-is-it/"
+  to = "/blog/the-no-surprises-act-what-is-it/"
+  status = 301
+  force = true
+
+# --- Generic old service/overview URLs -> closest current page ---
+[[redirects]]
+  from = "/revenue-cycle-management/"
+  to = "/services/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/medical-billing-denial-management/"
+  to = "/services/denial-management/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/medical-claims-billing-service/"
+  to = "/services/claim-submission/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/medical-insurance-billing-services/"
+  to = "/services/insurance-eligibility/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/account-receivables/"
+  to = "/services/patient-ar-collections/"
+  status = 301
+  force = true
+
+# --- Old eClinicalWorks sub-pages, now one consolidated page ---
+[[redirects]]
+  from = "/eclinicalworks-new-practice-setup/"
+  to = "/services/eclinicalworks-billing-services/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/eclinicalworks-reporting/"
+  to = "/services/eclinicalworks-billing-services/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/eclinicalworks-rcm/"
+  to = "/services/eclinicalworks-billing-services/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/eclinicalworks-setup-configuration/"
+  to = "/services/eclinicalworks-billing-services/"
+  status = 301
+  force = true
+
+# --- Old downloadable lead-magnet files (resource retired, no direct
+#     replacement file exists) -> resources hub as a graceful fallback ---
+[[redirects]]
+  from = "/wp-content/uploads/2023/09/Billed-Right-Medical-Practice-Budget.xlsx"
+  to = "/resources/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/wp-content/uploads/2023/04/5-Day-Planner.pdf"
+  to = "/resources/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/wp-content/uploads/2023/04/Kaizen-Cycle-Worksheet.pdf"
+  to = "/resources/"
+  status = 301
+  force = true
+
 # Long-lived caching for immutable static assets
 [[headers]]
   for = "/assets/*"
