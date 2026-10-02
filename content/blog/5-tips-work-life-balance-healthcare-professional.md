@@ -40,7 +40,7 @@ Additionally, a support system can offer practical assistance, such as helping w
 
 Creating a well-structured schedule is essential for doctors and healthcare staff to effectively manage their time and achieve a healthy work-life balance. With the demanding and often unpredictable nature of their profession, it becomes crucial to plan and prioritize tasks efficiently. By establishing a schedule that allows for dedicated blocks of time for work, personal commitments, and self-care, healthcare professionals can better allocate their energy and resources. This involves setting realistic expectations and avoiding overcommitment. By proactively organizing their time, doctors and healthcare staff can ensure they have adequate rest, engage in self-care activities, and spend quality time with loved ones. It also enables you optimize their productivity during work hours, minimizing the need for excessive overtime or encroachment on personal time. Creating a balanced schedule empowers healthcare professionals to maintain their well-being, enhance their efficiency, and ultimately deliver optimal care to their patients.
 
-[Master time management with time blocking. Click here to access our guide and optimize productivity, prioritize tasks, and achieve work-life balance. Click now to take control of your schedule!](https://billedright.com/time-management-tips-for-busy-professionals/)
+[Master time management with time blocking. Click here to access our guide and optimize productivity, prioritize tasks, and achieve work-life balance. Click now to take control of your schedule!](https://billedright.com/blog/time-management-tips-for-busy-professionals/)
 
 ### Investing in Relationships 👥
 

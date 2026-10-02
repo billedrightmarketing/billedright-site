@@ -81,7 +81,7 @@ Promote open conversations about time management among your team. Share tips and
 
 Invest in training sessions that focus on time management skills. Equip your staff with techniques for setting priorities, utilizing tools effectively, and handling interruptions. Providing the necessary support empowers your team to excel individually and as a cohesive unit.
 
-### [Time-Blocking 5-Day Daily Planner Worksheet – Download or Print today!](https://billedright.com/wp-content/uploads/2023/04/5-Day-Planner.pdf)
+### [Time-Blocking 5-Day Daily Planner Worksheet – Download or Print today!](https://billedright.com/resources/)
 
 ### **Conclusion**
 

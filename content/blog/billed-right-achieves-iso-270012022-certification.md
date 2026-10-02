@@ -33,6 +33,6 @@ In an industry where security and confidentiality are paramount, the ISO 27001:2
 
 As we move forward, we will continue to prioritize excellence, innovation, and the security of your data. This certification is not the end of the road but a stepping stone toward achieving even greater milestones.
 
-[Thank you for your continued trust and support. Together, we are shaping the[ future of secure and efficient Revenue Cycle Management.](https://billedright.com/revenue-cycle-management-services/)
+[Thank you for your continued trust and support. Together, we are shaping the[ future of secure and efficient Revenue Cycle Management.](https://billedright.com/services/)
 
 Stay tuned for more updates as we continue to raise the bar for service and innovation in the industry!

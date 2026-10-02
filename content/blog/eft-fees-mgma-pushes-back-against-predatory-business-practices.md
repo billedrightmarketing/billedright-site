@@ -31,6 +31,6 @@ Moving forward MGMA will continue to put pressure on the federal government to t
 
 **Who is Billed Right?**
 
-[In 2006, two business partners had a vision of creating holistic services that can help improve medical billing operations. They started by listening to doctors and building a service model around what doctors need the most. As a result, Billed Right’s [Revenue Cycle Management](https://billedright.com/revenue-cycle-management/) (RCM) model was born. The focus continues to be on solving the problem, rather than selling a product, and hence, Billed Right’s advanced RCM model revolves around personalized service in today’s corporate world, while still cutting costs and improving both patient care and practice revenue.
+[In 2006, two business partners had a vision of creating holistic services that can help improve medical billing operations. They started by listening to doctors and building a service model around what doctors need the most. As a result, Billed Right’s [Revenue Cycle Management](https://billedright.com/services/) (RCM) model was born. The focus continues to be on solving the problem, rather than selling a product, and hence, Billed Right’s advanced RCM model revolves around personalized service in today’s corporate world, while still cutting costs and improving both patient care and practice revenue.
 
 [Contact Billed Right](https://billedright.com/contact/) to learn more.

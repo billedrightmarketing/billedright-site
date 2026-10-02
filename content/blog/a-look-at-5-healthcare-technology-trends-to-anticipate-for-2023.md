@@ -21,7 +21,7 @@ Recording medical data in combination with artificial intelligence will allow an
 
 ## Remote Patient Monitoring
 
-[According to a report from MarketsAndMarkets](https://www.reportlinker.com/p05982888/Remote-Patient-Monitoring-Market-by-Product-End-User-Global-Forecast-to.html?utm_source=GNW), the global market for remote patient monitoring market is projected to reach USD 175.2 Billion by 2027 from USD 53.6 Billion in 2022. This growth in the market is both due to the decreasing cost and increased accessibility of medical wearable devices. [Remote Patient Monitoring](https://billedright.com/what-is-remote-patient-monitoring/) is a subset of telehealth that involves reporting and collection of a patient’s health data and thus the evaluation of a patient’s health.
+[According to a report from MarketsAndMarkets](https://www.reportlinker.com/p05982888/Remote-Patient-Monitoring-Market-by-Product-End-User-Global-Forecast-to.html?utm_source=GNW), the global market for remote patient monitoring market is projected to reach USD 175.2 Billion by 2027 from USD 53.6 Billion in 2022. This growth in the market is both due to the decreasing cost and increased accessibility of medical wearable devices. [Remote Patient Monitoring](https://billedright.com/blog/what-is-remote-patient-monitoring/) is a subset of telehealth that involves reporting and collection of a patient’s health data and thus the evaluation of a patient’s health.
 
 Remote Patient Monitoring gained most of its popularity through the Covid-19 pandemic amid lockdowns. However, the pandemic has steered RPM as an effective way to deliver care to patients.
 
@@ -34,7 +34,7 @@ Practices that offer RPM services can:
 
 In combination with telehealth, Remote Patient Monitoring has the potential to both increase accessibility to healthcare, and reduce costs for patients. We are also not far from integration between AI, machine learning, and RPM to automate repetitive tasks in order to give physicians more time with their patients.
 
-### [Read more about Patient Monitoring Here](https://billedright.com/what-is-remote-patient-monitoring/)
+### [Read more about Patient Monitoring Here](https://billedright.com/blog/what-is-remote-patient-monitoring/)
 
 ## Artificial Intelligence Transforming The Future Of Healthcare
 

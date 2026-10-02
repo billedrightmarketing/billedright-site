@@ -17,12 +17,12 @@ A number of the respondents shared some of the challenges and successes concerni
 
 - New billing rules were implemented that increased the number of clean claims being sent out.
 - Renewed enrollment in ACA marketplace plans reduced the number of uninsured patients, making collecting balances easier.
-- [Outsourcing all or portions of their [revenue cycle management](https://billedright.com/revenue-cycle-management/) or utilizing new AI or machine learning tools to lessen repetitive tasks.
+- [Outsourcing all or portions of their [revenue cycle management](https://billedright.com/services/) or utilizing new AI or machine learning tools to lessen repetitive tasks.
 
 As for those practices that stated their A/R had increased:
 
 - Lack of office staff to work outstanding balances or large learning curves for new employees.
-- [Some declared that they felt that payers played a role by issuing questionable [medical claim denials](https://billedright.com/medical-billing-denial-management/) and delays in reviewing appeals.
+- [Some declared that they felt that payers played a role by issuing questionable [medical claim denials](https://billedright.com/services/denial-management/) and delays in reviewing appeals.
 - [Whereas [prior authorizations](https://billedright.com/services/authorizations/) were called out as an issue for several of the practices.
 
 There are a couple of ways you can start collecting on these outstanding balances:
@@ -39,9 +39,9 @@ Your revenue cycle management is what keeps your practice doors open. Part of th
 
 **Outsourcing RCM Can Help**
 
-[A way to help eliminate this issue is to [outsource your revenue cycle management](https://billedright.com/rcm-outsourcing/), allowing them to do what they do best while you and your staff focus on your patients. By outsourcing, you put an entire team of professional billers, coders, and A/R experts to work for you without the added expense of salary, training, or staff turnover.
+[A way to help eliminate this issue is to [outsource your revenue cycle management](https://billedright.com/blog/rcm-outsourcing/), allowing them to do what they do best while you and your staff focus on your patients. By outsourcing, you put an entire team of professional billers, coders, and A/R experts to work for you without the added expense of salary, training, or staff turnover.
 
-[At [Billed Right](https://billedright.com/revenue-cycle-management-company/) we partner with you to ensure that your revenue cycle runs efficiently and effectively. With a team of AAPC certified coders and experienced billers, we are with you every step of the way. An additional benefit of outsourcing with us is that we provide reports weekly, monthly, quarterly, and annually so you know exactly what is happening and can keep track of your practice’s financial health.
+[At [Billed Right](https://billedright.com/about/) we partner with you to ensure that your revenue cycle runs efficiently and effectively. With a team of AAPC certified coders and experienced billers, we are with you every step of the way. An additional benefit of outsourcing with us is that we provide reports weekly, monthly, quarterly, and annually so you know exactly what is happening and can keep track of your practice’s financial health.
 
 We see our role as a strategic partner, not just a vendor, and work to optimize your entire revenue cycle to help you grow your practice!
 

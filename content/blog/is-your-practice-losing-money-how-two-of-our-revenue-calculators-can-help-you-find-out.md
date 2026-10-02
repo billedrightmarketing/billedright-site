@@ -29,7 +29,7 @@ These calculators are designed to give you a clear picture of where your practic
 
 Is your practice losing revenue without you knowing it? Use our ‘How Much Revenue are You Losing?’ calculator to uncover potential gaps in your billing process. Click here to find out where your money might be slipping through the cracks and take control of your revenue today.
 
-### [**[Use the Revenue Loss Calculator Now](https://billedright.com/how-much-revenue-are-you-losing-calculator/)**
+### [**[Use the Revenue Loss Calculator Now](https://billedright.com/resources/)**
 
 ### Medical Billing Outsourcing Calculator
 
@@ -48,7 +48,7 @@ Is your practice losing revenue without you knowing it? Use our ‘How Much Reve
 
 Considering outsourcing your billing but unsure if it’s the right move? Our ‘Medical Billing Outsourcing Calculator’ can help you make an informed decision. Click here to compare your current costs with the potential benefits of outsourcing and see how much your practice could save.
 
-### [**[Try the Outsourcing Calculator Today](https://billedright.com/medical-billing-calculator/)**
+### [**[Try the Outsourcing Calculator Today](https://billedright.com/resources/in-house-vs-outsourced-calculator/)**
 
 Taking control of your practice’s financial health starts with understanding where your revenue is going and how you can optimize it. By using our **“How Much Revenue are You Losing?”** Calculator, you can pinpoint inefficiencies and potential losses in your current billing process. Meanwhile, the **“Medical Billing Outsourcing Calculator”** provides a clear picture of the potential financial benefits of outsourcing your revenue cycle management.
 

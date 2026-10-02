@@ -51,7 +51,7 @@ title_image: /assets/blog/EHR-in-the-Telehealth-Era-Decoding-the-Challenges-and-
 
 The study advises healthcare providers to embrace supportive technology, like virtual scribes, and consider workflow adaptations for a seamless integration of telemedicine. Exploring solutions such as virtual waiting rooms is also recommended to enhance operational efficiency amid the rise in electronic health record (EHR) documentation tasks.
 
-[The escalating demands on physician time, as highlighted in this study, [have also spurred major technology players such as Amazon](https://billedright.com/amazon-launches-aws-healthscribe-ai/), Google, and Microsoft to explore innovative solutions, [incorporating AI-driven virtual scribes.](https://aws.amazon.com/healthscribe/) These advancements aim to streamline documentation processes, offering a potential remedy to alleviate the burden on healthcare professionals.
+[The escalating demands on physician time, as highlighted in this study, [have also spurred major technology players such as Amazon](https://billedright.com/blog/amazon-launches-aws-healthscribe-ai/), Google, and Microsoft to explore innovative solutions, [incorporating AI-driven virtual scribes.](https://aws.amazon.com/healthscribe/) These advancements aim to streamline documentation processes, offering a potential remedy to alleviate the burden on healthcare professionals.
 
 The surge in telemedicine, while offering unprecedented opportunities, requires a m0tivated approach from health systems to address the challenges outlined in this study.
 

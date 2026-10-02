@@ -41,7 +41,7 @@ Most of the time, these mistakes are completely unintentional. However, they are
 
 Having a certified billing expert on staff can be expensive and the cost to keep them up to date on guidelines and codes can be cost-prohibitive. Not to mention what happens if they go on vacation, only work part-time, or worse, leave?
 
-[Outsourcing your medical billing to the right [revenue cycle management company](https://billedright.com/revenue-cycle-management/) can help eliminate incorrect medical coding as well as save you time and money by providing a team of AAPC certified coders to review claims, documentation and keep your staff educated on changes and compliance issues.
+[Outsourcing your medical billing to the right [revenue cycle management company](https://billedright.com/services/) can help eliminate incorrect medical coding as well as save you time and money by providing a team of AAPC certified coders to review claims, documentation and keep your staff educated on changes and compliance issues.
 
 [This is where [Billed Right](https://billedright.com) can help! Since 2006 we have been partnering with physicians to help streamline their workflow, continually educate them on ongoing code changes, increase their income and decrease the time their staff spends on medical billing, denials, and account receivable collections.
 

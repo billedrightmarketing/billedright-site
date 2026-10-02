@@ -45,4 +45,4 @@ When other methods fail, request to speak with the payer’s medical director. T
 
 **How Billed Right Can Help**Managing prior authorizations takes time away from patient care. Our team helps practices **track payer-specific requirements, prepare complete documentation, and follow through on appeals**—all while reducing administrative strain on your staff.
 
-[Ready to see how outsourcing can ease your PA headaches?[Try our Medical Billing Outsourcing Calculator](https://billedright.com/medical-billing-calculator/) to estimate your time and cost savings.
+[Ready to see how outsourcing can ease your PA headaches?[Try our Medical Billing Outsourcing Calculator](https://billedright.com/resources/in-house-vs-outsourced-calculator/) to estimate your time and cost savings.

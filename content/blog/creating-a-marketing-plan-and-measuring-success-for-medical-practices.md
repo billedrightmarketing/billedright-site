@@ -7,7 +7,7 @@ meta_description: "Craft a winning medical marketing plan: Understand, strategiz
 title_image: /assets/blog/Creating-a-Marketing-Plan-and-Measuring-Success-for-Medical-Practices.webp
 ---
 
-[As we continue your journey toward optimizing your medical practice’s marketing strategy, this is the second installment of our three-part guide. In this article, we would like to dive into crafting engaging value propositions and choosing the right marketing channels based on your audience. If you have not read part one yet, [click here to learn about understanding your target market as a medical practice.](https://billedright.com/understanding-target-market-medical-practice/)
+[As we continue your journey toward optimizing your medical practice’s marketing strategy, this is the second installment of our three-part guide. In this article, we would like to dive into crafting engaging value propositions and choosing the right marketing channels based on your audience. If you have not read part one yet, [click here to learn about understanding your target market as a medical practice.](https://billedright.com/blog/understanding-target-market-medical-practice/)
 
 ### **Key Topics Covered:**
 
@@ -49,9 +49,9 @@ Your objectives should align with your overall practice goals, whether increasin
 
 **Budget Allocation** Budget allocation is the financial roadmap of your marketing strategy. It’s about deciding how to allocate resources effectively across various marketing initiatives. Balancing your budget ensures that you’re getting the most out of your marketing investments while avoiding overspending.
 
-[](https://billedright.com/wp-content/uploads/2023/09/Billed-Right-Medical-Practice-Budget.xlsx)
+[](https://billedright.com/resources/)
 
-[**[Click on the image above to access our handy Marketing Budget Expenses Tracker and streamline your financial planning for a successful medical practice marketing strategy.](https://billedright.com/wp-content/uploads/2023/09/Billed-Right-Medical-Practice-Budget.xlsx)**
+[**[Click on the image above to access our handy Marketing Budget Expenses Tracker and streamline your financial planning for a successful medical practice marketing strategy.](https://billedright.com/resources/)**
 
 **Content Creation and Distribution** Content is the heart of your marketing efforts. It involves creating informative and engaging materials that resonate with your target audience. Content can take various forms, including blog posts, videos, infographics, and social media posts. Distribution is equally crucial – it’s about getting your content in front of the right audience through the chosen channels.
 

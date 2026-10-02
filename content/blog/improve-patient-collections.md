@@ -23,7 +23,7 @@ It is more important than ever for practices to stay abreast of patient billings
 
 The best option in managing you’re A/R is to collect as much as possible from a patient at the time of service. Here are some tips on how:
 
-- [**Eligibility**](https://billedright.com/medical-insurance-billing-services/) – contact the patient’s primary and secondary insurer (payer) to get exact information on deductibles and co-pay amounts due at the time of service for the type of service and collect upfront
+- [**Eligibility**](https://billedright.com/services/insurance-eligibility/) – contact the patient’s primary and secondary insurer (payer) to get exact information on deductibles and co-pay amounts due at the time of service for the type of service and collect upfront
 - **Fee Schedule **– have a fee schedule available for the front desk, so they know how much the patient portion will be if they have not met their deductible
 - **Train staff** – ensure your staff knows how to approach and discuss the patient’s financial responsibility either for that specific visit or for any outstanding balance when they are at the office
 - **Strict payment policy** – have a policy that is tailored to having patients pay full responsibility for the visit as well as some payment from the previous balance before providing any additional service
@@ -44,8 +44,8 @@ The goal is to collect more patient payments with less delay. While you are in t
 
 ### **Get Help with Patient Collections**
 
-[If you are struggling with efficiently collecting patient balances, an [outsourced medical billing company](https://billedright.com/rcm-outsourcing/) can help!
+[If you are struggling with efficiently collecting patient balances, an [outsourced medical billing company](https://billedright.com/blog/rcm-outsourcing/) can help!
 
-[At Billed Right, our team of medical billing professionals can help increase your revenue while lowering your costs. We are experts in [revenue cycle management](https://billedright.com/revenue-cycle-management/) and work directly with your staff and PMS to ensure your practice is collecting the most revenue possible. We offer help with eligibility verification, [account receivable](https://billedright.com/account-receivables/) follow-up, patient collections, and much more!
+[At Billed Right, our team of medical billing professionals can help increase your revenue while lowering your costs. We are experts in [revenue cycle management](https://billedright.com/services/) and work directly with your staff and PMS to ensure your practice is collecting the most revenue possible. We offer help with eligibility verification, [account receivable](https://billedright.com/services/patient-ar-collections/) follow-up, patient collections, and much more!
 
 [**Contact Billed Right today**](https://billedright.com/contact/) to see how we can help you increase your revenue!
