@@ -28,7 +28,7 @@ In this guide, we’ll cover everything you need to know about medical billing, 
 
 ### **What is Medical Billing?**
 
-[Medical billing is the process of translating healthcare services into claims to receive payment from insurance companies and patients. It involves verifying insurance, submitting claims, handling denials, and ensuring providers get paid accurately and on time. A well-managed billing process keeps a practice financially healthy, [**reduces revenue loss**](https://billedright.com/9-medical-billing-kpis-for-success-within-your-healthcare-practice/), and allows doctors to focus on patient care instead of administrative tasks.
+[Medical billing is the process of translating healthcare services into claims to receive payment from insurance companies and patients. It involves verifying insurance, submitting claims, handling denials, and ensuring providers get paid accurately and on time. A well-managed billing process keeps a practice financially healthy, [**reduces revenue loss**](https://billedright.com/blog/9-medical-billing-kpis-for-success-within-your-healthcare-practice/), and allows doctors to focus on patient care instead of administrative tasks.
 
 ### **Why is Medical Billing Important?**
 
@@ -36,11 +36,11 @@ As a physician, your number one priority is on patient care. Without efficient m
 
 **1. Medical billing ensures you get paid accurately and on time:**
 
-[**Medical billing companies**](https://billedright.com/why-billed-right) verify insurance details, submit claims correctly, and follow up on outstanding payments. Without proper billing, services that you provided may go unpaid, directly impacting your revenue.****
+[**Medical billing companies**](https://billedright.com/why-billed-right/) verify insurance details, submit claims correctly, and follow up on outstanding payments. Without proper billing, services that you provided may go unpaid, directly impacting your revenue.****
 
 **2. Reduces Claim Denials and Payment Delays**
 
-[**Billing experts**](https://benefits-of-medical-billing-services-in-billed-right) work daily with insurance providers to ensure claims meet the payers requirements. They handle denials, appeal when necessary, and track unpaid claims, preventing revenue loss.
+[**Billing experts**](https://billedright.com/resources/in-house-vs-outsourced-calculator/) work daily with insurance providers to ensure claims meet the payers requirements. They handle denials, appeal when necessary, and track unpaid claims, preventing revenue loss.
 
 **3. Enhances Patient Experience**
 

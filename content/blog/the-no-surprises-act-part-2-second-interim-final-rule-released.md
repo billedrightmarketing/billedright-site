@@ -9,7 +9,7 @@ title_image: /assets/blog/107751454_s.jpg
 
 **Background**
 
-[In part one, we discussed exactly what the “[No Surprises Act](https://billedright.com/the-no-surprises-act-what-is-it/)” (NSA) is. Passed as part of the Consolidation Appropriations Act of 2021 in December of 2020, the NSA is aimed at eliminating large unexpected or surprise medical bills. Those bills usually come from one of three sources – 1) an emergency where a patient was unable to utilize an in-network facility or 2) was able to get to an in-network emergency facility however one of the attending practitioners was out-of-network or 3) an out-of-network air ambulance. Any one of these situations can result in what is called “balance billing” or billing for the remainder of what the insurance company didn’t cover. These bills can be large and come as a surprise to the patient. The end result of NSA is that patients will only have to pay the cost-sharing portion they would normally have paid if the provider would have been in-network.
+[In part one, we discussed exactly what the “[No Surprises Act](https://billedright.com/blog/the-no-surprises-act-what-is-it/)” (NSA) is. Passed as part of the Consolidation Appropriations Act of 2021 in December of 2020, the NSA is aimed at eliminating large unexpected or surprise medical bills. Those bills usually come from one of three sources – 1) an emergency where a patient was unable to utilize an in-network facility or 2) was able to get to an in-network emergency facility however one of the attending practitioners was out-of-network or 3) an out-of-network air ambulance. Any one of these situations can result in what is called “balance billing” or billing for the remainder of what the insurance company didn’t cover. These bills can be large and come as a surprise to the patient. The end result of NSA is that patients will only have to pay the cost-sharing portion they would normally have paid if the provider would have been in-network.
 
 ** ****No Surprise Act Interim Final Rule II**
 
@@ -55,7 +55,7 @@ Although health plans have directories of in-network providers, sometimes the in
 
 **What Does This Mean for Revenue Cycle Management?**
 
-[In addition to protecting patients against surprise billing, on the other side, this law will especially affect [revenue cycle management](https://billedright.com/revenue-cycle-management/) leaders. They will need to be prepared for these changes by:
+[In addition to protecting patients against surprise billing, on the other side, this law will especially affect [revenue cycle management](https://billedright.com/services/) leaders. They will need to be prepared for these changes by:
 
 - establishing processes to provide good faith estimates promptly
 - stop balance billing
@@ -71,6 +71,6 @@ ________________________________________________________________________________
 
 **Who is Billed Right?**
 
-[In 2006, two business partners had a vision of creating holistic services that can help improve medical billing operations. They started by listening to doctors and building a service model around what doctors need the most. As a result, Billed Right’s [Revenue Cycle Management](https://billedright.com/revenue-cycle-management/) (RCM) model was born. The focus continues to be on solving the problem, rather than selling a product, and hence, Billed Right’s advanced RCM model revolves around personalized service in today’s corporate world, while still cutting costs and improving both patient care and practice revenue. No matter what challenges physicians face, we never waiver from our goal to be a partner in strategy to promote practice growth.
+[In 2006, two business partners had a vision of creating holistic services that can help improve medical billing operations. They started by listening to doctors and building a service model around what doctors need the most. As a result, Billed Right’s [Revenue Cycle Management](https://billedright.com/services/) (RCM) model was born. The focus continues to be on solving the problem, rather than selling a product, and hence, Billed Right’s advanced RCM model revolves around personalized service in today’s corporate world, while still cutting costs and improving both patient care and practice revenue. No matter what challenges physicians face, we never waiver from our goal to be a partner in strategy to promote practice growth.
 
 [Contact Billed Right](https://billedright.com/contact/) to learn more.

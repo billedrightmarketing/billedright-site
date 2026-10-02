@@ -55,7 +55,7 @@ Making real changes in the number of denials will require re-thinking the entire
 
 ### **Get Help Reducing Denials**
 
-[Most physician’s office staff is already stretched thin, why add to the workload with the administrative task of dealing with denials? By outsourcing your [revenue cycle management](https://billedright.com/revenue-cycle-management/) you can increase the number of clean medical claims being submitted with less stress on your staff. Wouldn’t it be great to have up to 99% of your claims paid the first time?
+[Most physician’s office staff is already stretched thin, why add to the workload with the administrative task of dealing with denials? By outsourcing your [revenue cycle management](https://billedright.com/resources/) you can increase the number of clean medical claims being submitted with less stress on your staff. Wouldn’t it be great to have up to 99% of your claims paid the first time?
 
 [At [Billed Right](https://billedright.com/) we have highly trained AAPC Certified Coders and a HIPAA compliant team who can ensure a majority of your claims get submitted clean the first time, increasing your revenue and decreasing the time, money, and energy spent on denials.
 

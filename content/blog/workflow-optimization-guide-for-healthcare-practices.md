@@ -53,9 +53,9 @@ Below are the seven steps in the Kaizen Cycle that we would like to outline for 
 
 To help you implement the Kaizen process optimization technique in your healthcare practice, we’ve created a worksheet that you can use to track your progress. Click on the link below to download the worksheet for free and start optimizing your workflow today!
 
-[](https://billedright.com/wp-content/uploads/2023/04/Kaizen-Cycle-Worksheet.pdf)
+[](https://billedright.com/resources/)
 
-### [Kaizen Cycle Worksheet – Download or Print today!](https://billedright.com/wp-content/uploads/2023/04/Kaizen-Cycle-Worksheet.pdf)
+### [Kaizen Cycle Worksheet – Download or Print today!](https://billedright.com/resources/)
 
 ### IV. Implementing Workflow Optimization
 

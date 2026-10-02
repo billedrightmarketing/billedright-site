@@ -127,7 +127,7 @@ Understanding and navigating these regulations is key to a successful appeal. Ig
 
 ### **Conclusion**
 
-[In wrapping it up, if the maze of medical billing appeals feels overwhelming, remember you’re not alone. Billed Right’s [full suite of RCM services](https://billedright.com/revenue-cycle-management/) are here to assist you every step of the way. Our team is equipped to navigate the complexities, ensuring your appeals are strong and stress-free. If you’d like a helping hand, reach out to us [here](https://billedright.com/contact/). Let’s turn those billing challenges into victories together!
+[In wrapping it up, if the maze of medical billing appeals feels overwhelming, remember you’re not alone. Billed Right’s [full suite of RCM services](https://billedright.com/services/) are here to assist you every step of the way. Our team is equipped to navigate the complexities, ensuring your appeals are strong and stress-free. If you’d like a helping hand, reach out to us [here](https://billedright.com/contact/). Let’s turn those billing challenges into victories together!
 
 **Who is Billed Right?**
 

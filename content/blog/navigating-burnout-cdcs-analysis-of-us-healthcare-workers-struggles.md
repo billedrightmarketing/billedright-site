@@ -86,7 +86,7 @@ Understanding the profound implications of workplace harassment on mental health
 
 **Optimize Workload Management:**
 
-- [**Tip:** [Assess and optimize workload expectations for health workers.](https://billedright.com/effective-burnout-strategies-for-healthcare/)
+- [**Tip:** [Assess and optimize workload expectations for health workers.](https://billedright.com/blog/effective-burnout-strategies-for-healthcare/)
 - **Preventive Measure:** Implement realistic workload assessments and ensure health workers have sufficient time to complete their tasks, reducing the risk of burnout.
 
 **Cultivate a Positive Work Environment:**

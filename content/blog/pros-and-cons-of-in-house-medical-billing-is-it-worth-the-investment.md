@@ -94,11 +94,11 @@ Deciding between in-house billing and outsourcing depends on your practice’s s
 - **Growing Practices** As practices expand, outsourcing offers scalability without the complexities of managing additional staff and maintaining compliance. This option supports growth while reducing the administrative burden.
 - **Practices with Complex Billing Needs** Practices facing intricate billing challenges or dealing with high claim denial rates can benefit from the expertise of external billing professionals. Outsourcing provides access to specialized knowledge and technology that can optimize revenue and reduce errors.
 
-### [**Interactive Tool: [Use Our Medical Billing Calculator](https://billedright.com/medical-billing-calculator/)**
+### [**Interactive Tool: [Use Our Medical Billing Calculator](https://billedright.com/resources/in-house-vs-outsourced-calculator/)**
 
-[](https://billedright.com/medical-billing-calculator/)
+[](https://billedright.com/resources/in-house-vs-outsourced-calculator/)
 
-[To better understand which billing model suits your practice, use our **‘[How Much Revenue Are You Losing?](https://billedright.com/how-much-revenue-are-you-losing-calculator/)’ or ‘[Medical Billing Outsourcing](https://billedright.com/medical-billing-calculator/)‘** calculator. This toolwill help you compare potential costs and savings between in-billing within your practice and outsourcing, offering a personalized insight into the best option for your financial and operational goals.
+[To better understand which billing model suits your practice, use our **‘[How Much Revenue Are You Losing?](https://billedright.com/resources/)’ or ‘[Medical Billing Outsourcing](https://billedright.com/resources/in-house-vs-outsourced-calculator/)‘** calculator. This toolwill help you compare potential costs and savings between in-billing within your practice and outsourcing, offering a personalized insight into the best option for your financial and operational goals.
 
 ### **Conclusion**
 
@@ -106,6 +106,6 @@ In-house billing and outsourcing each offer unique benefits and challenges. In-h
 
 Assess which option aligns best with your practice’s needs by considering factors like control, billing complexity, and resource availability.
 
-[For a detailed comparison, use our [**Medical Billing Outsourcing Calculator**.](https://billedright.com/medical-billing-calculator/) This tool helps you evaluate the financial impact and benefits of outsourcing versus billing within your practice, guiding you toward the most effective solution for your practice.
+[For a detailed comparison, use our [**Medical Billing Outsourcing Calculator**.](https://billedright.com/resources/in-house-vs-outsourced-calculator/) This tool helps you evaluate the financial impact and benefits of outsourcing versus billing within your practice, guiding you toward the most effective solution for your practice.
 
 Explore the potential of outsourcing as a cost-effective, scalable option to enhance your billing operations and improve revenue management.

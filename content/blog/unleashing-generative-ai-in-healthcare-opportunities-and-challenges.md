@@ -7,7 +7,7 @@ meta_description: Explore how a leading Medical Billing Company in Florida lever
 title_image: /assets/blog/Unleashing-Generative-AI-in-Healthcare-Opportunities-and-ChallengesUnleashing-G.webp
 ---
 
-[A couple of weeks back, we shared some news about what the folks at Amazon’s AWS were launching in their [goal to combine generative artificial intelligence and the healthcare industry.](https://billedright.com/amazon-launches-aws-healthscribe-ai/) Today, we at Billed Right would like to dive deeper into the segment of generative AI that will inevitably be a part of your professional career in the foreseeable future.
+[A couple of weeks back, we shared some news about what the folks at Amazon’s AWS were launching in their [goal to combine generative artificial intelligence and the healthcare industry.](https://billedright.com/blog/amazon-launches-aws-healthscribe-ai/) Today, we at Billed Right would like to dive deeper into the segment of generative AI that will inevitably be a part of your professional career in the foreseeable future.
 
 In healthcare, the emergence of generative artificial intelligence (AI) holds profound implications. Generative AI, encompassing the creation of content by machines, has the power to reshape the landscape of medical practices. This could mean big things for doctors and patients alike as AI steps in to help out and improve medical care. But there’s a catch – the ethical concerns around this tech are real and need to be talked about too.
 

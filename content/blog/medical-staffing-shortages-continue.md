@@ -34,7 +34,7 @@ One of the biggest opportunities to shore up your workforce, streamline workflow
 
 - Accounting
 - Payroll
-- [Medical billing](https://billedright.com/revenue-cycle-management-company/)
+- [Medical billing](https://billedright.com/services/patient-ar-collections/)
 - [Credentialling](https://billedright.com/services/credentialing/)
 - And more
 

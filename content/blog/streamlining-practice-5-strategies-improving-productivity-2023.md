@@ -13,7 +13,7 @@ As healthcare professionals, it’s important to maintain a high level of produc
 
 As a doctor, you’re likely always looking for methods to boost efficiency within your practice. Telemedicine is one technique that can be especially useful in this area. Telemedicine is the use of technology such as videoconferencing and electronic communication to offer medical care remotely. This can be a useful tool for enhancing your productivity because it eliminates the need for in-person visits, allowing you to see more patients in person or via telemedicine. Furthermore, because you may visit patients from the comfort of your own office or even remotely, telemedicine can help you save time on travel. Overall, telemedicine can be a powerful tool for increasing productivity within your practice, allowing you to provide high-quality care to a larger number of patients in a more efficient and cost-effective manner.
 
-[**[Read more about Telemedicine Here](https://billedright.com/what-is-telehealth-vs-telemedicine/)**
+[**[Read more about Telemedicine Here](https://billedright.com/blog/what-is-telehealth-vs-telemedicine/)**
 
 ## **Streamlining Tasks with Automation Technologies**
 

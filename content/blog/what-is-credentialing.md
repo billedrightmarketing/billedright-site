@@ -58,7 +58,7 @@ Although your practice’s main priority is treating patients, going through the
 
 ### **How We Can Help?**
 
-[Billed Right is a [revenue cycle management company](https://billedright.com/revenue-cycle-management/) that also offers additional virtual back-office services, such as credentialing, to be able to provide practitioners with multiple ways to help streamline their workflow, increase their revenue and grow their business. We see our role as a partner, not just a vendor, and work to help all facets of practice management, not just Revenue Cycle Management.
+[Billed Right is a [revenue cycle management company](https://billedright.com/services/) that also offers additional virtual back-office services, such as credentialing, to be able to provide practitioners with multiple ways to help streamline their workflow, increase their revenue and grow their business. We see our role as a partner, not just a vendor, and work to help all facets of practice management, not just Revenue Cycle Management.
 
 As your credentialing partner here is what you can expect:
 

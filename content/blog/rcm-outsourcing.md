@@ -47,7 +47,7 @@ A big advantage to having an RCM is reporting. They provide an analysis of accou
 
 ### **Choosing the Right RCM Company**
 
-[As you can see by the above list, revenue cycle management is about more than just medical billing. An outsourced [RCM company](https://billedright.com/revenue-cycle-management/) should become a strategic partner and help you grow your practice.
+[As you can see by the above list, revenue cycle management is about more than just medical billing. An outsourced [RCM company](https://billedright.com/resources/) should become a strategic partner and help you grow your practice.
 
 [**Billed Right**](https://billedright.com/) has been partnering with physicians for over 15 years. Our dedicated and knowledgeable team works hard to ensure that claims are clean and go through the first time, works any denials in a timely fashion, and collects outstanding account receivables to ensure you are receiving the most money for your services.
 

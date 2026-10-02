@@ -37,9 +37,9 @@ Read more on using technology to streamline tasks within your practice here!
 
 **Tip #3: Use Time-Blocking⌛**
 
-[As discussed earlier, time blocking can be a powerful tool for medical professionals. Schedule dedicated blocks of time for specific tasks and activities, and stick to the schedule as much as possible. Take control of your time and increase productivity with our free time blocking worksheet. Download or print it now to get started![](https://billedright.com/wp-content/uploads/2023/04/5-Day-Planner.pdf)
+[As discussed earlier, time blocking can be a powerful tool for medical professionals. Schedule dedicated blocks of time for specific tasks and activities, and stick to the schedule as much as possible. Take control of your time and increase productivity with our free time blocking worksheet. Download or print it now to get started![](https://billedright.com/resources/)
 
-### [Time-Blocking 5-Day Daily Planner Worksheet – Download or Print today!](https://billedright.com/wp-content/uploads/2023/04/5-Day-Planner.pdf)
+### [Time-Blocking 5-Day Daily Planner Worksheet – Download or Print today!](https://billedright.com/resources/)
 
 **Tip #4: Automate Repetitive Tasks 🤖**
 

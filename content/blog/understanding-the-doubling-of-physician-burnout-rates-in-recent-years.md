@@ -9,7 +9,7 @@ title_image: /assets/blog/Understanding-the-Doubling-of-Physician-Burnout-Rates-
 
 [A study done by researchers at _[JAMA Network Open](https://jamanetwork.com/journals/jamanetworkopen)_ asked 1373 physicians over three different survey periods (2017, 2019, 2021) and found significantly higher burnout rates year after year. Specifically, higher burnout rates in groups of female physicians compared to male counterparts and primary care physicians compared to providers in other specialties.
 
-[Medical workplace burnout](https://billedright.com/effective-burnout-strategies-for-healthcare/) is a debilitating state of emotional, physical, and mental exhaustion resulting from prolonged stress that was significantly heightened during the pandemic, impacting both physicians and patient care.
+[Medical workplace burnout](https://billedright.com/blog/effective-burnout-strategies-for-healthcare/) is a debilitating state of emotional, physical, and mental exhaustion resulting from prolonged stress that was significantly heightened during the pandemic, impacting both physicians and patient care.
 
 Some factors correlated to increased levels of physician burnout include time excessively spent on administrative tasks, working in primary care, and lower compensation for their industry.
 
