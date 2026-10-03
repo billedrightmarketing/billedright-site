@@ -1,5 +1,5 @@
 ---
-title: How to streamline Billing and Boost Revenue
+title: How to Streamline Medical Billing and Boost Revenue
 author: Billed Right
 date: 2025-05-14
 category: Healthcare Billing

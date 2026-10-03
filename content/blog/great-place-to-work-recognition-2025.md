@@ -3,7 +3,7 @@ title: "Celebrating a Culture of Excellence: Billed Right Earns Great Place to W
 author: Billed Right
 date: 2025-08-26
 category: Billed Right News
-meta_description: Looking for a medical billing company? Billed Right offers a solution, not just a service, along with a 120-day money-back guarantee.
+meta_description: Billed Right earns Great Place to Work® Certification for the second consecutive year, recognizing its commitment to employee growth, trust, and culture.
 title_image: /assets/blog/Billed-Right-Earns-Great-Place-to-Work-Certification-for-the-Second-Year-in-a-RowEmpower-Your.jpg
 ---
 

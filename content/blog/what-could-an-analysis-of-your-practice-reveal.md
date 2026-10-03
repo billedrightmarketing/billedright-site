@@ -3,7 +3,7 @@ title: What could an analysis of your practice reveal?
 author: Billed Right
 date: 2020-01-20
 category: Healthcare
-meta_description: Looking for a medical billing company? Billed Right offers a solution, not just a service, along with a 120-day money-back guarantee.
+meta_description: Discover how a SWOT analysis can help medical practices identify strengths, weaknesses, opportunities, and threats to improve planning and business growth.
 title_image: /assets/blog/practice-reveal.jpg
 ---
 

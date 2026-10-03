@@ -3,7 +3,7 @@ title: Billed Right at the 42nd Annual AOA Convention — A Weekend of Connectio
 author: Billed Right
 date: 2025-08-12
 category: Billed Right News
-meta_description: Looking for a medical billing company? Billed Right offers a solution, not just a service, along with a 120-day money-back guarantee.
+meta_description: Billed Right shares insights from the 42nd Annual AOA Convention, connecting with physicians and practice leaders on reimbursement, A/R, and revenue growth.
 title_image: /assets/blog/Billed-Right-at-the-42nd-Annual-AOA-ConventionEmpower-Your.jpg
 ---
 

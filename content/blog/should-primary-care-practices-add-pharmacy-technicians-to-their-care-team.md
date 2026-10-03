@@ -3,7 +3,7 @@ title: Should Primary Care Practices Add Pharmacy Technicians to Their Care Team
 author: Billed Right
 date: 2025-11-05
 category: Medical Practice Management
-meta_description: Looking for a medical billing company? Billed Right offers a solution, not just a service, along with a 120-day money-back guarantee.
+meta_description: Explore how pharmacy technicians can reduce medication-related workload, streamline prior authorizations, improve workflows, and give primary care teams more time.
 title_image: /assets/blog/Should-Primary-Care-Practices-Add-Pharmacy-Technicians-to-Their-Care-TeamEmpower-Your.jpg
 ---
 

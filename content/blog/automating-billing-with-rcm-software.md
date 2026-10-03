@@ -1,5 +1,5 @@
 ---
-title: How to Streamline Billing and Boost Revenue
+title: RCM Software Automation: How to Streamline Billing
 author: Billed Right
 date: 2025-05-14
 category: Healthcare Billing
