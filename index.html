@@ -43,39 +43,80 @@
       "@type": "Organization",
       "@id": "https://billedright.com/#organization",
       "name": "Billed Right",
-      "url": "https://billedright.com",
-      "logo": {"@type":"ImageObject","url":"https://billedright.com/logo.png"},
+      "url": "https://billedright.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://billedright.com/logo.png"
+      },
       "foundingDate": "2006",
       "description": "End-to-end revenue cycle management, medical billing, credentialing, and denial management for healthcare practices since 2006.",
-      "address": {"@type":"PostalAddress","addressLocality":"Orlando","addressRegion":"FL","addressCountry":"US"},
-      "contactPoint": {"@type":"ContactPoint","telephone":"+1-407-217-9281","email":"hello@billedright.com","contactType":"customer service","areaServed":"US"},
-      "sameAs": ["https://www.linkedin.com/company/billedright","https://www.facebook.com/billedright"]
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "256 Rangeline Road",
+        "addressLocality": "Longwood",
+        "addressRegion": "FL",
+        "postalCode": "32750",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-407-217-9281",
+        "email": "hello@billedright.com",
+        "contactType": "customer service",
+        "areaServed": "US"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/billedright",
+        "https://www.facebook.com/billedright"
+      ]
     },
     {
       "@type": "MedicalBusiness",
       "@id": "https://billedright.com/#medicalbusiness",
       "name": "Billed Right Medical Billing Services",
-      "url": "https://billedright.com",
+      "url": "https://billedright.com/",
       "telephone": "+1-407-217-9281",
       "email": "hello@billedright.com",
-      "address": {"@type":"PostalAddress","addressLocality":"Orlando","addressRegion":"FL","addressCountry":"US"},
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "256 Rangeline Road",
+        "addressLocality": "Longwood",
+        "addressRegion": "FL",
+        "postalCode": "32750",
+        "addressCountry": "US"
+      },
       "openingHours": "Mo-Fr 08:00-18:00",
       "priceRange": "$$",
       "areaServed": "US",
-      "medicalSpecialty": ["Cardiology","InternalMedicine","Psychiatry","Orthopedic","Pediatric"]
+      "medicalSpecialty": [
+        "Cardiology",
+        "InternalMedicine",
+        "Psychiatry",
+        "Orthopedic",
+        "Pediatric"
+      ]
     },
     {
       "@type": "WebSite",
       "@id": "https://billedright.com/#website",
-      "url": "https://billedright.com",
+      "url": "https://billedright.com/",
       "name": "Billed Right",
-      "publisher": {"@id": "https://billedright.com/#organization"},
-      "potentialAction": {"@type":"SearchAction","target":"https://billedright.com/?s={search_term_string}","query-input":"required name=search_term_string"}
+      "publisher": {
+        "@id": "https://billedright.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://billedright.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     },
     {
       "@type": "Service",
+      "@id": "https://billedright.com/#rcm-service",
       "name": "Revenue Cycle Management Services",
-      "provider": {"@id": "https://billedright.com/#organization"},
+      "provider": {
+        "@id": "https://billedright.com/#organization"
+      },
       "areaServed": "US",
       "serviceType": "Medical Billing and Revenue Cycle Management",
       "description": "Credentialing, medical billing, denial management, A/R follow-up, charge posting, coding & audits, eligibility verification, and reporting for healthcare practices.",
@@ -83,22 +124,88 @@
         "@type": "OfferCatalog",
         "name": "RCM Services",
         "itemListElement": [
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Medical Billing"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Provider Credentialing"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Denial Management"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"A/R Follow-up"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Insurance Eligibility Verification"}}
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Medical Billing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Provider Credentialing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Denial Management"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "A/R Follow-up"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Insurance Eligibility Verification"
+            }
+          }
         ]
       }
     },
     {
       "@type": "FAQPage",
+      "@id": "https://billedright.com/#faq",
       "mainEntity": [
-        {"@type":"Question","name":"How much can Billed Right improve my collections?","acceptedAnswer":{"@type":"Answer","text":"Billed Right clients see an average 94% lift in collections, with days in A/R reduced from 40+ to under 24 days on average."}},
-        {"@type":"Question","name":"What specialties does Billed Right serve?","acceptedAnswer":{"@type":"Answer","text":"Billed Right serves 20+ medical specialties including cardiology, behavioral health, internal medicine, pain management, orthopedics, pediatrics, ophthalmology, urgent care, neurology, nephrology, and multispecialty groups."}},
-        {"@type":"Question","name":"Is Billed Right HIPAA compliant?","acceptedAnswer":{"@type":"Answer","text":"Yes. Billed Right has maintained zero data breaches in 18+ years of operation. We are HIPAA compliant, SOC 2 aligned, and use 256-bit encryption for all data in transit and at rest."}},
-        {"@type":"Question","name":"How long does it take to onboard with Billed Right?","acceptedAnswer":{"@type":"Answer","text":"Most practices are fully onboarded within 2–3 weeks, including EHR/PM system integration, payer setup, and team training."}},
-        {"@type":"Question","name":"What does Billed Right charge for medical billing services?","acceptedAnswer":{"@type":"Answer","text":"Billed Right uses a transparent percentage-of-collections pricing model with no setup fees and no long-term contracts required to get started. Contact us for a quote tailored to your specialty and volume."}}
+        {
+          "@type": "Question",
+          "name": "How much can Billed Right improve my collections?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Billed Right clients see an average 94% lift in collections, with days in A/R reduced from 40+ to under 24 days on average."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What specialties does Billed Right serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Billed Right serves 20+ medical specialties including cardiology, behavioral health, internal medicine, pain management, orthopedics, pediatrics, ophthalmology, urgent care, neurology, nephrology, and multispecialty groups."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Billed Right HIPAA compliant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Billed Right has maintained zero data breaches in 18+ years of operation. We are HIPAA compliant, SOC 2 aligned, and use 256-bit encryption for all data in transit and at rest."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to onboard with Billed Right?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most practices are fully onboarded within 2–3 weeks, including EHR/PM system integration, payer setup, and team training."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Billed Right charge for medical billing services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Billed Right uses a transparent percentage-of-collections pricing model with no setup fees and no long-term contracts required to get started. Contact us for a quote tailored to your specialty and volume."
+          }
+        }
       ]
     }
   ]
