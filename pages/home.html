@@ -59,73 +59,200 @@ window.brLoadGTM = function() {
 <meta name="geo.position" content="28.7031;-81.3451">
 <meta name="ICBM" content="28.7031, -81.3451">
 
-<!-- Schema.org — Organization + WebSite + Service -->
+<!-- Schema.org — Organization + MedicalBusiness + WebSite + Service + FAQPage -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
+
     {
       "@type": "Organization",
       "@id": "https://billedright.com/#organization",
       "name": "Billed Right",
-      "url": "https://billedright.com",
-      "logo": {"@type":"ImageObject","url":"https://billedright.com/logo.png"},
+      "url": "https://billedright.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://billedright.com/assets/images/billedright-logo.png"
+      },
+      "image": "https://billedright.com/assets/images/billedright-logo.png",
       "foundingDate": "2006",
       "description": "End-to-end revenue cycle management, medical billing, credentialing, and denial management for healthcare organizations since 2006.",
-      "address": {"@type":"PostalAddress","addressLocality":"Longwood","addressRegion":"FL","addressCountry":"US"},
-      "contactPoint": {"@type":"ContactPoint","telephone":"+1-407-217-9281","email":"info@billedright.com","contactType":"customer service","areaServed":"US"},
-      "sameAs": ["https://www.linkedin.com/company/billedright","https://www.facebook.com/billedright"]
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "256 Rangeline Road",
+        "addressLocality": "Longwood",
+        "addressRegion": "FL",
+        "postalCode": "32750",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-407-217-9281",
+        "email": "info@billedright.com",
+        "contactType": "customer service",
+        "areaServed": "US"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/billedright",
+        "https://www.facebook.com/billedright"
+      ]
     },
+
     {
       "@type": "MedicalBusiness",
       "@id": "https://billedright.com/#medicalbusiness",
       "name": "Billed Right Medical Billing Services",
-      "url": "https://billedright.com",
+      "url": "https://billedright.com/",
+      "image": "https://billedright.com/assets/images/billedright-logo.png",
       "telephone": "+1-407-217-9281",
       "email": "info@billedright.com",
-      "address": {"@type":"PostalAddress","addressLocality":"Longwood","addressRegion":"FL","addressCountry":"US"},
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "256 Rangeline Road",
+        "addressLocality": "Longwood",
+        "addressRegion": "FL",
+        "postalCode": "32750",
+        "addressCountry": "US"
+      },
       "openingHours": "Mo-Fr 08:00-18:00",
       "priceRange": "$$",
-      "areaServed": "US",
-      "medicalSpecialty": ["Cardiology","PainManagement","InternalMedicine","BehavioralHealth"]
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "medicalSpecialty": [
+        "https://schema.org/Cardiovascular",
+        "https://schema.org/InternalMedicine",
+        "https://schema.org/Psychiatric"
+      ]
     },
+
     {
       "@type": "WebSite",
       "@id": "https://billedright.com/#website",
-      "url": "https://billedright.com",
+      "url": "https://billedright.com/",
       "name": "Billed Right",
-      "publisher": {"@id": "https://billedright.com/#organization"},
-      "potentialAction": {"@type":"SearchAction","target":"https://billedright.com/?s={search_term_string}","query-input":"required name=search_term_string"}
+      "publisher": {
+        "@id": "https://billedright.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://billedright.com/?s={search_term_string}"
+        },
+        "query-input": {
+          "@type": "PropertyValueSpecification",
+          "valueRequired": true,
+          "valueName": "search_term_string"
+        }
+      }
     },
+
     {
       "@type": "Service",
+      "@id": "https://billedright.com/#rcm-service",
       "name": "Revenue Cycle Management Services",
-      "provider": {"@id": "https://billedright.com/#organization"},
-      "areaServed": "US",
+      "url": "https://billedright.com/",
+      "provider": {
+        "@id": "https://billedright.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
       "serviceType": "Medical Billing and Revenue Cycle Management",
-      "description": "Credentialing, medical billing, denial management, A/R follow-up, charge posting, coding & audits, eligibility verification, and reporting for healthcare organizations.",
+      "description": "Credentialing, medical billing, denial management, A/R follow-up, charge posting, coding and audits, eligibility verification, and reporting for healthcare organizations.",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "RCM Services",
         "itemListElement": [
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Medical Billing"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Provider Credentialing"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Denial Management"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"A/R Follow-up"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Insurance Eligibility Verification"}}
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Medical Billing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Provider Credentialing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Denial Management"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "A/R Follow-up"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Insurance Eligibility Verification"
+            }
+          }
         ]
       }
     },
+
     {
       "@type": "FAQPage",
+      "@id": "https://billedright.com/#faq",
       "mainEntity": [
-        {"@type":"Question","name":"What results does Billed Right deliver in Revenue Cycle Management?","acceptedAnswer":{"@type":"Answer","text":"Billed Right has billed $2B+ to date, maintains a 94% client retention rate, and keeps average days in A/R under 24, benchmarked against MGMA/HBMA best-in-class standards."}},
-        {"@type":"Question","name":"What specialties does Billed Right serve?","acceptedAnswer":{"@type":"Answer","text":"Billed Right serves multiple medical specialties with dedicated Revenue Cycle Management expertise, with priority depth in cardiology, pain management, internal medicine, and behavioral health, plus additional specialty and multispecialty support."}},
-        {"@type":"Question","name":"Is Billed Right HIPAA compliant?","acceptedAnswer":{"@type":"Answer","text":"Yes. Billed Right maintains healthcare-focused privacy and security practices designed to protect patient and client information, including HIPAA compliance, access controls, and workforce security training."}},
-        {"@type":"Question","name":"How long does it take to onboard with Billed Right?","acceptedAnswer":{"@type":"Answer","text":"Onboarding timing depends on organization size, scope, technology environment, and credentialing dependencies. Billed Right scopes a transition plan during discovery so revenue continuity is protected throughout the switch."}},
-        {"@type":"Question","name":"What does Billed Right charge for medical billing services?","acceptedAnswer":{"@type":"Answer","text":"Billed Right uses a transparent percentage-of-collections pricing model with no setup fees and no long-term contracts required to get started. Contact us for a quote tailored to your specialty and volume."}}
+        {
+          "@type": "Question",
+          "name": "What results does Billed Right deliver in Revenue Cycle Management?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Billed Right has billed $2B+ to date, maintains a 94% client retention rate, and keeps average days in A/R under 24, benchmarked against MGMA/HBMA best-in-class standards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What specialties does Billed Right serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Billed Right serves multiple medical specialties with dedicated Revenue Cycle Management expertise, with priority depth in cardiology, pain management, internal medicine, and behavioral health, plus additional specialty and multispecialty support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Billed Right HIPAA compliant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Billed Right maintains healthcare-focused privacy and security practices designed to protect patient and client information, including HIPAA compliance, access controls, and workforce security training."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to onboard with Billed Right?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Onboarding timing depends on organization size, scope, technology environment, and credentialing dependencies. Billed Right scopes a transition plan during discovery so revenue continuity is protected throughout the switch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Billed Right charge for medical billing services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Billed Right uses a transparent percentage-of-collections pricing model with no setup fees and no long-term contracts required to get started. Contact us for a quote tailored to your specialty and volume."
+          }
+        }
       ]
     }
+
   ]
 }
 </script>
@@ -2238,7 +2365,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
           <a class="br-logo-slide" href="https://www.drchrono.com/" target="_blank" rel="noopener" aria-label="DrChrono"><img src="/assets/images/who-do-we-work-with/drchrono.png" alt="DrChrono" loading="lazy"></a>
           <a class="br-logo-slide" href="https://www.curemd.com/" target="_blank" rel="noopener" aria-label="CureMD"><img src="/assets/images/who-do-we-work-with/curemd.png" alt="CureMD" loading="lazy"></a>
           <a class="br-logo-slide" href="https://www.micromd.com/" target="_blank" rel="noopener" aria-label="MicroMD"><img src="/assets/images/who-do-we-work-with/micro-md.png" alt="MicroMD" loading="lazy"></a>
-          <a class="br-logo-slide" href="https://www.e-mds.com/" target="_blank" rel="noopener" aria-label="e-MDs"><img src="/assets/images/who-do-we-work-with/emds.jpg" alt="e-MDs" loading="lazy"></a>
+          <a class="br-logo-slide" href="#" target="_blank" rel="noopener" aria-label="e-MDs"><img src="/assets/images/who-do-we-work-with/emds.jpg" alt="e-MDs" loading="lazy"></a>
           <a class="br-logo-slide" href="https://www.meditab.com/" target="_blank" rel="noopener" aria-label="Meditab"><img src="/assets/images/who-do-we-work-with/metlab.png" alt="Meditab" loading="lazy"></a>
           <a class="br-logo-slide" href="https://www.availity.com/" target="_blank" rel="noopener" aria-label="Availity"><img src="/assets/images/who-do-we-work-with/availity.png" alt="Availity" loading="lazy"></a>
           <a class="br-logo-slide" href="https://www.billflash.com/" target="_blank" rel="noopener" aria-label="BillFlash"><img src="/assets/images/who-do-we-work-with/billflash.jpg" alt="BillFlash" loading="lazy"></a>
@@ -2251,7 +2378,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; }
           <a class="br-logo-slide" href="https://www.drchrono.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/drchrono.png" alt="" loading="lazy"></a>
           <a class="br-logo-slide" href="https://www.curemd.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/curemd.png" alt="" loading="lazy"></a>
           <a class="br-logo-slide" href="https://www.micromd.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/micro-md.png" alt="" loading="lazy"></a>
-          <a class="br-logo-slide" href="https://www.e-mds.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/emds.jpg" alt="" loading="lazy"></a>
+          <a class="br-logo-slide" href="#" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/emds.jpg" alt="" loading="lazy"></a>
           <a class="br-logo-slide" href="https://www.meditab.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/metlab.png" alt="" loading="lazy"></a>
           <a class="br-logo-slide" href="https://www.availity.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/availity.png" alt="" loading="lazy"></a>
           <a class="br-logo-slide" href="https://www.billflash.com/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="/assets/images/who-do-we-work-with/billflash.jpg" alt="" loading="lazy"></a>
