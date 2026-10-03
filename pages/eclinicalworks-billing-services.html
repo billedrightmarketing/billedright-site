@@ -59,7 +59,6 @@ window.brLoadGTM = function() {
 <meta name="ICBM" content="28.7033, -81.3373">
 
 <!-- Schema.org — Organization + WebSite + Service -->
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -71,8 +70,9 @@ window.brLoadGTM = function() {
       "url": "https://billedright.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://billedright.com/logo.png"
+        "url": "https://billedright.com/assets/images/billedright-logo.png"
       },
+      "image": "https://billedright.com/assets/images/billedright-logo.png",
       "foundingDate": "2006",
       "description": "End-to-end revenue cycle management, medical billing, credentialing, and denial management for healthcare practices since 2006.",
       "address": {
@@ -100,6 +100,7 @@ window.brLoadGTM = function() {
       "@id": "https://billedright.com/#medicalbusiness",
       "name": "Billed Right Medical Billing Services",
       "url": "https://billedright.com/",
+      "image": "https://billedright.com/assets/images/billedright-logo.png",
       "telephone": "+1-407-217-9281",
       "email": "info@billedright.com",
       "address": {
@@ -125,44 +126,51 @@ window.brLoadGTM = function() {
     },
     {
       "@type": "Service",
-      "@id": "https://billedright.com/#eclinicalworks-billing-service",
-      "name": "eClinicalWorks Medical Billing Services",
+      "@id": "https://billedright.com/#rcm-service",
+      "name": "Revenue Cycle Management Services",
       "provider": {
         "@id": "https://billedright.com/#organization"
       },
       "areaServed": "US",
-      "serviceType": "eClinicalWorks Medical Billing",
-      "description": "Twenty years of dedicated eClinicalWorks billing expertise, including system setup and configuration, end-to-end billing, custom reporting and dashboards, and new practice onboarding, all performed inside the client's own eCW instance.",
+      "serviceType": "Medical Billing and Revenue Cycle Management",
+      "description": "Credentialing, medical billing, denial management, A/R follow-up, charge posting, coding & audits, eligibility verification, and reporting for healthcare practices.",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "eClinicalWorks Billing Services",
+        "name": "RCM Services",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "eClinicalWorks Setup and Configuration"
+              "name": "Medical Billing"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "End-to-End Billing in eClinicalWorks"
+              "name": "Provider Credentialing"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "eClinicalWorks Reporting and Dashboards"
+              "name": "Denial Management"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "New Practice Onboarding in eClinicalWorks"
+              "name": "A/R Follow-up"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Insurance Eligibility Verification"
             }
           }
         ]
@@ -170,89 +178,53 @@ window.brLoadGTM = function() {
     },
     {
       "@type": "FAQPage",
-      "@id": "https://billedright.com/services/eclinicalworks-billing-services/#faq",
+      "@id": "https://billedright.com/#faq",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is eClinicalWorks and why does billing expertise in it matter?",
+          "name": "How much can Billed Right improve my collections?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "eClinicalWorks (eCW) is one of the most widely used EHR and practice management platforms in the country, and it offers more configuration depth than most systems on the market. That depth only helps when it's set up and used correctly. A generalist billing team that touches eCW occasionally misses configuration options and reports that a dedicated eCW team builds as standard practice."
+            "text": "Billed Right clients see an average 94% lift in collections, with days in A/R reduced from 40+ to under 24 days on average."
           }
         },
         {
           "@type": "Question",
-          "name": "Does Billed Right work inside our existing eCW instance or do we need to migrate?",
+          "name": "What specialties does Billed Right serve?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We work entirely inside your existing eClinicalWorks instance. There is no migration, no parallel system, and no data transfer. Your fee schedules, payer enrollments, templates, and dashboards stay exactly where they are, and we work within them."
+            "text": "Billed Right serves 20+ medical specialties including cardiology, behavioral health, internal medicine, pain management, orthopedics, pediatrics, ophthalmology, urgent care, neurology, nephrology, and multispecialty groups."
           }
         },
         {
           "@type": "Question",
-          "name": "How long does it take for a new practice to be billing clean in eCW with Billed Right?",
+          "name": "Is Billed Right HIPAA compliant?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Timelines depend on specialty and payer mix, but our team is involved from Day 1 for new eCW practices, configuring the system and billing workflow in parallel so the practice reaches a clean billing state on schedule rather than discovering configuration gaps after claims start denying."
+            "text": "Yes. Billed Right has maintained zero data breaches in 18+ years of operation. We are HIPAA compliant, SOC 2 aligned, and use 256-bit encryption for all data in transit and at rest."
           }
         },
         {
           "@type": "Question",
-          "name": "What eClinicalWorks reports does Billed Right build for clients?",
+          "name": "How long does it take to onboard with Billed Right?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We build the custom financial and operational reports most practices never configure on their own: dashboards that show whether claims were paid correctly, where AR is aging, and what denial patterns actually mean. We use eCW's full reporting capability, not the handful of default reports most practices rely on."
+            "text": "Most practices are fully onboarded within 2–3 weeks, including EHR/PM system integration, payer setup, and team training."
           }
         },
         {
           "@type": "Question",
-          "name": "Can Billed Right configure eCW for a brand new practice that has not gone live yet?",
+          "name": "What does Billed Right charge for medical billing services?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. For new practices, we configure fee schedules, payer enrollments, claim edits, and templates before go-live, train front-end staff on billing-related workflows, and function as a full-time eCW billing onboarding specialist on the practice's team, included as part of the relationship rather than billed separately."
+            "text": "Billed Right uses a transparent percentage-of-collections pricing model with no setup fees and no long-term contracts required to get started. Contact us for a quote tailored to your specialty and volume."
           }
-        },
-        {
-          "@type": "Question",
-          "name": "How does Billed Right handle eCW updates and new feature releases?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Because our team works inside eClinicalWorks exclusively, we track platform updates and new features as part of normal operations and adjust configurations and workflows accordingly, rather than a client's staff having to identify and interpret changes on their own."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What makes Billed Right different from other billing companies that support eCW?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Most billing companies support eClinicalWorks as one of several systems they work in. Billed Right has worked inside eCW exclusively for 20 years, and it is our top platform by client volume. That depth shows up in the configurations we know to check, the reports we build by default, and the workflow issues we catch before they become billing problems."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://billedright.com/services/eclinicalworks-billing-services/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://billedright.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "eClinicalWorks Billing Services",
-          "item": "https://billedright.com/services/eclinicalworks-billing-services/"
         }
       ]
     }
   ]
 }
 </script>
-
-
 
 <!-- Google Fonts — WordPress: add via functions.php wp_enqueue_style -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
