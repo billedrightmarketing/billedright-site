@@ -67,69 +67,159 @@ window.brLoadGTM = function() {
       "@type": "Organization",
       "@id": "https://billedright.com/#organization",
       "name": "Billed Right",
-      "url": "https://billedright.com",
-      "logo": {"@type":"ImageObject","url":"https://billedright.com/logo.png"},
+      "url": "https://billedright.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://billedright.com/assets/images/billedright-logo.png"
+      },
+      "image": "https://billedright.com/assets/images/billedright-logo.png",
       "foundingDate": "2006",
       "description": "End-to-end revenue cycle management, medical billing, credentialing, and denial management for healthcare practices since 2006.",
-      "address": {"@type":"PostalAddress","addressLocality":"Longwood","addressRegion":"FL","addressCountry":"US"},
-      "contactPoint": {"@type":"ContactPoint","telephone":"+1-407-217-9281","email":"info@billedright.com","contactType":"customer service","areaServed":"US"},
-      "sameAs": ["https://www.linkedin.com/company/billedright","https://www.facebook.com/billedright"]
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "256 Rangeline Road",
+        "addressLocality": "Longwood",
+        "addressRegion": "FL",
+        "postalCode": "32750",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-407-217-9281",
+        "email": "info@billedright.com",
+        "contactType": "customer service",
+        "areaServed": "US"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/billedright",
+        "https://www.facebook.com/billedright"
+      ]
     },
     {
       "@type": "MedicalBusiness",
       "@id": "https://billedright.com/#medicalbusiness",
       "name": "Billed Right Medical Billing Services",
-      "url": "https://billedright.com",
+      "url": "https://billedright.com/",
+      "image": "https://billedright.com/assets/images/billedright-logo.png",
       "telephone": "+1-407-217-9281",
       "email": "info@billedright.com",
-      "address": {"@type":"PostalAddress","addressLocality":"Longwood","addressRegion":"FL","addressCountry":"US"},
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "256 Rangeline Road",
+        "addressLocality": "Longwood",
+        "addressRegion": "FL",
+        "postalCode": "32750",
+        "addressCountry": "US"
+      },
       "openingHours": "Mo-Fr 08:00-18:00",
       "priceRange": "$$",
-      "areaServed": "US",
-      "medicalSpecialty": ["Cardiology","InternalMedicine","Psychiatry","Orthopedic","Pediatric"]
+      "areaServed": "US"
     },
     {
       "@type": "WebSite",
       "@id": "https://billedright.com/#website",
-      "url": "https://billedright.com",
+      "url": "https://billedright.com/",
       "name": "Billed Right",
-      "publisher": {"@id": "https://billedright.com/#organization"}
+      "publisher": {
+        "@id": "https://billedright.com/#organization"
+      }
     },
     {
       "@type": "Service",
-      "name": "eClinicalWorks Medical Billing Services",
-      "provider": {"@id": "https://billedright.com/#organization"},
+      "@id": "https://billedright.com/#rcm-service",
+      "name": "Revenue Cycle Management Services",
+      "provider": {
+        "@id": "https://billedright.com/#organization"
+      },
       "areaServed": "US",
-      "serviceType": "eClinicalWorks Medical Billing",
-      "description": "Twenty years of dedicated eClinicalWorks billing expertise, including system setup and configuration, end-to-end billing, custom reporting and dashboards, and new practice onboarding, all performed inside the client's own eCW instance.",
+      "serviceType": "Medical Billing and Revenue Cycle Management",
+      "description": "Credentialing, medical billing, denial management, A/R follow-up, charge posting, coding & audits, eligibility verification, and reporting for healthcare practices.",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "eClinicalWorks Billing Services",
+        "name": "RCM Services",
         "itemListElement": [
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"eClinicalWorks Setup and Configuration"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"End-to-End Billing in eClinicalWorks"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"eClinicalWorks Reporting and Dashboards"}},
-          {"@type":"Offer","itemOffered":{"@type":"Service","name":"New Practice Onboarding in eClinicalWorks"}}
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Medical Billing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Provider Credentialing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Denial Management"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "A/R Follow-up"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Insurance Eligibility Verification"
+            }
+          }
         ]
       }
     },
     {
       "@type": "FAQPage",
+      "@id": "https://billedright.com/#faq",
       "mainEntity": [
-        {"@type":"Question","name":"What is eClinicalWorks and why does billing expertise in it matter?","acceptedAnswer":{"@type":"Answer","text":"eClinicalWorks (eCW) is one of the most widely used EHR and practice management platforms in the country, and it offers more configuration depth than most systems on the market. That depth only helps when it's set up and used correctly. A generalist billing team that touches eCW occasionally misses configuration options and reports that a dedicated eCW team builds as standard practice."}},
-        {"@type":"Question","name":"Does Billed Right work inside our existing eCW instance or do we need to migrate?","acceptedAnswer":{"@type":"Answer","text":"We work entirely inside your existing eClinicalWorks instance. There is no migration, no parallel system, and no data transfer. Your fee schedules, payer enrollments, templates, and dashboards stay exactly where they are, and we work within them."}},
-        {"@type":"Question","name":"How long does it take for a new practice to be billing clean in eCW with Billed Right?","acceptedAnswer":{"@type":"Answer","text":"Timelines depend on specialty and payer mix, but our team is involved from Day 1 for new eCW practices, configuring the system and billing workflow in parallel so the practice reaches a clean billing state on schedule rather than discovering configuration gaps after claims start denying."}},
-        {"@type":"Question","name":"What eClinicalWorks reports does Billed Right build for clients?","acceptedAnswer":{"@type":"Answer","text":"We build the custom financial and operational reports most practices never configure on their own: dashboards that show whether claims were paid correctly, where AR is aging, and what denial patterns actually mean. We use eCW's full reporting capability, not the handful of default reports most practices rely on."}},
-        {"@type":"Question","name":"Can Billed Right configure eCW for a brand new practice that has not gone live yet?","acceptedAnswer":{"@type":"Answer","text":"Yes. For new practices, we configure fee schedules, payer enrollments, claim edits, and templates before go-live, train front-end staff on billing-related workflows, and function as a full-time eCW billing onboarding specialist on the practice's team, included as part of the relationship rather than billed separately."}},
-        {"@type":"Question","name":"How does Billed Right handle eCW updates and new feature releases?","acceptedAnswer":{"@type":"Answer","text":"Because our team works inside eClinicalWorks exclusively, we track platform updates and new features as part of normal operations and adjust configurations and workflows accordingly, rather than a client's staff having to identify and interpret changes on their own."}},
-        {"@type":"Question","name":"What makes Billed Right different from other billing companies that support eCW?","acceptedAnswer":{"@type":"Answer","text":"Most billing companies support eClinicalWorks as one of several systems they work in. Billed Right has worked inside eCW exclusively for 20 years, and it is our top platform by client volume. That depth shows up in the configurations we know to check, the reports we build by default, and the workflow issues we catch before they become billing problems."}}
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type":"ListItem","position":1,"name":"Home","item":"https://billedright.com/"},
-        {"@type":"ListItem","position":2,"name":"eClinicalWorks Billing Services","item":"https://billedright.com/services/eclinicalworks-billing-services/"}
+        {
+          "@type": "Question",
+          "name": "How much can Billed Right improve my collections?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Billed Right clients see an average 94% lift in collections, with days in A/R reduced from 40+ to under 24 days on average."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What specialties does Billed Right serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Billed Right serves 20+ medical specialties including cardiology, behavioral health, internal medicine, pain management, orthopedics, pediatrics, ophthalmology, urgent care, neurology, nephrology, and multispecialty groups."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Billed Right HIPAA compliant?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Billed Right has maintained zero data breaches in 18+ years of operation. We are HIPAA compliant, SOC 2 aligned, and use 256-bit encryption for all data in transit and at rest."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to onboard with Billed Right?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most practices are fully onboarded within 2–3 weeks, including EHR/PM system integration, payer setup, and team training."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Billed Right charge for medical billing services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Billed Right uses a transparent percentage-of-collections pricing model with no setup fees and no long-term contracts required to get started. Contact us for a quote tailored to your specialty and volume."
+          }
+        }
       ]
     }
   ]
@@ -2280,28 +2370,28 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="br-svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
           <h3>Setup &amp; Configuration</h3>
           <p>Fee schedules, payer enrollments, claim edits, templates, clearinghouse build, and user roles, configured correctly in your eCW from day one. A misconfigured eCW instance creates billing errors that compound for months. We build it right the first time.</p>
-          <a href="/eclinicalworks-setup-configuration/" class="br-learn">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="/services/emr-billing-platforms/" class="br-learn">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <div class="br-service-card br-pillar-card br-reveal br-reveal-d1">
           <span class="br-pillar-num">02</span>
           <div class="br-svc-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
           <h3>End-to-End Billing</h3>
           <p>Charge entry through payment posting, denial management, and AR follow-up, all executed inside your eClinicalWorks. No parallel system, no data transfer, no black box. You see everything we do in the same system you work in every day.</p>
-          <a href="/eclinicalworks-rcm/" class="br-learn">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="/services/eclinicalworks-billing-services/" class="br-learn">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <div class="br-service-card br-pillar-card br-reveal br-reveal-d2">
           <span class="br-pillar-num">03</span>
           <div class="br-svc-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
           <h3>Reporting &amp; Dashboards</h3>
           <p>eCW has hundreds of reports. Most practices run three. Our team builds the custom dashboards and financial reports that tell you whether you were paid correctly, where your AR is aging, and what your denial patterns actually mean. This is the biggest gap we find, and the biggest opportunity.</p>
-          <a href="/eclinicalworks-reporting/" class="br-learn">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="/services/reporting/" class="br-learn">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <div class="br-service-card br-pillar-card br-reveal br-reveal-d3">
           <span class="br-pillar-num">04</span>
           <div class="br-svc-icon"><svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
           <h3>New Practice Onboarding</h3>
           <p>If you are a new practice on eCW, we are in from Day 1. We configure eClinicalWorks, set up your billing workflows, train your front-end staff on billing processes, and get you billing clean on schedule. This is a full-time eCW billing onboarding specialist on your team, included, not an add-on.</p>
-          <a href="/eclinicalworks-new-practice-setup/" class="br-learn">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="/services/eclinicalworks-billing-services/" class="br-learn">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </div>

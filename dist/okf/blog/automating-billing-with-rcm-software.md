@@ -1,12 +1,12 @@
 ---
 type: BlogPosting
-title: "How to Streamline Billing and Boost Revenue"
+title: "RCM Software Automation: How to Streamline Billing"
 description: "Discover how to streamline billing, boost revenue, Importance and Benefits of Automating Billing with RCM Software"
 resource: https://billedright.com/blog/automating-billing-with-rcm-software/
 tags: [blog, healthcare-billing]
 ---
 
-# How to Streamline Billing and Boost Revenue
+# RCM Software Automation: How to Streamline Billing
 
 Discover how to streamline billing, boost revenue, Importance and Benefits of Automating Billing with RCM Software
 

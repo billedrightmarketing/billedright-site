@@ -1,14 +1,14 @@
 ---
 type: BlogPosting
 title: "Elevate Your Practice: Demystifying Revenue Optimization in Healthcare"
-description: "Looking for a medical billing company? Billed Right offers a solution, not just a service, along with a 120-day money-back guarantee."
+description: "Discover key healthcare revenue optimization strategies, from insurance verification and accurate coding to denial management and A/R follow-up."
 resource: https://billedright.com/blog/elevate-your-practice-demystifying-revenue-optimization-in-healthcare/
 tags: [blog, healthcare-billing]
 ---
 
 # Elevate Your Practice: Demystifying Revenue Optimization in Healthcare
 
-Looking for a medical billing company? Billed Right offers a solution, not just a service, along with a 120-day money-back guarantee.
+Discover key healthcare revenue optimization strategies, from insurance verification and accurate coding to denial management and A/R follow-up.
 
 Category: Healthcare Billing
 

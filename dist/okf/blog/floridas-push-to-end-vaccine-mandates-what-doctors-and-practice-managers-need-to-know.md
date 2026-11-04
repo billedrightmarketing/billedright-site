@@ -1,14 +1,14 @@
 ---
 type: BlogPosting
 title: "Florida’s Push to End Vaccine Mandates: What Doctors and Practice Managers Need to Know"
-description: "Looking for a medical billing company? Billed Right offers a solution, not just a service, along with a 120-day money-back guarantee."
+description: "Learn how Florida’s proposed vaccine mandate changes could affect medical practices, workflows, compliance, documentation, and revenue cycle management."
 resource: https://billedright.com/blog/floridas-push-to-end-vaccine-mandates-what-doctors-and-practice-managers-need-to-know/
 tags: [blog, florida-healthcare-news]
 ---
 
 # Florida’s Push to End Vaccine Mandates: What Doctors and Practice Managers Need to Know
 
-Looking for a medical billing company? Billed Right offers a solution, not just a service, along with a 120-day money-back guarantee.
+Learn how Florida’s proposed vaccine mandate changes could affect medical practices, workflows, compliance, documentation, and revenue cycle management.
 
 Category: Florida Healthcare News
 

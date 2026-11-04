@@ -1,14 +1,14 @@
 ---
 type: BlogPosting
 title: "What could an analysis of your practice reveal?"
-description: "Looking for a medical billing company? Billed Right offers a solution, not just a service, along with a 120-day money-back guarantee."
+description: "Discover how a SWOT analysis can help medical practices identify strengths, weaknesses, opportunities, and threats to improve planning and business growth."
 resource: https://billedright.com/blog/what-could-an-analysis-of-your-practice-reveal/
 tags: [blog, healthcare]
 ---
 
 # What could an analysis of your practice reveal?
 
-Looking for a medical billing company? Billed Right offers a solution, not just a service, along with a 120-day money-back guarantee.
+Discover how a SWOT analysis can help medical practices identify strengths, weaknesses, opportunities, and threats to improve planning and business growth.
 
 Category: Healthcare
 
