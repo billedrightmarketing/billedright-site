@@ -55,7 +55,7 @@
     formData.forEach(function (value, key) {
       // Netlify Forms' own bookkeeping fields — not real lead data, and
       // zoho-lead.js doesn't read them.
-      if (key === 'form-name' || key === 'bot-field') return;
+      if (key === 'form-name' || key === 'bot-field' || key === 'br_hp_url') return;
       data[key] = value;
     });
     return data;
@@ -122,6 +122,23 @@
     // is "/contact/" (another lead form, not a confirmation page) — gets
     // the inline success state instead of bouncing the visitor
     // somewhere that isn't actually a "thank you" experience.
+    // Honeypot: an off-screen text field real visitors never see or
+    // tab into. Bots that auto-fill every field will populate it, and
+    // zoho-lead.js silently discards those submissions. Also records
+    // when the form was wired so the server can reject instant submits.
+    var loadedAt = Date.now();
+    var hpWrap = document.createElement('div');
+    hpWrap.setAttribute('aria-hidden', 'true');
+    hpWrap.style.cssText =
+      'position:absolute!important;left:-10000px!important;top:auto;width:1px;height:1px;overflow:hidden';
+    var hpInput = document.createElement('input');
+    hpInput.type = 'text';
+    hpInput.name = 'br_hp_url';
+    hpInput.tabIndex = -1;
+    hpInput.autocomplete = 'off';
+    hpWrap.appendChild(hpInput);
+    form.appendChild(hpWrap);
+
     var action = form.getAttribute('action') || '';
     var thankYouRedirect = action.indexOf('/thank-you/') === 0 ? action : null;
 
@@ -144,6 +161,8 @@
 
       var payload = formToPayload(form);
       payload.form_source = formSource;
+      payload.br_hp_url = hpInput.value;
+      payload.br_elapsed_ms = Date.now() - loadedAt;
 
       setBusy(form, true);
 

@@ -336,6 +336,26 @@ exports.handler = async (event) => {
     };
   }
 
+  // Spam defence: honeypot field filled in, or form submitted faster
+  // than a person could fill it. Return a normal-looking success so the
+  // bot gets no signal to adapt to, but never create a Zoho lead.
+  const elapsedMs = Number(fields.br_elapsed_ms);
+  if (
+    (fields.br_hp_url && String(fields.br_hp_url).trim() !== "") ||
+    (Number.isFinite(elapsedMs) && elapsedMs < 3000)
+  ) {
+    console.warn(
+      "zoho-lead: spam submission dropped (honeypot/timing)",
+      JSON.stringify({ hp: !!fields.br_hp_url, elapsedMs })
+    );
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ success: true }),
+    };
+  }
+  delete fields.br_hp_url;
+  delete fields.br_elapsed_ms;
+
   if (!fields.email && !fields.phone) {
     return {
       statusCode: 400,
